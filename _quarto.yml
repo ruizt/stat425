@@ -1,0 +1,23 @@
+project:
+  type: website
+  output-dir: docs
+
+website:
+  title: "STAT425"
+  google-analytics: "G-H3YKZX4J88"
+  page-footer: "\u00a9 2023 Trevor Ruiz"
+  navbar:
+    background: dark
+    foreground: light
+    search: true
+    left:
+      - syllabus.qmd
+
+format:
+  html:
+    theme: cosmo
+    css: styles.css
+    toc: true
+
+
+

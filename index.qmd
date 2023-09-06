@@ -1,0 +1,15 @@
+---
+title: "Probability Theory"
+date: today
+published-title: 'Updated'
+---
+
+::: callout-note
+## Announcements
+
+🍂 First class meetings Thursday 9/21/23!
+:::
+
+This is the class website for Probability Theory (STAT425) offered at Cal Poly in Fall 2023. Note that this site is for *both* sections (01-3585 held 4:10pm MTWR and 02-3430 held 5:10pm MTWR). Please do not reproduce material without permission.
+
+**Course description**: Rigorous development of probability theory. Probability axioms, combinatorial methods, conditional and marginal probability, independence, random variables, univariate and multivariate probability distributions, conditional distributions, transformations, order statistics, expectation and variance. Use of statistical simulation throughout the course.
