@@ -2,3 +2,8 @@
 title: 'Content'
 ---
 
+### Week 0
+
+Class meetings:
+
+-   ***Thursday***: course introduction
