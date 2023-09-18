@@ -9,7 +9,7 @@ published-title: "Updated"
 editor: visual
 ---
 
-### Class information
+### Course information
 
 **Instructor:** Trevor Ruiz (he/him/his) \[[email](mailto:truiz01@calpoly.edu)\]
 
@@ -19,6 +19,8 @@ editor: visual
 -   \[Section 02/3430\] 5:10pm -- 6:00pm MTWR Construction Innovations Center Room C201
 
 **Office hours:** 2:00pm -- 3:00pm TWR 25-236 and [by appointment](https://calendly.com/tdruiz/student)
+
+Probability is the mathematics of random events. It is an active field of study and provides the theoretical foundation for the discipline of statistics. This course aims to formalize familiar probability concepts covered in prior coursework (predominantly STAT 305), including probability rules, random variables, common distributions, and expected value. We will build on prior experience and intuition and develop tools to support deeper inquiry and subsequent study of mathematical statistics in STAT 426 and STAT 427. Students will also be introduced to potentially new concepts that play central roles in statistics such as joint distributions, transformations, and conditional expectation. Lectures will provide an exposition of definitions, properties, theorems, and examples, and offer a venue for discussion; students will practice applying this material to solve probability problems on homework assignments and demonstrate fluency with key concepts on in-class exams.
 
 ### Catalog Description
 
@@ -36,7 +38,7 @@ Desk copies of DeGroot & Schervish are available in StatLab (25-107B).
 
 ### Learning outcomes
 
-Successful students will:
+The course aims to enable students to:
 
 -   use the axiomatic construction of probability to derive properties of probability measures and conditional probability measures, and apply definitions and properties to solve probability problems <!-- CLO 1, 3; EO a -->
 
@@ -46,17 +48,17 @@ Successful students will:
 
 ### Assessments
 
-Attainment of learning outcomes will be measured by evaluation of submitted homework assignments and exams. Letter grades will be assigned based on a weighted average of scores, with the relative weighting approximately as follows.
+Attainment of learning outcomes will be measured by evaluation of submitted homework assignments and exams. Letter grades will be assigned based on a weighted average of scores, with the relative weighting approximately as indicated in parentheses below.
 
--   **Homeworks (50%).** Homework assignments will be given approximately weekly (except for exam weeks and holidays). These will be distributed on Thursday each week in which they are assigned and due in class the following Thursday; in general, each assignment will consist of questions pertaining to material discussed in class during the preceding week. Students are encouraged to collaborate on homework assignments, but are expected to prepare submissions individually and indicate in writing on their submission any classmates they consulted. Submissions should reflect students' best effort and will be evaluated based on completeness, organization, and correctness of selected answers. Each student's lowest homework score will be omitted in grade calculations; otherwise, all homework scores will be weighted equally.
+-   **Homeworks (50%).** Homework assignments will be given approximately weekly (except for exam weeks and holidays). The goal of homework assignments is to provide opportunities for students to reinforce key concepts, definitions, and results through practice and to develop and apply problem-solving abilities. These will be distributed on Thursday each week in which they are assigned and due in class the following Thursday; in general, each assignment will consist of questions pertaining to material discussed in class during the preceding week. Students are encouraged to collaborate on homework assignments, but are expected to prepare submissions individually and indicate in writing on their submission any classmates they consulted. Submissions should reflect students' best effort and will be evaluated based on completeness, organization, and correctness of selected answers. Each student's lowest homework score will be omitted in grade calculations; otherwise, all homework scores will be weighted equally.
 
--   **Midterms (30%).** Two midterm exams will be given during the quarter at approximately four-week intervals as shown on the tentative schedule below. Midterms will be given in class on Thursdays during indicated weeks and consist of 2-3 questions that must be answered individually during the allotted time without consulting anyone except the instructor. Answers will be evaluated based on completeness and correctness. The exam receiving the higher score will be weighted more heavily in grade calculations.
+-   **Midterms (30%).** Two midterm exams will be given during the quarter at approximately four-week intervals as shown on the tentative schedule below. The goal of the midterm exams is to assess students' ability to use key concepts, definitions, and results in furtherance of course learning outcomes. Midterms will be given in class on Thursdays during indicated weeks and consist of 2-3 questions that must be answered individually during the allotted time without consulting anyone except the instructor. Students will be allowed one sheet of notes that they may consult while taking each exam. Answers will be evaluated based on completeness and correctness. While both midterm exams will count towards final grades, whichever exam receives the higher score will be weighted more heavily in grade calculations.
 
--   **Final (20%).** A final exam will be given in the usual classroom at the time scheduled by the registrar. For Section 01, the final will be held on Wednesday, December 13, 4:10pm --- 7:00pm; for Section 02, the final will be held on Friday, December 15, 4:10pm --- 7:00pm. The final will consist of 4-6 questions that must be answered individually during the allotted time without consulting anyone except the instructor. Its scope will be cumulative but emphasis will be on later material. Answers will be evaluated based on completeness and correctness.
+-   **Final (20%).** A final exam will be given in the usual classroom at the time scheduled by the registrar. The goal of the final exam is to assess students' integration of the course material in furtherance of course learning oucomes. For Section 01, the final will be held on Wednesday, December 13, 4:10pm --- 7:00pm; for Section 02, the final will be held on Friday, December 15, 4:10pm --- 7:00pm. The final will consist of 4-6 questions that must be answered individually during the allotted time without consulting anyone except the instructor. Students will be allowed one sheet of notes that they may consult while taking the final. Its scope will be cumulative but emphasis will be on later material. Answers will be evaluated based on completeness and correctness.
 
-Every effort will be made to return evaluated work within one week of submission. Final exams, per University policy, will be retained by the instructor. Scores will be recorded in Canvas, and students are responsible for checking their scores to ensure accurate data entry upon receipt of evaluated work.
+Every effort will be made to return evaluated work within one week of submission. Final exams, per University policy, will be retained by the instructor. Scores will be recorded in Canvas, and students will be responsible for checking their scores to ensure accurate data entry upon receipt of evaluated work.
 
-Very roughly, letter grades will be assigned as follows. A: 90-100. B: 75-90. C: 60-75. D: 50-60. However, please note that [letter grades represent *qualitative* assessments of attainment of course objectives](https://catalog.calpoly.edu/academicstandardsandpolicies/grading/), and as such these ranges may be adjusted at instructor discretion to ensure correspondence with letter grade definitions based on submitted work. Please also note that failure to adhere to course policies --- particularly collaboration, academic integrity, and attendance --- may result in a lower letter grade than would otherwise be assigned.
+Very roughly, letter grades will be assigned as follows. A: 90-100. B: 75-90. C: 60-75. D: 50-60. However, please note that [letter grades represent *qualitative* assessments of attainment of course objectives](https://catalog.calpoly.edu/academicstandardsandpolicies/grading/), and as such these ranges may be adjusted at instructor discretion to ensure apporpriate correspondence with letter grade definitions based on course assessments. Please also note that failure to adhere to course policies --- particularly collaboration, academic integrity, and attendance policies --- may result in a lower letter grade than would otherwise be assigned.
 
 ### Tentative schedule
 
@@ -82,23 +84,21 @@ Subject to change at instructor discretion.
 
 #### Collaboration
 
-Collaboration within the class is both allowed and encouraged on homework assignments. Collaboration means that all parties make material contributions. Material contributions include participation in discussion, suggesting an approach or idea, providing consultation on a problem or difficulty, and presenting an approach. Collaboration does *not* include copying another student's answer (even if it is during a group session), consulting with students or other individuals outside of the class, dividing an assignment among a group and exchanging answers, or 'sitting in' on a group work session.
+Collaboration within the class (including across class sections) is both allowed and encouraged on homework assignments, subject to certain conditions outlined in the paragraph below. Students collaborating with a group are expected to prepare their own solutions, in their own words and writing, and are required to indicate their collaborators in writing on their submission. Submissions that do not indicate any collaborators will be understood to represent the sole and independent effort of the student named on the submission.
 
-Students collaborating with a group are expected to prepare their own solutions, in their own words and writing, and are required to indicate their collaborators in writing on their submission. Submissions that do not indicate any collaborators will be understood to represent the sole and independent effort of the student named on the submission.
-
-Any instances of unacknowledged exchange of work or obtaining of answers by inappropriate means will be regarded as plagiarism. The best way to ensure that a group effort is consistent with this collaboration policy is to require that all students attempt all problems before engaging in any discussion or exchange.
+A collaboration requires that all parties make material contributions to a shared work. Material contributions might include participation in discussions, suggesting an approach or idea, providing consultation on a problem or difficulty, or presenting an approach. In short, there must be shared effort among each student involved. While the end result of a homework collaboration may be a set of shared answers, the converse is not true: a set of shared answers is not necessarily the result of a collaboration. A set of submissions containing common answers resulting from exchange does not reflect a legitimate collaboration unless each individual contributed materially to the result. In that respect, collaboration does not include directly requesting or distributing answers, consulting with students or other individuals outside of the class, dividing an assignment among a group and exchanging answers, or sitting in on a group work session without actively participating. Any instances of unacknowledged or inappropriate exchange of work will be regarded as acts of academic disohonesty. The best way to ensure that a group effort is consistent with this collaboration policy is to agree that all team members will attempt all or most of each assignment individually before engaging in any discussion or exchange.
 
 #### Attendance
 
-Regular attendance is essential for success in the course and required per University policy. Each student may miss two class meetings without notice but subsequent absences should be [excusable](https://academicprograms.calpoly.edu/content/academicpolicies/class-attendance). This expectation will be enacted by honor system, and although attendance will not be taken each class meeting, unexcused absences may negatively impact course grades.
+Regular attendance is essential for success in the course and required per University policy. Each student may miss two class meetings without notice but subsequent absences should be [excusable](https://academicprograms.calpoly.edu/content/academicpolicies/class-attendance). Unexcused absences may negatively impact course grades.
 
 #### Communication and email
 
-Students are encouraged to use face-to-face means of communication (office hours, class meetings, appointments) whenever possible. Email communication may be used on a secondary basis or when a written record of communication is needed. Every effort is made to respond to email within 48 weekday hours --- so a message sent Thursday or Friday may not receive a reply until Monday or Tuesday. If a response is not received within one week, students should send a reminder.
+Students are encouraged to use face-to-face means of communication (office hours, class meetings, appointments) when possible. Email may be used on a secondary basis or when a written record of communication is needed. Every effort is made to respond to email within 48 weekday hours --- so a message sent Thursday or Friday may not receive a reply until Monday or Tuesday. Time-sensitive messages should be identified as such in the subject line. Students should wait one week before sending a reminder.
 
 #### Time commitment
 
-STAT425 is a four-credit course, which corresponds to a *minimum* time commitment of 12 hours per week, including lectures, reading, homework assignments, and study time. Some variability in workload by week should be expected, and most students may need to budget a few extra hours each week. However, students can expect to be able to meet course expectations with a time commitment less than 16 hours per week, and are encouraged to notify the instructor if they are regularly exceeding this amount.
+STAT425 is a four-credit course, which corresponds to a minimum time commitment of 12 hours per week, including lectures, reading, homework assignments, and study time. Some variability in workload by week should be expected, and most students will need to budget a few extra hours each week. However, students can expect to be able to meet course expectations with a time commitment less than 16 hours per week, and are encouraged to notify the instructor if they are regularly exceeding this amount.
 
 #### Assignment scores and final grades
 
@@ -106,7 +106,7 @@ Every effort will be made to provide consistent and fair evaluation of student w
 
 #### Late work
 
-Each student may turn in two homework assignments up to one week late without penalty at any time during the quarter and without notice. Subsequently, assignments turned in up to one week late will be evaluated for 75% credit unless an extension is granted in advance. No late work will be accepted beyond one week after the original due date. This policy applies to homeworks only, and not exams.
+Each student may turn in two homework assignments up to one week late without penalty at any time during the quarter and without notice. Subsequently, assignments turned in up to one week late will be evaluated for 75% credit unless an extension is granted in advance. No late work will be accepted beyond one week after the original due date. This policy applies to homework assignments only, and not exams.
 
 #### Accommodations
 
@@ -118,4 +118,4 @@ Students are expected to be aware of and adhere to University policy regarding a
 
 #### Copyright and distribution of course materials
 
-All course materials, including handouts, homework assignments, study guides, course notes, exams, and solutions are subject to copyright; students are not permitted to share or distribute any course materials without the explicit written consent of the instructor. This includes, in particular, uploading materials or prepared solutions to online services and sharing materials or prepared solutions with students who may take the course in a future term.
+All course materials, including handouts, homework assignments, study guides, course notes, exams, and solutions are subject to copyright; students are not permitted to share or distribute any course materials without the explicit written consent of the instructor. This includes, in particular, uploading materials or prepared solutions to online services and sharing materials or prepared solutions with students who may take the course in a future term. Transgressions of this policy compromise the effectiveness of course assessments and do a disservice to future students.
