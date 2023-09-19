@@ -1,31 +1,35 @@
 ---
-title: 'Content'
+title: 'Materials'
 ---
 
-### Week 0
+### Week 0 (9/21/23)
 
 Class meetings:
 
--   ***Thursday***: course introduction
+-   ***Thursday***: course introduction \[[slides](outlines/week0-intro.qmd)\]
 
-### Week 1
+Assignments:
 
-Suggested reading:
+-   Complete [intake survey](https://forms.gle/uWWTaZrVvL7jykz86)
 
--   DG&S 1.4 --- 1.6
+<!-- ### Week 1 (9/25/23) -->
 
--   H&C 1.1 --- 1.3
+<!-- Suggested reading: -->
 
-Class meetings:
+<!-- -   DG&S 1.4 --- 1.6 -->
 
--   ***Monday:*** set theory
+<!-- -   H&C 1.1 --- 1.3 -->
 
--   ***Tuesday:*** probability spaces
+<!-- Class meetings: -->
 
--   ***Wednesday:*** properties of probability measures
+<!-- -   ***Monday:*** set theory -->
 
--   ***Thursday:*** properties of probability measures
+<!-- -   ***Tuesday:*** probability spaces -->
 
-Assignment:
+<!-- -   ***Wednesday:*** properties of probability measures -->
 
--   HW1 due Thursday 10/2
+<!-- -   ***Thursday:*** properties of probability measures -->
+
+<!-- Assignment: -->
+
+<!-- -   HW1 due Thursday 10/2 -->

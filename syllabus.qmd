@@ -65,7 +65,7 @@ Very roughly, letter grades will be assigned as follows. A: 90-100. B: 75-90. C:
 Subject to change at instructor discretion.
 
 | Week                 | Lecture Topic                            | Suggested reading | Assignments |
-|------------------|--------------------|------------------|------------------|
+|---------------|----------------------------|---------------|---------------|
 | 0 (9/21)             | Course introduction                      |                   |             |
 | 1 (9/25)             | Probability axioms and properties        | 1.4--1.6          | HW1         |
 | 2 (10/2)             | Counting methods                         | 1.7--1.10         | HW2         |
@@ -90,7 +90,7 @@ A collaboration is a shared effort. Students that choose to work together on hom
 
 #### Attendance
 
-Regular attendance is essential for success in the course and required per University policy. Each student may miss two class meetings without notice but subsequent absences should be [excusable](https://academicprograms.calpoly.edu/content/academicpolicies/class-attendance). Unexcused absences may negatively impact course grades.
+Regular attendance is essential for success in the course and required per University policy. Each student may miss two class meetings without notice but subsequent absences should be [excusable](https://academicprograms.calpoly.edu/content/academicpolicies/class-attendance) and students should notify the instructor. Unexcused absences may negatively impact course grades.
 
 #### Communication and email
 
@@ -102,7 +102,7 @@ STAT425 is a four-credit course, which corresponds to a minimum time commitment 
 
 #### Assignment scores and final grades
 
-Every effort will be made to provide consistent and fair evaluation of student work. Students should notify the instructor of any errors and/or discrepancies in evaluation promptly and on an assignment-by-assignment basis (*i.e.,* not at the end of the quarter) to guarantee consideration for correction. Final grades will only be changed in the case of clerical errors. Negotiating scores or final grades is not appropriate. Per University policy, faculty have final responsibility for grading criteria and grading judgment and have the right to alter student assessment or other parts of the syllabus during the term. If any student feels their grade is unfairly assigned at the end of the course, they have the right to appeal it according to the procedure outlined [here](https://academicprograms.calpoly.edu/content/academic-petition-appeals).
+Every effort will be made to provide consistent and fair evaluation of student work. Students should notify the instructor of any errors and/or discrepancies in evaluation promptly and on an assignment-by-assignment basis (*i.e.,* not at the end of the quarter) to guarantee consideration for correction. Final grades will only be changed in the case of clerical errors. Attempting to negotiate scores or final grades is not appropriate. Per University policy, faculty have final responsibility for grading criteria and grading judgment and have the right to alter student assessment or other parts of the syllabus during the term. If any student feels their grade is unfairly assigned at the end of the course, they have the right to appeal it according to the procedure outlined [here](https://academicprograms.calpoly.edu/content/academic-petition-appeals).
 
 #### Late work
 

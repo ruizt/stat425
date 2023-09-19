@@ -14,6 +14,7 @@ website:
     search: true
     left:
       - syllabus.qmd
+      - content.qmd
 
 format:
   html:
