@@ -6,7 +6,7 @@ title: 'Materials'
 
 Class meetings:
 
--   ***Thursday***: course introduction \[[slides](outlines/week0-intro.qmd)\]
+-   ***Thursday***: course introduction
 
 Assignments:
 
