@@ -1,5 +1,6 @@
 ---
 title: 'Materials'
+title-block-style: none
 ---
 
 ### Week 0 (9/21/23)
