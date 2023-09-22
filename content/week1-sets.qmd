@@ -71,12 +71,14 @@ Both relations are transitive:
 
 -   If $A \subset B$ and $B \subset C$ then $A \subset C$
 
-*Check your understanding:*
+::: callout-note
+## Check your understanding
 
 1.  Let $A = [0, 1)$ and $B = (0, 1]$ and $C = (0, 2)$
     -   True or false, $A \subset C$
     -   True or false, $B \subset C$
 2.  List all proper subset relations among $\mathbb{R}, \mathbb{Q}, \mathbb{N}, \mathbb{Z}, \mathbb{C}$.
+:::
 
 ### Null set
 
@@ -146,14 +148,15 @@ This is a handy construction, for example, in representing:
 -   an $n$-dimensional unit cube ($[0, 1]^n$)
 -   32-bit integers ($\{0, 1\}^{32}$)
 
-*Check your understanding:*
-
+::: callout-note
+## Check your understanding
 1.  Let $A = [0, 1)$ and $B = (0, 1]$ and write the following sets as real intervals.
     -   $A \cup B$
     -   $A \cap B$
     -   $B\setminus A$
     -   $(A \cup B) \setminus (A \cap B)$
     -   $(A \cap B) \setminus (A \cup B)$
+:::
 
 ### Cardinality
 
@@ -171,11 +174,12 @@ $$
 
 If $A$ is finite, $|2^A| = 2^{|A|}$; otherwise, $2^A$ is uncountable. We'll prove the finite case in class.
 
-*Check your understanding*:
-
+::: callout-note
+## Check your understanding
 1.  If $A = \{0, 6, 12, 44, 190\}$, what is $|A|$?
 2.  If $A = \{H, T\}$, list all the elements of $2^A$.
 3.  If $A = \{x \in \mathbb{N}: x \leq 100 \text{ and } x\%2 = 0\}$, find $|A|$ and $|2^A|$
+:::
 
 ### Sequences of sets
 
@@ -210,16 +214,49 @@ We say that a sequence is [monotone]{style="color: blue"} if sets are sequential
 -   [nonincreasing]{style="color: blue"} if $A_i \supseteq A_{i + 1}$ for every $i \in \mathbb{N}$
 -   [decreasing]{style="color: blue"} if $A_i \supset A_{i + 1}$ for every $i \in \mathbb{N}$
 
-We define the [limit]{style="color: blue"} of a monotone sequence of sets as the countable union or intersection:
+Note that increasing sequences are also nondecreasing, and that decreasing sequences are also nonincreasing. We define the [limit]{style="color: blue"} of a monotone sequence of sets as the countable union or intersection:
 
 $$
 \begin{align*}
 \lim_{n\rightarrow\infty} A_n = \bigcap_{n = 1}^\infty A_n \quad\text{(nonincreasing)} \\
 \lim_{n\rightarrow\infty} A_n = \bigcup_{n = 1}^\infty A_n \quad\text{(nondecreasing)}
 \end{align*}
-$$ *Check your understanding:*
+$$ 
 
+::: callout-note
+## Check your understanding
 1.  If $\{A_n\}$ is a nondecreasing sequence, what is $\bigcap_{n = 1}^\infty A_n$?
 2.  If $\{A_n\}$ is a nonincreasing sequence, what is $\bigcup_{n = 1}^\infty A_n$?
 3.  If $\{A_n\}$ is a decreasing sequence, what is $\bigcap_{i = 1}^n A_i$?
 4.  If $\{A_n\}$ is a decreasing sequence, what is $\bigcap_{n = 1}^\infty A_n$?
+5.  If $\{A_n\}$ is an increasing sequence, what is $\bigcup_{i = 1}^n A_i$?
+:::
+
+### The Cantor set
+
+The [Cantor set]{style="color:blue"} is a subset of the unit interval with the counterintuitive distinction of having uncountably many points, but zero length. It is formed by recursively removing middle thirds, first from the unit interval, and then from each subinterval. This process is illustrated by the picture below.
+
+![Recursively removing middle thirds.](img/cantor-set.png){width="5in"}
+
+Each row represents a set consisting of the union of the shaded intervals, so we are considering a sequence of sets $\{C_n\}$ where:
+
+$$
+\begin{align*}
+C_0 &= [0, 1] \\
+C_1 &= \left[0, \frac{1}{3}\right] \cup \left[\frac{2}{3}, 1\right] \\
+C_2 &= \left\{\left[0, \frac{1}{9}\right] \cup \left[\frac{2}{9}, \frac{1}{3}\right]\right\} \cup \left\{\left[\frac{2}{3}, \frac{7}{9}\right] \cup \left[\frac{8}{9}, 1\right]\right\} \\
+&\vdots
+\end{align*}
+$$ One way to write the recursion explicitly at an arbitrary step $n$ is to consider the left endpoints $a_i^(n - 1)$ of the intervals from the previous step in the recursion and express the $n$th step as:
+
+$$
+C_n = \bigcup_{i = 1}^{2^{n - 1}} \left\{ 3^{-n} \left([0, 1]\cup[2, 3]\right) + a_i^{(n - 1)} \right\}
+$$
+
+(In this expression, $c\times[a, b] + d$ is shorthand for $[ca + d, cb + d]$ and $\times, +$ distribute over unions.)
+
+Note that the sequence $\{C_n\}$ is monotonic and strictly [decreasing]{style="color:blue"}. The Cantor set is defined as the limit of this sequence:
+
+$$
+C^* = \lim_{n \rightarrow \infty} C_n = \bigcap_{n = 0}^\infty C_n
+$$

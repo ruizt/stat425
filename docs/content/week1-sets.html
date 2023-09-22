@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="STAT425, Fall 2023">
-<meta name="dcterms.date" content="2023-09-20">
+<meta name="dcterms.date" content="2023-09-22">
 
 <title>STAT425 - Sets</title>
 <style>
@@ -125,6 +125,7 @@ gtag('config', 'G-H3YKZX4J88', { 'anonymize_ip': true});
   <li><a href="#set-operations" id="toc-set-operations" class="nav-link" data-scroll-target="#set-operations">Set operations</a></li>
   <li><a href="#cardinality" id="toc-cardinality" class="nav-link" data-scroll-target="#cardinality">Cardinality</a></li>
   <li><a href="#sequences-of-sets" id="toc-sequences-of-sets" class="nav-link" data-scroll-target="#sequences-of-sets">Sequences of sets</a></li>
+  <li><a href="#the-cantor-set" id="toc-the-cantor-set" class="nav-link" data-scroll-target="#the-cantor-set">The Cantor set</a></li>
   </ul>
 </nav>
     </div>
@@ -150,7 +151,7 @@ gtag('config', 'G-H3YKZX4J88', { 'anonymize_ip': true});
     <div>
     <div class="quarto-title-meta-heading">Updated</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">September 20, 2023</p>
+      <p class="date">September 22, 2023</p>
     </div>
   </div>
   
@@ -214,7 +215,16 @@ A \subseteq B \text{ and } A \neq B
 <li><p>If <span class="math inline">\(A \subseteq B\)</span> and <span class="math inline">\(B \subseteq C\)</span> then <span class="math inline">\(A \subseteq C\)</span></p></li>
 <li><p>If <span class="math inline">\(A \subset B\)</span> and <span class="math inline">\(B \subset C\)</span> then <span class="math inline">\(A \subset C\)</span></p></li>
 </ul>
-<p><em>Check your understanding:</em></p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Check your understanding
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <ol type="1">
 <li>Let <span class="math inline">\(A = [0, 1)\)</span> and <span class="math inline">\(B = (0, 1]\)</span> and <span class="math inline">\(C = (0, 2)\)</span>
 <ul>
@@ -223,6 +233,8 @@ A \subseteq B \text{ and } A \neq B
 </ul></li>
 <li>List all proper subset relations among <span class="math inline">\(\mathbb{R}, \mathbb{Q}, \mathbb{N}, \mathbb{Z}, \mathbb{C}\)</span>.</li>
 </ol>
+</div>
+</div>
 </section>
 <section id="null-set" class="level3">
 <h3 class="anchored" data-anchor-id="null-set">Null set</h3>
@@ -277,7 +289,16 @@ A^n = \{(a_1, \dots, a_n): a_i \in A, i = 1, \dots, n\}
 <li>an <span class="math inline">\(n\)</span>-dimensional unit cube (<span class="math inline">\([0, 1]^n\)</span>)</li>
 <li>32-bit integers (<span class="math inline">\(\{0, 1\}^{32}\)</span>)</li>
 </ul>
-<p><em>Check your understanding:</em></p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Check your understanding
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <ol type="1">
 <li>Let <span class="math inline">\(A = [0, 1)\)</span> and <span class="math inline">\(B = (0, 1]\)</span> and write the following sets as real intervals.
 <ul>
@@ -288,6 +309,8 @@ A^n = \{(a_1, \dots, a_n): a_i \in A, i = 1, \dots, n\}
 <li><span class="math inline">\((A \cap B) \setminus (A \cup B)\)</span></li>
 </ul></li>
 </ol>
+</div>
+</div>
 </section>
 <section id="cardinality" class="level3">
 <h3 class="anchored" data-anchor-id="cardinality">Cardinality</h3>
@@ -302,12 +325,23 @@ A^n = \{(a_1, \dots, a_n): a_i \in A, i = 1, \dots, n\}
 2^A = \{B: B \subseteq A\}
 \]</span></p>
 <p>If <span class="math inline">\(A\)</span> is finite, <span class="math inline">\(|2^A| = 2^{|A|}\)</span>; otherwise, <span class="math inline">\(2^A\)</span> is uncountable. We’ll prove the finite case in class.</p>
-<p><em>Check your understanding</em>:</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Check your understanding
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <ol type="1">
 <li>If <span class="math inline">\(A = \{0, 6, 12, 44, 190\}\)</span>, what is <span class="math inline">\(|A|\)</span>?</li>
 <li>If <span class="math inline">\(A = \{H, T\}\)</span>, list all the elements of <span class="math inline">\(2^A\)</span>.</li>
 <li>If <span class="math inline">\(A = \{x \in \mathbb{N}: x \leq 100 \text{ and } x\%2 = 0\}\)</span>, find <span class="math inline">\(|A|\)</span> and <span class="math inline">\(|2^A|\)</span></li>
 </ol>
+</div>
+</div>
 </section>
 <section id="sequences-of-sets" class="level3">
 <h3 class="anchored" data-anchor-id="sequences-of-sets">Sequences of sets</h3>
@@ -335,19 +369,59 @@ A^n = \{(a_1, \dots, a_n): a_i \in A, i = 1, \dots, n\}
 <li><span style="color: blue">nonincreasing</span> if <span class="math inline">\(A_i \supseteq A_{i + 1}\)</span> for every <span class="math inline">\(i \in \mathbb{N}\)</span></li>
 <li><span style="color: blue">decreasing</span> if <span class="math inline">\(A_i \supset A_{i + 1}\)</span> for every <span class="math inline">\(i \in \mathbb{N}\)</span></li>
 </ul>
-<p>We define the <span style="color: blue">limit</span> of a monotone sequence of sets as the countable union or intersection:</p>
+<p>Note that increasing sequences are also nondecreasing, and that decreasing sequences are also nonincreasing. We define the <span style="color: blue">limit</span> of a monotone sequence of sets as the countable union or intersection:</p>
 <p><span class="math display">\[
 \begin{align*}
 \lim_{n\rightarrow\infty} A_n = \bigcap_{n = 1}^\infty A_n \quad\text{(nonincreasing)} \\
 \lim_{n\rightarrow\infty} A_n = \bigcup_{n = 1}^\infty A_n \quad\text{(nondecreasing)}
 \end{align*}
-\]</span> <em>Check your understanding:</em></p>
+\]</span></p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Check your understanding
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <ol type="1">
 <li>If <span class="math inline">\(\{A_n\}\)</span> is a nondecreasing sequence, what is <span class="math inline">\(\bigcap_{n = 1}^\infty A_n\)</span>?</li>
 <li>If <span class="math inline">\(\{A_n\}\)</span> is a nonincreasing sequence, what is <span class="math inline">\(\bigcup_{n = 1}^\infty A_n\)</span>?</li>
 <li>If <span class="math inline">\(\{A_n\}\)</span> is a decreasing sequence, what is <span class="math inline">\(\bigcap_{i = 1}^n A_i\)</span>?</li>
 <li>If <span class="math inline">\(\{A_n\}\)</span> is a decreasing sequence, what is <span class="math inline">\(\bigcap_{n = 1}^\infty A_n\)</span>?</li>
+<li>If <span class="math inline">\(\{A_n\}\)</span> is an increasing sequence, what is <span class="math inline">\(\bigcup_{i = 1}^n A_i\)</span>?</li>
 </ol>
+</div>
+</div>
+</section>
+<section id="the-cantor-set" class="level3">
+<h3 class="anchored" data-anchor-id="the-cantor-set">The Cantor set</h3>
+<p>The <span style="color:blue">Cantor set</span> is a subset of the unit interval with the counterintuitive distinction of having uncountably many points, but zero length. It is formed by recursively removing middle thirds, first from the unit interval, and then from each subinterval. This process is illustrated by the picture below.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/cantor-set.png" class="img-fluid figure-img" style="width:5in"></p>
+<figcaption class="figure-caption">Recursively removing middle thirds.</figcaption>
+</figure>
+</div>
+<p>Each row represents a set consisting of the union of the shaded intervals, so we are considering a sequence of sets <span class="math inline">\(\{C_n\}\)</span> where:</p>
+<p><span class="math display">\[
+\begin{align*}
+C_0 &amp;= [0, 1] \\
+C_1 &amp;= \left[0, \frac{1}{3}\right] \cup \left[\frac{2}{3}, 1\right] \\
+C_2 &amp;= \left\{\left[0, \frac{1}{9}\right] \cup \left[\frac{2}{9}, \frac{1}{3}\right]\right\} \cup \left\{\left[\frac{2}{3}, \frac{7}{9}\right] \cup \left[\frac{8}{9}, 1\right]\right\} \\
+&amp;\vdots
+\end{align*}
+\]</span> One way to write the recursion explicitly at an arbitrary step <span class="math inline">\(n\)</span> is to consider the left endpoints <span class="math inline">\(a_i^(n - 1)\)</span> of the intervals from the previous step in the recursion and express the <span class="math inline">\(n\)</span>th step as:</p>
+<p><span class="math display">\[
+C_n = \bigcup_{i = 1}^{2^{n - 1}} \left\{ 3^{-n} \left([0, 1]\cup[2, 3]\right) + a_i^{(n - 1)} \right\}
+\]</span></p>
+<p>(In this expression, <span class="math inline">\(c\times[a, b] + d\)</span> is shorthand for <span class="math inline">\([ca + d, cb + d]\)</span> and <span class="math inline">\(\times, +\)</span> distribute over unions.)</p>
+<p>Note that the sequence <span class="math inline">\(\{C_n\}\)</span> is monotonic and strictly <span style="color:blue">decreasing</span>. The Cantor set is defined as the limit of this sequence:</p>
+<p><span class="math display">\[
+C^* = \lim_{n \rightarrow \infty} C_n = \bigcap_{n = 0}^\infty C_n
+\]</span></p>
 
 
 </section>

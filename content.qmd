@@ -7,7 +7,7 @@ title-block-style: none
 
 Class meetings:
 
--   ***Thursday***: course introduction
+-   ***Thursday***: course introduction \[[slides](content/week0-intro.qmd)\]
 
 Assignments:
 
