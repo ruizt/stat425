@@ -7,8 +7,6 @@ published-title: 'Updated'
 ::: callout-note
 ## Announcements
 
--   Introductory slides posted
-
 -   Monday notes posted
 
 -   Please complete intake survey before Monday class meeting
