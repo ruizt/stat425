@@ -7,7 +7,7 @@ published-title: 'Updated'
 ::: callout-note
 ## Announcements
 
--   Monday notes posted
+-   Notes posted for Monday
 
 -   Please complete intake survey before Monday class meeting
 :::
