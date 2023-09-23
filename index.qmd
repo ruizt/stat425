@@ -7,7 +7,11 @@ published-title: 'Updated'
 ::: callout-note
 ## Announcements
 
-🍂 First class meetings Thursday 9/21/23!
+-   Introductory slides posted
+
+-   Monday notes posted
+
+-   Please complete intake survey before Monday class meeting
 :::
 
 This is the class website for Probability Theory (STAT 425) offered at Cal Poly in Fall 2023. Note that this site is for *both* sections (01-3585 held 4:10pm MTWR and 02-3430 held 5:10pm MTWR).

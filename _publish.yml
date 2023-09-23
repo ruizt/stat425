@@ -1,0 +1,4 @@
+- source: project
+  quarto-pub:
+    - id: 5e7badd8-c4d7-4804-ad92-f08945101fbb
+      url: 'https://ruizt.quarto.pub/stat425'
