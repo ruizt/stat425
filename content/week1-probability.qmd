@@ -1,5 +1,5 @@
 ---
-title: "Sets"
+title: "Probability measures"
 author: "STAT425, Fall 2023"
 author-title: "Course notes"
 date: today
@@ -12,8 +12,7 @@ Consider an experiment or random process and define the [sample space]{style="co
 
 $$
 S: \text{ set of all possible outcomes}
-$$
-An [event]{style="color:blue"} is a subset $E \subseteq S$. Its [complement]{style="color:blue"} is defined as the set $E^C = S\setminus E$.
+$$ An [event]{style="color:blue"} is a subset $E \subseteq S$. Its [complement]{style="color:blue"} is defined as the set $E^C = S\setminus E$.
 
 Note that $\left(E^C\right)^C = E$
 
@@ -23,8 +22,7 @@ $$
 (A\cup B)^C = A^C \cap B^C
 \qquad\text{and}\qquad
 (A\cap B)^C = A^C \cup B^C
-$$
-Recursive application of this property yields [DeMorgan's laws]{style="color:blue"}:
+$$ Recursive application of this property yields [DeMorgan's laws]{style="color:blue"}:
 
 $$
 \left[\bigcup_{i = 1}^n A_i\right]^C = \bigcap A_i^c
@@ -34,9 +32,7 @@ $$
 
 The proof is by induction, and left as an exercise. The base case is already established. For the inductive step, one need only reapply the base case replacing $A$ by $\bigcup_{i = 1}^n A_i$ and $B$ by $A_{n + 1}$.
 
-### Disjoint events
-
-Two events $E_1, E_2 \subseteq S$ are [disjoint]{style="color:blue"} just in case they share no outcomes, that is, if $E_1 \cap E_2 = \emptyset$. 
+Two events $E_1, E_2 \subseteq S$ are [disjoint]{style="color:blue"} just in case they share no outcomes, that is, if $E_1 \cap E_2 = \emptyset$.
 
 A collection of events $\{E_i\}$ is [mutually disjoint]{style="color:blue"} just in case every pair is disjoint, that is, if:
 
@@ -48,48 +44,246 @@ $$
 
 A [partition]{style="color:blue"} is a mutually disjoint collection whose union contains an event of interest. Usually, one speaks of a partition of the sample space $S$, *i.e.*, a collection $\{E_i\}$ such that:
 
-- $\{E_i\}$ are mutually disjoint events
-- $\bigcup_i E_i = S$
+-   $\{E_i\}$ are mutually disjoint events
+-   $\bigcup_i E_i = S$
 
 ### Probability spaces
 
 Given a sample space $S$, denote by $\mathcal{S}$ the [set of all events]{style="color:blue"}. We will assume that this set:
 
-- contains the empty set: $\emptyset \in \mathcal{S}$
-- contains the sample space: $S \in \mathcal{S}$
-- is closed under complements: $E \in \mathcal{S} \Longrightarrow E^C \in \mathcal{S}$
-- is closed under countable unions: $E_i \in \mathcal{S} \Longrightarrow \bigcup_i E_i \in \mathcal{S}$
+-   contains the empty set: $\emptyset \in \mathcal{S}$
+-   contains the sample space: $S \in \mathcal{S}$
+-   is closed under complements: $E \in \mathcal{S} \Longrightarrow E^C \in \mathcal{S}$
+-   is closed under countable unions: $E_i \in \mathcal{S} \Longrightarrow \bigcup_i E_i \in \mathcal{S}$
 
 (Technically, such a collection is known as a "$\sigma$-algebra" of sets. These can be generated in a variety of ways; we won't go into the details here. Broadly, this construction is used to obtain a subcollection of $2^S$ with some essential regularity properties.)
 
-Now, a [probability measure]{style="color:blue"} is any set function $P: \mathcal{S} \rightarrow [0, 1]$ satisfying three axioms:
+Now, a [probability measure]{style="color:blue"} is any set function $P: \mathcal{S} \rightarrow [0, 1]$ satisfying three **axioms**:
 
-1. $P(E) \geq 0$ for every $E\in \mathcal{S}$
-2. $P(S) = 1$
-3. If $\{E_n\}$ is a mutually disjoint sequence of events then
-$$
-P\left(\bigcup_{n = 1}^\infty E_n\right) = \sum_{n = 1}^\infty P(E_n)
-$$
+A1. $P(E) \geq 0$ for every $E\in \mathcal{S}$
+
+A2. $P(S) = 1$
+
+A3. If $\{E_n\}$ is a mutually disjoint sequence of events then $$
+    P\left(\bigcup_{n = 1}^\infty E_n\right) = \sum_{n = 1}^\infty P(E_n)
+    $$
+
 In words, a probability is a *countably additive and nonnegative set function such that the probability of the sample space is 1*.
 
 Finally, a [probability space]{style="color:blue"} is a triple $(S, \mathcal{S}, P)$ where:
 
-- (sample space) $S$ is a set
-- (collection of events) $\mathcal{S} \subseteq 2^S$ is a $\sigma$-algebra
-- (probability) $P$ is a probability measure
+-   (sample space) $S$ is a set
+-   (collection of events) $\mathcal{S} \subseteq 2^S$ is a $\sigma$-algebra
+-   (probability) $P$ is a probability measure
 
-### A simple probability space
+::: callout-note
+## Check your understanding
 
 Consider a coin toss with two outcomes, $H, T$. The sample space and collection of events are fairly straightforward:
 
 $$
 \begin{align*}
 S = \{H, T\} \\
-\mathcal{S} = \{\emptyset, \{H\}, \{T\}, \{H, T\}\}
+\mathcal{S} = \{\underbrace{\emptyset}_{E_1}, \underbrace{\{H\}}_{E_2}, \underbrace{\{T\}}_{E_3}, \underbrace{\{H, T\}}_{E_4}\}
 \end{align*}
 $$
 
 Discussion questions:
 
-1. How should we interpret the events $\emptyset$ and $\{H, T\}$?
-2. What are the valid probability measures in this case?
+1.  How should we interpret the events $E_1$ and $E_4$?
+
+2.  Each row of the table below shows an assignment of probabilities to each event. Which rows correspond to valid probability measures? For the rows that don't correspond to valid probability measures, which axiom(s) do they violate?
+
+    | $P(E_1)$      | $P(E_2)$      | $P(E_3)$      | $P(E_4)$      |
+    |---------------|---------------|---------------|---------------|
+    | $0$           | $\frac{1}{2}$ | $\frac{1}{2}$ | $0$           |
+    | $0$           | $\frac{1}{2}$ | $\frac{1}{2}$ | $1$           |
+    | $\frac{1}{4}$ | $\frac{1}{4}$ | $\frac{1}{4}$ | $\frac{1}{4}$ |
+    | $0$           | $\frac{1}{3}$ | $\frac{2}{3}$ | $1$           |
+    | $0$           | $0$           | $1$           | $1$           |
+
+3.  What conditions must the numbers $p_i = P(E_i)$ satisfy for $P$ to be a valid probability measure in this case?
+
+:::
+
+### Basic properties
+
+The axioms have several fairly immediate consequences:
+
+1.  $P(\emptyset) = 0$
+2.  If $\{E_n\}$ are a disjoint collection then $P\left(\bigcup_{i = 1}^n E_i\right) = \sum_{i = 1}^n P(E_i)$
+3.  $P(E) = 1 - P\left(E^C\right)$
+4.  If $E_1 \subseteq E_2$ then $P(E_1) \leq P(E_2)$
+5.  $P(E) \in [0, 1]$
+6.  $P(E_1 \cup E_2) = P(E_1) + P(E_2) - P(E_1 \cap E_2)$
+
+::: callout-tip
+## Proof
+
+Proofs follow in sequence.
+
+**Property 1.** Let $\{E_n\}$ be a collection of infinitely many null sets, so that $E_i = \emptyset$ for every $i \in \mathcal{N}$. Then by A3:
+
+$$
+P(\emptyset) = P\left(\bigcup_{n = 1}^\infty E_n\right) = \sum_{n = 1}^\infty P(\emptyset) 
+$$
+
+This can only hold if $P(\emptyset) = 0$.
+
+**Property 2.** Let $\{E_n\}$ be a finite disjoint collection of $N$ events and consider the infinite disjoint collection $\{E_n^*\}$ defined by:
+
+$$
+E_n^* = \begin{cases}
+  E_n &,\; n \leq N \\
+  \emptyset &,\;n > N
+  \end{cases}
+$$
+
+Then by A3 and property 1:
+
+$$
+P\left(\bigcup_{n = 1}^N E_n\right) = P\left(\bigcup_{n = 1}^\infty E_n^*\right) = \sum_{n = 1}^\infty P\left(E_n^*\right) = \sum_{n = 1}^N P(E_n)
+$$
+
+**Property 3.** Consider an arbitrary event $E$; since $E\cap E^C = \emptyset$ and $E\cup E^C = S$, by A2 and property 2:
+
+$$
+P(S) = P(E) + P\left(E^C\right) 
+\quad\Longrightarrow\quad
+P(E) = 1 - P\left(E^C\right)
+$$
+
+**Property 4.** Let $E_1 \subseteq E_2$ and partition $E_2$ into the disjoint union $E_1 \cup (E_2\setminus E_1)$. Then by A1 and property 2:
+
+$$
+P(E_2) = P(E_1 \cup (E_2 \setminus E_1)) = P(E_1) + P(E_2 \setminus E_1) \geq P(E_1)
+$$
+
+**Property 5.** Noting that for an arbitrary event $E$ one has $\emptyset \subseteq E \subseteq S$, so by property 4, $0 \leq P(E) \leq 1$.[^1]
+
+**Property 6.** Note that $A\cup B = A\cup \left(B\cap A^C\right)$ and $B = (A \cap B) \cup \left(A^C\cap B\right)$ can both be written as disjoint unions. Applying property 2 yields:
+
+$$
+\begin{cases}
+P(A \cup B) = P(A) + P\left(B\cap A^C\right) \\
+P(B) = P(A \cap B) + P\left(A^C \cap B\right) 
+\end{cases}
+\quad\Longrightarrow\quad
+P(A\cup B) = P(A) + P(B) - P(A\cap B)
+$$
+:::
+
+[^1]: In these notes $P$ is explicitly defined as having range $[0, 1]$, so this property may seem redundant. However, most sources simply define $P$ as a real-valued function, in which case this property must be derived. The property is included here to underscore that the $[0, 1]$ range is in fact a consequence of the axioms, and not an assumption.
+
+### Further properties
+
+We now consider several more substantive results. First, for monotonic sequences of events, the probability of the limiting event is the limit of the event probabilities. In other words, the order of taking limits and computing probabilities is interchangeable.
+
+**Theorem**. Let $\{E_n\}$ be a monotonic infinite sequence of events. Then: 
+
+$$
+P\left(\lim_{n \rightarrow \infty} E_n\right) = \lim_{n \rightarrow\infty} P(E_n)
+$$
+
+::: callout-tip
+## Proof
+
+First consider the nondecreasing case, and define the disjoint sequence:
+
+$$
+D_n = \begin{cases}
+  E_1 &,\; n = 1 \\
+  E_n \cap E_{n - 1}^C &,\; n > 1
+  \end{cases}
+$$
+Now for $n > 1$, one has that $P(D_n) = P(E_n) - P(E_{n - 1})$ (since $E_{n - 1}\cup D_n = E_n$ is a disjoint union), so by countable additivity:
+
+$$
+\begin{align*}
+P\left(\bigcup_{n = 1}^\infty E_n \right) 
+&= P\left(\bigcup_{n = 1}^\infty E_n \right) \\
+&= \sum_{n = 1}^\infty P(D_n) \\
+&= \lim_{n \rightarrow \infty} \sum_{j = 1}^\infty P(D_j) \\
+&= \lim_{n \rightarrow\infty} \left[ P(D_1) + \sum_{j = 2}^n P(D_j) \right] \\
+&= \lim_{n \rightarrow\infty} \left\{ P(E_1) + \sum_{j = 2}^n \left[P(E_j) - P(E_{j - 1})\right]\right\} \\
+&= \lim_{n \rightarrow\infty} P(E_n) 
+\end{align*}
+$$
+
+For the nonincreasing case, note that $\{E_n^C\}$ is a nondecreasing sequence, so:
+
+$$
+\begin{align*}
+P\left(\bigcap_{n = 1}^\infty E_n \right)
+&= 1 - P\left(\bigcup_{n = 1}^\infty E_n^C \right) \\
+&= 1 - \lim_{n\rightarrow\infty} P\left(E_n^C\right) \\
+&= 1 - \lim_{n\rightarrow\infty} \left[1 - P\left(E_n\right) \right] \\
+&= \lim_{n\rightarrow\infty} P(E_n)
+\end{align*}
+$$
+:::
+
+The axioms stipulate countable additivity for disjoint collections of events. For a general collection (not necessarily disjoint), we have instead what is known as [countable sub-additivity]{style="color:blue"}.
+
+**Theorem.** (Countable sub-additivity) For any sequence of events: 
+
+$$
+P\left(\bigcup_{n = 1}^\infty E_n\right) \leq \sum_{n = 1}^\infty P(E_n)
+$$
+
+::: callout-tip
+## Proof
+Consider the nondecreasing sequence defined by $D_n = \bigcup_{j = 1}^n E_j$ and note that:
+
+$$
+P(D_n)
+= P(D_{n - 1} \cup E_n)
+\leq P(D_{n - 1}) + P(E_n)
+$$
+This implies that $P(D_n) - P(D_{n - 1}) \leq P(E_n)$. Then (from the proof of the last result), we can write:
+
+$$
+\begin{align*}
+P\left(\bigcup_{n = 1}^\infty E_n \right) 
+&= P\left(\bigcup_{n = 1}^\infty D_n \right) \\
+&= \lim_{n \rightarrow\infty} \left\{ P(D_1) + \sum_{j = 2}^n \underbrace{\left[P(D_j) - P(D_{j - 1})\right]}_{\leq P(E_j)} \right\} \\
+&\leq \lim_{n \rightarrow\infty} \sum_{j = 1}^n P(E_j) \\
+&= \sum_{n = 1}^\infty P(E_n)
+\end{align*}
+$$
+:::
+
+
+This result is also known as Boole's inequality, and has two important consequences:
+
+-   ([finite subadditivity]{style="color:blue"}) $P\left(\bigcup_{i = 1}^n E_n\right) \leq \sum_{i = 1}^n P(E_n)$
+-   ([Bonferroni's inequality]{style="color:blue"}) $P\left(\bigcap_{i = 1}^n E_i\right) \geq 1 - \sum_{i = 1}^n P\left(E_i^C\right)$
+
+The proofs are left as exercises.
+
+Boole's inequality is an important result in multiple hypothesis testing. Suppose, for example, that you're computing $K$ $t$-tests all at level $\alpha$ (recall this is the error rate at which hypotheses are falsely rejected), and suppose that every hypothesis is true. Now define the events:
+
+$$
+R_i = \{\text{reject hypothesis } i\}
+\qquad i = 1, \dots, K
+$$
+
+By supposition, $P(R_i) = \alpha$, so the probability of at least one error is:
+
+$$
+P\left(\bigcup_{i = 1}^K R_i\right) \leq \sum_{i = 1}^K P(R_i) = K\alpha
+$$
+
+So to control *familywise* error, one conducts the individual tests at level $\frac{\alpha}{K}$. This is known as the Bonferroni correction.
+
+Lastly, the probability of a finite union can be calculated explititly using what's known as the [inclusion-exclusion formula]{style="color:blue"}.
+
+**Theorem.** (Inclusion-exclusion) For any collection of events:
+
+$$
+P\left(\bigcup_{i - 1}^n E_i\right) (-1)^{i + 1} p_i
+\quad\text{where}\quad
+p_i = \sum_{1 \leq j_1 < \cdots < j_i \leq n} P(E_{j_1} \cap \cdots \cap E_{j_i})
+$$
+
+We'll review the proof in class.

@@ -6,9 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="STAT425, Fall 2023">
 <meta name="dcterms.date" content="2023-09-24">
 
-<title>STAT425 - Probability Theory</title>
+<title>STAT425 - Properties of probability measures</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -24,22 +25,22 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -70,8 +71,10 @@ gtag('js', new Date());
 gtag('config', 'G-H3YKZX4J88', { 'anonymize_ip': true});
 </script>
 
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="../styles.css">
 </head>
 
 <body class="nav-fixed">
@@ -81,7 +84,7 @@ gtag('config', 'G-H3YKZX4J88', { 'anonymize_ip': true});
     <nav class="navbar navbar-expand-lg navbar-dark ">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../index.html">
     <span class="navbar-title">STAT425</span>
     </a>
   </div>
@@ -92,11 +95,11 @@ gtag('config', 'G-H3YKZX4J88', { 'anonymize_ip': true});
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./syllabus.html" rel="" target="">
+    <a class="nav-link" href="../syllabus.html" rel="" target="">
  <span class="menu-text">Course syllabus</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./content.html" rel="" target="">
+    <a class="nav-link" href="../content.html" rel="" target="">
  <span class="menu-text">Materials</span></a>
   </li>  
 </ul>
@@ -111,20 +114,35 @@ gtag('config', 'G-H3YKZX4J88', { 'anonymize_ip': true});
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#basic-probability-properties" id="toc-basic-probability-properties" class="nav-link active" data-scroll-target="#basic-probability-properties">Basic probability properties</a></li>
+  <li><a href="#monotonic-sequences" id="toc-monotonic-sequences" class="nav-link" data-scroll-target="#monotonic-sequences">Monotonic sequences</a></li>
+  <li><a href="#countable-subadditivity" id="toc-countable-subadditivity" class="nav-link" data-scroll-target="#countable-subadditivity">Countable subadditivity</a></li>
+  <li><a href="#inclusion-exclusion-principle" id="toc-inclusion-exclusion-principle" class="nav-link" data-scroll-target="#inclusion-exclusion-principle">Inclusion-exclusion principle</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Probability Theory</h1>
+<h1 class="title">Properties of probability measures</h1>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
+    <div>
+    <div class="quarto-title-meta-heading">Course notes</div>
+    <div class="quarto-title-meta-contents">
+             <p>STAT425, Fall 2023 </p>
+          </div>
+  </div>
     
     <div>
     <div class="quarto-title-meta-heading">Updated</div>
@@ -139,28 +157,123 @@ gtag('config', 'G-H3YKZX4J88', { 'anonymize_ip': true});
 
 </header>
 
-<div class="callout callout-style-default callout-note callout-titled">
+<p>From before, a probability space is a triple <span class="math inline">\((S, \mathcal{S}, P)\)</span> where <span class="math inline">\(S\)</span> is a set, <span class="math inline">\(\mathcal{S}\)</span> is a <span class="math inline">\(\sigma\)</span>-algebra, and <span class="math inline">\(P\)</span> is a set function <span class="math inline">\(P: \mathcal{S} \rightarrow [0, 1]\)</span> satisfying three <span style="color:blue">axioms</span>:</p>
+<p>A1. <span class="math inline">\(P(E) \geq 0\)</span> for every <span class="math inline">\(E\in \mathcal{S}\)</span></p>
+<p>A2. <span class="math inline">\(P(S) = 1\)</span></p>
+<p>A3. If <span class="math inline">\(\{E_n\}\)</span> is a mutually disjoint sequence of events then <span class="math display">\[
+    P\left(\bigcup_{n = 1}^\infty E_n\right) = \sum_{n = 1}^\infty P(E_n)
+    \]</span></p>
+<section id="basic-probability-properties" class="level3">
+<h3 class="anchored" data-anchor-id="basic-probability-properties">Basic probability properties</h3>
+<p>The axioms have several fairly immediate consequences:</p>
+<ol type="1">
+<li><span class="math inline">\(P(\emptyset) = 0\)</span></li>
+<li>If <span class="math inline">\(\{E_n\}\)</span> are a disjoint collection then <span class="math inline">\(P\left(\bigcup_{i = 1}^n E_i\right) = \sum_{i = 1}^n P(E_i)\)</span></li>
+<li><span class="math inline">\(P(E) = 1 - P\left(E^C\right)\)</span></li>
+<li>If <span class="math inline">\(E_1 \subseteq E_2\)</span> then <span class="math inline">\(P(E_1) \leq P(E_2)\)</span></li>
+<li><span class="math inline">\(P(E) \in [0, 1]\)</span></li>
+<li><span class="math inline">\(P(E_1 \cup E_2) = P(E_1) + P(E_2) - P(E_1 \cap E_2)\)</span></li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Announcements
+Proof
 </div>
 </div>
 <div class="callout-body-container callout-body">
+<p>Proofs follow in sequence.</p>
+<p><strong>Property 1.</strong> Let <span class="math inline">\(\{E_n\}\)</span> be a collection of infinitely many null sets, so that <span class="math inline">\(E_i = \emptyset\)</span> for every <span class="math inline">\(i \in \mathcal{N}\)</span>. Then by A3:</p>
+<p><span class="math display">\[
+P(\emptyset) = P\left(\bigcup_{n = 1}^\infty E_n\right) = \sum_{n = 1}^\infty P(\emptyset)
+\]</span></p>
+<p>This can only hold if <span class="math inline">\(P(\emptyset) = 0\)</span>.</p>
+<p><strong>Property 2.</strong> Let <span class="math inline">\(\{E_n\}\)</span> be a finite disjoint collection of <span class="math inline">\(N\)</span> events and consider the infinite disjoint collection <span class="math inline">\(\{E_n^*\}\)</span> defined by:</p>
+<p><span class="math display">\[
+E_n^* = \begin{cases}
+  E_n &amp;,\; n \leq N \\
+  \emptyset &amp;,\;n &gt; N
+  \end{cases}
+\]</span></p>
+<p>Then by A3 and property 1:</p>
+<p><span class="math display">\[
+P\left(\bigcup_{n = 1}^N E_n\right) = P\left(\bigcup_{n = 1}^\infty E_n^*\right) = \sum_{n = 1}^\infty P\left(E_n^*\right) = \sum_{n = 1}^N P(E_n)
+\]</span></p>
+<p><strong>Property 3.</strong> Consider an arbitrary event <span class="math inline">\(E\)</span>; since <span class="math inline">\(E\cap E^C = \emptyset\)</span> and <span class="math inline">\(E\cup E^C = S\)</span>, by A2 and property 2:</p>
+<p><span class="math display">\[
+P(S) = P(E) + P\left(E^C\right)
+\quad\Longrightarrow\quad
+P(E) = 1 - P\left(E^C\right)
+\]</span></p>
+<p><strong>Property 4.</strong> Let <span class="math inline">\(E_1 \subseteq E_2\)</span> and partition <span class="math inline">\(E_2\)</span> into the disjoint union <span class="math inline">\(E_1 \cup (E_2\setminus E_1)\)</span>. Then by A1 and property 2:</p>
+<p><span class="math display">\[
+P(E_2) = P(E_1 \cup (E_2 \setminus E_1)) = P(E_1) + P(E_2 \setminus E_1) \geq P(E_1)
+\]</span></p>
+<p><strong>Property 5.</strong> Noting that for an arbitrary event <span class="math inline">\(E\)</span> one has <span class="math inline">\(\emptyset \subseteq E \subseteq S\)</span>, so by property 4, <span class="math inline">\(0 \leq P(E) \leq 1\)</span>.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
+<p><strong>Property 6.</strong> Note that <span class="math inline">\(A\cup B = A\cup \left(B\cap A^C\right)\)</span> and <span class="math inline">\(B = (A \cap B) \cup \left(A^C\cap B\right)\)</span> can both be written as disjoint unions. Applying property 2 yields:</p>
+<p><span class="math display">\[
+\begin{cases}
+P(A \cup B) = P(A) + P\left(B\cap A^C\right) \\
+P(B) = P(A \cap B) + P\left(A^C \cap B\right)
+\end{cases}
+\quad\Longrightarrow\quad
+P(A\cup B) = P(A) + P(B) - P(A\cap B)
+\]</span></p>
+</div>
+</div>
+<p>We now consider several more substantive results.</p>
+</section>
+<section id="monotonic-sequences" class="level3">
+<h3 class="anchored" data-anchor-id="monotonic-sequences">Monotonic sequences</h3>
+<p>Let <span class="math inline">\(\{E_n\}\)</span> be a monotonic infinite sequence of events. Then:</p>
+<p><span class="math display">\[
+P\left(\lim_{n \rightarrow \infty} E_n\right) = \lim_{n \rightarrow\infty} P(E_n)
+\]</span></p>
+</section>
+<section id="countable-subadditivity" class="level3">
+<h3 class="anchored" data-anchor-id="countable-subadditivity">Countable subadditivity</h3>
+<p>For any sequence of events:</p>
+<p><span class="math display">\[
+P\left(\bigcup_{n = 1}^\infty E_n\right) \leq \sum_{n = 1}^\infty P(E_n)
+\]</span></p>
+<p>This result is also known as Boole’s inequality, and has two important consequences:</p>
 <ul>
-<li><p>Notes posted for Monday</p></li>
-<li><p>Please complete intake survey before Monday class meeting</p></li>
+<li>(<span style="color:blue">finite subadditivity</span>) <span class="math inline">\(P\left(\bigcup_{i = 1}^n E_n\right) \leq \sum_{i = 1}^n P(E_n)\)</span></li>
+<li>(<span style="color:blue">Bonferroni’s inequality</span>) <span class="math inline">\(P\left(\bigcap_{i = 1}^n E_i\right) \geq 1 - \sum_{i = 1}^n P\left(E_i^C\right)\)</span></li>
 </ul>
-</div>
-</div>
-<p>This is the class website for Probability Theory (STAT 425) offered at Cal Poly in Fall 2023. Note that this site is for <em>both</em> sections (01-3585 held 4:10pm MTWR and 02-3430 held 5:10pm MTWR).</p>
-<p>Material posted on this site is intended for use by currently enrolled students for course-related purposes only. Please do not reproduce any material on this site without permission.</p>
+<p>The proofs are left as exercises.</p>
+<p>Boole’s inequality is an important result in multiple hypothesis testing. Suppose, for example, that you’re computing <span class="math inline">\(K\)</span> <span class="math inline">\(t\)</span>-tests all at level <span class="math inline">\(\alpha\)</span> (recall this is the error rate at which hypotheses are falsely rejected), and suppose that every hypothesis is true. Now define the events:</p>
+<p><span class="math display">\[
+R_i = \{\text{reject hypothesis } i\}
+\qquad i = 1, \dots, K
+\]</span></p>
+<p>By supposition, <span class="math inline">\(P(R_i) = \alpha\)</span>, so the probability of at least one error is:</p>
+<p><span class="math display">\[
+P\left(\bigcup_{i = 1}^K R_i\right) \leq \sum_{i = 1}^K P(R_i) = K\alpha
+\]</span></p>
+<p>So to control <em>familywise</em> error, one conducts the individual tests at level <span class="math inline">\(\frac{\alpha}{K}\)</span>. This is known as the Bonferroni correction.</p>
+</section>
+<section id="inclusion-exclusion-principle" class="level3">
+<h3 class="anchored" data-anchor-id="inclusion-exclusion-principle">Inclusion-exclusion principle</h3>
+<p>For any collection of events:</p>
+<p><span class="math display">\[
+P\left(\bigcup_{i - 1}^n E_i\right) (-1)^{i + 1} p_i
+\quad\text{where}\quad
+p_i = \sum_{1 \leq j_1 &lt; \cdots &lt; j_i \leq n} P(E_{j_1} \cap \cdots \cap E_{j_i})
+\]</span></p>
 
 
+</section>
 
-</main> <!-- /main -->
+
+<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+
+<ol>
+<li id="fn1"><p>In these notes <span class="math inline">\(P\)</span> is explicitly defined as having range <span class="math inline">\([0, 1]\)</span>, so this property may seem redundant. However, most sources simply define <span class="math inline">\(P\)</span> as a real-valued function, in which case this property must be derived. The property is included here to underscore that the <span class="math inline">\([0, 1]\)</span> range is in fact a consequence of the axioms, and not an assumption.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
