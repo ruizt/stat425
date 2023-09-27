@@ -29,9 +29,9 @@ Class meetings:
 
 -   ***Monday:*** sets
 
--   ***Tuesday:*** sets, cont'd; sample spaces and events
+-   ***Tuesday:*** sets, cont'd
 
-<!-- -   ***Wednesday:*** properties of probability measures -->
+-   ***Wednesday:*** probability spaces
 
 <!-- -   ***Thursday:*** properties of probability measures -->
 
