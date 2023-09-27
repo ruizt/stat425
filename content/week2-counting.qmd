@@ -1,0 +1,101 @@
+---
+title: "Counting rules"
+author: "STAT425, Fall 2023"
+author-title: "Course notes"
+date: today
+published-title: "Updated"
+---
+
+### Finite sample spaces
+
+Suppose $S = \{s_1, \dots, s_n\}$ and $\mathcal{S} = 2^S$. Let $\{p_i\}$ be $n$ numbers such that $0 \leq p_i \leq 1$ and $\sum_{i = 1}^n p_i = 1$. Then the set function
+
+$$
+P(E) = \sum_{i: x_i \in E} p_i \quad,\; E\in \mathcal{S}
+$$
+
+is a probability measure on $(S, \mathcal{S})$, *i.e.*, $(S, \mathcal{S}, P)$ is a probability space.
+
+::: callout-tip
+## Proof
+
+Since by construction $\mathcal{S}$ is a $\sigma$-algebra, it remains only to check that $P$ satisfies the probability axioms.
+
+-   Axiom 1: $P(E) = \sum_{i: x_i \in E} p_i \geq 0$ since by hypothesis $p_i \geq 0$.
+-   Axiom 2: $P(S) = \sum_{i: x_i \in E} p_i = \sum_{i = 1}^n p_i = 1$.
+-   Axiom 3: let $\{E_j\}$ be disjoint and define $I_j = \{i: x_i \in E_j\}$. Note that $\left\{i: x_i \in \bigcup_j E_j\right\} = \bigcup_j I_j$ and $I_j \cap I_k = \emptyset$ for $j \neq k$. Then: $$
+    P\left(\bigcup_j E_j\right) = \sum_{\bigcup_j I_j} p_i = \sum_j \sum_{I_j} p_i = \sum_j P(E_j)
+    $$
+:::
+
+So, probability measures on finite sample spaces are simply assignments of numbers in $[0, 1]$ to each outcome that sum to one.
+
+Now, if one has [equally likely outcomes]{style="color:blue"} in a finite sample space, *i.e.*, $p_i = p_j$, then: $$
+P(E) = \sum_{i: x_i \in E} p_i = \sum_{i: x_i \in E} \frac{1}{|S|} = \frac{|E|}{|S|}
+$$
+
+Thus, for finite probability spaces with equally likely outcomes, computing event probabilities is a matter of [counting]{style="color:blue"}. While conceptually straightforward, it is often nontrivial to count the elements in a set. For example, how would you count the number of ways to draw a 3-of-a-kind in a 5-card poker hand? In other words, how many distinct combinations of 5 cards contain exactly three of matching rank and no other matches? For that matter, how many 5-card poker hands are possible? Once you know the answer, finding the probability of a 3-of-a-kind (or obtaining one by drawing 5 cards at random, anyway) is easy; counting the outcomes is the tricky part.
+
+### Counting combinations
+
+Many counting problems reduce to tabulating the possible combinations formed from drawing elements from small finite sets according to certain rules. Depending on whether elements are drawn with or without replacement (can you draw the same element twice?), how many elements are drawn, and whether a combination drawn in a different order is regarded as a distinct outcome, there are different formulae for counting combinations. These can be derived based on two simple [multiplication rules]{style="color:blue"}.
+
+*Note*: in what follows, assume that the elements of a set are distinct, *i.e.*, that if we write $A = \{a_1, \dots, a_n\}$, then $a_i \neq a_j$ for $i \neq j$. It would be highly unconventional to list the elements of a set in a way that includes duplicates, since, *e.g.*, $\{0, 0, 1\} = \{0, 1\}$ according to our definition of set identity.
+
+[Multiplication Rule 1]{style="color:blue"}. Let $A = \{a_1, \dots, a_n\}$ and $B = \{b_1, \dots, b_m\}$. The number of possible pairs $(a, b)$ that can be formed from the two sets is $n \times m$.
+
+::: callout-tip
+## Proof
+
+More formally, let $|A| = n$ and $|B| = m$; the statement amounts to $|A \times B| = |A| \times |B| = nm$. The elements of $A\times B$ can be arranged in an $n \times m$ array
+
+$$
+\begin{array}{ccccc}
+(a_1, b_1) &(a_1, b_2) &\cdots &(a_1, b_m) \\
+(a_2, b_1) &(a_2, b_2) &\cdots &(a_2, b_m) \\
+\vdots &\vdots &\ddots &\vdots \\
+(a_n, b_1) &(a_n, b_2) &\cdots &(a_n, b_m) \\
+\end{array}
+$$ showing that there are $n \times m$ distinct pairs.
+:::
+
+[Multiplication Rule 2]{style="color:blue"}. Let $A_1, \dots, A_m$ be finite sets with $|A_i| = n_i$. Then:
+
+$$
+|A_1 \times \cdots \times A_m| = |A_1| \times \cdots \times |A_m| = \prod_{i = 1}^m n_i 
+$$
+
+::: callout-tip
+## Proof
+
+Apply multiplication rule 1 recursively. Define $B_i = A_1 \times \cdots \times A_i$. Note that $B_i = B_{i - 1} \times A_i$, so by multiplication rule 1, $|B_i| = |B_{i - 1}|\time n_i$. Note also that $|B_1| = |A_1| = n_1$. Then:
+
+$$
+\begin{align*}
+|A_1 \times \cdots \times A_m| 
+&= |B_{m - 1} \times A_m| \\
+&= |B_{m - 1}| \times n_m \\
+&= |B_{m - 2}| \times n_{m - 1} \times n_m \\
+&\;\;\vdots \\
+&= |B_1| \times n_2 \times \cdots \times n_m \\
+&= n_1 \times n_2 \times \cdots \times n_m \\
+&= \prod_{i = 1}^m n_i
+\end{align*}
+$$
+:::
+
+::: callout-note
+## Check your understanding
+
+1.  If you're buying nuts, apples, and cheese at the store and there are three kinds of nuts, four varieties of apples, and five cheeses, how many distinct purchases are possible? Which multiplication rule did you use to determine an answer?
+2.  In forming combinations, there are two common methods of drawing elements from a set -- with or without replacement -- and two common methods of recording draws -- with or without the order in which elements were drawn. How many ways are there to form combinations? Which multiplication rule did you use to determine an answer?
+:::
+
+Now consider forming combinations of $k$ elements drawn from a finite set $A = \{a_1, \dots, a_n\}$ with $|A| = n$. The number of combinations depends on how they are formed: by drawing with or without replacement, and by accounting for or ignoring the order in which elements were drawn. Formally, these methods correspond to the following sets:
+
+-   (ordered, with replacement) $\{(a_{j_1}, \dots, a_{j_k}): j_i \in \{1, \dots, n\}\}$
+-   (ordered, without replacement) $\{(a_{j_1}, \dots, a_{j_k}): j_i \in \{1, \dots, n\}; j_i \neq j_l \text{ for } i \neq l\}$
+-   (unordered, with replacement) $\{[a_{j_1}, \dots, a_{j_k}]: j_i \in \{1, \dots, n\}\}$[^1]
+-   (unordered, without replacement) $\{\{a_{j_1}, \dots, a_{j_k}\}: j_i \in \{1, \dots, n\}; j_i \neq j_l \text{ for } i \neq l\}$
+
+[^1]: The notation $[x_1, \dots, x_n]$ is an ad-hoc expression for the unordered collection consisting of $x_1, \dots, x_n$ possibly non-distinct elements. Some special notation is needed here because when the collection includes duplicates, it cannot be written as a set. For instance, $\{0, 0, 1\} = \{0, 1\}$ but $[0, 0, 1] \neq [0, 1]$.

@@ -30,7 +30,7 @@ $$
 \left[\bigcap_{i = 1}^n A_i\right]^C = \bigcup A_i^c
 $$
 
-The proof is by induction, and left as an exercise. The base case is already established. For the inductive step, one need only reapply the base case replacing $A$ by $\bigcup_{i = 1}^n A_i$ and $B$ by $A_{n + 1}$.
+The proof is by induction, and we'll review it in class. The base case is already established. For the inductive step, one need only reapply the base case replacing $A$ by $\bigcup_{i = 1}^n A_i$ and $B$ by $A_{n + 1}$.
 
 Two events $E_1, E_2 \subseteq S$ are [disjoint]{style="color:blue"} just in case they share no outcomes, that is, if $E_1 \cap E_2 = \emptyset$.
 
@@ -47,6 +47,19 @@ A [partition]{style="color:blue"} is a mutually disjoint collection whose union 
 -   $\{E_i\}$ are mutually disjoint events
 -   $\bigcup_i E_i = S$
 
+Note that $\{E, E^C\}$ always form a partition of the sample space for any event $E$.
+
+::: callout-note
+## Check your understanding
+
+Let $S = [0, 2], E_1 = (0, 1), E_2 = \{0, 1, 2\}, E_3 = (0, 2)$.
+
+1.  Are $E_1$ and $E_2$ disjoint?
+2.  Are $E_2$ and $E_3$ disjoint?
+3.  Does the collection $\{E_1, E_2, E_3\}$ form a partition of $S$?
+4.  Find the set $E_4$ such that $\{E_1, E_2, E_4\}$ partition $S$.
+:::
+
 ### Probability spaces
 
 Given a sample space $S$, denote by $\mathcal{S}$ the [set of all events]{style="color:blue"}. We will assume that this set:
@@ -56,7 +69,7 @@ Given a sample space $S$, denote by $\mathcal{S}$ the [set of all events]{style=
 -   is closed under complements: $E \in \mathcal{S} \Longrightarrow E^C \in \mathcal{S}$
 -   is closed under countable unions: $E_i \in \mathcal{S} \Longrightarrow \bigcup_i E_i \in \mathcal{S}$
 
-(Technically, such a collection is known as a "$\sigma$-algebra" of sets. These can be generated in a variety of ways; we won't go into the details here. Broadly, this construction is used to obtain a subcollection of $2^S$ with some essential regularity properties. Notice the possibility that there are subsets of $S$ that are not events.)
+Technically, such a collection is known as a "$\sigma$-algebra" of sets. (Note that the collection is also closed under countable intersections as an immediate consequence of the last two conditions and DeMorgan's laws.) These collections can be generated analytically in a variety of ways, most commonly from a topology (collection of open subsets); we won't go into the details here, but suffice it to say that such collections typically exist under normal circumstances. For finite and countable sample spaces, assume $\mathcal{S} = 2^S$. The reason we define $\mathcal{S}$, rather than work directly with the power set $2^S$, is to obtain a subcollection of $2^S$ with some essential regularity properties in the case where $S$ is uncountable. Notice that this allows for the possibility that there are subsets of $S$ that are not events.
 
 Now, a [probability measure]{style="color:blue"} is any set function $P: \mathcal{S} \rightarrow [0, 1]$ satisfying three **axioms**:
 
@@ -88,11 +101,11 @@ S = \{H, T\} \\
 \end{align*}
 $$
 
-Discussion questions:
+1.  Find a partition of the sample space.
 
-1.  How should we interpret the events $E_1$ and $E_4$?
+2.  How should we interpret the events $E_1$ and $E_4$?
 
-2.  Each row of the table below shows an assignment of probabilities to each event. Which rows correspond to valid probability measures? For the rows that don't correspond to valid probability measures, which axiom(s) do they violate?
+3.  Each row of the table below shows an assignment of probabilities to each event. Which rows correspond to valid probability measures? For the rows that don't correspond to valid probability measures, which axiom(s) do they violate?
 
     | $P(E_1)$      | $P(E_2)$      | $P(E_3)$      | $P(E_4)$      |
     |---------------|---------------|---------------|---------------|
@@ -102,7 +115,7 @@ Discussion questions:
     | $0$           | $\frac{1}{3}$ | $\frac{2}{3}$ | $1$           |
     | $0$           | $0$           | $1$           | $1$           |
 
-3.  What conditions must the numbers $p_i = P(E_i)$ satisfy for $P$ to be a valid probability measure in this case?
+4.  What conditions must the numbers $p_i = P(E_i)$ satisfy for $P$ to be a valid probability measure in this case?
 :::
 
 ### Basic properties

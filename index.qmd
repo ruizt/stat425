@@ -7,9 +7,7 @@ published-title: 'Updated'
 ::: callout-note
 ## Announcements
 
--   Notes posted for Monday
-
--   Please complete intake survey before Monday class meeting
+-   Updated office hours: TR 1pm --- 3pm
 :::
 
 This is the class website for Probability Theory (STAT 425) offered at Cal Poly in Fall 2023. Note that this site is for *both* sections (01-3585 held 4:10pm MTWR and 02-3430 held 5:10pm MTWR).

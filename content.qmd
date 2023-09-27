@@ -19,11 +19,17 @@ Suggested reading:
 
 -   DG&S 1.4 --- 1.6
 
+Lecture notes:
+
+-   \[[sets](content/week1-sets.qmd)\]
+
+-   \[[probability measures](content/week1-probability.qmd)\]
+
 Class meetings:
 
--   ***Monday:*** sets \[[lecture notes](content/week1-sets.qmd)\]
+-   ***Monday:*** sets
 
-<!-- -   ***Tuesday:*** probability spaces -->
+-   ***Tuesday:*** sets, cont'd; sample spaces and events
 
 <!-- -   ***Wednesday:*** properties of probability measures -->
 

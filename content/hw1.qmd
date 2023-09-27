@@ -1,6 +1,7 @@
 ---
 title: "Homework 1"
 author: "STAT425, Fall 2023"
+author-title: "Course"
 date: "10/5/2023"
 published-title: "Due in class on"
 ---
@@ -51,4 +52,6 @@ Please prepare your solutions neatly, numbered, and in order; ideally, you'll wr
     i.  Show that $(S, \mathcal{S}, P)$ is a probability space by verifying the requisite conditions on $\mathcal{S}$ and $P$.
     ii. Let $\mathcal{C}$ denote the Cantor set. Show that $P(\mathcal{C}) = 0$.
 
-7.  Prove Bonferroni's inequality: $P\left(\bigcap_{i = 1}^n E_i\right) \geq 1 - \sum_{i = 1}^n P\left(E^C\right)$.
+7.  Let $(S, \mathcal{S}, P)$ be a probability space, and let $\{E_i\}$ be a collection of events. Show that if $\{E_i\}$ is a finite or countable partition of any event $A \subseteq S$, then $\sum_i P(E_i) = P(A)$.
+
+8.  Prove Bonferroni's inequality: $P\left(\bigcap_{i = 1}^n E_i\right) \geq 1 - \sum_{i = 1}^n P\left(E^C\right)$.

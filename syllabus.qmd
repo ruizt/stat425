@@ -18,7 +18,7 @@ editor: visual
 -   \[Section 01/3585\] 4:10pm -- 5:00pm MTWR Construction Innovations Center Room C201
 -   \[Section 02/3430\] 5:10pm -- 6:00pm MTWR Construction Innovations Center Room C201
 
-**Office hours:** 2:00pm -- 3:00pm TWR 25-236 and [by appointment](https://calendly.com/tdruiz/student)
+**Office hours:** 1:00pm -- 3:00pm TR 25-236 and [by appointment](https://calendly.com/tdruiz/student)
 
 Probability is the mathematics of random events. It is an active field of study and provides the theoretical foundation for the discipline of statistics. This course aims to formalize familiar probability concepts covered in prior coursework (predominantly STAT 305), including probability rules, random variables, common distributions, and expected value. We will build on prior experience and intuition and develop tools to support deeper inquiry and subsequent study of mathematical statistics in STAT 426 and STAT 427. Students will also be introduced to potentially new concepts that play central roles in statistics such as joint distributions, transformations, and conditional expectation. Lectures will provide an exposition of definitions, properties, theorems, and examples, and offer a venue for discussion; students will practice applying this material to solve probability problems on homework assignments and demonstrate fluency with key concepts on in-class exams.
 
@@ -65,7 +65,7 @@ Very roughly, letter grades will be assigned as follows. A: 90-100. B: 75-90. C:
 Subject to change at instructor discretion.
 
 | Week                 | Lecture Topic                            | Suggested reading | Assignments |
-|----------------------|------------------------------------------|-------------------|-------------|
+|---------------|----------------------------|---------------|---------------|
 | 0 (9/21)             | Course introduction                      |                   |             |
 | 1 (9/25)             | Probability axioms and properties        | 1.4--1.6          | HW1         |
 | 2 (10/2)             | Counting methods                         | 1.7--1.10         | HW2         |

@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="STAT425, Fall 2023">
-<meta name="dcterms.date" content="2023-09-26">
+<meta name="dcterms.date" content="2023-09-27">
 
 <title>STAT425 - Probability measures</title>
 <style>
@@ -147,7 +147,7 @@ gtag('config', 'G-H3YKZX4J88', { 'anonymize_ip': true});
     <div>
     <div class="quarto-title-meta-heading">Updated</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">September 26, 2023</p>
+      <p class="date">September 27, 2023</p>
     </div>
   </div>
   
@@ -174,7 +174,7 @@ S: \text{ set of all possible outcomes}
 \qquad\text{and}\qquad
 \left[\bigcap_{i = 1}^n A_i\right]^C = \bigcup A_i^c
 \]</span></p>
-<p>The proof is by induction, and left as an exercise. The base case is already established. For the inductive step, one need only reapply the base case replacing <span class="math inline">\(A\)</span> by <span class="math inline">\(\bigcup_{i = 1}^n A_i\)</span> and <span class="math inline">\(B\)</span> by <span class="math inline">\(A_{n + 1}\)</span>.</p>
+<p>The proof is by induction, and we’ll review it in class. The base case is already established. For the inductive step, one need only reapply the base case replacing <span class="math inline">\(A\)</span> by <span class="math inline">\(\bigcup_{i = 1}^n A_i\)</span> and <span class="math inline">\(B\)</span> by <span class="math inline">\(A_{n + 1}\)</span>.</p>
 <p>Two events <span class="math inline">\(E_1, E_2 \subseteq S\)</span> are <span style="color:blue">disjoint</span> just in case they share no outcomes, that is, if <span class="math inline">\(E_1 \cap E_2 = \emptyset\)</span>.</p>
 <p>A collection of events <span class="math inline">\(\{E_i\}\)</span> is <span style="color:blue">mutually disjoint</span> just in case every pair is disjoint, that is, if:</p>
 <p><span class="math display">\[
@@ -187,6 +187,26 @@ i \neq j
 <li><span class="math inline">\(\{E_i\}\)</span> are mutually disjoint events</li>
 <li><span class="math inline">\(\bigcup_i E_i = S\)</span></li>
 </ul>
+<p>Note that <span class="math inline">\(\{E, E^C\}\)</span> always form a partition of the sample space for any event <span class="math inline">\(E\)</span>.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Check your understanding
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Let <span class="math inline">\(S = [0, 2], E_1 = (0, 1), E_2 = \{0, 1, 2\}, E_3 = (0, 2)\)</span>.</p>
+<ol type="1">
+<li>Are <span class="math inline">\(E_1\)</span> and <span class="math inline">\(E_2\)</span> disjoint?</li>
+<li>Are <span class="math inline">\(E_2\)</span> and <span class="math inline">\(E_3\)</span> disjoint?</li>
+<li>Does the collection <span class="math inline">\(\{E_1, E_2, E_3\}\)</span> form a partition of <span class="math inline">\(S\)</span>?</li>
+<li>Find the set <span class="math inline">\(E_4\)</span> such that <span class="math inline">\(\{E_1, E_2, E_4\}\)</span> partition <span class="math inline">\(S\)</span>.</li>
+</ol>
+</div>
+</div>
 </section>
 <section id="probability-spaces" class="level3">
 <h3 class="anchored" data-anchor-id="probability-spaces">Probability spaces</h3>
@@ -197,7 +217,7 @@ i \neq j
 <li>is closed under complements: <span class="math inline">\(E \in \mathcal{S} \Longrightarrow E^C \in \mathcal{S}\)</span></li>
 <li>is closed under countable unions: <span class="math inline">\(E_i \in \mathcal{S} \Longrightarrow \bigcup_i E_i \in \mathcal{S}\)</span></li>
 </ul>
-<p>(Technically, such a collection is known as a “<span class="math inline">\(\sigma\)</span>-algebra” of sets. These can be generated in a variety of ways; we won’t go into the details here. Broadly, this construction is used to obtain a subcollection of <span class="math inline">\(2^S\)</span> with some essential regularity properties. Notice the possibility that there are subsets of <span class="math inline">\(S\)</span> that are not events.)</p>
+<p>Technically, such a collection is known as a “<span class="math inline">\(\sigma\)</span>-algebra” of sets. (Note that the collection is also closed under countable intersections as an immediate consequence of the last two conditions and DeMorgan’s laws.) These collections can be generated analytically in a variety of ways, most commonly from a topology (collection of open subsets); we won’t go into the details here, but suffice it to say that such collections typically exist under normal circumstances. For finite and countable sample spaces, assume <span class="math inline">\(\mathcal{S} = 2^S\)</span>. The reason we define <span class="math inline">\(\mathcal{S}\)</span>, rather than work directly with the power set <span class="math inline">\(2^S\)</span>, is to obtain a subcollection of <span class="math inline">\(2^S\)</span> with some essential regularity properties in the case where <span class="math inline">\(S\)</span> is uncountable. Notice that this allows for the possibility that there are subsets of <span class="math inline">\(S\)</span> that are not events.</p>
 <p>Now, a <span style="color:blue">probability measure</span> is any set function <span class="math inline">\(P: \mathcal{S} \rightarrow [0, 1]\)</span> satisfying three <strong>axioms</strong>:</p>
 <p>A1. <span class="math inline">\(P(E) \geq 0\)</span> for every <span class="math inline">\(E\in \mathcal{S}\)</span></p>
 <p>A2. <span class="math inline">\(P(S) = 1\)</span></p>
@@ -228,8 +248,8 @@ S = \{H, T\} \\
 \mathcal{S} = \{\underbrace{\emptyset}_{E_1}, \underbrace{\{H\}}_{E_2}, \underbrace{\{T\}}_{E_3}, \underbrace{\{H, T\}}_{E_4}\}
 \end{align*}
 \]</span></p>
-<p>Discussion questions:</p>
 <ol type="1">
+<li><p>Find a partition of the sample space.</p></li>
 <li><p>How should we interpret the events <span class="math inline">\(E_1\)</span> and <span class="math inline">\(E_4\)</span>?</p></li>
 <li><p>Each row of the table below shows an assignment of probabilities to each event. Which rows correspond to valid probability measures? For the rows that don’t correspond to valid probability measures, which axiom(s) do they violate?</p>
 <table class="table">
