@@ -296,4 +296,4 @@ P\left(\bigcup_{i = 1}^n E_i\right) (-1)^{i + 1} p_i
 p_i = \sum_{1 \leq j_1 < \cdots < j_i \leq n} P(E_{j_1} \cap \cdots \cap E_{j_i})
 $$
 
-We'll review the proof in class.
+We'll review the proof in class, time permitting.

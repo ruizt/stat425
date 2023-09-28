@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="STAT425, Fall 2023">
-<meta name="dcterms.date" content="2023-09-27">
+<meta name="dcterms.date" content="2023-09-28">
 
 <title>STAT425 - Counting rules</title>
 <style>
@@ -145,7 +145,7 @@ gtag('config', 'G-H3YKZX4J88', { 'anonymize_ip': true});
     <div>
     <div class="quarto-title-meta-heading">Updated</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">September 27, 2023</p>
+      <p class="date">September 28, 2023</p>
     </div>
   </div>
   
@@ -228,7 +228,7 @@ Proof
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Apply multiplication rule 1 recursively. Define <span class="math inline">\(B_i = A_1 \times \cdots \times A_i\)</span>. Note that <span class="math inline">\(B_i = B_{i - 1} \times A_i\)</span>, so by multiplication rule 1, <span class="math inline">\(|B_i| = |B_{i - 1}|\time n_i\)</span>. Note also that <span class="math inline">\(|B_1| = |A_1| = n_1\)</span>. Then:</p>
+<p>Apply multiplication rule 1 recursively. Define <span class="math inline">\(B_i = A_1 \times \cdots \times A_i\)</span>. Note that <span class="math inline">\(B_i = B_{i - 1} \times A_i\)</span>, so by multiplication rule 1, <span class="math inline">\(|B_i| = |B_{i - 1}|\times n_i\)</span>. Note also that <span class="math inline">\(|B_1| = |A_1| = n_1\)</span>. Then:</p>
 <p><span class="math display">\[
 \begin{align*}
 |A_1 \times \cdots \times A_m|
@@ -254,7 +254,7 @@ Check your understanding
 </div>
 <div class="callout-body-container callout-body">
 <ol type="1">
-<li>If you’re buying nuts, apples, and cheese at the store and there are three kinds of nuts, four varieties of apples, and five cheeses, how many distinct purchases are possible? Which multiplication rule did you use to determine an answer?</li>
+<li>If you’re buying nuts, apples, and cheese at the store and there are three kinds of nuts, four varieties of apples, and five cheeses, how many distinct purchases are possible if you only buy one kind of each item? Which multiplication rule did you use to determine an answer?</li>
 <li>In forming combinations, there are two common methods of drawing elements from a set – with or without replacement – and two common methods of recording draws – with or without the order in which elements were drawn. How many ways are there to form combinations? Which multiplication rule did you use to determine an answer?</li>
 </ol>
 </div>
@@ -266,6 +266,169 @@ Check your understanding
 <li>(unordered, with replacement) <span class="math inline">\(\{[a_{j_1}, \dots, a_{j_k}]: j_i \in \{1, \dots, n\}\}\)</span><a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></li>
 <li>(unordered, without replacement) <span class="math inline">\(\{\{a_{j_1}, \dots, a_{j_k}\}: j_i \in \{1, \dots, n\}; j_i \neq j_l \text{ for } i \neq l\}\)</span></li>
 </ul>
+<p>In what follows, counting rules for each situation will be derived. The proofs rely in many instances on two facts: for disjoint sets <span class="math inline">\(A, B\)</span>, <span class="math inline">\(|A\cup B| = |A| + |B|\)</span>; and if <span class="math inline">\(A \subseteq B\)</span>, then <span class="math inline">\(|B\setminus A| = |B| - |A|\)</span>.</p>
+<p><strong>Sampling with replacement 1 (SWR1).</strong> Let <span class="math inline">\(A\)</span> be a set with <span class="math inline">\(|A| = n\)</span>. The number of <span style="color:blue">ordered</span> combinations of <span class="math inline">\(k\)</span> elements drawn <span style="color:blue">with replacement</span> from <span class="math inline">\(A\)</span> is <span class="math inline">\(n^k\)</span>.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Proof
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Enumerate the elements of <span class="math inline">\(A\)</span> as <span class="math inline">\(A = \{a_1, \dots, a_n\}\)</span>. The ordered combinations of <span class="math inline">\(k\)</span> elements of <span class="math inline">\(A\)</span> drawn with replacement are the distinct <span class="math inline">\(k\)</span>-tuples <span class="math inline">\((a_{j_1}, \dots, a_{j_k})\)</span> where <span class="math inline">\(j_i \in \{1, \dots, n\}\)</span> is some index. Note that possibly <span class="math inline">\(j_i = j_l\)</span> according to this schema. Now, <span class="math inline">\(\{(a_{j_1}, \dots, a_{j_k}): j_i \in \{1, \dots, n\}\} = A^k\)</span>, so using multiplication rule 2:</p>
+<p><span class="math display">\[
+|A^k| = |A \times \cdots \times A| = |A| \times \cdots \times |A| = |A|^k = n^k
+\]</span></p>
+</div>
+</div>
+<p><strong>Sampling without replacement 1 (SWOR1)</strong>. Let <span class="math inline">\(A\)</span> be a set with <span class="math inline">\(|A| = n\)</span>. The number of <span style="color:blue">ordered</span> combinations of <span class="math inline">\(k\)</span> distinct elements drawn <span style="color:blue">without replacement</span> from <span class="math inline">\(A\)</span> is:</p>
+<p><span class="math display">\[
+\frac{n!}{(n - k)!} = n \times (n - 1) \times \cdots \times (n - k + 1)
+\]</span></p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Proof
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Let <span class="math inline">\(B_k = \{(a_{j_1}, \dots, a_{j_k}): j_i \in \{1, \dots, n\}; j_i \neq j_l \text{ for } i \neq l\}\)</span>. The goal is to show that <span class="math inline">\(|B_k| = \frac{n!}{(n - k)!}\)</span> for arbitrary <span class="math inline">\(k\)</span>. Enumerate the elements of <span class="math inline">\(B_k\)</span> as <span class="math inline">\(B_k = \{b_{k1}, b_{k2}, \dots, b_{kn_k}\}\)</span>. For each element, <span class="math inline">\(b_{ki} = (b_{ki1}, \dots, b_{kik}) = (a_{j_{1_i}}, \dots, a_{j_{k_i}})\)</span> for some collection of distinct indices <span class="math inline">\(j_{1_i}, \dots, j_{k_i}\)</span>. Note also that <span class="math inline">\(B_1 = A\)</span>. Now define:</p>
+<p><span class="math display">\[
+\begin{align*}
+\tilde{b}_{ki} &amp;= \{b_{ki1}, \dots, b_{kik}\} \\
+B_{ki} &amp;= \{b \in B_k: b_k \in A \setminus \tilde{b}_{k - 1, i}, (b_1, \dots, b_k - 1) = b_{k - 1, i}\} \\
+\end{align*}
+\]</span></p>
+<p>In other words, <span class="math inline">\(\tilde{b}_{ki}\)</span> is the set of elements of <span class="math inline">\(A\)</span> included in the <span class="math inline">\(i\)</span>th ordered combination of <span class="math inline">\(k\)</span> elements; <span class="math inline">\(B_{ki}\)</span> is the set of ordered combinations of <span class="math inline">\(k\)</span> elements where the last element in the combination is not included in the <span class="math inline">\(i\)</span>th ordered combination of <span class="math inline">\(k - 1\)</span> elements. The indexing of ordered combinations is arbitrary.</p>
+<p>Now, since <span class="math inline">\(b_{kij} \neq b_{kij'}\)</span> for <span class="math inline">\(j \neq j'\)</span>, <span class="math inline">\(|\tilde{b}_{ki}| = k\)</span>. Note also that <span class="math inline">\(|B_{ki}| = |A| - |\tilde{b}_{k-1, i}| = n - (k - 1)\)</span>, <span class="math inline">\(\{B_{ki}\}\)</span> is a mutually disjoint collection, and that <span class="math inline">\(B_k = \bigcup_i B_{ki}\)</span>. Then:</p>
+<p><span class="math display">\[
+|B_k|
+= \left| \bigcup_{i = 1}^{|B_{k - 1}|} B_{ki} \right|
+= \sum_{i = 1}^{|B_{k - 1}|} |B_{ki}|
+= \sum_{i = 1}^{|B_{k - 1}|} \left[ n - (k - 1)\right]
+= |B_{k - 1}| \left[ n - (k - 1)\right]
+\]</span></p>
+<p>So by recursion: <span class="math display">\[
+\begin{align*}
+|B_k| &amp;= |B_{k - 1}| \left[ n - (k - 1)\right] \\
+&amp;= |B_{k - 2}| \left[ n - (k - 2)\right] \left[ n - (k - 1)\right] \\
+&amp;\;\;\vdots \\
+&amp;= |B_1| \left[n - 1\right] \cdots \left[ n - (k - 2)\right] \left[ n - (k - 1)\right] \\
+&amp;= n (n - 1) \cdots (n - (k - 1))
+\end{align*}
+\]</span></p>
+</div>
+</div>
+<p><strong>Sampling without replacement 2 (SWOR2)</strong>. Let <span class="math inline">\(A\)</span> be a set with <span class="math inline">\(|A| = n\)</span>. The Number of <span style="color:blue">unordered</span> combinations of <span class="math inline">\(k\)</span> distinct elements drawn without replacement from <span class="math inline">\(A\)</span> is:</p>
+<p><span class="math display">\[
+\frac{n!}{k! (n - k)!} = \frac{n\cdot (n - 1)\cdot \cdots \cdot (n - k + 1)}{k \cdot (k - 1) \cdot \cdots \cdot 2 \cdot 1}
+\]</span></p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Proof
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Let <span class="math inline">\(B_k\)</span> be the set of all <em>ordered</em> combinations of <span class="math inline">\(k\)</span> distinct elements drawn without replacement from <span class="math inline">\(A\)</span> (as in the proof of SWOR1) and consider: <span class="math display">\[
+C_k = \{ \{a_{j_1}, \dots, a_{j_k}\} \subseteq A: j_i \neq j_{i'} \text{ for } i \neq i'\}
+\quad\text{(all subsets of size $k$)}
+\]</span></p>
+<p>The goal is to show that <span class="math inline">\(|C_k| = \frac{n!}{k! (n - k)!}\)</span>. For each set <span class="math inline">\(C_{kj} \in C_k\)</span>, denote the set of ordered combinations formed from elements of <span class="math inline">\(C_{kj}\)</span> by <span class="math inline">\(B_{kj} = \{(a_{j_1}, \dots, a_{j_k}): a_{j_i} \in C_k\}\)</span>. Note that by construction, <span class="math inline">\(\{B_{kj}\}\)</span> is a partition of <span class="math inline">\(B_k\)</span>. Further, <span class="math inline">\(|C_{kj} = k|\)</span>, so by SWOR1 we have that <span class="math inline">\(|B_{kj}| = \frac{k!}{(k - k)!} = k!\)</span>, and then:</p>
+<p><span class="math display">\[
+|B_k| = \left| \bigcup_{j = 1}^{|C_k|} B_{kj} \right| = \sum_{j = 1}^{|C_k|} |B_{kj}| = \sum_{j = 1}^{|C_k|} k! = |C_k| k!
+\]</span></p>
+<p>It follows that:</p>
+<p><span class="math display">\[
+|C_k| = \frac{|B_k|}{k!} = \frac{n!}{k! (n - k)!}
+\]</span></p>
+</div>
+</div>
+<p>The types of combinations resulting from sampling without replacement have special names: ordered combinations of distinct elements drawn without replacement are known as <span style="color:blue">permutations</span>; and unordered combinations are known as <span style="color:blue">combinations</span>. It is common to denote the corresponding counting rules with special notation:</p>
+<ul>
+<li>(permutations) <span class="math inline">\(P^n_k\)</span> or <span class="math inline">\(P_{n, k}\)</span> for <span class="math inline">\(\frac{n!}{(n - k)!}\)</span></li>
+<li>(combinations) <span class="math inline">\(C^n_k\)</span> or <span class="math inline">\(C_{n, k}\)</span> for <span class="math inline">\(\frac{n!}{k! (n - k)!}\)</span></li>
+</ul>
+<p>These won’t be used in this class, but it’s useful to be aware of the notation, as many books use them. We will, however, adopt the notation <span class="math inline">\({n \choose k}\)</span> for unordered combinations of elements drawn with replacement; this is read “<span class="math inline">\(n\)</span> choose <span class="math inline">\(k\)</span>”, because the counting rule gives the number of ways to choose <span class="math inline">\(k\)</span> items from among <span class="math inline">\(n\)</span> possibilities.</p>
+<p>There are a few combination identities that will come in handy later. Proofs amount to simple arithmetic, and are left as exercises.</p>
+<ul>
+<li><span class="math inline">\({n \choose k} = (k + 1){n \choose k + 1}\)</span></li>
+<li><span class="math inline">\({n + m \choose m} = {n + m \choose n}\)</span></li>
+</ul>
+<p><strong>Sampling with replacement 2 (SWR2).</strong> Let <span class="math inline">\(A\)</span> be a set with <span class="math inline">\(|A| = n\)</span>. The number of <span style="color:blue">unordered</span> combinations of <span class="math inline">\(k\)</span> (possibly nondistinct) elements drawn with replacement from <span class="math inline">\(A\)</span> is <span class="math inline">\({n + k - 1 \choose k}\)</span>.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Proof
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The goal is to find <span class="math inline">\(|D_k|\)</span> where <span class="math inline">\(D_k = \{D_{kj} = [a_{j_1}, \dots, a_{j_k}]: j_i \in \{1, \dots, n\}\}\)</span>. Define:</p>
+<p><span class="math display">\[
+x_{ij} = \# \text{ of times } a_i \text{ is included in } D_{kj}
+\]</span></p>
+<p>Then <span class="math inline">\(\sum_{i = 1}^n x_{ij} = |D_{kj}| = k\)</span> by construction. Denote by <span class="math inline">\(x_j\)</span> the vector <span class="math inline">\((x_{1j}, x_{2j}, \dots, x_{nj)\)</span>. Note that <span class="math inline">\(D_{kj} = D_{kj'}\)</span> just in case <span class="math inline">\(x_j = x_{j'}\)</span>, and in fact there is a one-to-one correspondence between the elements of <span class="math inline">\(D_k\)</span> and the set <span class="math inline">\(V = \{x \in \{0, 1, \dots, k\}^n: \sum_{i = 1}^n x_i = k \}\)</span>. Thus, <span class="math inline">\(|D_k| = |V|\)</span>.</p>
+<p>Consider the encoding of <span class="math inline">\(\sum_i x_{ij}\)</span> for an arbitrary <span class="math inline">\(x_j \in V\)</span> that results from expanding the sum and replacing integers by the corresponding number of vertical bars, for instance:</p>
+<p><span class="math display">\[
+\begin{align*}
+\sum_{i = 1}^n x_{ij}
+&amp;= 1 + 2 + 0 + 0 + 0 + 0 + 1 + \dots + 3 + 0 + 1 + 0 + 0 \\
+&amp;= | + || + + + + | + \cdots + ||| + + | + +
+\end{align*}
+\]</span> Now, each unique <span class="math inline">\(x_j\)</span> will correspond to a distinct encoding sequence of <span class="math inline">\(|\)</span> and <span class="math inline">\(+\)</span>, and conversely each unique encoding sequence corresponds to exactly one <span class="math inline">\(x_j\)</span>. Further, there are precisely <span class="math inline">\(k\)</span> bars and <span class="math inline">\(n - 1\)</span> plus signs, so each encoding string comprises <span class="math inline">\(k + n - 1\)</span> characters. The unique encoding sequences result from the distinct allocations of bars to positions in the encoding string. In other words, there are exactly as many encoding sequences as there are ways to place the <span class="math inline">\(k\)</span> bars among the <span class="math inline">\(k + n - 1\)</span> positions. Thus:</p>
+<p><span class="math display">\[
+|D_k| = |V| = \text{\# of ways to allocate $k$ bars to $n + k - 1$ positions} = {n + k - 1 \choose k}
+\]</span></p>
+</div>
+</div>
+<p>The table below summarizes the four counting rules.</p>
+<table class="table">
+<caption>Counting rules.</caption>
+<colgroup>
+<col style="width: 22%">
+<col style="width: 36%">
+<col style="width: 40%">
+</colgroup>
+<thead>
+<tr class="header">
+<th></th>
+<th>Drawn with replacement</th>
+<th>Drawn without replacement</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Unordered</strong></td>
+<td><span class="math display">\[                     
+                 {n + k - 1 \choose k}   
+                 \]</span></td>
+<td><span class="math display">\[                        
+                                          {n \choose k}              
+                                          \]</span></td>
+</tr>
+<tr class="even">
+<td><strong>Ordered</strong></td>
+<td><span class="math display">\[                     
+                 n^k                     
+                 \]</span></td>
+<td><span class="math display">\[                        
+                                          \frac{n!}{(n - k)!}        
+                                          \]</span></td>
+</tr>
+</tbody>
+</table>
 
 
 </section>

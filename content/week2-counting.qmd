@@ -68,7 +68,7 @@ $$
 ::: callout-tip
 ## Proof
 
-Apply multiplication rule 1 recursively. Define $B_i = A_1 \times \cdots \times A_i$. Note that $B_i = B_{i - 1} \times A_i$, so by multiplication rule 1, $|B_i| = |B_{i - 1}|\time n_i$. Note also that $|B_1| = |A_1| = n_1$. Then:
+Apply multiplication rule 1 recursively. Define $B_i = A_1 \times \cdots \times A_i$. Note that $B_i = B_{i - 1} \times A_i$, so by multiplication rule 1, $|B_i| = |B_{i - 1}|\times n_i$. Note also that $|B_1| = |A_1| = n_1$. Then:
 
 $$
 \begin{align*}
@@ -87,7 +87,7 @@ $$
 ::: callout-note
 ## Check your understanding
 
-1.  If you're buying nuts, apples, and cheese at the store and there are three kinds of nuts, four varieties of apples, and five cheeses, how many distinct purchases are possible? Which multiplication rule did you use to determine an answer?
+1.  If you're buying nuts, apples, and cheese at the store and there are three kinds of nuts, four varieties of apples, and five cheeses, how many distinct purchases are possible if you only buy one kind of each item? Which multiplication rule did you use to determine an answer?
 2.  In forming combinations, there are two common methods of drawing elements from a set -- with or without replacement -- and two common methods of recording draws -- with or without the order in which elements were drawn. How many ways are there to form combinations? Which multiplication rule did you use to determine an answer?
 :::
 
@@ -99,3 +99,142 @@ Now consider forming combinations of $k$ elements drawn from a finite set $A = \
 -   (unordered, without replacement) $\{\{a_{j_1}, \dots, a_{j_k}\}: j_i \in \{1, \dots, n\}; j_i \neq j_l \text{ for } i \neq l\}$
 
 [^1]: The notation $[x_1, \dots, x_n]$ is an ad-hoc expression for the unordered collection consisting of $x_1, \dots, x_n$ possibly non-distinct elements. Some special notation is needed here because when the collection includes duplicates, it cannot be written as a set. For instance, $\{0, 0, 1\} = \{0, 1\}$ but $[0, 0, 1] \neq [0, 1]$.
+
+In what follows, counting rules for each situation will be derived. The proofs rely in many instances on two facts: for disjoint sets $A, B$, $|A\cup B| = |A| + |B|$; and if $A \subseteq B$, then $|B\setminus A| = |B| - |A|$.
+
+**Sampling with replacement 1 (SWR1).** Let $A$ be a set with $|A| = n$. The number of [ordered]{style="color:blue"} combinations of $k$ elements drawn [with replacement]{style="color:blue"} from $A$ is $n^k$.
+
+::: callout-tip
+## Proof
+
+Enumerate the elements of $A$ as $A = \{a_1, \dots, a_n\}$. The ordered combinations of $k$ elements of $A$ drawn with replacement are the distinct $k$-tuples $(a_{j_1}, \dots, a_{j_k})$ where $j_i \in \{1, \dots, n\}$ is some index. Note that possibly $j_i = j_l$ according to this schema. Now, $\{(a_{j_1}, \dots, a_{j_k}): j_i \in \{1, \dots, n\}\} = A^k$, so using multiplication rule 2:
+
+$$
+|A^k| = |A \times \cdots \times A| = |A| \times \cdots \times |A| = |A|^k = n^k
+$$
+:::
+
+**Sampling without replacement 1 (SWOR1)**. Let $A$ be a set with $|A| = n$. The number of [ordered]{style="color:blue"} combinations of $k$ distinct elements drawn [without replacement]{style="color:blue"} from $A$ is:
+
+$$
+\frac{n!}{(n - k)!} = n \times (n - 1) \times \cdots \times (n - k + 1)
+$$
+
+::: callout-tip
+## Proof
+
+Let $B_k = \{(a_{j_1}, \dots, a_{j_k}): j_i \in \{1, \dots, n\}; j_i \neq j_l \text{ for } i \neq l\}$. The goal is to show that $|B_k| = \frac{n!}{(n - k)!}$ for arbitrary $k$. Enumerate the elements of $B_k$ as $B_k = \{b_{k1}, b_{k2}, \dots, b_{kn_k}\}$. For each element, $b_{ki} = (b_{ki1}, \dots, b_{kik}) = (a_{j_{1_i}}, \dots, a_{j_{k_i}})$ for some collection of distinct indices $j_{1_i}, \dots, j_{k_i}$. Note also that $B_1 = A$. Now define:
+
+$$
+\begin{align*}
+\tilde{b}_{ki} &= \{b_{ki1}, \dots, b_{kik}\} \\
+B_{ki} &= \{b \in B_k: b_k \in A \setminus \tilde{b}_{k - 1, i}, (b_1, \dots, b_k - 1) = b_{k - 1, i}\} \\
+\end{align*}
+$$
+
+In other words, $\tilde{b}_{ki}$ is the set of elements of $A$ included in the $i$th ordered combination of $k$ elements; $B_{ki}$ is the set of ordered combinations of $k$ elements where the last element in the combination is not included in the $i$th ordered combination of $k - 1$ elements. The indexing of ordered combinations is arbitrary.
+
+Now, since $b_{kij} \neq b_{kij'}$ for $j \neq j'$, $|\tilde{b}_{ki}| = k$. Note also that $|B_{ki}| = |A| - |\tilde{b}_{k-1, i}| = n - (k - 1)$, $\{B_{ki}\}$ is a mutually disjoint collection, and that $B_k = \bigcup_i B_{ki}$. Then:
+
+$$
+|B_k| 
+= \left| \bigcup_{i = 1}^{|B_{k - 1}|} B_{ki} \right| 
+= \sum_{i = 1}^{|B_{k - 1}|} |B_{ki}| 
+= \sum_{i = 1}^{|B_{k - 1}|} \left[ n - (k - 1)\right] 
+= |B_{k - 1}| \left[ n - (k - 1)\right] 
+$$
+
+So by recursion: $$
+\begin{align*}
+|B_k| &= |B_{k - 1}| \left[ n - (k - 1)\right] \\
+&= |B_{k - 2}| \left[ n - (k - 2)\right] \left[ n - (k - 1)\right] \\ 
+&\;\;\vdots \\
+&= |B_1| \left[n - 1\right] \cdots \left[ n - (k - 2)\right] \left[ n - (k - 1)\right] \\
+&= n (n - 1) \cdots (n - (k - 1))
+\end{align*}
+$$
+:::
+
+**Sampling without replacement 2 (SWOR2)**. Let $A$ be a set with $|A| = n$. The Number of [unordered]{style="color:blue"} combinations of $k$ distinct elements drawn without replacement from $A$ is:
+
+$$
+\frac{n!}{k! (n - k)!} = \frac{n\cdot (n - 1)\cdot \cdots \cdot (n - k + 1)}{k \cdot (k - 1) \cdot \cdots \cdot 2 \cdot 1}
+$$
+
+::: callout-tip
+## Proof
+
+Let $B_k$ be the set of all *ordered* combinations of $k$ distinct elements drawn without replacement from $A$ (as in the proof of SWOR1) and consider: $$
+C_k = \{ \{a_{j_1}, \dots, a_{j_k}\} \subseteq A: j_i \neq j_{i'} \text{ for } i \neq i'\}
+\quad\text{(all subsets of size $k$)}
+$$
+
+The goal is to show that $|C_k| = \frac{n!}{k! (n - k)!}$. For each set $C_{kj} \in C_k$, denote the set of ordered combinations formed from elements of $C_{kj}$ by $B_{kj} = \{(a_{j_1}, \dots, a_{j_k}): a_{j_i} \in C_k\}$. Note that by construction, $\{B_{kj}\}$ is a partition of $B_k$. Further, $|C_{kj} = k|$, so by SWOR1 we have that $|B_{kj}| = \frac{k!}{(k - k)!} = k!$, and then:
+
+$$
+|B_k| = \left| \bigcup_{j = 1}^{|C_k|} B_{kj} \right| = \sum_{j = 1}^{|C_k|} |B_{kj}| = \sum_{j = 1}^{|C_k|} k! = |C_k| k!
+$$
+
+It follows that:
+
+$$
+|C_k| = \frac{|B_k|}{k!} = \frac{n!}{k! (n - k)!}
+$$
+:::
+
+The types of combinations resulting from sampling without replacement have special names: ordered combinations of distinct elements drawn without replacement are known as [permutations]{style="color:blue"}; and unordered combinations are known as [combinations]{style="color:blue"}. It is common to denote the corresponding counting rules with special notation:
+
+-   (permutations) $P^n_k$ or $P_{n, k}$ for $\frac{n!}{(n - k)!}$
+-   (combinations) $C^n_k$ or $C_{n, k}$ for $\frac{n!}{k! (n - k)!}$
+
+These won't be used in this class, but it's useful to be aware of the notation, as many books use them. We will, however, adopt the notation ${n \choose k}$ for unordered combinations of elements drawn with replacement; this is read "$n$ choose $k$", because the counting rule gives the number of ways to choose $k$ items from among $n$ possibilities.
+
+There are a few combination identities that will come in handy later. Proofs amount to simple arithmetic, and are left as exercises.
+
+-   ${n \choose k} = (k + 1){n \choose k + 1}$
+-   ${n + m \choose m} = {n + m \choose n}$
+
+**Sampling with replacement 2 (SWR2).** Let $A$ be a set with $|A| = n$. The number of [unordered]{style="color:blue"} combinations of $k$ (possibly nondistinct) elements drawn with replacement from $A$ is ${n + k - 1 \choose k}$.
+
+::: callout-tip
+## Proof
+
+The goal is to find $|D_k|$ where $D_k = \{D_{kj} = [a_{j_1}, \dots, a_{j_k}]: j_i \in \{1, \dots, n\}\}$. Define:
+
+$$
+x_{ij} = \# \text{ of times } a_i \text{ is included in } D_{kj}
+$$
+
+Then $\sum_{i = 1}^n x_{ij} = |D_{kj}| = k$ by construction. Denote by $x_j$ the vector $(x_{1j}, x_{2j}, \dots, x_{nj)$. Note that $D_{kj} = D_{kj'}$ just in case $x_j = x_{j'}$, and in fact there is a one-to-one correspondence between the elements of $D_k$ and the set $V = \{x \in \{0, 1, \dots, k\}^n: \sum_{i = 1}^n x_i = k \}$. Thus, $|D_k| = |V|$.
+
+Consider the encoding of $\sum_i x_{ij}$ for an arbitrary $x_j \in V$ that results from expanding the sum and replacing integers by the corresponding number of vertical bars, for instance:
+
+$$
+\begin{align*}
+\sum_{i = 1}^n x_{ij} 
+&= 1 + 2 + 0 + 0 + 0 + 0 + 1 + \dots + 3 + 0 + 1 + 0 + 0 \\
+&= | + || + + + + | + \cdots + ||| + + | + +
+\end{align*}
+$$ Now, each unique $x_j$ will correspond to a distinct encoding sequence of $|$ and $+$, and conversely each unique encoding sequence corresponds to exactly one $x_j$. Further, there are precisely $k$ bars and $n - 1$ plus signs, so each encoding string comprises $k + n - 1$ characters. The unique encoding sequences result from the distinct allocations of bars to positions in the encoding string. In other words, there are exactly as many encoding sequences as there are ways to place the $k$ bars among the $k + n - 1$ positions. Thus:
+
+$$
+|D_k| = |V| = \text{\# of ways to allocate $k$ bars to $n + k - 1$ positions} = {n + k - 1 \choose k}
+$$
+:::
+
+The table below summarizes the four counting rules.
+
+|               | Drawn with replacement | Drawn without replacement |
+|---------------|------------------------|---------------------------|
+| **Unordered** | $$                     
+                 {n + k - 1 \choose k}   
+                 $$                      | $$                        
+                                          {n \choose k}              
+                                          $$                         |
+| **Ordered**   | $$                     
+                 n^k                     
+                 $$                      | $$                        
+                                          \frac{n!}{(n - k)!}        
+                                          $$                         |
+
+: Counting rules.
