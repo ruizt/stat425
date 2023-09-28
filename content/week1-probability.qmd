@@ -134,7 +134,7 @@ The axioms have several fairly immediate consequences:
 
 Proofs follow in sequence.
 
-**Property 1.** Let $\{E_n\}$ be a collection of infinitely many null sets, so that $E_i = \emptyset$ for every $i \in \mathcal{N}$. Then by A3:
+**Property 1.** Let $\{E_n\}$ be a collection of infinitely many null sets, so that $E_i = \emptyset$ for every $i \in \mathbb{N}$. Then by A3:
 
 $$
 P(\emptyset) = P\left(\bigcup_{n = 1}^\infty E_n\right) = \sum_{n = 1}^\infty P(\emptyset) 
