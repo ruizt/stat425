@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="STAT425, Fall 2023">
-<meta name="dcterms.date" content="2023-09-28">
+<meta name="dcterms.date" content="2023-09-30">
 
 <title>STAT425 - Counting rules</title>
 <style>
@@ -119,7 +119,8 @@ gtag('config', 'G-H3YKZX4J88', { 'anonymize_ip': true});
    
   <ul>
   <li><a href="#finite-sample-spaces" id="toc-finite-sample-spaces" class="nav-link active" data-scroll-target="#finite-sample-spaces">Finite sample spaces</a></li>
-  <li><a href="#counting-combinations" id="toc-counting-combinations" class="nav-link" data-scroll-target="#counting-combinations">Counting combinations</a></li>
+  <li><a href="#counting-principles" id="toc-counting-principles" class="nav-link" data-scroll-target="#counting-principles">Counting principles</a></li>
+  <li><a href="#combinations-permutations-and-more" id="toc-combinations-permutations-and-more" class="nav-link" data-scroll-target="#combinations-permutations-and-more">Combinations, permutations, and more</a></li>
   </ul>
 </nav>
     </div>
@@ -145,7 +146,7 @@ gtag('config', 'G-H3YKZX4J88', { 'anonymize_ip': true});
     <div>
     <div class="quarto-title-meta-heading">Updated</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">September 28, 2023</p>
+      <p class="date">September 30, 2023</p>
     </div>
   </div>
   
@@ -188,10 +189,39 @@ P(E) = \sum_{i: x_i \in E} p_i = \sum_{i: x_i \in E} \frac{1}{|S|} = \frac{|E|}{
 \]</span></p>
 <p>Thus, for finite probability spaces with equally likely outcomes, computing event probabilities is a matter of <span style="color:blue">counting</span>. While conceptually straightforward, it is often nontrivial to count the elements in a set. For example, how would you count the number of ways to draw a 3-of-a-kind in a 5-card poker hand? In other words, how many distinct combinations of 5 cards contain exactly three of matching rank and no other matches? For that matter, how many 5-card poker hands are possible? Once you know the answer, finding the probability of a 3-of-a-kind (or obtaining one by drawing 5 cards at random, anyway) is easy; counting the outcomes is the tricky part.</p>
 </section>
-<section id="counting-combinations" class="level3">
-<h3 class="anchored" data-anchor-id="counting-combinations">Counting combinations</h3>
-<p>Many counting problems reduce to tabulating the possible combinations formed from drawing elements from small finite sets according to certain rules. Depending on whether elements are drawn with or without replacement (can you draw the same element twice?), how many elements are drawn, and whether a combination drawn in a different order is regarded as a distinct outcome, there are different formulae for counting combinations. These can be derived based on two simple <span style="color:blue">multiplication rules</span>.</p>
-<p><em>Note</em>: in what follows, assume that the elements of a set are distinct, <em>i.e.</em>, that if we write <span class="math inline">\(A = \{a_1, \dots, a_n\}\)</span>, then <span class="math inline">\(a_i \neq a_j\)</span> for <span class="math inline">\(i \neq j\)</span>. It would be highly unconventional to list the elements of a set in a way that includes duplicates, since, <em>e.g.</em>, <span class="math inline">\(\{0, 0, 1\} = \{0, 1\}\)</span> according to our definition of set identity.</p>
+<section id="counting-principles" class="level3">
+<h3 class="anchored" data-anchor-id="counting-principles">Counting principles</h3>
+<p><span style="color:blue">Multiplication rule (informally)</span>. In general, if a set of outcomes can be formed in <span class="math inline">\(k\)</span> steps and there are <span class="math inline">\(n_1, \dots, n_k\)</span> ways to complete each step, then there <span class="math inline">\(n_1 \times \cdots \times n_k\)</span> outcomes.</p>
+<p>The intuition behind this principle is that for each of the <span class="math inline">\(n_1\)</span> ways of completing the first step, there are <span class="math inline">\(n_2\)</span> ways to complete the second step, and hence, <span class="math inline">\(n_1 \times n_2\)</span> total possibilities; then, for each of those possibilities, <span class="math inline">\(n_3\)</span> ways to complete the third step, so <span class="math inline">\(n_1 \times n_2 \times n_3\)</span> possibilities for completing the first three steps; and so on.</p>
+<p>The term “step” is fairly loose, and need not correspond to a physical sequence of events. For example, one might represent that a playing card is specified in two steps by first selecting a suit, then a rank, even though, of course, one cannot physically choose a card in this way. “Steps” are just any systematic way of specifying outcome attributes; think of them like a recipe.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Example: choosing an outfit
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Suppose you have a wardrobe of 30 tops, 20 bottoms, and 10 footwear options.</p>
+<ol type="i">
+<li>How many outfits can you make?</li>
+<li>How many ways can you get dressed?</li>
+<li>If you choose an outfit at random, what is the probability of selecting each outfit?</li>
+<li>What about the probability of selecting an outfit with a specific top?</li>
+</ol>
+<p>These can all be answered .</p>
+<ol type="i">
+<li><p>For each of the 30 tops, you can pick any of 20 bottoms, and thus there are 600 distinct combinations of tops and bottoms; for each of those, there are 10 footwear options, making for 6000 total combinations. In other words, the number of outfits is <span class="math inline">\(30 \times 20 \times 10 = 6000\)</span>.</p></li>
+<li><p>Think of this as choosing an outfit and then choosing an order in which to put it on. No matter which outfit is chosen, there are 6 ways to put it on — 3 options for the first garment to put on; 2 options for the second garment, and 1 option for the last garment. So for each of the 6000 outfits, there are 6 orders: thus, 12,000 ways to get dressed. (No wonder it’s so hard to make up one’s mind sometimes.)</p></li>
+<li><p>If outfits are chosen at random, then every outfit is equally likely, so the probability that each outfit is selected is <span class="math inline">\(\frac{1}{6000} \approx 0.00017\)</span>.</p></li>
+<li><p>The number of outfits including a specific top is the number of combinations of 1 top with 20 bottoms with 10 footwear options, so there are <span class="math inline">\(1 \times 20\times 10 = 200\)</span> such outfits; the probability of selecting one of these outfits at random is <span class="math inline">\(\frac{1}{30} \approx 0.033\)</span>. (Note that this is the same as the probability of selecting a given top at random.)</p></li>
+</ol>
+<p>Notice that in (i), the same garments specified in a different order are not regarded as a distinct outfit — that is, the outcomes of interest are <span style="color:blue">unordered</span>. By contrast, in (ii), when the sequence that items are put on is considered, the outcomes of interest are <span style="color:blue">ordered</span>.</p>
+</div>
+</div>
+<p>The mathematical principle in use in the outfit example is that the cardinality of a Cartesian product is the product of the cardinalities. This is articulated formally below. Throughout, assume that the elements of a set are distinct, <em>i.e.</em>, that if we write <span class="math inline">\(A = \{a_1, \dots, a_n\}\)</span>, then <span class="math inline">\(a_i \neq a_j\)</span> for <span class="math inline">\(i \neq j\)</span>. (It would be highly unconventional to list the elements of a set in a way that includes duplicates, since, <em>e.g.</em>, <span class="math inline">\(\{0, 0, 1\} = \{0, 1\}\)</span> according to our definition of set identity.)</p>
 <p><span style="color:blue">Multiplication Rule 1</span>. Let <span class="math inline">\(A = \{a_1, \dots, a_n\}\)</span> and <span class="math inline">\(B = \{b_1, \dots, b_m\}\)</span>. The number of possible pairs <span class="math inline">\((a, b)\)</span> that can be formed from the two sets is <span class="math inline">\(n \times m\)</span>.</p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -253,13 +283,17 @@ Check your understanding
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<ol type="1">
-<li>If you’re buying nuts, apples, and cheese at the store and there are three kinds of nuts, four varieties of apples, and five cheeses, how many distinct purchases are possible if you only buy one kind of each item? Which multiplication rule did you use to determine an answer?</li>
-<li>In forming combinations, there are two common methods of drawing elements from a set – with or without replacement – and two common methods of recording draws – with or without the order in which elements were drawn. How many ways are there to form combinations? Which multiplication rule did you use to determine an answer?</li>
+<p>If you’re buying nuts, apples, and cheese at the store and there are three kinds of nuts, four varieties of apples, and five cheeses, how many distinct purchases are possible if you only buy one kind of each item?</p>
+<ol type="i">
+<li>Reason out an answer using the informal multiplication rule.</li>
+<li>Write the problem in terms of sets, and find the answer by multiplication rule 2.</li>
 </ol>
 </div>
 </div>
-<p>Now consider forming combinations of <span class="math inline">\(k\)</span> elements drawn from a finite set <span class="math inline">\(A = \{a_1, \dots, a_n\}\)</span> with <span class="math inline">\(|A| = n\)</span>. The number of combinations depends on how they are formed: by drawing with or without replacement, and by accounting for or ignoring the order in which elements were drawn. Formally, these methods correspond to the following sets:</p>
+</section>
+<section id="combinations-permutations-and-more" class="level3">
+<h3 class="anchored" data-anchor-id="combinations-permutations-and-more">Combinations, permutations, and more</h3>
+<p>Often a counting problem (or a step in a counting problem) involves forming combinations of <span class="math inline">\(k\)</span> elements drawn from a finite set <span class="math inline">\(A = \{a_1, \dots, a_n\}\)</span> with <span class="math inline">\(|A| = n\)</span>. The number of combinations depends on how they are formed: by drawing with or without replacement, and by accounting for or ignoring the order in which elements were drawn. Formally, these methods correspond to finding the cardinalities the following sets:</p>
 <ul>
 <li>(ordered, with replacement) <span class="math inline">\(\{(a_{j_1}, \dots, a_{j_k}): j_i \in \{1, \dots, n\}\}\)</span></li>
 <li>(ordered, without replacement) <span class="math inline">\(\{(a_{j_1}, \dots, a_{j_k}): j_i \in \{1, \dots, n\}; j_i \neq j_l \text{ for } i \neq l\}\)</span></li>
@@ -268,6 +302,7 @@ Check your understanding
 </ul>
 <p>In what follows, counting rules for each situation will be derived. The proofs rely in many instances on two facts: for disjoint sets <span class="math inline">\(A, B\)</span>, <span class="math inline">\(|A\cup B| = |A| + |B|\)</span>; and if <span class="math inline">\(A \subseteq B\)</span>, then <span class="math inline">\(|B\setminus A| = |B| - |A|\)</span>.</p>
 <p><strong>Sampling with replacement 1 (SWR1).</strong> Let <span class="math inline">\(A\)</span> be a set with <span class="math inline">\(|A| = n\)</span>. The number of <span style="color:blue">ordered</span> combinations of <span class="math inline">\(k\)</span> elements drawn <span style="color:blue">with replacement</span> from <span class="math inline">\(A\)</span> is <span class="math inline">\(n^k\)</span>.</p>
+<p>Informally, apply the multiplication principle thinking of each draw as one ‘step’; since items are replaced after each draw, there are always <span class="math inline">\(n\)</span> options at every step, so the number of possibilities is <span class="math inline">\(n \times \cdots \times n = n^k\)</span>. A more formal proof follows.</p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -288,6 +323,7 @@ Proof
 <p><span class="math display">\[
 \frac{n!}{(n - k)!} = n \times (n - 1) \times \cdots \times (n - k + 1)
 \]</span></p>
+<p>Using the informal multiplication rule considering each draw as a step, this result is fairly obvious: for the first draw there are <span class="math inline">\(n\)</span> options, for the second, one option has been removed so there are <span class="math inline">\(n - 1\)</span>, for the third option, there are <span class="math inline">\(n - 2\)</span>, and so on, until the <span class="math inline">\(k\)</span>th draw, at which point there are <span class="math inline">\(n - k + 1\)</span> options. The proof below essentially formalizes this argument in terms of sets.</p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -298,7 +334,8 @@ Proof
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Let <span class="math inline">\(B_k = \{(a_{j_1}, \dots, a_{j_k}): j_i \in \{1, \dots, n\}; j_i \neq j_l \text{ for } i \neq l\}\)</span>. The goal is to show that <span class="math inline">\(|B_k| = \frac{n!}{(n - k)!}\)</span> for arbitrary <span class="math inline">\(k\)</span>. Enumerate the elements of <span class="math inline">\(B_k\)</span> as <span class="math inline">\(B_k = \{b_{k1}, b_{k2}, \dots, b_{kn_k}\}\)</span>. For each element, <span class="math inline">\(b_{ki} = (b_{ki1}, \dots, b_{kik}) = (a_{j_{1_i}}, \dots, a_{j_{k_i}})\)</span> for some collection of distinct indices <span class="math inline">\(j_{1_i}, \dots, j_{k_i}\)</span>. Note also that <span class="math inline">\(B_1 = A\)</span>. Now define:</p>
+<p>Let <span class="math inline">\(B_k = \{(a_{j_1}, \dots, a_{j_k}): j_i \in \{1, \dots, n\}; j_i \neq j_l \text{ for } i \neq l\}\)</span>. The goal is to show that <span class="math inline">\(|B_k| = \frac{n!}{(n - k)!}\)</span> for arbitrary <span class="math inline">\(k\)</span>.</p>
+<p>Enumerate the elements of <span class="math inline">\(B_k\)</span> as <span class="math inline">\(B_k = \{b_{k1}, b_{k2}, \dots, b_{kn_k}\}\)</span>. For each element, <span class="math inline">\(b_{ki} = (b_{ki1}, \dots, b_{kik}) = (a_{j_{1_i}}, \dots, a_{j_{k_i}})\)</span> for some collection of distinct indices <span class="math inline">\(j_{1_i}, \dots, j_{k_i}\)</span>. Note also that <span class="math inline">\(B_1 = A\)</span>. Now define:</p>
 <p><span class="math display">\[
 \begin{align*}
 \tilde{b}_{ki} &amp;= \{b_{ki1}, \dots, b_{kik}\} \\
@@ -325,10 +362,39 @@ B_{ki} &amp;= \{b \in B_k: b_k \in A \setminus \tilde{b}_{k - 1, i}, (b_1, \dots
 \]</span></p>
 </div>
 </div>
-<p><strong>Sampling without replacement 2 (SWOR2)</strong>. Let <span class="math inline">\(A\)</span> be a set with <span class="math inline">\(|A| = n\)</span>. The Number of <span style="color:blue">unordered</span> combinations of <span class="math inline">\(k\)</span> distinct elements drawn without replacement from <span class="math inline">\(A\)</span> is:</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Example: the birthday problem
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><em>In a group of</em> <span class="math inline">\(n &lt; 365\)</span> <em>unrelated people, what is the probability that two or more share a birthday?</em></p>
+<p>Suppose the individuals are numbered <span class="math inline">\(1, \dots, n\)</span> and have birthdays <span class="math inline">\(b_1, \dots, b_n\)</span>. Represent the possible birthdays by the days of the year <span class="math inline">\(1, \dots, 365\)</span>. The sample space is the set of all possible collections of <span class="math inline">\(n\)</span> birthdays: <span class="math display">\[
+S = \{(b_1, \dots, b_n): b_i \in \{1, \dots, 365\}\} = \{1, \dots, 365\}^n
+\]</span></p>
+<p>Assuming that birthdays are allocated uniformly at random, each outcome is equally likely. Since it’s much easier to count the number of ways that all birthdays are different, consider the complementary event: <span class="math display">\[
+E = \{(b_1, \dots, b_n) \in S: b_i \neq b_j \text{ for } i \neq j\}
+\]</span></p>
+<p>Since <span class="math inline">\(S\)</span> is a set of ordered combinations of birthdays drawn with replacement, by SWR1 <span class="math inline">\(|S| = 365^n\)</span>. Since <span class="math inline">\(E\)</span> is a set of ordered combinations of birthdays drawn without replacement, by SWOR1 <span class="math inline">\(|E| = \frac{365!}{(365 - n)!}\)</span>. So: <span class="math display">\[
+P(\text{at least two shared birthdays}) = 1 - P(E) = 1 - \frac{365!}{365^n (365 - n)!}
+\]</span></p>
+<p>A plot of the probabilities is shown below.</p>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="week2-counting_files/figure-html/unnamed-chunk-1-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+</div>
+</div>
+<p><strong>Sampling without replacement 2 (SWOR2)</strong>. Let <span class="math inline">\(A\)</span> be a set with <span class="math inline">\(|A| = n\)</span>. The number of <span style="color:blue">unordered</span> combinations of <span class="math inline">\(k\)</span> distinct elements drawn without replacement from <span class="math inline">\(A\)</span> is:</p>
 <p><span class="math display">\[
 \frac{n!}{k! (n - k)!} = \frac{n\cdot (n - 1)\cdot \cdots \cdot (n - k + 1)}{k \cdot (k - 1) \cdot \cdots \cdot 2 \cdot 1}
 \]</span></p>
+<p>This result is also rather intuitive, given the SWOR1; for each unordered combination of elements drawn with replacement, by SWOR1 there are <span class="math inline">\(k!\)</span> possible ways to order the combination (form ordered combination of <span class="math inline">\(k\)</span> elements from <span class="math inline">\(k\)</span> options without replacement). One can then regard the number of ordered combinations as the result of choosing a combination and then choosing an order. So, by the multiplication rule, <span class="math inline">\((\#\text{ordered combinations}) = k! \times (\#\text{unordered combinations})\)</span>. The proof formalizes this argument.</p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -343,7 +409,8 @@ Proof
 C_k = \{ \{a_{j_1}, \dots, a_{j_k}\} \subseteq A: j_i \neq j_{i'} \text{ for } i \neq i'\}
 \quad\text{(all subsets of size $k$)}
 \]</span></p>
-<p>The goal is to show that <span class="math inline">\(|C_k| = \frac{n!}{k! (n - k)!}\)</span>. For each set <span class="math inline">\(C_{kj} \in C_k\)</span>, denote the set of ordered combinations formed from elements of <span class="math inline">\(C_{kj}\)</span> by <span class="math inline">\(B_{kj} = \{(a_{j_1}, \dots, a_{j_k}): a_{j_i} \in C_k\}\)</span>. Note that by construction, <span class="math inline">\(\{B_{kj}\}\)</span> is a partition of <span class="math inline">\(B_k\)</span>. Further, <span class="math inline">\(|C_{kj} = k|\)</span>, so by SWOR1 we have that <span class="math inline">\(|B_{kj}| = \frac{k!}{(k - k)!} = k!\)</span>, and then:</p>
+<p>The goal is to show that <span class="math inline">\(|C_k| = \frac{n!}{k! (n - k)!}\)</span>. For each set <span class="math inline">\(C_{kj} \in C_k\)</span>, denote the set of ordered combinations formed from elements of <span class="math inline">\(C_{kj}\)</span> by <span class="math inline">\(B_{kj} = \{(a_{j_1}, \dots, a_{j_k}): a_{j_i} \in C_k\}\)</span>.</p>
+<p>Note that by construction, <span class="math inline">\(\{B_{kj}\}\)</span> is a partition of <span class="math inline">\(B_k\)</span>. Further, <span class="math inline">\(|C_{kj} = k|\)</span>, so by SWOR1 we have that <span class="math inline">\(|B_{kj}| = \frac{k!}{(k - k)!} = k!\)</span>, and then:</p>
 <p><span class="math display">\[
 |B_k| = \left| \bigcup_{j = 1}^{|C_k|} B_{kj} \right| = \sum_{j = 1}^{|C_k|} |B_{kj}| = \sum_{j = 1}^{|C_k|} k! = |C_k| k!
 \]</span></p>
@@ -359,11 +426,43 @@ C_k = \{ \{a_{j_1}, \dots, a_{j_k}\} \subseteq A: j_i \neq j_{i'} \text{ for } i
 <li>(combinations) <span class="math inline">\(C^n_k\)</span> or <span class="math inline">\(C_{n, k}\)</span> for <span class="math inline">\(\frac{n!}{k! (n - k)!}\)</span></li>
 </ul>
 <p>These won’t be used in this class, but it’s useful to be aware of the notation, as many books use them. We will, however, adopt the notation <span class="math inline">\({n \choose k}\)</span> for unordered combinations of elements drawn with replacement; this is read “<span class="math inline">\(n\)</span> choose <span class="math inline">\(k\)</span>”, because the counting rule gives the number of ways to choose <span class="math inline">\(k\)</span> items from among <span class="math inline">\(n\)</span> possibilities.</p>
-<p>There are a few combination identities that will come in handy later. Proofs amount to simple arithmetic, and are left as exercises.</p>
-<ul>
-<li><span class="math inline">\({n \choose k} = (k + 1){n \choose k + 1}\)</span></li>
-<li><span class="math inline">\({n + m \choose m} = {n + m \choose n}\)</span></li>
-</ul>
+<!-- There are a few combination identities that will come in handy later. Proofs amount to simple arithmetic, and are left as exercises. -->
+<!-- -   ${n \choose k} = (k + 1){n \choose k + 1}$ -->
+<!-- -   ${n + m \choose m} = {n + m \choose n}$ -->
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Example: poker hands
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A typical poker hand is 5 playing cards drawn without replacement from a standard 52-card deck. The number of possible hands is the number of <em>unordered</em> combinations, because the same 5 cards drawn in any order yields the same hand. Thus the number of possible hands is:</p>
+<p><span class="math display">\[
+\#\text{hands} = {52\choose 5} = \frac{52!}{5!47!} = 2,598,960
+\]</span></p>
+<p>A 3-of-a-kind is a hand in which the rank of three cards matches, and the rank of the remaining two cards does not. How many distinct three-of-a-kind hands are there?</p>
+<p>The hand can be obtained in the following “steps”: (i) choose a rank for the three matching cards; (ii) choose the suits of the three matching cards; (iii) choose the ranks of the non-matching pair; (iv) choose the suits of the non-matching pair. Each “choice” amounts to an unordered combination drawn without replacement, because the same card can’t be selected twice and selecting the same cards in any order produces to the same hand. The ways to accomplish each step are as follows:</p>
+<ol type="i">
+<li>Choose 1 rank from 13 possibilities (A, 2, 3, …, 10, J, Q, K)</li>
+<li>Choose 3 suits from 4 possibilities (hears, spades, clubs, diamonds)</li>
+<li>Choose 2 ranks from 12 possibilities (13 ranks less the rank selected for the matching pair)</li>
+<li>Choose 1 suit from 4 possibilities</li>
+<li>Choose 1 suit from 4 possibilities.</li>
+</ol>
+<p>Thus: <span class="math display">\[
+\begin{align*}
+\#\text{ 3-of-a-kind hands}
+&amp;= {13\choose 1}\times {4\choose 3}\times {12\choose 2}\times {4\choose 1}\times {4\choose 1} \\
+&amp;= 13\times 4 \times 66 \times 4 \times 4 \\
+&amp;= 54912
+\end{align*}
+\]</span></p>
+<p>If a hand is drawn at random, the probability of a 3-of-a-kind is <span class="math inline">\(\frac{54912}{{52 \choose 5}} = \frac{54912}{2598960} \approx 0.0211\)</span>.</p>
+</div>
+</div>
 <p><strong>Sampling with replacement 2 (SWR2).</strong> Let <span class="math inline">\(A\)</span> be a set with <span class="math inline">\(|A| = n\)</span>. The number of <span style="color:blue">unordered</span> combinations of <span class="math inline">\(k\)</span> (possibly nondistinct) elements drawn with replacement from <span class="math inline">\(A\)</span> is <span class="math inline">\({n + k - 1 \choose k}\)</span>.</p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -379,7 +478,7 @@ Proof
 <p><span class="math display">\[
 x_{ij} = \# \text{ of times } a_i \text{ is included in } D_{kj}
 \]</span></p>
-<p>Then <span class="math inline">\(\sum_{i = 1}^n x_{ij} = |D_{kj}| = k\)</span> by construction. Denote by <span class="math inline">\(x_j\)</span> the vector <span class="math inline">\((x_{1j}, x_{2j}, \dots, x_{nj)\)</span>. Note that <span class="math inline">\(D_{kj} = D_{kj'}\)</span> just in case <span class="math inline">\(x_j = x_{j'}\)</span>, and in fact there is a one-to-one correspondence between the elements of <span class="math inline">\(D_k\)</span> and the set <span class="math inline">\(V = \{x \in \{0, 1, \dots, k\}^n: \sum_{i = 1}^n x_i = k \}\)</span>. Thus, <span class="math inline">\(|D_k| = |V|\)</span>.</p>
+<p>Then <span class="math inline">\(\sum_{i = 1}^n x_{ij} = |D_{kj}| = k\)</span> by construction. Denote by <span class="math inline">\(x_j\)</span> the vector <span class="math inline">\((x_{1j}, x_{2j}, \dots, x_{nj})\)</span>. Note that <span class="math inline">\(D_{kj} = D_{kj'}\)</span> just in case <span class="math inline">\(x_j = x_{j'}\)</span>, and in fact there is a one-to-one correspondence between the elements of <span class="math inline">\(D_k\)</span> and the set <span class="math inline">\(V = \{x \in \{0, 1, \dots, k\}^n: \sum_{i = 1}^n x_i = k \}\)</span>. Thus, <span class="math inline">\(|D_k| = |V|\)</span>.</p>
 <p>Consider the encoding of <span class="math inline">\(\sum_i x_{ij}\)</span> for an arbitrary <span class="math inline">\(x_j \in V\)</span> that results from expanding the sum and replacing integers by the corresponding number of vertical bars, for instance:</p>
 <p><span class="math display">\[
 \begin{align*}
@@ -393,13 +492,37 @@ x_{ij} = \# \text{ of times } a_i \text{ is included in } D_{kj}
 \]</span></p>
 </div>
 </div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Example: clown cars
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Suppose 50 clowns are organizing a three-car caravan. They have a polka dot car, a striped car, and a swirl car. They are trying to decide how many clowns should go in each car. How many options are there?</p>
+<p>Each arrangement is a grouping of the clowns into three groups — polka dot, stripes, swirls — so this can be thought of as sampling from the cars with replacement. The number of groupings is therefore: <span class="math display">\[
+{3 + 50 - 1 \choose 50} = {52\choose 50} = \frac{52\cdot 51}{2} = 1326
+\]</span> What about the number of configurations in which the polka dot car has at least 10 clowns? This can be done by assigning 10 clowns to the polka dot car and then allocating the remaining 40 clowns among the three cars, so the number of configurations is simply the number of ways to allocate 40 clowns to 3 cars: <span class="math display">\[
+{3 + 40 - 1 \choose 40} = {42\choose 40} = \frac{42\cdot 41}{2} = 861
+\]</span> What about the number of configurations in which the polka dot car has <em>exactly</em> 10 clowns? That amounts to allocating the remaining 40 clowns among only two cars: <span class="math display">\[
+{2 + 40 - 1 \choose 40} = {41\choose 40} = 41
+\]</span> Check your understanding:</p>
+<ol type="1">
+<li>What if each car must have at least one clown to drive and one to navigate?</li>
+<li>What is the probability that all cars have at least 10 clowns?</li>
+</ol>
+</div>
+</div>
 <p>The table below summarizes the four counting rules.</p>
 <table class="table">
 <caption>Counting rules.</caption>
 <colgroup>
-<col style="width: 22%">
-<col style="width: 36%">
-<col style="width: 40%">
+<col style="width: 26%">
+<col style="width: 35%">
+<col style="width: 38%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -411,21 +534,21 @@ x_{ij} = \# \text{ of times } a_i \text{ is included in } D_{kj}
 <tbody>
 <tr class="odd">
 <td><strong>Unordered</strong></td>
-<td><span class="math display">\[                     
-                 {n + k - 1 \choose k}   
-                 \]</span></td>
-<td><span class="math display">\[                        
-                                          {n \choose k}              
-                                          \]</span></td>
+<td><span class="math display">\[                                                                              
+                                                                    {n + k - 1 \choose k}         
+                                                                    \]</span></td>
+<td><span class="math display">\[                                                                                                                                                                                                                     
+                                                                                                                                                                                                                                                                                          {n \choose k}                    
+                                                                                                                                                                                                                                                                                          \]</span></td>
 </tr>
 <tr class="even">
 <td><strong>Ordered</strong></td>
-<td><span class="math display">\[                     
-                 n^k                     
-                 \]</span></td>
-<td><span class="math display">\[                        
-                                          \frac{n!}{(n - k)!}        
-                                          \]</span></td>
+<td><span class="math display">\[                                                                              
+                                                                    n^k                           
+                                                                    \]</span></td>
+<td><span class="math display">\[                                                                                                                                                                                                                     
+                                                                                                                                                                                                                                                                                          \frac{n!}{(n - k)!}              
+                                                                                                                                                                                                                                                                                          \]</span></td>
 </tr>
 </tbody>
 </table>

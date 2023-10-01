@@ -38,3 +38,27 @@ Class meetings:
 Assignment:
 
 -   [Homework 1](content/hw1.qmd) due Thursday 10/5
+
+### Week 2 (10/2/23)
+
+Suggested reading:
+
+-   DG&S 1.7 --- 1.10
+
+Lecture notes:
+
+-   \[[counting](content/week2-counting.qmd)\]
+
+Class meetings:
+
+-   ***Monday:*** wrap-up; probability on finite sample spaces
+
+-   ***Tuesday:*** counting principles and multiplication rules
+
+-   ***Wednesday:*** combinations and permutations
+
+-   ***Thursday:*** combinations and permutations
+
+<!-- Assignment: -->
+
+<!-- -   [Homework 1](content/hw2.qmd) due Thursday 10/12 -->

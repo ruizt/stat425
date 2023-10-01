@@ -55,9 +55,6 @@ Please prepare your solutions neatly, numbered, and in order; ideally, you'll wr
 
     -   for disjoint intervals $E_i$, $\int_{\bigcup_i E_i} dx = \sum_i \int_{E_i} dx$
 
-```{=html}
-<!-- -->
-```
 6.  Let $(S, \mathcal{S}, P)$ be a probability space, and let $\{E_i\}$ be a collection of events. Show that if $\{E_i\}$ is a finite or countable partition of any event $A \subseteq S$, then $\sum_i P(E_i) = P(A)$.
 
 7.  (Bonferroni inequality) Use results from class to show that $P\left(\bigcap_{i = 1}^n E_i\right) \geq 1 - \sum_{i = 1}^n P\left(E^C\right)$.
