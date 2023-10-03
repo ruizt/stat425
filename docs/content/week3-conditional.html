@@ -7,9 +7,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="STAT425, Fall 2023">
-<meta name="dcterms.date" content="2023-10-05">
+<meta name="dcterms.date" content="2023-10-03">
 
-<title>STAT425 - Homework 1</title>
+<title>STAT425 - Counting rules</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -121,7 +121,7 @@ gtag('config', 'G-H3YKZX4J88', { 'anonymize_ip': true});
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Homework 1</h1>
+<h1 class="title">Counting rules</h1>
 </div>
 
 
@@ -129,16 +129,16 @@ gtag('config', 'G-H3YKZX4J88', { 'anonymize_ip': true});
 <div class="quarto-title-meta">
 
     <div>
-    <div class="quarto-title-meta-heading">Course</div>
+    <div class="quarto-title-meta-heading">Course notes</div>
     <div class="quarto-title-meta-contents">
              <p>STAT425, Fall 2023 </p>
           </div>
   </div>
     
     <div>
-    <div class="quarto-title-meta-heading">Due in class on</div>
+    <div class="quarto-title-meta-heading">Updated</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">October 5, 2023</p>
+      <p class="date">October 3, 2023</p>
     </div>
   </div>
   
@@ -148,56 +148,23 @@ gtag('config', 'G-H3YKZX4J88', { 'anonymize_ip': true});
 
 </header>
 
-<p>Please prepare your solutions neatly, numbered, and in order; ideally, you’ll write up a final clean copy after completing all problems on scratch paper. Please note that if a prompt includes a question, you’re expected to support answers with reasoning, even if the prompt does not explicitly ask for a justification. Provide your name at the top of your submission, and if you collaborate with other students in the class, please list their names at the top of your submission beneath your own.</p>
-<ol type="1">
-<li><p>(Serial systems) In a <em>serial</em> system, components are linked together in such a way that the system only works if every component works. For example, consider a string of Christmas lights; if one light goes out, the whole string goes out. Suppose that one has a serial system with <span class="math inline">\(k\)</span> components that all function independently of one another. The state of the system can be represented by a binary vector <span class="math inline">\(x = (x_1, \dots, x_k)\)</span> where the coordinate <span class="math inline">\(x_i\)</span> indicates whether the <span class="math inline">\(i\)</span>th component is working. The relevant sample space is the set of all possible values of <span class="math inline">\(x\)</span>, that is, <span class="math inline">\(S = \{(x_1, \dots, x_k): x_i \in \{0, 1\}\}\)</span>, so that the system states are the outcomes, and the events are all possible subsets <span class="math inline">\(\mathcal{S} = 2^S\)</span>. Let <span class="math inline">\(E_i \in \mathcal{S}\)</span> denote the event that the <span class="math inline">\(i\)</span>th component works.</p>
-<ol type="i">
-<li>Express the sample space <span class="math inline">\(S\)</span> as a Cartesian product.</li>
-<li>Express the event <span class="math inline">\(E_i\)</span> as a set in terms of the system states <span class="math inline">\(x \in S\)</span>.</li>
-<li>List two distinct outcomes included in <span class="math inline">\(E_1\)</span> and two distinct outcomes included in <span class="math inline">\(E_2\)</span>.</li>
-<li>Is <span class="math inline">\(\{E_i\}\)</span> a disjoint collection? Why or why not?</li>
-<li>Find the number of system states <span class="math inline">\(|S|\)</span> and the number of possible events <span class="math inline">\(|\mathcal{S}|\)</span>.</li>
-</ol></li>
-<li><p>Continuing the example in the previous problem, express each of the following events in terms of the collection <span class="math inline">\(\{E_i\}\)</span>.</p>
-<ol type="i">
-<li>The first component works and the second component fails.</li>
-<li>The first three components work.</li>
-<li>The system works.</li>
-<li>The system fails.</li>
-<li>Exactly one component fails.</li>
-</ol></li>
-<li><p>Consider the monotone sequences of sets defined by <span class="math inline">\(A_n = [0, 1 + \frac{1}{n})\)</span> and <span class="math inline">\(B_n = [0, 1 - \frac{1}{n})\)</span>.</p>
-<ol type="i">
-<li>Is <span class="math inline">\(\{A_n\}\)</span> increasing or decreasing?</li>
-<li>Is <span class="math inline">\(\{B_n\}\)</span> increasing or decreasing?</li>
-<li>True or false: <span class="math inline">\(\lim_{n \rightarrow\infty} A_n = \lim_{n\rightarrow\infty} B_n\)</span>? Explain. (<em>Hint</em>: <span class="math inline">\(x \in \bigcup_n C_n\)</span> just in case <span class="math inline">\(x \in C_n\)</span> for at least one <span class="math inline">\(n\)</span>; similarly, <span class="math inline">\(x \in \bigcap_n C_n\)</span> just in case <span class="math inline">\(x \in C_n\)</span> for every <span class="math inline">\(n\)</span>.)</li>
-</ol></li>
-<li><p>Consider the “experiment” of rolling 2 six-sided dice, and denote the outcomes by pairs <span class="math inline">\((i, j)\)</span> where <span class="math inline">\(i, j \in \{1, 2, 3, 4, 5, 6\}\)</span>.</p>
-<ol type="i">
-<li>Write the sample space <span class="math inline">\(S\)</span> for this experiment, assuming the order of the dice does not matter (<em>i.e.</em>, <span class="math inline">\((3, 2) = (2, 3)\)</span>), and find <span class="math inline">\(|S|\)</span>.</li>
-<li>If <span class="math inline">\(P(E) = 1\)</span> whenever <span class="math inline">\(E = \{(1, 1)\}\)</span> and <span class="math inline">\(P(E) = 0\)</span> otherwise for <span class="math inline">\(E \in 2^S\)</span>, is <span class="math inline">\(P\)</span> a valid probability measure? Why or why not?</li>
-<li>If <span class="math inline">\(P(E) = 1\)</span> whenever <span class="math inline">\((1, 1) \in E\)</span> and <span class="math inline">\(P(E) = 0\)</span> otherwise for <span class="math inline">\(E \in 2^S\)</span>, is <span class="math inline">\(P\)</span> a valid probability measure? Why or why not?</li>
-</ol></li>
-<li><p>(Uniform distribution) [OPTIONAL] Consider the triple <span class="math inline">\((S, \mathcal{S}, P)\)</span> where:</p>
-<p><span class="math display">\[
-\begin{align*}
-S &amp;= [0, 1] \\
-\mathcal{S} &amp;= \left\{A \subseteq S: A \text{ is a countable union or intersection of open or closed intervals or their complements}\right\} \\
-P(E) &amp;= \int_E dx,\quad E\in\mathcal{S} \qquad\text{(i.e., total length of $E$)}
-\end{align*}
+<p>Let <span class="math inline">\((S, \mathcal{S}, P)\)</span> be a probability space and let <span class="math inline">\(A \in \mathcal{S}\)</span> be an event with <span class="math inline">\(P(A) &gt; 0\)</span>. The <span style="color:blue">conditional probability</span> of any event <span class="math inline">\(E\in\mathcal{S}\)</span> <span style="color:blue">given <span class="math inline">\(A\)</span></span> is defined as: <span class="math display">\[
+P(E\;|A) = \frac{P(E\cap A)}{P(A)}
 \]</span></p>
-<ol type="i">
-<li>Show that <span class="math inline">\((S, \mathcal{S}, P)\)</span> is a probability space by verifying the requisite conditions on <span class="math inline">\(\mathcal{S}\)</span> and <span class="math inline">\(P\)</span>.</li>
-<li>Let <span class="math inline">\(\mathcal{C}\)</span> denote the Cantor set. Show that <span class="math inline">\(P(\mathcal{C}) = 0\)</span>.</li>
-</ol>
-<p><em>Remark</em>: the integral <span class="math inline">\(\int_E dx\)</span> is defined as follows:</p>
+<p>This is interpreted as the chance of <span class="math inline">\(E\)</span> provided that <span class="math inline">\(A\)</span> has occurred. Importantly, <span class="math inline">\(E|A\)</span> is not an event; rather, <span class="math inline">\(P(\cdot\;| A)\)</span> is a new probability measure. To see this, check the axioms:</p>
 <ul>
-<li><p>for contiguous intervals, <span class="math inline">\(\int_{(a, b)} dx = \int_{[a, b]} dx = \int_{[a, b)} dx = \int_{(a, b]} dx = \int_a^b dx\)</span></p></li>
-<li><p>for disjoint intervals <span class="math inline">\(E_i\)</span>, <span class="math inline">\(\int_{\bigcup_i E_i} dx = \sum_i \int_{E_i} dx\)</span></p></li>
-</ul></li>
-<li><p>Let <span class="math inline">\((S, \mathcal{S}, P)\)</span> be a probability space, and let <span class="math inline">\(\{E_i\}\)</span> be a collection of events. Show that if <span class="math inline">\(\{E_i\}\)</span> is a finite or countable partition of any event <span class="math inline">\(A \subseteq S\)</span>, then <span class="math inline">\(\sum_i P(E_i) = P(A)\)</span>.</p></li>
-<li><p>(Bonferroni inequality) Use results from class to show that <span class="math inline">\(P\left(\bigcap_{i = 1}^n E_i\right) \geq 1 - \sum_{i = 1}^n P\left(E^C\right)\)</span>.</p></li>
-</ol>
+<li>(A1) Since <span class="math inline">\(P\)</span> is a probability measure, <span class="math inline">\(P(E\cap A) \geq 0\)</span>, so it follows <span class="math inline">\(P(E\;|A) = \frac{P(E\cap A)}{P(A)} \geq 0\)</span>.</li>
+<li>(A2) <span class="math inline">\(P(S\;|A) = \frac{P(S\cap A)}{P(A)} = \frac{P(A)}{P(A)} = 1\)</span></li>
+<li>(A3) If <span class="math inline">\(\{E_i\}\)</span> is a disjoint collection, then <span class="math inline">\(\{E_i \cap A\}\)</span> is also a disjoint collection, so by countable additivity of <span class="math inline">\(P\)</span>, one has: <span class="math display">\[
+P\left(\bigcup_i E_i \;\big|\; A\right) = \frac{P\left(\left[\bigcup_i E_i\right]\cap A\right)}{P(A)} = \frac{P\left(\bigcup_i (E_i\cap A)\right)}{P(A)} = \sum_i \frac{P(E_i\cap A)}{P(A)} = \sum_i P(E_i\;|A)
+\]</span></li>
+</ul>
+<p>One can view <span class="math inline">\(P(\cdot\;|A)\)</span> as a probability measure on <span class="math inline">\((S, \mathcal{S})\)</span>, or as a probability measure on <span class="math inline">\((A, \mathcal{S}^A)\)</span> where <span class="math inline">\(\mathcal{S}^A = \{E\cap A: E \in \mathcal{S}\}\)</span>. Some prefer the latter view, since it aligns with the interpretation that by conditioning on <span class="math inline">\(A\)</span> one is redefining the sample space.</p>
+<p>An immediate consequence of the definition is that: <span class="math display">\[
+P(E\cap A) = P(E\;| A) P(A)
+\]</span></p>
+<p>In fact, this <span style="color:blue">multiplication rule for conditional probabilities</span> can be generalized to an arbitrary finite collection of events: <span class="math display">\[
+\]</span></p>
 
 
 

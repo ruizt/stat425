@@ -1,0 +1,32 @@
+---
+title: "Counting rules"
+author: "STAT425, Fall 2023"
+author-title: "Course notes"
+date: today
+published-title: "Updated"
+---
+
+Let $(S, \mathcal{S}, P)$ be a probability space and let $A \in \mathcal{S}$ be an event with $P(A) > 0$. The [conditional probability]{style="color:blue"} of any event $E\in\mathcal{S}$ [given $A$]{style="color:blue"} is defined as:
+$$
+P(E\;|A) = \frac{P(E\cap A)}{P(A)}
+$$
+
+This is interpreted as the chance of $E$ provided that $A$ has occurred. Importantly, $E|A$ is not an event; rather, $P(\cdot\;| A)$ is a new probability measure. To see this, check the axioms:
+
+- (A1) Since $P$ is a probability measure, $P(E\cap A) \geq 0$, so it follows $P(E\;|A) = \frac{P(E\cap A)}{P(A)} \geq 0$.
+- (A2) $P(S\;|A) = \frac{P(S\cap A)}{P(A)} = \frac{P(A)}{P(A)} = 1$
+- (A3) If $\{E_i\}$ is a disjoint collection, then $\{E_i \cap A\}$ is also a disjoint collection, so by countable additivity of $P$, one has:
+$$
+P\left(\bigcup_i E_i \;\big|\; A\right) = \frac{P\left(\left[\bigcup_i E_i\right]\cap A\right)}{P(A)} = \frac{P\left(\bigcup_i (E_i\cap A)\right)}{P(A)} = \sum_i \frac{P(E_i\cap A)}{P(A)} = \sum_i P(E_i\;|A)
+$$
+
+One can view $P(\cdot\;|A)$ as a probability measure on $(S, \mathcal{S})$, or as a probability measure on $(A, \mathcal{S}^A)$ where $\mathcal{S}^A = \{E\cap A: E \in \mathcal{S}\}$. Some prefer the latter view, since it aligns with the interpretation that by conditioning on $A$ one is redefining the sample space.
+
+An immediate consequence of the definition is that:
+$$
+P(E\cap A) = P(E\;| A) P(A)
+$$
+
+In fact, this [multiplication rule for conditional probabilities]{style="color:blue"} can be generalized to an arbitrary finite collection of events:
+$$
+$$

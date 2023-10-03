@@ -4,6 +4,7 @@ author: "STAT425, Fall 2023"
 author-title: "Course"
 date: "10/5/2023"
 published-title: "Due in class on"
+# format: pdf
 ---
 
 Please prepare your solutions neatly, numbered, and in order; ideally, you'll write up a final clean copy after completing all problems on scratch paper. Please note that if a prompt includes a question, you're expected to support answers with reasoning, even if the prompt does not explicitly ask for a justification. Provide your name at the top of your submission, and if you collaborate with other students in the class, please list their names at the top of your submission beneath your own.
@@ -32,11 +33,11 @@ Please prepare your solutions neatly, numbered, and in order; ideally, you'll wr
 
 4.  Consider the "experiment" of rolling 2 six-sided dice, and denote the outcomes by pairs $(i, j)$ where $i, j \in \{1, 2, 3, 4, 5, 6\}$.
 
-    i.  Write the sample space $S$ for this experiment, assuming the order of the dice does not matter (*i.e.*, $(3, 2) = (2, 3)$, and find $|S|$.
-    ii. If $P(E) = 1$ whenever $E = (1, 1)$ and $P(E) = 0$ otherwise for $E \in 2^S$, is $P$ a valid probability measure? Why or why not?
+    i.  Write the sample space $S$ for this experiment, assuming the order of the dice does not matter (*i.e.*, $(3, 2) = (2, 3)$), and find $|S|$.
+    ii. If $P(E) = 1$ whenever $E = \{(1, 1)\}$ and $P(E) = 0$ otherwise for $E \in 2^S$, is $P$ a valid probability measure? Why or why not?
     iii. If $P(E) = 1$ whenever $(1, 1) \in E$ and $P(E) = 0$ otherwise for $E \in 2^S$, is $P$ a valid probability measure? Why or why not?
 
-5.  (Uniform distribution) Consider the triple $(S, \mathcal{S}, P)$ where:
+5.  (Uniform distribution) \[OPTIONAL\] Consider the triple $(S, \mathcal{S}, P)$ where:
 
     $$
     \begin{align*}

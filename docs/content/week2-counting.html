@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="STAT425, Fall 2023">
-<meta name="dcterms.date" content="2023-09-30">
+<meta name="dcterms.date" content="2023-10-03">
 
 <title>STAT425 - Counting rules</title>
 <style>
@@ -146,7 +146,7 @@ gtag('config', 'G-H3YKZX4J88', { 'anonymize_ip': true});
     <div>
     <div class="quarto-title-meta-heading">Updated</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">September 30, 2023</p>
+      <p class="date">October 3, 2023</p>
     </div>
   </div>
   
@@ -211,7 +211,7 @@ Example: choosing an outfit
 <li>If you choose an outfit at random, what is the probability of selecting each outfit?</li>
 <li>What about the probability of selecting an outfit with a specific top?</li>
 </ol>
-<p>These can all be answered .</p>
+<p>These can all be answered informally.</p>
 <ol type="i">
 <li><p>For each of the 30 tops, you can pick any of 20 bottoms, and thus there are 600 distinct combinations of tops and bottoms; for each of those, there are 10 footwear options, making for 6000 total combinations. In other words, the number of outfits is <span class="math inline">\(30 \times 20 \times 10 = 6000\)</span>.</p></li>
 <li><p>Think of this as choosing an outfit and then choosing an order in which to put it on. No matter which outfit is chosen, there are 6 ways to put it on — 3 options for the first garment to put on; 2 options for the second garment, and 1 option for the last garment. So for each of the 6000 outfits, there are 6 orders: thus, 12,000 ways to get dressed. (No wonder it’s so hard to make up one’s mind sometimes.)</p></li>
@@ -534,21 +534,21 @@ Example: clown cars
 <tbody>
 <tr class="odd">
 <td><strong>Unordered</strong></td>
-<td><span class="math display">\[                                                                              
-                                                                    {n + k - 1 \choose k}         
-                                                                    \]</span></td>
-<td><span class="math display">\[                                                                                                                                                                                                                     
-                                                                                                                                                                                                                                                                                          {n \choose k}                    
-                                                                                                                                                                                                                                                                                          \]</span></td>
+<td><span class="math display">\[                                                                                                                    
+                                                                                                      {n + k - 1 \choose k}             
+                                                                                                      \]</span></td>
+<td><span class="math display">\[                                                                                                                                                                                                                                                                                                                                                                                                                                                  
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         {n \choose k}                        
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         \]</span></td>
 </tr>
 <tr class="even">
 <td><strong>Ordered</strong></td>
-<td><span class="math display">\[                                                                              
-                                                                    n^k                           
-                                                                    \]</span></td>
-<td><span class="math display">\[                                                                                                                                                                                                                     
-                                                                                                                                                                                                                                                                                          \frac{n!}{(n - k)!}              
-                                                                                                                                                                                                                                                                                          \]</span></td>
+<td><span class="math display">\[                                                                                                                    
+                                                                                                      n^k                               
+                                                                                                      \]</span></td>
+<td><span class="math display">\[                                                                                                                                                                                                                                                                                                                                                                                                                                                  
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         \frac{n!}{(n - k)!}                  
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         \]</span></td>
 </tr>
 </tbody>
 </table>
