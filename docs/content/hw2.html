@@ -162,10 +162,38 @@ gtag('config', 'G-H3YKZX4J88', { 'anonymize_ip': true});
 <li>Find <span class="math inline">\(|S|\)</span> and <span class="math inline">\(p\)</span>.</li>
 <li>Find <span class="math inline">\(|E_k|\)</span> in terms of <span class="math inline">\(k\)</span>.</li>
 <li>Make a table of the probabilities <span class="math inline">\(P(E_k)\)</span>.</li>
-<li>Interpret the event <span class="math inline">\(\bigcup_{k = 1}^m E_k\)</span> and find <span class="math inline">\(P\left(\bigcup_{k = 1}^m E_k\right)\)</span> (assuming <span class="math inline">\(1\leq m \leq 12\)</span>).</li>
+<li>Interpret the event <span class="math inline">\(\bigcup_{k = 1}^m E_k\)</span> in words and find <span class="math inline">\(P\left(\bigcup_{k = 1}^m E_k\right)\)</span> (assuming <span class="math inline">\(1\leq m \leq 12\)</span>).</li>
+<li>Find the probability of rolling a sum smaller than or equal to 8.</li>
 </ol></li>
 </ol>
 <p><em>Hint</em>: you may find the proof of SWR2 helpful in answering part (ii); however, there are multiple ways to solve the problem.</p>
+<ol start="3" type="1">
+<li><p>Verify the following identities.</p>
+<ol type="i">
+<li><span class="math inline">\({n \choose k} = (k + 1){n \choose k + 1}\)</span></li>
+<li><span class="math inline">\({n + m \choose m} = {n + m \choose n}\)</span></li>
+<li><span class="math inline">\({n \choose 1} = {n \choose n - 1} = n\)</span></li>
+<li><span class="math inline">\({n \choose k} = {n \choose n - k}\)</span></li>
+<li><span class="math inline">\({n \choose k} = \frac{n}{k}{n - 1 \choose k - 1}\)</span></li>
+</ol></li>
+<li><p>Consider a lottery where players can choose 12 numbers between 0 and 50 (including 0 and 50) and one winning combination is drawn by randomly selecting one number at a time. Suppose there are three prizes: the biggest prize is awarded to a match of all numbers in the winning combination in sequence; the second biggest prize is awarded to a match of all numbers in the winning combination, but not in sequence; and a smaller cash prize is awarded for matching all but one number in the winning combination, and not necessarily in sequence.</p>
+<ol type="i">
+<li>What is the probability of winning each prize if player selections (and the winning combination) can include each number no more than once?</li>
+<li>What is the probability of winning each prize if player selections (and the winning combination) can include any number multiple times?</li>
+<li>What is the probability of winning any of the prizes under each of the scenarios in (i) and (ii)?</li>
+</ol></li>
+<li><p>Suppose that you have <span class="math inline">\(n\)</span> letters addressed to distinct recipients and <span class="math inline">\(n\)</span> envelopes addressed accordingly, and the letters are placed in the envelopes at random and mailed. Let <span class="math inline">\(A_i = i\text{th letter is placed in the correct envelope}\)</span>.</p>
+<ol type="i">
+<li>Find the probability that the <span class="math inline">\(i\)</span>th letter is placed in the correct envelope: determine <span class="math inline">\(P(A_i)\)</span>.</li>
+<li>Find the probability that the <span class="math inline">\(i\)</span>th and <span class="math inline">\(j\)</span>th letters are placed in the correct envelopes: determine <span class="math inline">\(P(A_i \cap A_j)\)</span> assuming <span class="math inline">\(1 \leq i &lt; j \leq n\)</span>.</li>
+<li>Find <span class="math inline">\(\sum_{1 \leq i &lt; j \leq n} P(A_i \cap A_j)\)</span>. (<em>Hint</em>: how many ways are there to choose two letters?)</li>
+<li>Find the probability that the <span class="math inline">\(i\)</span>th, <span class="math inline">\(j\)</span>th, and <span class="math inline">\(k\)</span>th letters are placed in the correct envelopes: determine <span class="math inline">\(P(A_i \cap A_j \cap A_k)\)</span> assuming <span class="math inline">\(1 \leq i &lt; j &lt; k \leq n\)</span>.</li>
+<li>Find <span class="math inline">\(\sum_{1 \leq i &lt; j &lt; k \leq n} P(A_i \cap A_j \cap A_k)\)</span>. (<em>Hint</em>: how many ways are there to choose three letters?)</li>
+<li>Find the probability that an arbitrary subcollection of <span class="math inline">\(i\)</span> letters (say, letters <span class="math inline">\(j_1, \dots, j_i\)</span>) are all placed in the right envelopes: determine <span class="math inline">\(P(A_{j_1}\cap A_{j2} \cap \cdots \cap A_{ji})\)</span> assuming <span class="math inline">\(1 \leq j_1 &lt; \cdots &lt; j_i \leq n\)</span>.</li>
+<li>Find <span class="math inline">\(\sum_{1 \leq j_1 &lt; \cdots &lt; j_i \leq 1} P(A_{j_1} \cap \cdots \cap A_{j_i})\)</span>.</li>
+<li>Use the inclusion-exclusion formula to find the probability that at least one letter is mailed to the correct recipient. What is the limit of this probability as <span class="math inline">\(n \rightarrow \infty\)</span>?</li>
+</ol></li>
+</ol>
 
 
 

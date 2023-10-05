@@ -291,7 +291,7 @@ Lastly, the probability of a finite union can be calculated explititly using wha
 **Theorem.** (Inclusion-exclusion) For any collection of events:
 
 $$
-P\left(\bigcup_{i = 1}^n E_i\right) (-1)^{i + 1} p_i
+P\left(\bigcup_{i = 1}^n E_i\right) = (-1)^{i + 1} p_i
 \quad\text{where}\quad
 p_i = \sum_{1 \leq j_1 < \cdots < j_i \leq n} P(E_{j_1} \cap \cdots \cap E_{j_i})
 $$

@@ -7,9 +7,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="STAT425, Fall 2023">
-<meta name="dcterms.date" content="2023-10-03">
+<meta name="dcterms.date" content="2023-10-05">
 
-<title>STAT425 - Counting rules</title>
+<title>STAT425 - Conditional probability</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -114,14 +114,22 @@ gtag('config', 'G-H3YKZX4J88', { 'anonymize_ip': true});
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#basic-properties" id="toc-basic-properties" class="nav-link active" data-scroll-target="#basic-properties">Basic properties</a></li>
+  <li><a href="#independence" id="toc-independence" class="nav-link" data-scroll-target="#independence">Independence</a></li>
+  <li><a href="#bayes-theorem" id="toc-bayes-theorem" class="nav-link" data-scroll-target="#bayes-theorem">Bayes’ theorem</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Counting rules</h1>
+<h1 class="title">Conditional probability</h1>
 </div>
 
 
@@ -138,7 +146,7 @@ gtag('config', 'G-H3YKZX4J88', { 'anonymize_ip': true});
     <div>
     <div class="quarto-title-meta-heading">Updated</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">October 3, 2023</p>
+      <p class="date">October 5, 2023</p>
     </div>
   </div>
   
@@ -159,14 +167,132 @@ P(E\;|A) = \frac{P(E\cap A)}{P(A)}
 P\left(\bigcup_i E_i \;\big|\; A\right) = \frac{P\left(\left[\bigcup_i E_i\right]\cap A\right)}{P(A)} = \frac{P\left(\bigcup_i (E_i\cap A)\right)}{P(A)} = \sum_i \frac{P(E_i\cap A)}{P(A)} = \sum_i P(E_i\;|A)
 \]</span></li>
 </ul>
-<p>One can view <span class="math inline">\(P(\cdot\;|A)\)</span> as a probability measure on <span class="math inline">\((S, \mathcal{S})\)</span>, or as a probability measure on <span class="math inline">\((A, \mathcal{S}^A)\)</span> where <span class="math inline">\(\mathcal{S}^A = \{E\cap A: E \in \mathcal{S}\}\)</span>. Some prefer the latter view, since it aligns with the interpretation that by conditioning on <span class="math inline">\(A\)</span> one is redefining the sample space.</p>
+<p>One can view <span class="math inline">\(P(\cdot\;|A)\)</span> as a probability measure on <span class="math inline">\((S, \mathcal{S})\)</span>, or as a probability measure on <span class="math inline">\(\left(A, \mathcal{S}^A\right)\)</span> where <span class="math inline">\(\mathcal{S}^A = \{E\cap A: E \in \mathcal{S}\}\)</span>. Some prefer the latter view, since it aligns with the interpretation that by conditioning on <span class="math inline">\(A\)</span> one is redefining the sample space.</p>
+<section id="basic-properties" class="level3">
+<h3 class="anchored" data-anchor-id="basic-properties">Basic properties</h3>
 <p>An immediate consequence of the definition is that: <span class="math display">\[
 P(E\cap A) = P(E\;| A) P(A)
 \]</span></p>
 <p>In fact, this <span style="color:blue">multiplication rule for conditional probabilities</span> can be generalized to an arbitrary finite collection of events: <span class="math display">\[
+P\left(\bigcap_{i = 1}^n E_i\right) = P(E_1) \times P(E_2\;|E_1) \times P(E_3\;|E_1 \cap E_2) \times\cdots\times P(E_n\;| E_1 \cap \cdots \cap E_{n - 1})
 \]</span></p>
+<p>Or, written more compactly: <span class="math display">\[
+P\left(\bigcap_{i = 1}^n E_i\right) = P(E_1) \times \prod_{i = 2}^n P\left(E_i \;\Bigg| \bigcap_{j = 1}^{i - 1} E_j \right)
+\]</span></p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Proof
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Apply the definition of conditional probability to the terms in the product on the right hand side to see that: <span class="math display">\[
+\begin{align*}
+P(E_1) \times \prod_{i = 2}^n P\left(E_i \;\Bigg| \bigcap_{j = 1}^{i - 1} E_j \right)
+&amp;= P(E_1) \times \prod_{j = 2}^n \left[\frac{P\left(\bigcap_{j = 1}^i E_j\right)}{P\left(\bigcap_{j = 1}^{i - 1} E_j \right)}\right] \\
+&amp;= P(E_1) \times \frac{P\left(\bigcap_{j = 1}^2 E_j\right)}{P\left( E_1 \right)}
+  \times \frac{P\left(\bigcap_{j = 1}^3 E_j\right)}{P\left(\bigcap_{j = 1}^{2} E_j \right)}
+  \times\cdots
+  \times \frac{P\left(\bigcap_{j = 1}^n E_j\right)}{P\left(\bigcap_{j = 1}^{n - 1} E_j \right)}
+\end{align*}
+\]</span> Then notice that all terms cancel, leaving only <span class="math inline">\(P\left(\bigcap_{j = 1}^n E_j\right)\)</span>, and establishing the result.</p>
+</div>
+</div>
+<p>The multiplication rule provides a convenient way to compute certain probabilities, as in some problems it’s easier to find a conditional probability than an unconditional one.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Example: (more) poker hands
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Consider drawing 5 cards at random. What’s the probability that all 5 are diamonds?</p>
+<p>This could be found by computing the total number of ways to draw 5 diamonds out of the total number of ways to draw 5 cards: <span class="math display">\[
+\frac{{13 \choose 5}}{{52 \choose 5}}
+= \frac{13!}{5!8!}\times\frac{5!47!}{52!}
+\]</span> Or, one can avoid evaluating the factorials and instead notice that the conditional probability of drawing a diamond given having already drawn <span class="math inline">\(k\)</span> diamonds is <span class="math inline">\(\frac{13 - k}{52 - k}\)</span> — the number of diamonds left as a proportion of the number of cards left — so: <span class="math display">\[
+P\left(\text{5 diamonds}\right) = \frac{13}{52}\times\frac{12}{51}\times\frac{11}{50}\times\frac{10}{49}\times\frac{9}{48} \approx 0.000495
+\]</span></p>
+<p>For a quick exercise, check the result by simplifying the factorials in the first solution.</p>
+<p>To see why this is an application of the multiplication rule for conditional probabilities more formally, let <span class="math inline">\(E_i = \{\text{draw a diamond on the $k$th draw}\}\)</span>. Then: <span class="math display">\[
+\begin{align*}
+P\left(\text{5 diamonds}\right)
+&amp;= P(E_1 \cap E_2 \cap E_3 \cap E_4 \cap E_5) \\
+&amp;= P(E_1)
+  \times P(E_2\;| E_1)
+  \times P(E_3\;| E_1 \cap E_2) \\
+  &amp;\qquad\times P(E_4 \;| E_1 \cap E_2 \cap E_3)
+  \times P(E_5\;| E_1 \cap E_2 \cap E_3 \cap E_4)
+\end{align*}
+\]</span></p>
+</div>
+</div>
+<p>Another useful property is the <span style="color:blue">law of total probability</span>: if <span class="math inline">\(\{A_i\}\)</span> is a partition of the sample space <span class="math inline">\(S\)</span>, then for any event <span class="math inline">\(E \in \mathcal{S}\)</span> one has: <span class="math display">\[
+P(E) = \sum_i P(E\;| A_i) P(A_i)
+\]</span></p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Proof
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Note that <span class="math inline">\(E = E \cap S = E\cap \left[\bigcup_i A_i\right] = \bigcup_i (E \cap A_i)\)</span>. Since <span class="math inline">\(\{A_i\}\)</span> is disjoint, so is <span class="math inline">\(\{E \cap A_i\}\)</span>. Then by countable additivity: <span class="math display">\[
+P(E) = P\left[\bigcup_i (E \cap A_i)\right] = \sum_i P(E \cap A_i)
+\]</span> And by the multiplication rule for conditional probabilities <span class="math inline">\(P(E\cap A_i) = P(E\;| A_i) P(A_i)\)</span> so: <span class="math display">\[
+P(E) = \sum_i P(E \cap A_i) = \sum_i P(E\;| A_i) P(A_i)
+\]</span></p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Example: CVD rates
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>It’s estimated that 8% of men and 0.5% of women have color vision deficiency (CVD). Supposing that exactly these proportions appear in a group of 400 women and 200 men, what’s the probability that a randomly selected individual has CVD?</p>
+<p>From the problem set-up:</p>
+<ul>
+<li><span class="math inline">\(P(\text{CVD}\;| M) = 0.08\)</span> and <span class="math inline">\(P(\text{CVD}\;| F) = 0.005\)</span></li>
+<li><span class="math inline">\(P(M) = \frac{1}{3}\)</span> and <span class="math inline">\(P(F) = \frac{2}{3}\)</span></li>
+</ul>
+<p>Note that these are the probabilities of selecting a person with the specified attributes from this group, assuming all individuals are equally likely to be selected. This is consistent with how we’ve defined probabilities for finite sample spaces. The meaning of the probability here comes from sampling from this group of people at random; these are not statements about the chance of having CVD, or being of one sex or the other, or the like.</p>
+<p>The law of total probability yields: <span class="math display">\[
+\begin{align*}
+P(\text{CVD})
+&amp;= P(\text{CVD}\;| M) P(M) + P(\text{CVD}\;| F) P(F) \\
+&amp;= 0.08 \cdot \frac{1}{3} + 0.005 \cdot\frac{2}{3} \\
+&amp;= 0.03
+\end{align*}
+\]</span></p>
+</div>
+</div>
+</section>
+<section id="independence" class="level3">
+<h3 class="anchored" data-anchor-id="independence">Independence</h3>
+<p>If two events are independent, then the occurrence of one event doesn’t affect the probability of the other. For example, obtaining heads in a coin toss doesn’t affect the chances of obtaining a heads in a subsequent toss.</p>
+<p>For <span style="color:blue">independent events</span>, conditioning on one event does not change the probability of the other: if <span class="math inline">\(E\)</span> and <span class="math inline">\(A\)</span> are independent then <span class="math inline">\(P(E\;|A) = P(E)\)</span>. Equivalently: <span class="math display">\[
+P(A \cap B) = P(A)P(B)
+\]</span></p>
+</section>
+<section id="bayes-theorem" class="level3">
+<h3 class="anchored" data-anchor-id="bayes-theorem">Bayes’ theorem</h3>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
