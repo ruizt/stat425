@@ -59,6 +59,6 @@ Class meetings:
 
 -   ***Thursday:*** combinations and permutations
 
-<!-- Assignment: -->
+Assignment:
 
-<!-- -   [Homework 1](content/hw2.qmd) due Thursday 10/12 -->
+-   [Homework 2](content/hw2.qmd) due Thursday 10/12
