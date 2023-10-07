@@ -7,9 +7,7 @@ published-title: 'Updated'
 ::: callout-note
 ## Announcements
 
--   HW1 due 10/5 in class; ***problem 5 is optional***
--   Week 2 notes posted
--   This week only, Thursday 1-3 office hour changed to W 2-3 and Th 1-2.
+-   HW2 due 10/6 in class
 :::
 
 This is the class website for Probability Theory (STAT 425) offered at Cal Poly in Fall 2023. Note that this site is for *both* sections (01-3585 held 4:10pm MTWR and 02-3430 held 5:10pm MTWR).

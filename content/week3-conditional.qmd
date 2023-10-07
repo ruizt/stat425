@@ -118,9 +118,77 @@ $$
 
 If two events are independent, then the occurrence of one event doesn't affect the probability of the other. For example, obtaining heads in a coin toss doesn't affect the chances of obtaining a heads in a subsequent toss.
 
-For [independent events]{style="color:blue"}, conditioning on one event does not change the probability of the other: if $E$ and $A$ are independent then $P(E\;|A) = P(E)$. Equivalently:
-$$
+By contrast, if two events are dependent, then the occurrence of one changes the probability of the other. For example, the likelihood of a car accident is higher in heavy rain.
+
+For [independent events]{style="color:blue"}, conditioning on one event does not change the probability of the other: if $E$ and $A$ are independent then $P(E\;|A) = P(E)$. Equivalently: $$
 P(A \cap B) = P(A)P(B)
 $$
+
+::: callout-note
+## Example: dice rolls
+
+Consider rolling two six-sided dice. The sample space for this experiment is $S = \{1, 2, 3, 4, 5, 6\}^2$, *i.e.*, all ordered pairs of integers between 1 and 6 corresponding to the physical possibilities for the two dice. If all outcomes are equally likely then $P((i, j)) = \frac{1}{|S|} = \frac{1}{36}$ for all $i, j \in \{1, \dots, 6\}$.
+
+In this scenario the value of the first die is independent of the value of the second die. While this is intuitively obvious, to see this probabilistically, let $A_x = \{(i, j) \in S: i = x\}$ denote the event that the first die is an $i$, and let $B_y = \{(i, j)\in S: j = y\}$ denote the event that the second die is a $j$. Now $|A_x| = |B_y| = 6$ for each $x$ and each $y$, so: $$
+P(A_x) = P(B_x) = \frac{6}{36} = \frac{1}{6} 
+$$ Then note that for any $x, y$, $A_x \cap B_y = \{(x, y)\}$, so: $$
+P(A_x \cap B_y) = \frac{1}{36} = \frac{1}{6}\times\frac{1}{6} = P(A_x)P(B_y)
+$$
+
+There are many probability measures on this space that are *not* equally likely but for which $A_x, B_y$ remain independent. For example, the table below shows probabilities assigned to each of the 36 possible rolls that are not equally likely, but it is easy to verify that the product of the probabilities in the row/column headers yields the probability in the corresponding cell.
+
+|                        | $P(B_1) = \frac{1}{3}$ | $P(B_2) = \frac{1}{6}$ | $P(B_3) = 0$   | $P(B_4) = \frac{1}{6}$ | $P(B_5) = \frac{1}{6}$ | $P(B_6) = \frac{1}{6}$ |
+|------------------------|------------------------|------------------------|----------------|------------------------|------------------------|------------------------|
+| $P(A_1) = \frac{1}{6}$ | $\frac{2}{36}$         | $\frac{1}{36}$         | $\frac{0}{36}$ | $\frac{1}{36}$         | $\frac{1}{36}$         | $\frac{1}{36}$         |
+| $P(A_2) = \frac{1}{6}$ | $\frac{2}{36}$         | $\frac{1}{36}$         | $\frac{0}{36}$ | $\frac{1}{36}$         | $\frac{1}{36}$         | $\frac{1}{36}$         |
+| $P(A_3) = \frac{1}{6}$ | $\frac{2}{36}$         | $\frac{1}{36}$         | $\frac{0}{36}$ | $\frac{1}{36}$         | $\frac{1}{36}$         | $\frac{1}{36}$         |
+| $P(A_4) = \frac{1}{6}$ | $\frac{2}{36}$         | $\frac{1}{36}$         | $\frac{0}{36}$ | $\frac{1}{36}$         | $\frac{1}{36}$         | $\frac{1}{36}$         |
+| $P(A_5) = \frac{1}{6}$ | $\frac{2}{36}$         | $\frac{1}{36}$         | $\frac{0}{36}$ | $\frac{1}{36}$         | $\frac{1}{36}$         | $\frac{1}{36}$         |
+| $P(A_6) = \frac{1}{6}$ | $\frac{2}{36}$         | $\frac{1}{36}$         | $\frac{0}{36}$ | $\frac{1}{36}$         | $\frac{1}{36}$         | $\frac{1}{36}$         |
+
+Now consider the following probability measure. Note it is still a valid probability measure because the entries in the table sum to one.
+
+|                        | $P(B_1) = \frac{11}{36}$ | $P(B_2) = \frac{7}{36}$ | $P(B_3) = 0$   | $P(B_4) = \frac{1}{6}$ | $P(B_5) = \frac{1}{6}$ | $P(B_6) = \frac{1}{6}$ |
+|------------------------|--------------------------|-------------------------|----------------|------------------------|------------------------|------------------------|
+| $P(A_1) = \frac{1}{6}$ | $\frac{2}{36}$           | $\frac{1}{36}$          | $\frac{0}{36}$ | $\frac{1}{36}$         | $\frac{1}{36}$         | $\frac{1}{36}$         |
+| $P(A_2) = \frac{1}{6}$ | $\frac{1}{36}$           | $\frac{2}{36}$          | $\frac{0}{36}$ | $\frac{1}{36}$         | $\frac{1}{36}$         | $\frac{1}{36}$         |
+| $P(A_3) = \frac{1}{6}$ | $\frac{2}{36}$           | $\frac{1}{36}$          | $\frac{0}{36}$ | $\frac{1}{36}$         | $\frac{1}{36}$         | $\frac{1}{36}$         |
+| $P(A_4) = \frac{1}{6}$ | $\frac{2}{36}$           | $\frac{1}{36}$          | $\frac{0}{36}$ | $\frac{1}{36}$         | $\frac{1}{36}$         | $\frac{1}{36}$         |
+| $P(A_5) = \frac{1}{6}$ | $\frac{2}{36}$           | $\frac{1}{36}$          | $\frac{0}{36}$ | $\frac{1}{36}$         | $\frac{1}{36}$         | $\frac{1}{36}$         |
+| $P(A_6) = \frac{1}{6}$ | $\frac{2}{36}$           | $\frac{1}{36}$          | $\frac{0}{36}$ | $\frac{1}{36}$         | $\frac{1}{36}$         | $\frac{1}{36}$         |
+
+Check your understanding:
+
+1.  Are $A_x, B_y$ independent under this probability measure? How do you check?
+2.  Write the a table of the probabilities $P(A_x | B_1)$.
+:::
+
+Note that independent events are *not* disjoint unless at least one event has probability zero. For any disjoint events $A, B$, one has $P(A \cap B) = P(\emptyset) = 0$, they cannot be independent unless either $P(A) = 0$ or $P(B) = 0$.
+
+A collection of events $\{E_i\}$ is [pairwise independent]{style="color:blue"} if for every pair of distinct events $E_i, E_j$ one has: $$
+P(E_i \cap E_j) = P(E_i)P(E_j)
+$$
+
+A collection of events $\{E_i\}$ is [mutually independent]{style="color:blue"} if for every $k$ and every subcollection of $k$ distinct events $E_{i_1}, \dots, E_{i_k}$: $$
+P\left(\bigcap_{j = 1}^k E_{i_j}\right) = \prod_{j = 1}^k P(E_{i_j})
+$$
+
+::: callout-note
+## Example
+
+Consider tossing two coins, so $S = \{HH, HT, TH, TT\}$, and assume all outcomes are equally likely. Define the events:
+
+$$
+\begin{align*}
+E_1 &= \{HH, HT\} \quad(\text{heads on first toss}) \\
+E_2 &= \{HH, TH\} \quad(\text{heads on second toss}) \\
+E_3 &= \{HH, TT\} \quad(\text{tosses match})
+\end{align*}
+$$
+
+Now, $P(E_i) = \frac{1}{2}$ for each $E_i$, since each has two outcomes, so $P(E_i)P(E_j) = \frac{1}{4}$. Moreover, $P(E_i \cap E_j) = P(\{HH\}) = \frac{1}{4}$ for each pair of events $i \neq j$, since $HH$ is the only shared outcome between any two events. However: $$
+P(E_1 \cap E_2 \cap E_3) = P(\{HH\}) = \frac{1}{4} \neq \frac{1}{8} = P(E_1)P(E_2)P(E_3)
+$$ So the events are pairwise independent, but not mutually independent.
+:::
 
 ### Bayes' theorem

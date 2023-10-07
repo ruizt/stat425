@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="STAT425, Fall 2023">
-<meta name="dcterms.date" content="2023-10-05">
+<meta name="dcterms.date" content="2023-10-06">
 
 <title>STAT425 - Conditional probability</title>
 <style>
@@ -146,7 +146,7 @@ gtag('config', 'G-H3YKZX4J88', { 'anonymize_ip': true});
     <div>
     <div class="quarto-title-meta-heading">Updated</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">October 5, 2023</p>
+      <p class="date">October 6, 2023</p>
     </div>
   </div>
   
@@ -284,9 +284,221 @@ P(\text{CVD})
 <section id="independence" class="level3">
 <h3 class="anchored" data-anchor-id="independence">Independence</h3>
 <p>If two events are independent, then the occurrence of one event doesn’t affect the probability of the other. For example, obtaining heads in a coin toss doesn’t affect the chances of obtaining a heads in a subsequent toss.</p>
+<p>By contrast, if two events are dependent, then the occurrence of one changes the probability of the other. For example, the likelihood of a car accident is higher in heavy rain.</p>
 <p>For <span style="color:blue">independent events</span>, conditioning on one event does not change the probability of the other: if <span class="math inline">\(E\)</span> and <span class="math inline">\(A\)</span> are independent then <span class="math inline">\(P(E\;|A) = P(E)\)</span>. Equivalently: <span class="math display">\[
 P(A \cap B) = P(A)P(B)
 \]</span></p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Example: dice rolls
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Consider rolling two six-sided dice. The sample space for this experiment is <span class="math inline">\(S = \{1, 2, 3, 4, 5, 6\}^2\)</span>, <em>i.e.</em>, all ordered pairs of integers between 1 and 6 corresponding to the physical possibilities for the two dice. If all outcomes are equally likely then <span class="math inline">\(P((i, j)) = \frac{1}{|S|} = \frac{1}{36}\)</span> for all <span class="math inline">\(i, j \in \{1, \dots, 6\}\)</span>.</p>
+<p>In this scenario the value of the first die is independent of the value of the second die. While this is intuitively obvious, to see this probabilistically, let <span class="math inline">\(A_x = \{(i, j) \in S: i = x\}\)</span> denote the event that the first die is an <span class="math inline">\(i\)</span>, and let <span class="math inline">\(B_y = \{(i, j)\in S: j = y\}\)</span> denote the event that the second die is a <span class="math inline">\(j\)</span>. Now <span class="math inline">\(|A_x| = |B_y| = 6\)</span> for each <span class="math inline">\(x\)</span> and each <span class="math inline">\(y\)</span>, so: <span class="math display">\[
+P(A_x) = P(B_x) = \frac{6}{36} = \frac{1}{6}
+\]</span> Then note that for any <span class="math inline">\(x, y\)</span>, <span class="math inline">\(A_x \cap B_y = \{(x, y)\}\)</span>, so: <span class="math display">\[
+P(A_x \cap B_y) = \frac{1}{36} = \frac{1}{6}\times\frac{1}{6} = P(A_x)P(B_y)
+\]</span></p>
+<p>There are many probability measures on this space that are <em>not</em> equally likely but for which <span class="math inline">\(A_x, B_y\)</span> remain independent. For example, the table below shows probabilities assigned to each of the 36 possible rolls that are not equally likely, but it is easy to verify that the product of the probabilities in the row/column headers yields the probability in the corresponding cell.</p>
+<table class="table">
+<colgroup>
+<col style="width: 15%">
+<col style="width: 15%">
+<col style="width: 15%">
+<col style="width: 10%">
+<col style="width: 15%">
+<col style="width: 15%">
+<col style="width: 15%">
+</colgroup>
+<thead>
+<tr class="header">
+<th></th>
+<th><span class="math inline">\(P(B_1) = \frac{1}{3}\)</span></th>
+<th><span class="math inline">\(P(B_2) = \frac{1}{6}\)</span></th>
+<th><span class="math inline">\(P(B_3) = 0\)</span></th>
+<th><span class="math inline">\(P(B_4) = \frac{1}{6}\)</span></th>
+<th><span class="math inline">\(P(B_5) = \frac{1}{6}\)</span></th>
+<th><span class="math inline">\(P(B_6) = \frac{1}{6}\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(P(A_1) = \frac{1}{6}\)</span></td>
+<td><span class="math inline">\(\frac{2}{36}\)</span></td>
+<td><span class="math inline">\(\frac{1}{36}\)</span></td>
+<td><span class="math inline">\(\frac{0}{36}\)</span></td>
+<td><span class="math inline">\(\frac{1}{36}\)</span></td>
+<td><span class="math inline">\(\frac{1}{36}\)</span></td>
+<td><span class="math inline">\(\frac{1}{36}\)</span></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(P(A_2) = \frac{1}{6}\)</span></td>
+<td><span class="math inline">\(\frac{2}{36}\)</span></td>
+<td><span class="math inline">\(\frac{1}{36}\)</span></td>
+<td><span class="math inline">\(\frac{0}{36}\)</span></td>
+<td><span class="math inline">\(\frac{1}{36}\)</span></td>
+<td><span class="math inline">\(\frac{1}{36}\)</span></td>
+<td><span class="math inline">\(\frac{1}{36}\)</span></td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(P(A_3) = \frac{1}{6}\)</span></td>
+<td><span class="math inline">\(\frac{2}{36}\)</span></td>
+<td><span class="math inline">\(\frac{1}{36}\)</span></td>
+<td><span class="math inline">\(\frac{0}{36}\)</span></td>
+<td><span class="math inline">\(\frac{1}{36}\)</span></td>
+<td><span class="math inline">\(\frac{1}{36}\)</span></td>
+<td><span class="math inline">\(\frac{1}{36}\)</span></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(P(A_4) = \frac{1}{6}\)</span></td>
+<td><span class="math inline">\(\frac{2}{36}\)</span></td>
+<td><span class="math inline">\(\frac{1}{36}\)</span></td>
+<td><span class="math inline">\(\frac{0}{36}\)</span></td>
+<td><span class="math inline">\(\frac{1}{36}\)</span></td>
+<td><span class="math inline">\(\frac{1}{36}\)</span></td>
+<td><span class="math inline">\(\frac{1}{36}\)</span></td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(P(A_5) = \frac{1}{6}\)</span></td>
+<td><span class="math inline">\(\frac{2}{36}\)</span></td>
+<td><span class="math inline">\(\frac{1}{36}\)</span></td>
+<td><span class="math inline">\(\frac{0}{36}\)</span></td>
+<td><span class="math inline">\(\frac{1}{36}\)</span></td>
+<td><span class="math inline">\(\frac{1}{36}\)</span></td>
+<td><span class="math inline">\(\frac{1}{36}\)</span></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(P(A_6) = \frac{1}{6}\)</span></td>
+<td><span class="math inline">\(\frac{2}{36}\)</span></td>
+<td><span class="math inline">\(\frac{1}{36}\)</span></td>
+<td><span class="math inline">\(\frac{0}{36}\)</span></td>
+<td><span class="math inline">\(\frac{1}{36}\)</span></td>
+<td><span class="math inline">\(\frac{1}{36}\)</span></td>
+<td><span class="math inline">\(\frac{1}{36}\)</span></td>
+</tr>
+</tbody>
+</table>
+<p>Now consider the following probability measure. Note it is still a valid probability measure because the entries in the table sum to one.</p>
+<table class="table">
+<colgroup>
+<col style="width: 14%">
+<col style="width: 15%">
+<col style="width: 15%">
+<col style="width: 9%">
+<col style="width: 14%">
+<col style="width: 14%">
+<col style="width: 14%">
+</colgroup>
+<thead>
+<tr class="header">
+<th></th>
+<th><span class="math inline">\(P(B_1) = \frac{11}{36}\)</span></th>
+<th><span class="math inline">\(P(B_2) = \frac{7}{36}\)</span></th>
+<th><span class="math inline">\(P(B_3) = 0\)</span></th>
+<th><span class="math inline">\(P(B_4) = \frac{1}{6}\)</span></th>
+<th><span class="math inline">\(P(B_5) = \frac{1}{6}\)</span></th>
+<th><span class="math inline">\(P(B_6) = \frac{1}{6}\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(P(A_1) = \frac{1}{6}\)</span></td>
+<td><span class="math inline">\(\frac{2}{36}\)</span></td>
+<td><span class="math inline">\(\frac{1}{36}\)</span></td>
+<td><span class="math inline">\(\frac{0}{36}\)</span></td>
+<td><span class="math inline">\(\frac{1}{36}\)</span></td>
+<td><span class="math inline">\(\frac{1}{36}\)</span></td>
+<td><span class="math inline">\(\frac{1}{36}\)</span></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(P(A_2) = \frac{1}{6}\)</span></td>
+<td><span class="math inline">\(\frac{1}{36}\)</span></td>
+<td><span class="math inline">\(\frac{2}{36}\)</span></td>
+<td><span class="math inline">\(\frac{0}{36}\)</span></td>
+<td><span class="math inline">\(\frac{1}{36}\)</span></td>
+<td><span class="math inline">\(\frac{1}{36}\)</span></td>
+<td><span class="math inline">\(\frac{1}{36}\)</span></td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(P(A_3) = \frac{1}{6}\)</span></td>
+<td><span class="math inline">\(\frac{2}{36}\)</span></td>
+<td><span class="math inline">\(\frac{1}{36}\)</span></td>
+<td><span class="math inline">\(\frac{0}{36}\)</span></td>
+<td><span class="math inline">\(\frac{1}{36}\)</span></td>
+<td><span class="math inline">\(\frac{1}{36}\)</span></td>
+<td><span class="math inline">\(\frac{1}{36}\)</span></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(P(A_4) = \frac{1}{6}\)</span></td>
+<td><span class="math inline">\(\frac{2}{36}\)</span></td>
+<td><span class="math inline">\(\frac{1}{36}\)</span></td>
+<td><span class="math inline">\(\frac{0}{36}\)</span></td>
+<td><span class="math inline">\(\frac{1}{36}\)</span></td>
+<td><span class="math inline">\(\frac{1}{36}\)</span></td>
+<td><span class="math inline">\(\frac{1}{36}\)</span></td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(P(A_5) = \frac{1}{6}\)</span></td>
+<td><span class="math inline">\(\frac{2}{36}\)</span></td>
+<td><span class="math inline">\(\frac{1}{36}\)</span></td>
+<td><span class="math inline">\(\frac{0}{36}\)</span></td>
+<td><span class="math inline">\(\frac{1}{36}\)</span></td>
+<td><span class="math inline">\(\frac{1}{36}\)</span></td>
+<td><span class="math inline">\(\frac{1}{36}\)</span></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(P(A_6) = \frac{1}{6}\)</span></td>
+<td><span class="math inline">\(\frac{2}{36}\)</span></td>
+<td><span class="math inline">\(\frac{1}{36}\)</span></td>
+<td><span class="math inline">\(\frac{0}{36}\)</span></td>
+<td><span class="math inline">\(\frac{1}{36}\)</span></td>
+<td><span class="math inline">\(\frac{1}{36}\)</span></td>
+<td><span class="math inline">\(\frac{1}{36}\)</span></td>
+</tr>
+</tbody>
+</table>
+<p>Check your understanding:</p>
+<ol type="1">
+<li>Are <span class="math inline">\(A_x, B_y\)</span> independent under this probability measure? How do you check?</li>
+<li>Write the a table of the probabilities <span class="math inline">\(P(A_x | B_1)\)</span>.</li>
+</ol>
+</div>
+</div>
+<p>Note that independent events are <em>not</em> disjoint unless at least one event has probability zero. For any disjoint events <span class="math inline">\(A, B\)</span>, one has <span class="math inline">\(P(A \cap B) = P(\emptyset) = 0\)</span>, they cannot be independent unless either <span class="math inline">\(P(A) = 0\)</span> or <span class="math inline">\(P(B) = 0\)</span>.</p>
+<p>A collection of events <span class="math inline">\(\{E_i\}\)</span> is <span style="color:blue">pairwise independent</span> if for every pair of distinct events <span class="math inline">\(E_i, E_j\)</span> one has: <span class="math display">\[
+P(E_i \cap E_j) = P(E_i)P(E_j)
+\]</span></p>
+<p>A collection of events <span class="math inline">\(\{E_i\}\)</span> is <span style="color:blue">mutually independent</span> if for every <span class="math inline">\(k\)</span> and every subcollection of <span class="math inline">\(k\)</span> distinct events <span class="math inline">\(E_{i_1}, \dots, E_{i_k}\)</span>: <span class="math display">\[
+P\left(\bigcap_{j = 1}^k E_{i_j}\right) = \prod_{j = 1}^k P(E_{i_j})
+\]</span></p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Example
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Consider tossing two coins, so <span class="math inline">\(S = \{HH, HT, TH, TT\}\)</span>, and assume all outcomes are equally likely. Define the events:</p>
+<p><span class="math display">\[
+\begin{align*}
+E_1 &amp;= \{HH, HT\} \quad(\text{heads on first toss}) \\
+E_2 &amp;= \{HH, TH\} \quad(\text{heads on second toss}) \\
+E_3 &amp;= \{HH, TT\} \quad(\text{tosses match})
+\end{align*}
+\]</span></p>
+<p>Now, <span class="math inline">\(P(E_i) = \frac{1}{2}\)</span> for each <span class="math inline">\(E_i\)</span>, since each has two outcomes, so <span class="math inline">\(P(E_i)P(E_j) = \frac{1}{4}\)</span>. Moreover, <span class="math inline">\(P(E_i \cap E_j) = P(\{HH\}) = \frac{1}{4}\)</span> for each pair of events <span class="math inline">\(i \neq j\)</span>, since <span class="math inline">\(HH\)</span> is the only shared outcome between any two events. However: <span class="math display">\[
+P(E_1 \cap E_2 \cap E_3) = P(\{HH\}) = \frac{1}{4} \neq \frac{1}{8} = P(E_1)P(E_2)P(E_3)
+\]</span> So the events are pairwise independent, but not mutually independent.</p>
+</div>
+</div>
 </section>
 <section id="bayes-theorem" class="level3">
 <h3 class="anchored" data-anchor-id="bayes-theorem">Bayes’ theorem</h3>
