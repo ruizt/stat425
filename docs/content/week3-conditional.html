@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="STAT425, Fall 2023">
-<meta name="dcterms.date" content="2023-10-06">
+<meta name="dcterms.date" content="2023-10-07">
 
 <title>STAT425 - Conditional probability</title>
 <style>
@@ -146,7 +146,7 @@ gtag('config', 'G-H3YKZX4J88', { 'anonymize_ip': true});
     <div>
     <div class="quarto-title-meta-heading">Updated</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">October 6, 2023</p>
+      <p class="date">October 7, 2023</p>
     </div>
   </div>
   
@@ -269,7 +269,7 @@ Example: CVD rates
 <li><span class="math inline">\(P(\text{CVD}\;| M) = 0.08\)</span> and <span class="math inline">\(P(\text{CVD}\;| F) = 0.005\)</span></li>
 <li><span class="math inline">\(P(M) = \frac{1}{3}\)</span> and <span class="math inline">\(P(F) = \frac{2}{3}\)</span></li>
 </ul>
-<p>Note that these are the probabilities of selecting a person with the specified attributes from this group, assuming all individuals are equally likely to be selected. This is consistent with how we’ve defined probabilities for finite sample spaces. The meaning of the probability here comes from sampling from this group of people at random; these are not statements about the chance of having CVD, or being of one sex or the other, or the like.</p>
+<p>Note that these are the probabilities of selecting a person with the specified attributes from this group, assuming all individuals are equally likely to be selected. This is consistent with how we’ve defined probabilities for finite sample spaces. In this case, the sample space is the collection of 600 individuals, and each individual is assigned selection probability <span class="math inline">\(\frac{1}{600}\)</span>. Thus, the meaning of the probability here comes from sampling from this group of people at random; importantly, these are not statements about the chance of having CVD, or being of one sex or the other, or the like.</p>
 <p>The law of total probability yields: <span class="math display">\[
 \begin{align*}
 P(\text{CVD})
@@ -285,9 +285,30 @@ P(\text{CVD})
 <h3 class="anchored" data-anchor-id="independence">Independence</h3>
 <p>If two events are independent, then the occurrence of one event doesn’t affect the probability of the other. For example, obtaining heads in a coin toss doesn’t affect the chances of obtaining a heads in a subsequent toss.</p>
 <p>By contrast, if two events are dependent, then the occurrence of one changes the probability of the other. For example, the likelihood of a car accident is higher in heavy rain.</p>
-<p>For <span style="color:blue">independent events</span>, conditioning on one event does not change the probability of the other: if <span class="math inline">\(E\)</span> and <span class="math inline">\(A\)</span> are independent then <span class="math inline">\(P(E\;|A) = P(E)\)</span>. Equivalently: <span class="math display">\[
-P(A \cap B) = P(A)P(B)
+<p>For <span style="color:blue">independent events</span>, conditioning on one event does not change the probability of the other. Thus, we say that any two events <span class="math inline">\(E\)</span> and <span class="math inline">\(A\)</span> are independent just in case: <span class="math display">\[
+P(E \cap A) = P(E)P(A)
 \]</span></p>
+<p>If so, we write <span class="math inline">\(E\perp A\)</span>.</p>
+<p>While it might be more intuitive to define independence according to the criterion <span class="math inline">\(P(E\;| A) = P(E)\)</span>, recall that <span class="math inline">\(P(E\;| A)\)</span> is undefined if <span class="math inline">\(P(A) = 0\)</span>. By using instead the (almost equivalent) criterion <span class="math inline">\(P(E \cap A) = P(E)P(A)\)</span>, the concept is still well-defined for events with probability zero.</p>
+<p>Note two facts:</p>
+<ul>
+<li><p>independent events are <em>not</em> disjoint unless at least one event has probability zero</p></li>
+<li><p>events with probability zero are independent of all other events, including themselves.</p></li>
+</ul>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Proof
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>For the first fact, observe that for any disjoint events <span class="math inline">\(A, B\)</span>, one has <span class="math inline">\(P(A \cap B) = P(\emptyset) = 0\)</span>, so <span class="math inline">\(P(A \cap B) = P(A)P(B)\)</span> cannot hold unless either <span class="math inline">\(P(A) = 0\)</span> or <span class="math inline">\(P(B) = 0\)</span>.</p>
+<p>For the second fact, if <span class="math inline">\(P(A) = 0\)</span>, then for any event <span class="math inline">\(B\)</span>, by monotonicity of the probability measure <span class="math inline">\(B \cap A \subseteq A\)</span> implies <span class="math inline">\(P(B\cap A) \leq P(A) = 0\)</span>, so <span class="math inline">\(P(B \cap A) = 0\)</span>. Therefore <span class="math inline">\(P(B\cap A) = P(A)P(B)\)</span>.</p>
+</div>
+</div>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -469,7 +490,6 @@ P(A_x \cap B_y) = \frac{1}{36} = \frac{1}{6}\times\frac{1}{6} = P(A_x)P(B_y)
 </ol>
 </div>
 </div>
-<p>Note that independent events are <em>not</em> disjoint unless at least one event has probability zero. For any disjoint events <span class="math inline">\(A, B\)</span>, one has <span class="math inline">\(P(A \cap B) = P(\emptyset) = 0\)</span>, they cannot be independent unless either <span class="math inline">\(P(A) = 0\)</span> or <span class="math inline">\(P(B) = 0\)</span>.</p>
 <p>A collection of events <span class="math inline">\(\{E_i\}\)</span> is <span style="color:blue">pairwise independent</span> if for every pair of distinct events <span class="math inline">\(E_i, E_j\)</span> one has: <span class="math display">\[
 P(E_i \cap E_j) = P(E_i)P(E_j)
 \]</span></p>
@@ -502,6 +522,129 @@ P(E_1 \cap E_2 \cap E_3) = P(\{HH\}) = \frac{1}{4} \neq \frac{1}{8} = P(E_1)P(E_
 </section>
 <section id="bayes-theorem" class="level3">
 <h3 class="anchored" data-anchor-id="bayes-theorem">Bayes’ theorem</h3>
+<p>In many circumstances one may be able to compute <span class="math inline">\(P(A\;| B)\)</span> but wish to know <span class="math inline">\(P(B\;| A)\)</span>. For example, you might have a good estimate for a diagnostic test of the probability that the test is positive given that a condition, illness, or pathogen is present, but what would really be much more useful to patients is the probability that one has the condition, illness, or pathogen given that they obtained a positive test result. The following theorem provides a means of accomplishing this.</p>
+<p><span style="color:blue">Bayes’ theorem.</span> If <span class="math inline">\(\{E_i\}\)</span> is a partition of <span class="math inline">\(S\)</span> and <span class="math inline">\(A\)</span> is an event with nonzero probability, then:</p>
+<p><span class="math display">\[
+P(E_i\;|A) = \frac{P(A\;| E_i) P(E_i)}{\sum_i P(A\;| E_i) P(E_i)}
+\]</span></p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Proof
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The result follows from the multiplication rule and the law of total probability. Since <span class="math inline">\(\{E_i\}\)</span> is a partition, <span class="math inline">\(P(A) = \sum_i P(A\;| E_i) P(E_i)\)</span>; further, <span class="math inline">\(P(E_i \cap A) = P(A\;| E_i) P(E_i)\)</span> Then: <span class="math display">\[
+P(E_i\;|A) = \frac{P(E_i \cap A)}{P(A)} = \frac{P(A\;| E_i) P(E_i)}{\sum_i P(A\;| E_i) P(E_i)}
+\]</span></p>
+</div>
+</div>
+<p>The probability <span class="math inline">\(P(E_i \;| A)\)</span> is referred to as the <span style="color:blue">posterior probability</span> and the probability <span class="math inline">\(P(E_i)\)</span> is referred to as the <span style="color:blue">prior probability</span>. The theorem provides a means of obtaining the posterior from the priors (assuming the conditional probabilities <span class="math inline">\(P(A\;| E_i)\)</span> can be computed) and is sometimes interpreted as a rule for ‘updating’ the probabilities <span class="math inline">\(P(E_i)\)</span>.</p>
+<p>As a special case, note that for any event <span class="math inline">\(E\)</span>, <span class="math inline">\(\{E, E^C\}\)</span> partition the sample space. Therefore: <span class="math display">\[
+P(E\;| A) = \frac{P(A\;| E) P(E)}{P(A\;| E) P(E) + P(A\;| E^C) P(E^C)}
+\]</span></p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Example: diagnostic test
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Consider a diagnostic test and let <span class="math inline">\(A\)</span> denote the event one has the condition of interest, <span class="math inline">\(T_+\)</span> denote the event one receives a positive test result, and <span class="math inline">\(T_-\)</span> denote the event one receives a negative test result. Assume that laboratory controls indicate that:</p>
+<p><span class="math display">\[
+\begin{align*}
+P(T_+ \;| A) &amp;= 0.99 \\
+P(T_- \;| A) &amp;= 0.05 \\
+P\left(T_+ \;| A^C\right) &amp;= 0.01 \\
+P\left(T_- \;| A^C\right) &amp;= 0.95
+\end{align*}
+\]</span> As an aside, <span class="math inline">\(P(T_+\;| A)\)</span> is the true positive rate, also known as the <em>sensitivity</em> of the test; <span class="math inline">\(P(T_- \;| A^C)\)</span> is the true negative rate, also known as the <em>specificity</em>. Note that although in this example, <span class="math inline">\(P(T_+ \;| A) + P(T_+ \;| A^C) = 1\)</span>, and likewise for <span class="math inline">\(T_-\)</span>, but this need not be the case.</p>
+<p>Suppose first that the condition has a prevalence of <span class="math inline">\(0.5\%\)</span> in the general population, so assume <span class="math inline">\(P(A) = 0.005\)</span>. Then the probability that one has the condition given a positive test result is: <span class="math display">\[
+\begin{align*}
+P(A \;| T_+)
+&amp;= \frac{P(T_+ \;| A) P(A)}{P(T_+ \;| A) P(A) + P\left(T_+ \;| A^C\right) P\left(A^C\right)} \\
+&amp;= \frac{(0.99)(0.005)}{(0.99)(0.005) + (0.01)(0.995)}\\
+&amp;\approx 0.33
+\end{align*}
+\]</span> Further, the probability that one has the condition given a negative test result is: <span class="math display">\[
+\begin{align*}
+P(A \;| T_-)
+&amp;= \frac{P(T_- \;| A) P(A)}{P(T_- \;| A) P(A) + P\left(T_- \;| A^C\right) P\left(A^C\right)}  \\
+&amp;= \frac{(0.05)(0.005)}{(0.05)(0.005) + (0.95)(0.995)} \\
+&amp;\approx 0.00026
+\end{align*}
+\]</span></p>
+<p>This usually comes as a surprise, given that the test appears to be fairly accurate, but somewhat prone to false negatives. What happens if the condition is more prevalent, say, present in <span class="math inline">\(5\%\)</span> of the population? In this scenario:</p>
+<p><span class="math display">\[
+\begin{align*}
+P(A \;| T_+)
+&amp;= \frac{(0.99)(0.05)}{(0.99)(0.05) + (0.01)(0.95)}
+\approx 0.84 \\
+P(A \;| T_-)
+&amp;= \frac{(0.05)(0.05)}{(0.05)(0.05) + (0.95)(0.95)}
+\approx 0.0028
+\end{align*}
+\]</span></p>
+<p>Try a few other scenarios on your own. First make a guess about how the posterior probability will change, and then check the calculation.</p>
+<ol type="1">
+<li>What happens if the false positive rate <span class="math inline">\(P\left(T_+\;| A^C\right)\)</span> is higher/lower, keeping everything else fixed?</li>
+<li>What happens if the false negative rate <span class="math inline">\(P\left(T_- \;| A)\right)\)</span> is higher/lower, keeping everything else fixed?</li>
+<li>What happens if the specificity increases to <span class="math inline">\(99.5\%\)</span> but the false negative rate increases to <span class="math inline">\(10\%\)</span>?</li>
+<li>What happens if the sensitivity decreases to <span class="math inline">\(91\%\)</span> but the false positive rate drops to <span class="math inline">\(0.1\%\)</span>?</li>
+</ol>
+</div>
+</div>
+<p>The <span style="color:blue">odds</span> of an event <span class="math inline">\(E\)</span> usually refers to the ratio <span class="math inline">\(\frac{P(E)}{P\left(E^C\right)}\)</span>, but to be more precise, this is really the odds of <span class="math inline">\(E\)</span> <em>relative to its complement</em> <span class="math inline">\(E^C\)</span>. More generally, for any two events <span class="math inline">\(E_1, E_2\)</span>: <span class="math display">\[
+\text{odds}\left(E_1, E_2\right) = \frac{P(E_1)}{P(E_2)}
+\]</span> The value of the odds gives the factor by which <span class="math inline">\(E_1\)</span> is more likely than <span class="math inline">\(E_2\)</span>, and:</p>
+<ul>
+<li>if <span class="math inline">\(\text{odds}\left(E_1, E_2\right) = 1\)</span>, the events are equally likely;</li>
+<li>if <span class="math inline">\(\text{odds}\left(E_1, E_2\right) &lt; 1\)</span>, <span class="math inline">\(E_2\)</span> is more likely than <span class="math inline">\(E_1\)</span>;</li>
+<li>if <span class="math inline">\(\text{odds}\left(E_1, E_2\right) &gt; 1\)</span>, <span class="math inline">\(E_1\)</span> is more likely than <span class="math inline">\(E_2\)</span>.</li>
+</ul>
+<p>The <span style="color:blue">conditional odds</span> of one event relative to another is defined identically but with a conditional probability measure: <span class="math display">\[
+\text{odds}\left(E_1, E_2 \;| A\right) = \frac{P(E_1 \;| A)}{P(E_2\;| A)}
+\]</span> One way to understand the diagnostic test example is that, although the probability of having the condition given a positive result is low, conditioning on the test result increases the posterior odds substantially.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Example: diagnostic test (cont’d)
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The prior odds of having the condition are: <span class="math display">\[
+\text{odds}\left(A, A^C\right) = \frac{P(A)}{P\left(A^C\right)} = \frac{0.005}{0.995} = 0.0005
+\]</span> But the posterior odds after conditioning on <span class="math inline">\(T_+\)</span> are: <span class="math display">\[
+\text{odds}\left(A, A^C \;| T_+\right) = \frac{P(A\;| T_+)}{P\left(A^C \;| T_+\right)} = \frac{0.33}{0.67} \approx 0.493
+\]</span> So the odds increase by a factor of <span class="math inline">\(\frac{0.493}{0.0005} \approx 985\)</span> by conditioning on a positive test result.</p>
+</div>
+</div>
+<p>There is an <span style="color:blue">odds form of Bayes’ theorem</span>, which states that under the same conditions as the original result, the posterior odds are the prior odds multiplied by a ‘Bayes factor’: <span class="math display">\[
+\text{odds}\left(E_i, E_j\;| A\right) = \text{odds}(E_i, E_j) \cdot \frac{P(A\;| E_i)}{P(A\;| E_j)}
+\]</span> The result follows from the definition of conditional odds and application of Bayes’ theorem to the conditional probabilities <span class="math inline">\(P(E_i\;| A)\)</span>, and the proof is left as an exercise.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Example: the Monty Hall problem
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>This is a classic probability problem named after the original host of the game show <em>Let’s Make a Deal</em>. The scenario is this: on a game show, you’re presented with three doors; behind one door is a car, and behind the other two are goats. If you pick the door concealing a car, you win the car (although no one ever explains whether, if you pick otherwise, you win a goat). You choose a door; then the host opens one of the remaining doors, revealing a goat, and asks you if you want to stay with your original guess, or switch. Are you more likely to win the car if you stay, or if you switch?</p>
+<p>We’ll work out the solution in class.</p>
+</div>
+</div>
 
 
 </section>

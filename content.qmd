@@ -62,3 +62,27 @@ Class meetings:
 Assignment:
 
 -   [Homework 2](content/hw2.qmd) due Thursday 10/12
+
+### Week 3 (10/9/23)
+
+Suggested reading:
+
+-   DG&S 2.1 --- 2.4
+
+Lecture notes:
+
+-   \[[counting](content/week3-conditional.qmd)\]
+
+Class meetings:
+
+-   ***Monday:*** conditional probability and basic properties
+
+-   ***Tuesday:*** independence
+
+-   ***Wednesday:*** Bayes' theorem
+
+-   ***Thursday:*** odds and conditional odds
+
+<!-- Assignment: -->
+
+<!-- -   [Homework 2](content/hw2.qmd) due Thursday 10/12 -->

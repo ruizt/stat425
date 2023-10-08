@@ -102,7 +102,7 @@ From the problem set-up:
 -   $P(\text{CVD}\;| M) = 0.08$ and $P(\text{CVD}\;| F) = 0.005$
 -   $P(M) = \frac{1}{3}$ and $P(F) = \frac{2}{3}$
 
-Note that these are the probabilities of selecting a person with the specified attributes from this group, assuming all individuals are equally likely to be selected. This is consistent with how we've defined probabilities for finite sample spaces. The meaning of the probability here comes from sampling from this group of people at random; these are not statements about the chance of having CVD, or being of one sex or the other, or the like.
+Note that these are the probabilities of selecting a person with the specified attributes from this group, assuming all individuals are equally likely to be selected. This is consistent with how we've defined probabilities for finite sample spaces. In this case, the sample space is the collection of 600 individuals, and each individual is assigned selection probability $\frac{1}{600}$. Thus, the meaning of the probability here comes from sampling from this group of people at random; importantly, these are not statements about the chance of having CVD, or being of one sex or the other, or the like.
 
 The law of total probability yields: $$
 \begin{align*}
@@ -120,9 +120,27 @@ If two events are independent, then the occurrence of one event doesn't affect t
 
 By contrast, if two events are dependent, then the occurrence of one changes the probability of the other. For example, the likelihood of a car accident is higher in heavy rain.
 
-For [independent events]{style="color:blue"}, conditioning on one event does not change the probability of the other: if $E$ and $A$ are independent then $P(E\;|A) = P(E)$. Equivalently: $$
-P(A \cap B) = P(A)P(B)
+For [independent events]{style="color:blue"}, conditioning on one event does not change the probability of the other. Thus, we say that any two events $E$ and $A$ are independent just in case: $$
+P(E \cap A) = P(E)P(A)
 $$
+
+If so, we write $E\perp A$.
+
+While it might be more intuitive to define independence according to the criterion $P(E\;| A) = P(E)$, recall that $P(E\;| A)$ is undefined if $P(A) = 0$. By using instead the (almost equivalent) criterion $P(E \cap A) = P(E)P(A)$, the concept is still well-defined for events with probability zero.
+
+Note two facts:
+
+-   independent events are *not* disjoint unless at least one event has probability zero
+
+-   events with probability zero are independent of all other events, including themselves.
+
+::: callout-tip
+## Proof
+
+For the first fact, observe that for any disjoint events $A, B$, one has $P(A \cap B) = P(\emptyset) = 0$, so $P(A \cap B) = P(A)P(B)$ cannot hold unless either $P(A) = 0$ or $P(B) = 0$.
+
+For the second fact, if $P(A) = 0$, then for any event $B$, by monotonicity of the probability measure $B \cap A \subseteq A$ implies $P(B\cap A) \leq P(A) = 0$, so $P(B \cap A) = 0$. Therefore $P(B\cap A) = P(A)P(B)$.
+:::
 
 ::: callout-note
 ## Example: dice rolls
@@ -163,8 +181,6 @@ Check your understanding:
 2.  Write the a table of the probabilities $P(A_x | B_1)$.
 :::
 
-Note that independent events are *not* disjoint unless at least one event has probability zero. For any disjoint events $A, B$, one has $P(A \cap B) = P(\emptyset) = 0$, they cannot be independent unless either $P(A) = 0$ or $P(B) = 0$.
-
 A collection of events $\{E_i\}$ is [pairwise independent]{style="color:blue"} if for every pair of distinct events $E_i, E_j$ one has: $$
 P(E_i \cap E_j) = P(E_i)P(E_j)
 $$
@@ -192,3 +208,110 @@ $$ So the events are pairwise independent, but not mutually independent.
 :::
 
 ### Bayes' theorem
+
+In many circumstances one may be able to compute $P(A\;| B)$ but wish to know $P(B\;| A)$. For example, you might have a good estimate for a diagnostic test of the probability that the test is positive given that a condition, illness, or pathogen is present, but what would really be much more useful to patients is the probability that one has the condition, illness, or pathogen given that they obtained a positive test result. The following theorem provides a means of accomplishing this.
+
+[Bayes' theorem.]{style="color:blue"} If $\{E_i\}$ is a partition of $S$ and $A$ is an event with nonzero probability, then:
+
+$$
+P(E_i\;|A) = \frac{P(A\;| E_i) P(E_i)}{\sum_i P(A\;| E_i) P(E_i)}
+$$
+
+::: callout-tip
+## Proof
+
+The result follows from the multiplication rule and the law of total probability. Since $\{E_i\}$ is a partition, $P(A) = \sum_i P(A\;| E_i) P(E_i)$; further, $P(E_i \cap A) = P(A\;| E_i) P(E_i)$ Then: $$
+P(E_i\;|A) = \frac{P(E_i \cap A)}{P(A)} = \frac{P(A\;| E_i) P(E_i)}{\sum_i P(A\;| E_i) P(E_i)}
+$$
+:::
+
+The probability $P(E_i \;| A)$ is referred to as the [posterior probability]{style="color:blue"} and the probability $P(E_i)$ is referred to as the [prior probability]{style="color:blue"}. The theorem provides a means of obtaining the posterior from the priors (assuming the conditional probabilities $P(A\;| E_i)$ can be computed) and is sometimes interpreted as a rule for 'updating' the probabilities $P(E_i)$.
+
+As a special case, note that for any event $E$, $\{E, E^C\}$ partition the sample space. Therefore: $$
+P(E\;| A) = \frac{P(A\;| E) P(E)}{P(A\;| E) P(E) + P(A\;| E^C) P(E^C)} 
+$$
+
+::: callout-note
+## Example: diagnostic test
+
+Consider a diagnostic test and let $A$ denote the event one has the condition of interest, $T_+$ denote the event one receives a positive test result, and $T_-$ denote the event one receives a negative test result. Assume that laboratory controls indicate that:
+
+$$
+\begin{align*}
+P(T_+ \;| A) &= 0.99 \\
+P(T_- \;| A) &= 0.05 \\
+P\left(T_+ \;| A^C\right) &= 0.01 \\
+P\left(T_- \;| A^C\right) &= 0.95 
+\end{align*}
+$$ As an aside, $P(T_+\;| A)$ is the true positive rate, also known as the *sensitivity* of the test; $P(T_- \;| A^C)$ is the true negative rate, also known as the *specificity*. Note that although in this example, $P(T_+ \;| A) + P(T_+ \;| A^C) = 1$, and likewise for $T_-$, but this need not be the case.
+
+Suppose first that the condition has a prevalence of $0.5\%$ in the general population, so assume $P(A) = 0.005$. Then the probability that one has the condition given a positive test result is: $$
+\begin{align*}
+P(A \;| T_+) 
+&= \frac{P(T_+ \;| A) P(A)}{P(T_+ \;| A) P(A) + P\left(T_+ \;| A^C\right) P\left(A^C\right)} \\
+&= \frac{(0.99)(0.005)}{(0.99)(0.005) + (0.01)(0.995)}\\
+&\approx 0.33
+\end{align*}
+$$ Further, the probability that one has the condition given a negative test result is: $$
+\begin{align*}
+P(A \;| T_-) 
+&= \frac{P(T_- \;| A) P(A)}{P(T_- \;| A) P(A) + P\left(T_- \;| A^C\right) P\left(A^C\right)}  \\
+&= \frac{(0.05)(0.005)}{(0.05)(0.005) + (0.95)(0.995)} \\
+&\approx 0.00026
+\end{align*}
+$$
+
+This usually comes as a surprise, given that the test appears to be fairly accurate, but somewhat prone to false negatives. What happens if the condition is more prevalent, say, present in $5\%$ of the population? In this scenario:
+
+$$
+\begin{align*}
+P(A \;| T_+) 
+&= \frac{(0.99)(0.05)}{(0.99)(0.05) + (0.01)(0.95)} 
+\approx 0.84 \\
+P(A \;| T_-) 
+&= \frac{(0.05)(0.05)}{(0.05)(0.05) + (0.95)(0.95)}
+\approx 0.0028
+\end{align*}
+$$
+
+Try a few other scenarios on your own. First make a guess about how the posterior probability will change, and then check the calculation.
+
+1.  What happens if the false positive rate $P\left(T_+\;| A^C\right)$ is higher/lower, keeping everything else fixed?
+2.  What happens if the false negative rate $P\left(T_- \;| A)\right)$ is higher/lower, keeping everything else fixed?
+3.  What happens if the specificity increases to $99.5\%$ but the false negative rate increases to $10\%$?
+4.  What happens if the sensitivity decreases to $91\%$ but the false positive rate drops to $0.1\%$?
+:::
+
+The [odds]{style="color:blue"} of an event $E$ usually refers to the ratio $\frac{P(E)}{P\left(E^C\right)}$, but to be more precise, this is really the odds of $E$ *relative to its complement* $E^C$. More generally, for any two events $E_1, E_2$: $$
+\text{odds}\left(E_1, E_2\right) = \frac{P(E_1)}{P(E_2)}
+$$ The value of the odds gives the factor by which $E_1$ is more likely than $E_2$, and:
+
+-   if $\text{odds}\left(E_1, E_2\right) = 1$, the events are equally likely;
+-   if $\text{odds}\left(E_1, E_2\right) < 1$, $E_2$ is more likely than $E_1$;
+-   if $\text{odds}\left(E_1, E_2\right) > 1$, $E_1$ is more likely than $E_2$.
+
+The [conditional odds]{style="color:blue"} of one event relative to another is defined identically but with a conditional probability measure: $$
+\text{odds}\left(E_1, E_2 \;| A\right) = \frac{P(E_1 \;| A)}{P(E_2\;| A)}
+$$ One way to understand the diagnostic test example is that, although the probability of having the condition given a positive result is low, conditioning on the test result increases the posterior odds substantially.
+
+::: callout-note
+## Example: diagnostic test (cont'd)
+
+The prior odds of having the condition are: $$
+\text{odds}\left(A, A^C\right) = \frac{P(A)}{P\left(A^C\right)} = \frac{0.005}{0.995} = 0.0005
+$$ But the posterior odds after conditioning on $T_+$ are: $$
+\text{odds}\left(A, A^C \;| T_+\right) = \frac{P(A\;| T_+)}{P\left(A^C \;| T_+\right)} = \frac{0.33}{0.67} \approx 0.493
+$$ So the odds increase by a factor of $\frac{0.493}{0.0005} \approx 985$ by conditioning on a positive test result.
+:::
+
+There is an [odds form of Bayes' theorem]{style="color:blue"}, which states that under the same conditions as the original result, the posterior odds are the prior odds multiplied by a 'Bayes factor': $$
+\text{odds}\left(E_i, E_j\;| A\right) = \text{odds}(E_i, E_j) \cdot \frac{P(A\;| E_i)}{P(A\;| E_j)}
+$$ The result follows from the definition of conditional odds and application of Bayes' theorem to the conditional probabilities $P(E_i\;| A)$, and the proof is left as an exercise.
+
+::: callout-note
+## Example: the Monty Hall problem
+
+This is a classic probability problem named after the original host of the game show *Let's Make a Deal*. The scenario is this: on a game show, you're presented with three doors; behind one door is a car, and behind the other two are goats. If you pick the door concealing a car, you win the car (although no one ever explains whether, if you pick otherwise, you win a goat). You choose a door; then the host opens one of the remaining doors, revealing a goat, and asks you if you want to stay with your original guess, or switch. Are you more likely to win the car if you stay, or if you switch?
+
+We'll work out the solution in class.
+:::
