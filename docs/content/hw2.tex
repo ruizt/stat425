@@ -1,0 +1,313 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
+%
+\documentclass[
+  letterpaper,
+  DIV=11,
+  numbers=noendperiod]{scrartcl}
+
+\usepackage{amsmath,amssymb}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else  
+    % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+% Make \paragraph and \subparagraph free-standing
+\ifx\paragraph\undefined\else
+  \let\oldparagraph\paragraph
+  \renewcommand{\paragraph}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+  \let\oldsubparagraph\subparagraph
+  \renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
+
+
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}\usepackage{longtable,booktabs,array}
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+
+\usepackage{fancyhdr}
+\KOMAoption{captions}{tableheading}
+\makeatletter
+\makeatother
+\makeatletter
+\makeatother
+\makeatletter
+\@ifpackageloaded{caption}{}{\usepackage{caption}}
+\AtBeginDocument{%
+\ifdefined\contentsname
+  \renewcommand*\contentsname{Table of contents}
+\else
+  \newcommand\contentsname{Table of contents}
+\fi
+\ifdefined\listfigurename
+  \renewcommand*\listfigurename{List of Figures}
+\else
+  \newcommand\listfigurename{List of Figures}
+\fi
+\ifdefined\listtablename
+  \renewcommand*\listtablename{List of Tables}
+\else
+  \newcommand\listtablename{List of Tables}
+\fi
+\ifdefined\figurename
+  \renewcommand*\figurename{Figure}
+\else
+  \newcommand\figurename{Figure}
+\fi
+\ifdefined\tablename
+  \renewcommand*\tablename{Table}
+\else
+  \newcommand\tablename{Table}
+\fi
+}
+\@ifpackageloaded{float}{}{\usepackage{float}}
+\floatstyle{ruled}
+\@ifundefined{c@chapter}{\newfloat{codelisting}{h}{lop}}{\newfloat{codelisting}{h}{lop}[chapter]}
+\floatname{codelisting}{Listing}
+\newcommand*\listoflistings{\listof{codelisting}{List of Listings}}
+\makeatother
+\makeatletter
+\@ifpackageloaded{caption}{}{\usepackage{caption}}
+\@ifpackageloaded{subcaption}{}{\usepackage{subcaption}}
+\makeatother
+\makeatletter
+\@ifpackageloaded{tcolorbox}{}{\usepackage[skins,breakable]{tcolorbox}}
+\makeatother
+\makeatletter
+\@ifundefined{shadecolor}{\definecolor{shadecolor}{rgb}{.97, .97, .97}}
+\makeatother
+\makeatletter
+\makeatother
+\makeatletter
+\makeatother
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same} % disable monospaced font for URLs
+\hypersetup{
+  pdftitle={Homework 2},
+  pdfauthor={STAT425, Fall 2023},
+  colorlinks=true,
+  linkcolor={blue},
+  filecolor={Maroon},
+  citecolor={Blue},
+  urlcolor={Blue},
+  pdfcreator={LaTeX via pandoc}}
+
+\title{Homework 2}
+\author{STAT425, Fall 2023}
+\date{2023-10-12}
+
+\begin{document}
+\maketitle
+\pagestyle{fancy} \fancyhead[LH]{HW2} \fancyhead[RH]{STAT425, Fall 2023}
+
+\ifdefined\Shaded\renewenvironment{Shaded}{\begin{tcolorbox}[frame hidden, boxrule=0pt, breakable, enhanced, interior hidden, borderline west={3pt}{0pt}{shadecolor}, sharp corners]}{\end{tcolorbox}}\fi
+
+Please prepare your solutions neatly, numbered, and in order; ideally,
+you'll write up a final clean copy after completing all problems on
+scratch paper. Please note that if a prompt includes a question, you're
+expected to support answers with reasoning, even if the prompt does not
+explicitly ask for a justification. Provide your name at the top of your
+submission, and if you collaborate with other students in the class,
+please list their names at the top of your submission beneath your own.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  (Hypergeometric distribution) Imagine a clown car with 50 clowns;
+  suppose that 20 of them are happy clowns and 30 of them are sad
+  clowns.
+
+  \begin{enumerate}
+  \def\labelenumii{\roman{enumii}.}
+  \tightlist
+  \item
+    If 10 clowns exit the car sequentially and at random, what is the
+    probability that exactly 3 are sad clowns?
+  \item
+    If 10 clowns exit the car sequentially and at random, what is the
+    probability that exactly \(k\) are sad clowns? (Assume
+    \(0\leq k \leq 10\).)
+  \item
+    If \(n\) clowns exit the car sequentially and at random, what is the
+    probability that exactly \(k\) are sad clowns? (Assume
+    \(0 \leq k \leq n\) and \(n < 20\).)
+  \item
+    If the car contains \(N\) happy clowns and \(M\) sad clowns and
+    \(n \leq \text{min}(N, M)\) exit the car sequentially and at random,
+    what is the probability that \(k\) are happy clowns (for
+    \(0 \leq k \leq n\))?
+  \end{enumerate}
+\item
+  Consider rolling two six-sided dice. The sample space is
+  \(S = \{1, 2, 3, 4, 5, 6\}^2\). Assuming the dice are fair, each
+  outcome \((i, j)\) has equal probability \(p\). Consider the event
+  that the dice sum to \(k\): \(E_k = \{(i, j)\in S: i + j = k\}\).
+
+  \begin{enumerate}
+  \def\labelenumii{\roman{enumii}.}
+  \tightlist
+  \item
+    Find \(|S|\) and \(p\).
+  \item
+    Find \(|E_k|\) in terms of \(k\).
+  \item
+    Make a table of the probabilities \(P(E_k)\).
+  \item
+    Interpret the event \(\bigcup_{k = 1}^m E_k\) in words and find
+    \(P\left(\bigcup_{k = 1}^m E_k\right)\) (assuming
+    \(1\leq m \leq 12\)).
+  \item
+    Find the probability of rolling a sum smaller than or equal to 8.
+  \end{enumerate}
+\end{enumerate}
+
+\emph{Hint}: you may find the proof of SWR2 helpful in answering part
+(ii); however, there are multiple ways to solve the problem.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{2}
+\item
+  Verify the following identities.
+
+  \begin{enumerate}
+  \def\labelenumii{\roman{enumii}.}
+  \tightlist
+  \item
+    \({n \choose k} = \frac{k + 1}{n - k}{n \choose k + 1}\)
+  \item
+    \({n + m \choose m} = {n + m \choose n}\)
+  \item
+    \({n \choose 1} = {n \choose n - 1} = n\)
+  \item
+    \({n \choose k} = {n \choose n - k}\)
+  \item
+    \({n \choose k} = \frac{n}{k}{n - 1 \choose k - 1}\)
+  \end{enumerate}
+\item
+  Consider a lottery where players can choose 12 numbers between 0 and
+  50 (including 0 and 50) and one winning combination is drawn by
+  randomly selecting one number at a time. Suppose there are three
+  prizes: the biggest prize is awarded to a match of all numbers in the
+  winning combination in sequence; the second biggest prize is awarded
+  to a match of all numbers in the winning combination, but not in
+  sequence; and a smaller cash prize is awarded for matching all but one
+  number in the winning combination, and not necessarily in sequence.
+
+  \begin{enumerate}
+  \def\labelenumii{\roman{enumii}.}
+  \tightlist
+  \item
+    What is the probability of winning each prize if player selections
+    (and the winning combination) can include each number no more than
+    once?
+  \item
+    What is the \emph{largest} probability of winning each prize if
+    player selections (and the winning combination) can include any
+    number multiple times? Find an upper bound.
+  \item
+    What is the probability of winning (or an upper bound) any of the
+    prizes under each of the scenarios in (i) and (ii)?
+  \end{enumerate}
+\item
+  (Matching problem) Suppose that you have \(n\) letters addressed to
+  distinct recipients and \(n\) envelopes addressed accordingly, and the
+  letters are placed in the envelopes at random and mailed. Let
+  \(A_i = i\text{th letter is placed in the correct envelope}\).
+
+  \begin{enumerate}
+  \def\labelenumii{\roman{enumii}.}
+  \tightlist
+  \item
+    Find the probability that the \(i\)th letter is placed in the
+    correct envelope: determine \(P(A_i)\).
+  \item
+    Find the probability that the \(i\)th and \(j\)th letters are placed
+    in the correct envelopes: determine \(P(A_i \cap A_j)\) assuming
+    \(1 \leq i < j \leq n\).
+  \item
+    Find \(\sum_{1 \leq i < j \leq n} P(A_i \cap A_j)\). (\emph{Hint}:
+    how many ways are there to choose two letters?)
+  \item
+    Find the probability that the \(i\)th, \(j\)th, and \(k\)th letters
+    are placed in the correct envelopes: determine
+    \(P(A_i \cap A_j \cap A_k)\) assuming \(1 \leq i < j < k \leq n\).
+  \item
+    Find \(\sum_{1 \leq i < j < k \leq n} P(A_i \cap A_j \cap A_k)\).
+    (\emph{Hint}: how many ways are there to choose three letters?)
+  \item
+    Find the probability that an arbitrary subcollection of \(i\)
+    letters (say, letters \(j_1, \dots, j_i\)) are all placed in the
+    right envelopes: determine
+    \(P(A_{j_1}\cap A_{j2} \cap \cdots \cap A_{ji})\) assuming
+    \(1 \leq j_1 < \cdots < j_i \leq n\).
+  \item
+    Find
+    \(\sum_{1 \leq j_1 < \cdots < j_i \leq 1} P(A_{j_1} \cap \cdots \cap A_{j_i})\).
+  \item
+    Use the inclusion-exclusion formula to find the probability that at
+    least one letter is mailed to the correct recipient. What is the
+    limit of this probability as \(n \rightarrow \infty\)?
+  \end{enumerate}
+\end{enumerate}
+
+
+
+\end{document}
