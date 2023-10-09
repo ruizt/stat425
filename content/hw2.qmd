@@ -28,7 +28,7 @@ Please prepare your solutions neatly, numbered, and in order; ideally, you'll wr
 
 3.  Verify the following identities.
 
-    i.  ${n \choose k} = (k + 1){n \choose k + 1}$
+    i.  ${n \choose k} = \frac{k + 1}{n - k}{n \choose k + 1}$
     ii. ${n + m \choose m} = {n + m \choose n}$
     iii. ${n \choose 1} = {n \choose n - 1} = n$
     iv. ${n \choose k} = {n \choose n - k}$
@@ -40,7 +40,7 @@ Please prepare your solutions neatly, numbered, and in order; ideally, you'll wr
     ii. What is the probability of winning each prize if player selections (and the winning combination) can include any number multiple times?
     iii. What is the probability of winning any of the prizes under each of the scenarios in (i) and (ii)?
 
-5.  Suppose that you have $n$ letters addressed to distinct recipients and $n$ envelopes addressed accordingly, and the letters are placed in the envelopes at random and mailed. Let $A_i = i\text{th letter is placed in the correct envelope}$.
+5.  (Matching problem) Suppose that you have $n$ letters addressed to distinct recipients and $n$ envelopes addressed accordingly, and the letters are placed in the envelopes at random and mailed. Let $A_i = i\text{th letter is placed in the correct envelope}$.
 
     i.  Find the probability that the $i$th letter is placed in the correct envelope: determine $P(A_i)$.
     ii. Find the probability that the $i$th and $j$th letters are placed in the correct envelopes: determine $P(A_i \cap A_j)$ assuming $1 \leq i < j \leq n$.

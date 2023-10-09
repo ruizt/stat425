@@ -5,83 +5,89 @@ title-block-style: none
 
 ### Week 0 (9/21/23)
 
-Class meetings:
+*Course introduction; syllabus.*
 
--   ***Thursday***: course introduction \[[slides](content/week0-intro.qmd)\]
+#### Class meetings
 
-Assignments:
+***Thursday***: course introduction \[[slides](content/week0-intro.qmd)\]
 
--   Complete [intake survey](https://forms.gle/uWWTaZrVvL7jykz86)
+#### Assignments
+
+Complete [intake survey](https://forms.gle/uWWTaZrVvL7jykz86)
 
 ### Week 1 (9/25/23)
 
-Suggested reading:
+*Sets and set operations; probability spaces; properties of probability.*
 
--   DG&S 1.4 --- 1.6
+#### Suggested reading
 
-Lecture notes:
+DG&S 1.4 --- 1.6
 
--   \[[sets](content/week1-sets.qmd)\]
+#### Lecture notes
 
--   \[[probability measures](content/week1-probability.qmd)\]
+\[[sets](content/week1-sets.qmd)\] \[[probability measures](content/week1-probability.qmd)\]
 
-Class meetings:
+#### Class meetings
 
--   ***Monday:*** sets
+***Monday:*** sets
 
--   ***Tuesday:*** sets, cont'd
+***Tuesday:*** sets, cont'd
 
--   ***Wednesday:*** probability spaces
+***Wednesday:*** probability spaces
 
--   ***Thursday:*** properties of probability measures
+***Thursday:*** properties of probability measures
 
-Assignment:
+#### Assignment
 
--   [Homework 1](content/hw1.qmd) due Thursday 10/5
+[Homework 1](content/hw1.qmd) due Thursday 10/5
 
 ### Week 2 (10/2/23)
 
-Suggested reading:
+*Probability on finite sample spaces; counting rules and applications.*
 
--   DG&S 1.7 --- 1.10
+#### Suggested reading
 
-Lecture notes:
+DG&S 1.7 --- 1.10
 
--   \[[counting](content/week2-counting.qmd)\]
+#### Lecture notes
 
-Class meetings:
+\[[counting](content/week2-counting.qmd)\]
 
--   ***Monday:*** wrap-up; probability on finite sample spaces
+#### Class meetings
 
--   ***Tuesday:*** counting principles and multiplication rules
+***Monday:*** wrap-up; probability on finite sample spaces
 
--   ***Wednesday:*** combinations and permutations
+***Tuesday:*** counting principles and multiplication rules
 
--   ***Thursday:*** combinations and permutations
+***Wednesday:*** combinations and permutations
 
-Assignment:
+***Thursday:*** combinations and permutations
 
--   [Homework 2](content/hw2.qmd) due Thursday 10/12
+#### Assignment
+
+[Homework 2](content/hw2.qmd) due Thursday 10/12
 
 ### Week 3 (10/9/23)
 
-Suggested reading:
+*Conditional probability; independence; Bayes' theorem.*
 
--   DG&S 2.1 --- 2.4
+#### Suggested reading:
 
-Lecture notes:
+DG&S 2.1 --- 2.4
 
--   \[[counting](content/week3-conditional.qmd)\]
+#### Lecture notes
 
-Class meetings:
+\[[conditional probability](content/week3-conditional.qmd)\]
 
--   ***Monday:*** conditional probability and basic properties
+#### Class meetings:
 
--   ***Tuesday:*** independence
+***Monday:*** conditional probability and basic properties
 
--   ***Wednesday:*** Bayes' theorem
+***Tuesday:*** independence
 
--   ***Thursday:*** odds and conditional odds
+***Wednesday:*** Bayes' theorem
+
+***Thursday:*** odds and conditional odds
 
 <!-- Assignment: -->
 

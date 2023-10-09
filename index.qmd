@@ -7,7 +7,8 @@ published-title: 'Updated'
 ::: callout-note
 ## Announcements
 
--   HW2 due 10/6 in class
+-   HW2 due 10/12 in class
+    -   Correction: 3(i) had read ${n \choose k} = (k + 1){n \choose k + 1}$; changed to ${n \choose k} = \frac{k + 1}{n - k}{n \choose k + 1}$
 -   Week 3 notes posted
 :::
 
