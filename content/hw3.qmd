@@ -1,0 +1,51 @@
+---
+title: "Homework 3"
+author: "STAT425, Fall 2023"
+author-title: "Course"
+date: "10/19/2023"
+published-title: "Due in class on"
+# format: 
+#   latex:
+#     include-in-header: 
+#       - text: 
+#           \usepackage{fancyhdr}
+#     include-before-body:
+#       - text:
+#           \pagestyle{fancy}
+#           \fancyhead[LH]{HW2}
+#           \fancyhead[RH]{STAT425, Fall 2023}
+---
+
+Please prepare your solutions neatly, numbered, and in order; ideally, you'll write up a final clean copy after completing all problems on scratch paper. Please note that if a prompt includes a question, you're expected to support answers with reasoning, even if the prompt does not explicitly ask for a justification. Provide your name at the top of your submission, and if you collaborate with other students in the class, please list their names at the top of your submission beneath your own.
+
+1.  Let $(S, \mathcal{S}, P)$ be any probability space. Show that if $\{E_j\}$ is a partition of $S$ with $P(E_j) > 0$, then for any events $A, B$: $$
+    P(A\;| B) = \sum_j P(A\;| B \cap E_j) P(E_j\;| B)
+    $$
+
+2.  Sickle-cell disease is an inherited condition that causes pain and damage to organs and muscles. It is recessive: people with two copies of the relevant allele have the disease, but people with only one copy are healthy. That is, if $A$ is the sickle-cell allele and $a$ is the neutral allele, people with $AA$ have the disease, and people with $Aa$ or $aa$ do not. Suppose that for some study population the probability that an individual has each combination is as shown below. $$
+    \begin{align*}
+    P(AA) &= 0.02 \\
+    P(Aa) &= 0.18 \\
+    P(aa) &= 0.8
+    \end{align*}
+    $$ Assume that parents reproduce independently of their having any of these genotypes and inherited alleles are selected independently and with equal probability from each parent.
+
+    i.  What are the unique combinations of parent genotypes?
+    ii. For each possible combination from (i), find the probability that a child has sickle-cell disease given parent genotypes.
+    iii. Find the probability that a child from this population has sickle-cell disease.
+
+3.  Suppose you are analyzing a diagnostic test for a condition that appears in 5% of the population. Let $T_+, T_-$ denote the events that an individual obtaining a positive or negative test result, respectively, and $C_+, C_-$ denote the events that an individual is a positive or negative case. Represent the detection rates for each type of case as follows: $$
+     \begin{align*}
+     P(T_+ \;| C_+) &= a \qquad\text{(true positive rate)}\\
+     P(T_- \;| C_+) &= 1 - a \qquad\text{(false positive rate)}\\
+     P(T_+ \;| C_-) &= 1 - b \qquad\text{(false negative rate)}\\
+     P(T_- \;| C_-) &= b \qquad\text{(true negative rate)} 
+     \end{align*}
+     $$
+
+    i.  Find the probability that the test correctly diagnoses a randomly chosen individual from the population in terms of $a, b$.
+    ii. If the test achieves an overall accuracy of 90% --- so $P(\text{test result is correct}) = \frac{9}{10}$ --- and the true positive rate is $a = \frac{8}{10}$, what is the true negative rate $b$?
+    iii. Find $P(C_+\;|T_+)$ and $P(C_- \;| T_-)$ in terms of $a, b$.
+    iv. If the true positive rate is $a = 0.8$, what true negative rate $b$ produces a test for which $P(C_+\;| T_+) = 0.9$?
+    v.  Under the scenario in (ii), what is $P(C_-\;| T_-)$?
+    vi. Suppose the test is being redesigned to ensure that $P(C_+ \;|T_+) \geq \frac{9}{10}$. If the best possible true positive rate for the test is $a = \frac{9}{10}$, what is the maximum false positive rate that achieves the redesign goal?

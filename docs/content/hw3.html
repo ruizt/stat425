@@ -6,9 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2023-10-12">
+<meta name="author" content="STAT425, Fall 2023">
+<meta name="dcterms.date" content="2023-10-19">
 
-<title>STAT425 - Probability Theory</title>
+<title>STAT425 - Homework 3</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -24,22 +25,22 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -70,8 +71,10 @@ gtag('js', new Date());
 gtag('config', 'G-H3YKZX4J88', { 'anonymize_ip': true});
 </script>
 
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="../styles.css">
 </head>
 
 <body class="nav-fixed">
@@ -81,7 +84,7 @@ gtag('config', 'G-H3YKZX4J88', { 'anonymize_ip': true});
     <nav class="navbar navbar-expand-lg navbar-dark ">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../index.html">
     <span class="navbar-title">STAT425</span>
     </a>
   </div>
@@ -92,11 +95,11 @@ gtag('config', 'G-H3YKZX4J88', { 'anonymize_ip': true});
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./syllabus.html" rel="" target="">
+    <a class="nav-link" href="../syllabus.html" rel="" target="">
  <span class="menu-text">Course syllabus</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./content.html" rel="" target="">
+    <a class="nav-link" href="../content.html" rel="" target="">
  <span class="menu-text">Materials</span></a>
   </li>  
 </ul>
@@ -118,18 +121,24 @@ gtag('config', 'G-H3YKZX4J88', { 'anonymize_ip': true});
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Probability Theory</h1>
+<h1 class="title">Homework 3</h1>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
+    <div>
+    <div class="quarto-title-meta-heading">Course</div>
+    <div class="quarto-title-meta-contents">
+             <p>STAT425, Fall 2023 </p>
+          </div>
+  </div>
     
     <div>
-    <div class="quarto-title-meta-heading">Updated</div>
+    <div class="quarto-title-meta-heading">Due in class on</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">October 12, 2023</p>
+      <p class="date">October 19, 2023</p>
     </div>
   </div>
   
@@ -139,24 +148,40 @@ gtag('config', 'G-H3YKZX4J88', { 'anonymize_ip': true});
 
 </header>
 
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Announcements
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<ul>
-<li>HW3 posted</li>
-<li>initial midterm study guide posted</li>
-</ul>
-</div>
-</div>
-<p>This is the class website for Probability Theory (STAT 425) offered at Cal Poly in Fall 2023. Note that this site is for <em>both</em> sections (01-3585 held 4:10pm MTWR and 02-3430 held 5:10pm MTWR).</p>
-<p>Material posted on this site is intended for use by currently enrolled students for course-related purposes only. Please do not reproduce any material on this site without permission.</p>
+<p>Please prepare your solutions neatly, numbered, and in order; ideally, you’ll write up a final clean copy after completing all problems on scratch paper. Please note that if a prompt includes a question, you’re expected to support answers with reasoning, even if the prompt does not explicitly ask for a justification. Provide your name at the top of your submission, and if you collaborate with other students in the class, please list their names at the top of your submission beneath your own.</p>
+<ol type="1">
+<li><p>Let <span class="math inline">\((S, \mathcal{S}, P)\)</span> be any probability space. Show that if <span class="math inline">\(\{E_j\}\)</span> is a partition of <span class="math inline">\(S\)</span> with <span class="math inline">\(P(E_j) &gt; 0\)</span>, then for any events <span class="math inline">\(A, B\)</span>: <span class="math display">\[
+P(A\;| B) = \sum_j P(A\;| B \cap E_j) P(E_j\;| B)
+\]</span></p></li>
+<li><p>Sickle-cell disease is an inherited condition that causes pain and damage to organs and muscles. It is recessive: people with two copies of the relevant allele have the disease, but people with only one copy are healthy. That is, if <span class="math inline">\(A\)</span> is the sickle-cell allele and <span class="math inline">\(a\)</span> is the neutral allele, people with <span class="math inline">\(AA\)</span> have the disease, and people with <span class="math inline">\(Aa\)</span> or <span class="math inline">\(aa\)</span> do not. Suppose that for some study population the probability that an individual has each combination is as shown below. <span class="math display">\[
+\begin{align*}
+P(AA) &amp;= 0.02 \\
+P(Aa) &amp;= 0.18 \\
+P(aa) &amp;= 0.8
+\end{align*}
+\]</span> Assume that parents reproduce independently of their having any of these genotypes and inherited alleles are selected independently and with equal probability from each parent.</p>
+<ol type="i">
+<li>What are the unique combinations of parent genotypes?</li>
+<li>For each possible combination from (i), find the probability that a child has sickle-cell disease given parent genotypes.</li>
+<li>Find the probability that a child from this population has sickle-cell disease.</li>
+</ol></li>
+<li><p>Suppose you are analyzing a diagnostic test for a condition that appears in 5% of the population. Let <span class="math inline">\(T_+, T_-\)</span> denote the events that an individual obtaining a positive or negative test result, respectively, and <span class="math inline">\(C_+, C_-\)</span> denote the events that an individual is a positive or negative case. Represent the detection rates for each type of case as follows: <span class="math display">\[
+\begin{align*}
+P(T_+ \;| C_+) &amp;= a \qquad\text{(true positive rate)}\\
+P(T_- \;| C_+) &amp;= 1 - a \qquad\text{(false positive rate)}\\
+P(T_+ \;| C_-) &amp;= 1 - b \qquad\text{(false negative rate)}\\
+P(T_- \;| C_-) &amp;= b \qquad\text{(true negative rate)}
+\end{align*}
+\]</span></p>
+<ol type="i">
+<li>Find the probability that the test correctly diagnoses a randomly chosen individual from the population in terms of <span class="math inline">\(a, b\)</span>.</li>
+<li>If the test achieves an overall accuracy of 90% — so <span class="math inline">\(P(\text{test result is correct}) = \frac{9}{10}\)</span> — and the true positive rate is <span class="math inline">\(a = \frac{8}{10}\)</span>, what is the true negative rate <span class="math inline">\(b\)</span>?</li>
+<li>Find <span class="math inline">\(P(C_+\;|T_+)\)</span> and <span class="math inline">\(P(C_- \;| T_-)\)</span> in terms of <span class="math inline">\(a, b\)</span>.</li>
+<li>If the true positive rate is <span class="math inline">\(a = 0.8\)</span>, what true negative rate <span class="math inline">\(b\)</span> produces a test for which <span class="math inline">\(P(C_+\;| T_+) = 0.9\)</span>?</li>
+<li>Under the scenario in (ii), what is <span class="math inline">\(P(C_-\;| T_-)\)</span>?</li>
+<li>Suppose the test is being redesigned to ensure that <span class="math inline">\(P(C_+ \;|T_+) \geq \frac{9}{10}\)</span>. If the best possible true positive rate for the test is <span class="math inline">\(a = \frac{9}{10}\)</span>, what is the maximum false positive rate that achieves the redesign goal?</li>
+</ol></li>
+</ol>
 
 
 

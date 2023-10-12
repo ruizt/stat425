@@ -89,6 +89,10 @@ DG&S 2.1 --- 2.4
 
 ***Thursday:*** odds and conditional odds
 
-<!-- Assignment: -->
+#### Assignment
 
-<!-- -   [Homework 2](content/hw2.qmd) due Thursday 10/12 -->
+-   [Homework 3](content/hw3.qmd) due Thursday 10/19
+
+### Week 4 (10/12/23)
+
+[Midterm study guide](content/midterm1-studyguide.qmd) --- check back for updates

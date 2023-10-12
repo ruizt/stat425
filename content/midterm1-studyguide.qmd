@@ -1,0 +1,85 @@
+---
+title: "Midterm 1 study guide"
+author: "STAT425, Fall 2023"
+author-title: "Course"
+date: today
+published-title: "Updated"
+# format: 
+#   latex:
+#     include-in-header: 
+#       - text: 
+#           \usepackage{fancyhdr}
+#     include-before-body:
+#       - text:
+#           \pagestyle{fancy}
+#           \fancyhead[LH]{HW2}
+#           \fancyhead[RH]{STAT425, Fall 2023}
+---
+
+This may be updated with further advice, suggestions, and the like --- check back.
+
+### Midterm details and scope
+
+The midterm exam will be given in class on Thursday, October 19. Here are the logistical details:
+
+-   50 minutes in duration
+-   you're allowed one double-sided note sheet on standard 8.5 x 11 paper
+-   scratch paper will be available
+-   3 problems in length
+-   no calculator required
+
+ Problems will draw on material from weeks 1-3, plus material covered Monday of week 4. You can expect one probability rules problem (week 1), one counting problem (week 2), and one conditional probability problem (week 3).
+
+### Topics to review
+
+#### Probability rules
+
+-   set concepts and operations
+
+-   set cardinality
+
+-   DeMorgan's laws
+
+-   events, disjoint events, partitions
+
+-   probability axioms
+
+-   probability rules
+
+    -   finite additivity
+    -   complement rule
+    -   monotonicity
+    -   union rule
+    -   limits for monotone sequences of events
+    -   countable sub-additivity (Boole's inequality)
+    -   finite sub-additivity
+    -   Bonferroni's inequality
+
+-   construction of probability measures on finite sample spaces
+
+#### Counting
+
+-   multiplication rules for counting
+
+-   counting rules for combinations of elements drawn from a finite set
+
+    -   ordered and drawn with replacement
+    -   ordered and drawn without replacement
+    -   unordered and drawn with replacement
+    -   unordered and drawn without replacement
+
+#### Conditional probability
+
+-   definition of conditional probability
+
+-   multiplication rules for conditional probability
+
+-   law of total probability
+
+-   definition of independence, pairwise independence, and mutual independence
+
+-   Bayes' theorem
+
+-   odds form of Bayes' theorem
+
+
