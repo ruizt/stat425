@@ -37,8 +37,8 @@ Please prepare your solutions neatly, numbered, and in order; ideally, you'll wr
 3.  Suppose you are analyzing a diagnostic test for a condition that appears in 5% of the population. Let $T_+, T_-$ denote the events that an individual obtaining a positive or negative test result, respectively, and $C_+, C_-$ denote the events that an individual is a positive or negative case. Represent the detection rates for each type of case as follows: $$
      \begin{align*}
      P(T_+ \;| C_+) &= a \qquad\text{(true positive rate)}\\
-     P(T_- \;| C_+) &= 1 - a \qquad\text{(false positive rate)}\\
-     P(T_+ \;| C_-) &= 1 - b \qquad\text{(false negative rate)}\\
+     P(T_- \;| C_+) &= 1 - a \qquad\text{(false negative rate)}\\
+     P(T_+ \;| C_-) &= 1 - b \qquad\text{(false positive rate)}\\
      P(T_- \;| C_-) &= b \qquad\text{(true negative rate)} 
      \end{align*}
      $$
