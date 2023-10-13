@@ -39,7 +39,7 @@ DG&S 1.4 --- 1.6
 
 #### Assignment
 
-[Homework 1](content/hw1.qmd) due Thursday 10/5
+[Homework 1](content/hw1.qmd) due Thursday 10/5 \[[solutions](https://drive.google.com/file/d/1ESqVD-HpfdNOYHUcgjWvxSA6Ed7XhkhV/view?usp=sharing)\]
 
 ### Week 2 (10/2/23)
 
