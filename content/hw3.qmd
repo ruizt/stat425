@@ -47,5 +47,5 @@ Please prepare your solutions neatly, numbered, and in order; ideally, you'll wr
     ii. If the test achieves an overall accuracy of 90% --- so $P(\text{test result is correct}) = \frac{9}{10}$ --- and the true positive rate is $a = \frac{8}{10}$, what is the true negative rate $b$?
     iii. Find $P(C_+\;|T_+)$ and $P(C_- \;| T_-)$ in terms of $a, b$.
     iv. If the true positive rate is $a = 0.8$, what true negative rate $b$ produces a test for which $P(C_+\;| T_+) = 0.9$?
-    v.  Under the scenario in (ii), what is $P(C_-\;| T_-)$?
+    v.  Under the scenario in (iv), what is $P(C_-\;| T_-)$?
     vi. Suppose the test is being redesigned to ensure that $P(C_+ \;|T_+) \geq \frac{9}{10}$. If the best possible true positive rate for the test is $a = \frac{9}{10}$, what is the maximum false positive rate that achieves the redesign goal?
