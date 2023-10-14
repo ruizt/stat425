@@ -222,15 +222,16 @@ gtag('config', 'G-H3YKZX4J88', { 'anonymize_ip': true});
 <section id="example-problems" class="level3">
 <h3 class="anchored" data-anchor-id="example-problems">Example problems</h3>
 <ol type="1">
-<li>Suppose you are performing <span class="math inline">\(k\)</span> hypothesis tests at exact level <span class="math inline">\(\alpha\)</span>, and assume all hypotheses are true. In other words, if <span class="math inline">\(R_i\)</span> denotes the event that the <span class="math inline">\(i\)</span>th hypothesis is rejected, <em>i.e.</em>, of making an error, then <span class="math inline">\(P(R_i) = \alpha\)</span>. However, when considering the tests as a group, there is a higher probability of making an error, as the individual error rates compound.</li>
-</ol>
-<p>It can be shown from the inclusion-exclusion principle that: <span class="math display">\[
+<li>Suppose you are performing <span class="math inline">\(k\)</span> hypothesis tests at exact level <span class="math inline">\(\alpha\)</span>, and assume all hypotheses are true. In other words, if <span class="math inline">\(R_i\)</span> denotes the event that the <span class="math inline">\(i\)</span>th hypothesis is rejected, <em>i.e.</em>, of making an error, then <span class="math inline">\(P(R_i) = \alpha\)</span>. However, when considering the tests as a group, there is a higher probability of making an error, as the individual error rates compound.It can be shown from the inclusion-exclusion principle that: <span class="math display">\[
 P\left(\bigcup_{i = 1}^k R_i\right) \geq \sum_{i = 1}^k P(R_i) - \sum_{1 \leq i &lt; j \leq k} P(R_i \cap R_j)
-\]</span></p>
-<pre><code>i. Use Boole's inequality to find an upper bound for the probability of making at least one error.
-ii. Use the fact above to derive a lower bound for the probability of making at least one error, assuming that the tests are independent.
-iii. Find the probability of making at least one error when performing 20 tests at $\alpha = 0.05$.
-iv. Find the smallest number of tests for which the probability of making at least one error is more likely than not. (Hint: write $0.05$ as $\frac{5}{100}$; you may find it useful to know that $41^2 = 1681$.)</code></pre>
+\]</span>
+<ol type="i">
+<li>Use Boole’s inequality to find an upper bound for the probability of making at least one error.</li>
+<li>Use the fact above to derive a lower bound for the probability of making at least one error, assuming that the tests are independent.</li>
+<li>Find the probability of making at least one error when performing 20 tests at <span class="math inline">\(\alpha = 0.05\)</span>.</li>
+<li>Find the smallest number of tests for which the probability of making at least one error is more likely than not. (Hint: write <span class="math inline">\(0.05\)</span> as <span class="math inline">\(\frac{5}{100}\)</span>; you may find it useful to know that <span class="math inline">\(41^2 = 1681\)</span>.)</li>
+</ol></li>
+</ol>
 <p><em>Remark</em>: this last part is maybe a little more involved in terms of calculation than what I’d put on an exam.</p>
 <ol start="2" type="1">
 <li><p>Suppose you are reading an article on admission rates at a selective college for different demographic groups reporting that 20% of applicants from underrepresented groups were admitted in 2022-2023 compared with 10% of other applicants.</p>
