@@ -239,38 +239,38 @@ Consider a diagnostic test and let $A$ denote the event one has the condition of
 $$
 \begin{align*}
 P(T_+ \;| A) &= 0.99 \\
-P(T_- \;| A) &= 0.05 \\
-P\left(T_+ \;| A^C\right) &= 0.01 \\
+P(T_- \;| A) &= 0.01 \\
+P\left(T_+ \;| A^C\right) &= 0.05 \\
 P\left(T_- \;| A^C\right) &= 0.95 
 \end{align*}
-$$ As an aside, $P(T_+\;| A)$ is the true positive rate, also known as the *sensitivity* of the test; $P(T_- \;| A^C)$ is the true negative rate, also known as the *specificity*. Note that although in this example, $P(T_+ \;| A) + P(T_+ \;| A^C) = 1$, and likewise for $T_-$, but this need not be the case.
+$$ As an aside, $P(T_+\;| A)$ is the true positive rate, also known as the *sensitivity* of the test; $P(T_- \;| A^C)$ is the true negative rate, also known as the *specificity*. Note that $P(T_+ \;| A) + P(T_- \;| A^C) \neq 1$, despite the fact that $T_+ = (T_-)^C$; this is because conditioning on different events produces different probability measures.
 
 Suppose first that the condition has a prevalence of $0.5\%$ in the general population, so assume $P(A) = 0.005$. Then the probability that one has the condition given a positive test result is: $$
 \begin{align*}
 P(A \;| T_+) 
 &= \frac{P(T_+ \;| A) P(A)}{P(T_+ \;| A) P(A) + P\left(T_+ \;| A^C\right) P\left(A^C\right)} \\
-&= \frac{(0.99)(0.005)}{(0.99)(0.005) + (0.01)(0.995)}\\
-&\approx 0.33
+&= \frac{(0.99)(0.005)}{(0.99)(0.005) + (0.05)(0.995)}\\
+&\approx 0.0905
 \end{align*}
 $$ Further, the probability that one has the condition given a negative test result is: $$
 \begin{align*}
 P(A \;| T_-) 
 &= \frac{P(T_- \;| A) P(A)}{P(T_- \;| A) P(A) + P\left(T_- \;| A^C\right) P\left(A^C\right)}  \\
-&= \frac{(0.05)(0.005)}{(0.05)(0.005) + (0.95)(0.995)} \\
-&\approx 0.00026
+&= \frac{(0.01)(0.005)}{(0.01)(0.005) + (0.95)(0.995)} \\
+&\approx 0.0000529
 \end{align*}
 $$
 
-This usually comes as a surprise, given that the test appears to be fairly accurate, but somewhat prone to false negatives. What happens if the condition is more prevalent, say, present in $5\%$ of the population? In this scenario:
+This usually comes as a surprise, given that the test appears to be fairly accurate, but somewhat prone to false negatives. What happens if the condition is more prevalent, say, present in $10\%$ of the population? In this scenario:
 
 $$
 \begin{align*}
 P(A \;| T_+) 
-&= \frac{(0.99)(0.05)}{(0.99)(0.05) + (0.01)(0.95)} 
-\approx 0.84 \\
+&= \frac{(0.99)(0.1)}{(0.99)(0.1) + (0.05)(0.9)} 
+\approx 0.688 \\
 P(A \;| T_-) 
-&= \frac{(0.05)(0.05)}{(0.05)(0.05) + (0.95)(0.95)}
-\approx 0.0028
+&= \frac{(0.05)(0.1)}{(0.05)(0.1) + (0.95)(0.9)}
+\approx 0.0012
 \end{align*}
 $$
 

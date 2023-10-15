@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="STAT425, Fall 2023">
-<meta name="dcterms.date" content="2023-10-13">
+<meta name="dcterms.date" content="2023-10-14">
 
 <title>STAT425 - Conditional probability</title>
 <style>
@@ -146,7 +146,7 @@ gtag('config', 'G-H3YKZX4J88', { 'anonymize_ip': true});
     <div>
     <div class="quarto-title-meta-heading">Updated</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">October 13, 2023</p>
+      <p class="date">October 14, 2023</p>
     </div>
   </div>
   
@@ -560,35 +560,35 @@ Example: diagnostic test
 <p><span class="math display">\[
 \begin{align*}
 P(T_+ \;| A) &amp;= 0.99 \\
-P(T_- \;| A) &amp;= 0.05 \\
-P\left(T_+ \;| A^C\right) &amp;= 0.01 \\
+P(T_- \;| A) &amp;= 0.01 \\
+P\left(T_+ \;| A^C\right) &amp;= 0.05 \\
 P\left(T_- \;| A^C\right) &amp;= 0.95
 \end{align*}
-\]</span> As an aside, <span class="math inline">\(P(T_+\;| A)\)</span> is the true positive rate, also known as the <em>sensitivity</em> of the test; <span class="math inline">\(P(T_- \;| A^C)\)</span> is the true negative rate, also known as the <em>specificity</em>. Note that although in this example, <span class="math inline">\(P(T_+ \;| A) + P(T_+ \;| A^C) = 1\)</span>, and likewise for <span class="math inline">\(T_-\)</span>, but this need not be the case.</p>
+\]</span> As an aside, <span class="math inline">\(P(T_+\;| A)\)</span> is the true positive rate, also known as the <em>sensitivity</em> of the test; <span class="math inline">\(P(T_- \;| A^C)\)</span> is the true negative rate, also known as the <em>specificity</em>. Note that <span class="math inline">\(P(T_+ \;| A) + P(T_- \;| A^C) \neq 1\)</span>, despite the fact that <span class="math inline">\(T_+ = (T_-)^C\)</span>; this is because conditioning on different events produces different probability measures.</p>
 <p>Suppose first that the condition has a prevalence of <span class="math inline">\(0.5\%\)</span> in the general population, so assume <span class="math inline">\(P(A) = 0.005\)</span>. Then the probability that one has the condition given a positive test result is: <span class="math display">\[
 \begin{align*}
 P(A \;| T_+)
 &amp;= \frac{P(T_+ \;| A) P(A)}{P(T_+ \;| A) P(A) + P\left(T_+ \;| A^C\right) P\left(A^C\right)} \\
-&amp;= \frac{(0.99)(0.005)}{(0.99)(0.005) + (0.01)(0.995)}\\
-&amp;\approx 0.33
+&amp;= \frac{(0.99)(0.005)}{(0.99)(0.005) + (0.05)(0.995)}\\
+&amp;\approx 0.0905
 \end{align*}
 \]</span> Further, the probability that one has the condition given a negative test result is: <span class="math display">\[
 \begin{align*}
 P(A \;| T_-)
 &amp;= \frac{P(T_- \;| A) P(A)}{P(T_- \;| A) P(A) + P\left(T_- \;| A^C\right) P\left(A^C\right)}  \\
-&amp;= \frac{(0.05)(0.005)}{(0.05)(0.005) + (0.95)(0.995)} \\
-&amp;\approx 0.00026
+&amp;= \frac{(0.01)(0.005)}{(0.01)(0.005) + (0.95)(0.995)} \\
+&amp;\approx 0.0000529
 \end{align*}
 \]</span></p>
-<p>This usually comes as a surprise, given that the test appears to be fairly accurate, but somewhat prone to false negatives. What happens if the condition is more prevalent, say, present in <span class="math inline">\(5\%\)</span> of the population? In this scenario:</p>
+<p>This usually comes as a surprise, given that the test appears to be fairly accurate, but somewhat prone to false negatives. What happens if the condition is more prevalent, say, present in <span class="math inline">\(10\%\)</span> of the population? In this scenario:</p>
 <p><span class="math display">\[
 \begin{align*}
 P(A \;| T_+)
-&amp;= \frac{(0.99)(0.05)}{(0.99)(0.05) + (0.01)(0.95)}
-\approx 0.84 \\
+&amp;= \frac{(0.99)(0.1)}{(0.99)(0.1) + (0.05)(0.9)}
+\approx 0.688 \\
 P(A \;| T_-)
-&amp;= \frac{(0.05)(0.05)}{(0.05)(0.05) + (0.95)(0.95)}
-\approx 0.0028
+&amp;= \frac{(0.05)(0.1)}{(0.05)(0.1) + (0.95)(0.9)}
+\approx 0.0012
 \end{align*}
 \]</span></p>
 <p>Try a few other scenarios on your own. First make a guess about how the posterior probability will change, and then check the calculation.</p>

@@ -23,7 +23,7 @@ Please prepare your solutions neatly, numbered, and in order; ideally, you'll wr
     i.  If 10 clowns exit the car sequentially and at random, what is the probability that exactly 3 are sad clowns?
     ii. If 10 clowns exit the car sequentially and at random, what is the probability that exactly $k$ are sad clowns? (Assume $0\leq k \leq 10$.)
     iii. If $n$ clowns exit the car sequentially and at random, what is the probability that exactly $k$ are sad clowns? (Assume $0 \leq k \leq n$ and $n < 20$.)
-    iv. If the car contains $N$ happy clowns and $M$ sad clowns and $n \leq \text{min}(N, M)$ exit the car sequentially and at random, what is the probability that $k$ are happy clowns (for $0 \leq k \leq n$)?
+    iv. If the car contains $N$ happy clowns and $M$ sad clowns and $n \leq N + M$ exit the car sequentially and at random, what is the probability that $k$ are happy clowns (for $0 \leq k \leq \text{min}(n, N)$)?
 
 2.  Consider rolling two six-sided dice. The sample space is $S = \{1, 2, 3, 4, 5, 6\}^2$. Assuming the dice are fair, each outcome $(i, j)$ has equal probability $p$. Consider the event that the dice sum to $k$: $E_k = \{(i, j)\in S: i + j = k\}$.
 
@@ -46,8 +46,7 @@ Please prepare your solutions neatly, numbered, and in order; ideally, you'll wr
 4.  Consider a lottery where players can choose 12 numbers between 0 and 50 (including 0 and 50) and one winning combination is drawn by randomly selecting one number at a time. Suppose there are three prizes: the biggest prize is awarded to a match of all numbers in the winning combination in sequence; the second biggest prize is awarded to a match of all numbers in the winning combination, but not in sequence; and a smaller cash prize is awarded for matching all but one number in the winning combination, and not necessarily in sequence.
 
     i.  What is the probability of winning each prize if player selections (and the winning combination) can include each number no more than once?
-    ii. What is the *largest* probability of winning each prize if player selections (and the winning combination) can include any number multiple times? Find an upper bound.
-    iii. What is the probability of winning (or an upper bound) any of the prizes under each of the scenarios in (i) and (ii)?
+    ii. What is the probability of winning any of the prizes?
 
 5.  (Matching problem) Suppose that you have $n$ letters addressed to distinct recipients and $n$ envelopes addressed accordingly, and the letters are placed in the envelopes at random and mailed. Let $A_i = i\text{th letter is placed in the correct envelope}$.
 
