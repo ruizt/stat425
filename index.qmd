@@ -7,9 +7,8 @@ published-title: 'Updated'
 ::: callout-note
 ## Announcements
 
--   HW3 posted
--   practice problems added to midterm study guide
--   HW1 solutions posted
+-   Office hours moved to 25-107G for more space; also, time changed to W-Th 1pm-3pm due to room availability
+-   Practice problems added to midterm study guide
 :::
 
 This is the class website for Probability Theory (STAT 425) offered at Cal Poly in Fall 2023. Note that this site is for *both* sections (01-3585 held 4:10pm MTWR and 02-3430 held 5:10pm MTWR).
