@@ -74,7 +74,7 @@ DG&S 1.7 --- 1.10
 
 #### Suggested reading:
 
-DG&S 2.1 --- 2.4
+DG&S 2.1 --- 2.3
 
 #### Lecture notes
 
@@ -97,3 +97,25 @@ DG&S 2.1 --- 2.4
 ### Week 4 (10/12/23)
 
 [Midterm study guide](content/midterm1-studyguide.qmd) --- check back for updates
+
+#### Suggested reading:
+
+DG&S 2.4
+
+#### Lecture notes
+
+\[[gambler's ruin](content/week4-gambler.qmd)\]
+
+#### Class meetings:
+
+***Monday:*** the gambler's ruin problem
+
+***Tuesday:*** midterm review session
+
+***Wednesday:*** random variables
+
+***Thursday:*** **Midterm 1**
+
+#### Assignment
+
+-   None --- enjoy!

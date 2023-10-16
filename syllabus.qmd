@@ -66,7 +66,7 @@ Very roughly, letter grades will be assigned as follows. A: 90-100. B: 75-90. C:
 Subject to change at instructor discretion.
 
 | Week                 | Lecture Topic                            | Suggested reading | Assignments |
-|----------------------|------------------------------------------|-------------------|-------------|
+|---------------|----------------------------|---------------|---------------|
 | 0 (9/21)             | Course introduction                      |                   |             |
 | 1 (9/25)             | Probability axioms and properties        | 1.4--1.6          | HW1         |
 | 2 (10/2)             | Counting methods                         | 1.7--1.10         | HW2         |
@@ -85,7 +85,7 @@ Subject to change at instructor discretion.
 
 #### Collaboration
 
-Collaboration within the class (including across class sections) is allowed (and encouraged!) on homework assignments, subject to certain conditions outlined in the paragraph below. Collaborations should not individuals outside of the class. Students collaborating with a group are expected to prepare their own solutions, in their own words and writing, and should to indicate their collaborators in writing on their submission. This is limited to peers that were consulted closely in completing the assignment; brief or passing interactions are not considered collaborations.
+Collaboration within the class (including across class sections) is allowed (and encouraged!) on homework assignments, subject to certain conditions outlined in the paragraph below. Collaborations should not include individuals outside of the class. Students collaborating with a group are expected to prepare their own solutions, in their own words and writing, and should to indicate their collaborators in writing on their submission. This is limited to peers that were consulted closely in completing the assignment; brief or passing interactions are not considered collaborations.
 
 A collaboration is a shared effort. Students that choose to work together on homework assignments are expected to make material contributions towards producing one or more shared answers or solutions. Material contributions might include participation in discussions, critique of a proposed solution, or presentation of a problem approach. In the absence of such contributions, submitting solutions prepared in a group is not appropriate. The best way to adhere to this policy is to attempt problems individually before consulting others.
 
