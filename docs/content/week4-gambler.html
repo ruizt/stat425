@@ -22,6 +22,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -173,7 +207,7 @@ a_{j + 1} - a_j = (a_j - a_{j - 1})\left(\frac{1 - p}{p}\right)
 <p>Since <span class="math inline">\(a_0 = 0\)</span>, <span class="math inline">\(a_2 - a_1 = a_1\left(\frac{1 - p}{p}\right)\)</span>, and then by recursion we obtain: <span class="math display">\[
 a_{j + 1} - a_j = a_1 \left(\frac{1 - p}{p}\right)^j
 \qquad j = 1, 2, \dots, k - 1
-\]</span> Then by writing <span class="math inline">\(a_{j + 1} - a_1\)</span> as a telescoping sum <span class="math inline">\(\sum_{i = 1}^j (a_{i + 1} - a_i)\)</span>, we can express <span class="math inline">\(a_{j + 1}\)</span> as a geometric series and optian: <span class="math display">\[
+\]</span> Then by writing <span class="math inline">\(a_{j + 1} - a_1\)</span> as a telescoping sum <span class="math inline">\(\sum_{i = 1}^j (a_{i + 1} - a_i)\)</span>, we can express <span class="math inline">\(a_{j + 1}\)</span> as a geometric series and obtian: <span class="math display">\[
 a_{j + 1} = \sum_{i = 0}^j a_1 \left(\frac{1 - p}{p}\right)^i
 =\begin{cases}
 a_1\left[\frac{1 - \left(\frac{1 - p}{p}\right)^{j + 1}}{1 - \left(\frac{1 - p}{p}\right)}\right], &amp;p\neq \frac{1}{2} \\
@@ -200,6 +234,25 @@ P(W_{100}\;| X_n = 10) = \frac{1 - \frac{1}{2^{10}}}{1 - \frac{1}{2^{100}}} \app
 1 - \left(\frac{1 - p}{p}\right)^j, &amp;p &gt; \frac{1}{2}
 \end{cases}
 \]</span></p>
+<p>It’s actually somewhat interesting to plot the solution path in <span class="math inline">\(j\)</span> for various <span class="math inline">\(p, k\)</span>. For instance, when <span class="math inline">\(p = 0.49\)</span>, and the game is only <em>barely</em> unfavorable, the probability of winning $200 is negligible until the gambler acquires most of the money they wish to win.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>fx <span class="ot">&lt;-</span> <span class="cf">function</span>(j, k, p){</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span>(p <span class="sc">!=</span> <span class="fl">0.5</span>){</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  odds <span class="ot">&lt;-</span> (<span class="dv">1</span> <span class="sc">-</span> p)<span class="sc">/</span>p</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  out <span class="ot">&lt;-</span> (<span class="dv">1</span> <span class="sc">-</span> odds<span class="sc">^</span>j)<span class="sc">/</span>(<span class="dv">1</span> <span class="sc">-</span> odds<span class="sc">^</span>k)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>  }<span class="cf">else</span>{</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>    out <span class="ot">&lt;-</span> j<span class="sc">/</span>k</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(out)</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>K <span class="ot">&lt;-</span> <span class="dv">200</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="dv">0</span><span class="sc">:</span>K, <span class="fu">fx</span>(<span class="dv">0</span><span class="sc">:</span>K, K, <span class="fl">0.49</span>), <span class="at">type =</span> <span class="st">'l'</span>, <span class="at">xlab =</span> <span class="st">'j'</span>, <span class="at">ylab =</span> <span class="st">'P(W_200 | X_n = j)'</span>, <span class="at">main =</span> <span class="st">'p = 0.499'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="week4-gambler_files/figure-html/unnamed-chunk-1-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<p>For an extension of the problem, consider finding the minimum <span class="math inline">\(j\)</span> such that <span class="math inline">\(P(W_k \;| X_n = j) \geq \frac{1}{2}\)</span> in terms of <span class="math inline">\(p\)</span>, in other words, the smallest amount of money to start with that ensures favorable odds of winning, given <span class="math inline">\(p\)</span>. Or, try plotting solution paths in <span class="math inline">\(p\)</span>.</p>
 
 
 
