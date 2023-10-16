@@ -83,7 +83,7 @@ $$
 
 It's actually somewhat interesting to plot the solution path in $j$ for various $p, k$. For instance, when $p = 0.49$, and the game is only *barely* unfavorable, the probability of winning \$200 is negligible until the gambler acquires most of the money they wish to win.
 
-```{r}
+```{r, echo = F}
 fx <- function(j, k, p){
   if(p != 0.5){
   odds <- (1 - p)/p
