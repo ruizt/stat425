@@ -1,0 +1,19 @@
+---
+title: "Homework 3"
+author: "STAT425, Fall 2023"
+author-title: "Course"
+date: "10/19/2023"
+published-title: "Due in class on"
+# format: 
+#   latex:
+#     include-in-header: 
+#       - text: 
+#           \usepackage{fancyhdr}
+#     include-before-body:
+#       - text:
+#           \pagestyle{fancy}
+#           \fancyhead[LH]{HW2}
+#           \fancyhead[RH]{STAT425, Fall 2023}
+---
+
+1. Random walk

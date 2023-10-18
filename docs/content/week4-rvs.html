@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="STAT425, Fall 2023">
-<meta name="dcterms.date" content="2023-10-16">
+<meta name="dcterms.date" content="2023-10-18">
 
 <title>STAT425 - Random variables</title>
 <style>
@@ -71,6 +71,8 @@ gtag('js', new Date());
 gtag('config', 'G-H3YKZX4J88', { 'anonymize_ip': true});
 </script>
 
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 <link rel="stylesheet" href="../styles.css">
 </head>
@@ -112,7 +114,13 @@ gtag('config', 'G-H3YKZX4J88', { 'anonymize_ip': true});
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#concepts" id="toc-concepts" class="nav-link active" data-scroll-target="#concepts">Concepts</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -136,7 +144,7 @@ gtag('config', 'G-H3YKZX4J88', { 'anonymize_ip': true});
     <div>
     <div class="quarto-title-meta-heading">Updated</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">October 16, 2023</p>
+      <p class="date">October 18, 2023</p>
     </div>
   </div>
   
@@ -146,8 +154,39 @@ gtag('config', 'G-H3YKZX4J88', { 'anonymize_ip': true});
 
 </header>
 
+<p>Informally, random variables are real-valued functions on probability spaces. Such functions induce probability measures on <span class="math inline">\(\mathbb{R}\)</span>, which encompass all of the familiar probability distributions. These distributions are, essentially, probability measures on the set of real numbers; to formalize this, we need to be able to articulate probability spaces with <span class="math inline">\(\mathbb{R}\)</span> as the sample space.</p>
+<p>THe <span style="color:blue">Borel sets</span> comprise the smallest <span class="math inline">\(\sigma\)</span>-algebra containing all intervals contained in <span class="math inline">\(\mathbb{R}\)</span>, known as the <span style="color:blue">Borel <span class="math inline">\(\sigma\)</span>-algebra</span>. We will denote this by <span class="math inline">\(\mathcal{B}\)</span>; while it is possible to generate <span class="math inline">\(\mathcal{B}\)</span> constructively from the open intervals as a closure under complements, countable unions, and countable intersections, doing so rigorously is beyond the scope of this class. Importantly, however, <span class="math inline">\(\mathcal{B}\)</span> contains all intervals and all sets that can be formed from intervals; these will comprise our “events” of interest going forward.</p>
+<section id="concepts" class="level3">
+<h3 class="anchored" data-anchor-id="concepts">Concepts</h3>
+<p>Let <span class="math inline">\((S, \mathcal{S}, P)\)</span> be a probability space. A <span style="color:blue">random variable</span> is a function <span class="math inline">\(X: S \longrightarrow \mathbb{R}\)</span> such that for every <span class="math inline">\(B \in \mathcal{B}\)</span>, <span class="math inline">\(X^{-1}(B) \in \mathcal{S}\)</span>.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Example: coin toss
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>If <span class="math inline">\(S = \{H, T\}\)</span>, and <span class="math inline">\(\mathcal{S} = 2^S = \{ \emptyset, \{H\}, \{T\}, \{H, T\}\}\)</span>, define: <span class="math display">\[
+X(s) = \begin{cases}
+  1, &amp;s = H \\
+  0, &amp;s \neq H
+\end{cases}
+\]</span> Then <span class="math inline">\(X\)</span> is a random variable since for any <span class="math inline">\(B \in \mathcal{B}\)</span>: <span class="math display">\[
+X^{-1} (B) = \begin{cases}
+\{H\}, &amp;1 \in B \\
+\{T\}, &amp;0 \in B
+\end{cases}
+\]</span> So <span class="math inline">\(X^{-1}(B) \in \mathcal{S}\)</span>.</p>
+</div>
+</div>
+<p>Not all functions are random variables. For example, take <span class="math inline">\(S = \{1, 2, 3\}\)</span> and the trivial <span class="math inline">\(\sigma\)</span>-algebra <span class="math inline">\(\mathcal{S} = \{\emptyset, S\}\)</span>, and consider <span class="math inline">\(X(s) = s\)</span>; then <span class="math inline">\(X^{-1}(2) = 2 \not\in\mathcal{S}\)</span>.</p>
+<p>The condition that preimages of Borel sets be events ensures that we can associate probabilities to statements such as <span class="math inline">\(a &lt; X(s) &lt; b\)</span> or, more generally <span class="math inline">\(X \in B\)</span>.</p>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

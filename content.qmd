@@ -65,8 +65,7 @@ DG&S 1.7 --- 1.10
 
 #### Assignment
 
-[Homework 2](content/hw2.qmd) due Thursday 10/12
-<!-- \[[solutions](https://drive.google.com/file/d/1GXVu0K3DaRE8UTcqLDPrAtoi19bgGZiM/view?usp=sharing)\] -->
+[Homework 2](content/hw2.qmd) due Thursday 10/12 \[[solutions](https://drive.google.com/file/d/1GXVu0K3DaRE8UTcqLDPrAtoi19bgGZiM/view?usp=sharing)\]
 
 ### Week 3 (10/9/23)
 
@@ -96,7 +95,7 @@ DG&S 2.1 --- 2.3
 
 ### Week 4 (10/16/23)
 
-[Midterm study guide](content/midterm1-studyguide.qmd) --- check back for updates
+[Midterm study guide](content/midterm1-studyguide.qmd) --- check back for updates \[[solutions to practice problems](https://drive.google.com/file/d/1Ap8C4hfH8_Q5bUIi0o4SL5-TXzV9OJHw/view?usp=share_link)\]
 
 #### Suggested reading:
 

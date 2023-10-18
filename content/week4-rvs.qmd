@@ -6,3 +6,35 @@ date: today
 published-title: "Updated"
 ---
 
+Informally, random variables are real-valued functions on probability spaces. Such functions induce probability measures on $\mathbb{R}$, which encompass all of the familiar probability distributions. These distributions are, essentially, probability measures on the set of real numbers; to formalize this, we need to be able to articulate probability spaces with $\mathbb{R}$ as the sample space.
+
+THe [Borel sets]{style="color:blue"} comprise the smallest $\sigma$-algebra containing all intervals contained in $\mathbb{R}$, known as the [Borel $\sigma$-algebra]{style="color:blue"}. We will denote this by $\mathcal{B}$; while it is possible to generate $\mathcal{B}$ constructively from the open intervals as a closure under complements, countable unions, and countable intersections, doing so rigorously is beyond the scope of this class. Importantly, however, $\mathcal{B}$ contains all intervals and all sets that can be formed from intervals; these will comprise our "events" of interest going forward.
+
+### Concepts
+
+Let $(S, \mathcal{S}, P)$ be a probability space. A [random variable]{style="color:blue"} is a function $X: S \longrightarrow \mathbb{R}$ such that for every $B \in \mathcal{B}$, $X^{-1}(B) \in \mathcal{S}$.
+
+::: callout-note
+## Example: coin toss
+
+If $S = \{H, T\}$, and $\mathcal{S} = 2^S = \{ \emptyset, \{H\}, \{T\}, \{H, T\}\}$, define:
+$$
+X(s) = \begin{cases}
+  1, &s = H \\
+  0, &s \neq H
+\end{cases}
+$$
+Then $X$ is a random variable since for any $B \in \mathcal{B}$:
+$$
+X^{-1} (B) = \begin{cases}
+\{H\}, &1 \in B \\
+\{T\}, &0 \in B
+\end{cases}
+$$
+So $X^{-1}(B) \in \mathcal{S}$.
+
+:::
+
+Not all functions are random variables. For example, take $S = \{1, 2, 3\}$ and the trivial $\sigma$-algebra $\mathcal{S} = \{\emptyset, S\}$, and consider $X(s) = s$; then $X^{-1}(2) = 2 \not\in\mathcal{S}$.
+
+The condition that preimages of Borel sets be events ensures that we can associate probabilities to statements such as $a < X(s) < b$ or, more generally $X \in B$. 

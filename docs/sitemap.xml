@@ -2,58 +2,62 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://ruizt.quarto.pub/stat425/syllabus.html</loc>
-    <lastmod>2023-10-16T22:04:36.324Z</lastmod>
+    <lastmod>2023-10-18T18:27:42.145Z</lastmod>
   </url>
   <url>
     <loc>https://ruizt.quarto.pub/stat425/content/week3-conditional.html</loc>
-    <lastmod>2023-10-16T22:04:35.622Z</lastmod>
+    <lastmod>2023-10-18T18:27:41.452Z</lastmod>
   </url>
   <url>
-    <loc>https://ruizt.quarto.pub/stat425/content/hw3.html</loc>
-    <lastmod>2023-10-16T22:04:34.616Z</lastmod>
-  </url>
-  <url>
-    <loc>https://ruizt.quarto.pub/stat425/content/week1-probability.html</loc>
-    <lastmod>2023-10-16T22:04:34.023Z</lastmod>
-  </url>
-  <url>
-    <loc>https://ruizt.quarto.pub/stat425/content/hw1.html</loc>
-    <lastmod>2023-10-16T22:04:32.111Z</lastmod>
-  </url>
-  <url>
-    <loc>https://ruizt.quarto.pub/stat425/content/week2-counting.html</loc>
-    <lastmod>2023-10-16T22:04:31.450Z</lastmod>
-  </url>
-  <url>
-    <loc>https://ruizt.quarto.pub/stat425/content/week4-rvs.html</loc>
-    <lastmod>2023-10-16T22:04:30.298Z</lastmod>
-  </url>
-  <url>
-    <loc>https://ruizt.quarto.pub/stat425/content.html</loc>
-    <lastmod>2023-10-16T22:04:28.477Z</lastmod>
-  </url>
-  <url>
-    <loc>https://ruizt.quarto.pub/stat425/content/week1-sets.html</loc>
-    <lastmod>2023-10-16T22:04:30.716Z</lastmod>
-  </url>
-  <url>
-    <loc>https://ruizt.quarto.pub/stat425/content/midterm1-studyguide.html</loc>
-    <lastmod>2023-10-16T22:04:31.807Z</lastmod>
-  </url>
-  <url>
-    <loc>https://ruizt.quarto.pub/stat425/content/week4-gambler.html</loc>
-    <lastmod>2023-10-16T22:04:33.588Z</lastmod>
+    <loc>https://ruizt.quarto.pub/stat425/content/hw4.html</loc>
+    <lastmod>2023-10-18T18:27:40.434Z</lastmod>
   </url>
   <url>
     <loc>https://ruizt.quarto.pub/stat425/content/hw2.html</loc>
-    <lastmod>2023-10-16T22:04:34.356Z</lastmod>
+    <lastmod>2023-10-18T18:27:39.919Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ruizt.quarto.pub/stat425/content/week4-gambler.html</loc>
+    <lastmod>2023-10-18T18:27:39.129Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ruizt.quarto.pub/stat425/content/midterm1-studyguide.html</loc>
+    <lastmod>2023-10-18T18:27:38.502Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ruizt.quarto.pub/stat425/content/week1-sets.html</loc>
+    <lastmod>2023-10-18T18:27:37.416Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ruizt.quarto.pub/stat425/content.html</loc>
+    <lastmod>2023-10-18T18:27:34.846Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ruizt.quarto.pub/stat425/content/week4-rvs.html</loc>
+    <lastmod>2023-10-18T18:27:36.946Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ruizt.quarto.pub/stat425/content/week2-counting.html</loc>
+    <lastmod>2023-10-18T18:27:38.146Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ruizt.quarto.pub/stat425/content/hw1.html</loc>
+    <lastmod>2023-10-18T18:27:38.821Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ruizt.quarto.pub/stat425/content/week1-probability.html</loc>
+    <lastmod>2023-10-18T18:27:39.592Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ruizt.quarto.pub/stat425/content/hw3.html</loc>
+    <lastmod>2023-10-18T18:27:40.212Z</lastmod>
   </url>
   <url>
     <loc>https://ruizt.quarto.pub/stat425/content/week0-intro.html</loc>
-    <lastmod>2023-10-16T22:04:34.956Z</lastmod>
+    <lastmod>2023-10-18T18:27:40.805Z</lastmod>
   </url>
   <url>
     <loc>https://ruizt.quarto.pub/stat425/index.html</loc>
-    <lastmod>2023-10-16T22:04:35.835Z</lastmod>
+    <lastmod>2023-10-18T18:27:41.677Z</lastmod>
   </url>
 </urlset>
