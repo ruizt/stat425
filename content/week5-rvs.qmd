@@ -40,6 +40,30 @@ $$
 
 The induced measure $P_X$ is known more commonly as a [probability distribution]{style="color:blue"} or simply as a distribution: it describes how probabilities are distributed across the set of real numbers.
 
+::: callout-note
+## Example
+
+You've already seen some simple random variables. For example, on the probability space representing two dice rolls with all outcomes equally likely, that is, $S = \{1, \dots, 6\}^2$ with $\mathcal{S} = 2^S$ and $P(E) = \frac{|E|}{36}$, the function $X((i, j)) = i + j$ is a random variable, because $X^{-1}(B) = \{(i, j): i + j = x \text{ for some } x \in B\} \in 2^S$. Moreover, the probability distribution associated with $X$ is:
+
+$$
+P_X(B) = \frac{1}{36}\sum_{x \in B} |\{(i, j) \in S: i + j = x\}| 
+$$ As determined in a previous homework problem, $|\{(i, j)\in S: i + j = x\}| > 0$ only for $x = 2, 3, \dots, 12$, and the associated probabilities are:
+
+| x   | $P_X(\{x\})$   |
+|-----|----------------|
+| 2   | $\frac{1}{36}$ |
+| 3   | $\frac{2}{36}$ |
+| 4   | $\frac{3}{36}$ |
+| 5   | $\frac{4}{36}$ |
+| 6   | $\frac{5}{36}$ |
+| 7   | $\frac{6}{36}$ |
+| 8   | $\frac{5}{36}$ |
+| 9   | $\frac{4}{36}$ |
+| 10  | $\frac{3}{36}$ |
+| 11  | $\frac{2}{36}$ |
+| 12  | $\frac{1}{36}$ |
+:::
+
 ### Cumulative distribution functions
 
 We must remember that the concept of a distribution arises relative to some underlying probability space. However, it is not necessary to work with the underlying measure --- distributions, luckily, can be characterized using any of several real-valued functions. Arguably, the most fundamental of these is the cumulative distribution function (CDF).
@@ -47,6 +71,26 @@ We must remember that the concept of a distribution arises relative to some unde
 Given any random variable $X:S \longrightarrow \mathbb{R}$, define the [cumulative distribution function]{style="color:blue"} (CDF) of $X$ to be the function: $$
 F_X(x) = P_X\left((-\infty, x]\right) = P(\{s \in S: X(s) \leq x\})
 $$
+
+::: callout-note
+## Check your understanding
+
+Consider the dice roll example above with the random variable $X((i, j)) = i + j$. Fill in the table below, and then draw the CDF.
+
+| x   | $P_X(\{x\})$   | $P(X \leq x)$ |
+|-----|----------------|---------------|
+| 2   | $\frac{1}{36}$ |               |
+| 3   | $\frac{2}{36}$ |               |
+| 4   | $\frac{3}{36}$ |               |
+| 5   | $\frac{4}{36}$ |               |
+| 6   | $\frac{5}{36}$ |               |
+| 7   | $\frac{6}{36}$ |               |
+| 8   | $\frac{5}{36}$ |               |
+| 9   | $\frac{4}{36}$ |               |
+| 10  | $\frac{3}{36}$ |               |
+| 11  | $\frac{2}{36}$ |               |
+| 12  | $\frac{1}{36}$ |               |
+:::
 
 If the random variable is evident from context, the subscript can be omitted and one can write $F$ instead of $F_X$. Four properties follow:
 
@@ -169,7 +213,7 @@ The proof of this result is omitted.
 
 For each of the functions below, determine whether it is a CDF. Then, for the CDFs, identify whether a random variable with this distribution is discrete or continuous, and find or guesstimate the PMF/PDF if it exists. You can ignore the behavior at the endpoints, but to check your understanding, identify for each jump which value the function must take at the endpoint for it to be a valid CDF.
 
-```{r, echo = F}
+```{r, echo = F, message = F, warning = F}
 library(tidyverse)
 library(modelr)
 

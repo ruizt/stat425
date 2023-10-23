@@ -22,6 +22,9 @@ published-title: "Due in class on"
 
 3. continuous rvs have p(any point) = o
 
-If $X$ is a random variable with CDF $F$, then $P(a < X \leq b) = F(b) - F(a)$
+4. Show
 
-If $X$ is a random variable with CDF $F$, then $P(X > a) = 1 - F(a)$
+    i. If $X$ is a random variable with CDF $F$, then $P(a < X \leq b) = F(b) - F(a)$
+    ii. If $X$ is a random variable with CDF $F$, then $P(X > a) = 1 - F(a)$
+
+5. triangular dist'n
