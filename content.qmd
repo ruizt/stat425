@@ -118,3 +118,29 @@ DG&S 2.4
 #### Assignment
 
 -   None --- enjoy!
+
+### Week 5
+
+\[[midterm solutions](https://drive.google.com/file/d/1Z8eJ41CJ9rnUI9a5wN0mIfHgzqrt-0sO/view?usp=share_link)\]
+
+#### Suggested reading:
+
+DG&S 3.1 --- 3.3
+
+#### Lecture notes
+
+\[[random variables](content/week5-rvs.qmd)\]
+
+#### Class meetings:
+
+***Monday:*** definition of a random variable; the CDF
+
+***Tuesday:*** discrete and continuous random variables
+
+***Wednesday:*** characterizing distributions
+
+***Thursday:*** common distributions
+
+#### Assignment
+
+-   Homework 4 due Thursday 11/2

@@ -7,9 +7,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="STAT425, Fall 2023">
-<meta name="dcterms.date" content="2023-10-23">
+<meta name="dcterms.date" content="2023-10-16">
 
-<title>STAT425 - The gambler’s ruin problem</title>
+<title>STAT425 - Midterm 1 study guide</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -114,14 +114,23 @@ gtag('config', 'G-H3YKZX4J88', { 'anonymize_ip': true});
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#midterm-details-and-scope" id="toc-midterm-details-and-scope" class="nav-link active" data-scroll-target="#midterm-details-and-scope">Midterm details and scope</a></li>
+  <li><a href="#topics-to-review" id="toc-topics-to-review" class="nav-link" data-scroll-target="#topics-to-review">Topics to review</a></li>
+  <li><a href="#example-problems" id="toc-example-problems" class="nav-link" data-scroll-target="#example-problems">Example problems</a></li>
+  <li><a href="#suggestions" id="toc-suggestions" class="nav-link" data-scroll-target="#suggestions">Suggestions</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">The gambler’s ruin problem</h1>
+<h1 class="title">Midterm 1 study guide</h1>
 </div>
 
 
@@ -129,7 +138,7 @@ gtag('config', 'G-H3YKZX4J88', { 'anonymize_ip': true});
 <div class="quarto-title-meta">
 
     <div>
-    <div class="quarto-title-meta-heading">Course notes</div>
+    <div class="quarto-title-meta-heading">Course</div>
     <div class="quarto-title-meta-contents">
              <p>STAT425, Fall 2023 </p>
           </div>
@@ -138,7 +147,7 @@ gtag('config', 'G-H3YKZX4J88', { 'anonymize_ip': true});
     <div>
     <div class="quarto-title-meta-heading">Updated</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">October 23, 2023</p>
+      <p class="date">October 16, 2023</p>
     </div>
   </div>
   
@@ -148,67 +157,101 @@ gtag('config', 'G-H3YKZX4J88', { 'anonymize_ip': true});
 
 </header>
 
-<p>This is a classic probability problem equivalent to a simple random walk on the nonnegative integers. The set-up is that a gambler plays a game where on each play, they win one dollar with probability <span class="math inline">\(p\)</span> and lose one dollar with probability <span class="math inline">\(1-p\)</span>. They keep playing until either they go broke or win <span class="math inline">\(k\)</span> dollars. What is the probability that they leave a winner?</p>
-<p>The sample space in this problem is all possible sequences of plays. This is a big collection, and we won’t be able to resolve the probabilities of events by counting arguments. However, we do know, given that the gambler has <span class="math inline">\(j\)</span> dollars after some play, their possible fortune at the next play and the associated probabilities; this information can be used to resolve the problem.</p>
-<p>Define <span class="math inline">\(X_n\)</span> to be the gambler’s fortune after <span class="math inline">\(n\)</span> plays, for <span class="math inline">\(n = 0, 1, 2, \dots\)</span>; <span class="math inline">\(X_n = j\)</span> defines the event that the gambler has <span class="math inline">\(j\)</span> dollars at play <span class="math inline">\(n\)</span>, for each <span class="math inline">\(j\)</span> and <span class="math inline">\(n\)</span>. The problem set-up is that for every <span class="math inline">\(n, j\)</span>: <span class="math display">\[
-P(X_{n + 1} = x \;| X_n = j)
-= \begin{cases}
-  p, &amp;x = j + 1 \\
-  1 - p, &amp;x = j - 1
-\end{cases}
-\]</span></p>
-<p>Now we are interested in the probability that the gambler wins <span class="math inline">\(k\)</span> dollars; denote this event by <span class="math inline">\(W_k\)</span>. This will change over the course of play and depend on how much they have at any given time. So consider: <span class="math display">\[
-a_j = P(W_k \;| X_n = j)
-\qquad\text{for each } j = 0, \dots, k
-\]</span></p>
-<p>Note that <span class="math inline">\(a_0 = 0\)</span>, since the gambler cannot win if they have no money left to play (<em>i.e.</em>, <span class="math inline">\(W_k \cap \{X_n = 0\} = \emptyset\)</span> for every <span class="math inline">\(n\)</span>), and <span class="math inline">\(a_k = 1\)</span>, since if the gambler has <span class="math inline">\(k\)</span> dollars they have won (<em>i.e.</em>, <span class="math inline">\(W_k \supset \{X_n = k\}\)</span> for every <span class="math inline">\(n\)</span>). Now, the probability of winning depends only on the most recent play; the plays before are irrelevant. Thus, <span class="math inline">\(P(W_k \;| X_{n + 1}, X_n) = P(W_k \;| X_{n + 1})\)</span> (This is known as the Markov property.) Using the law of total (conditional) probability (see HW3 for a proof), we have that for each <span class="math inline">\(j\)</span>: <span class="math display">\[
-\begin{align*}
-P(W_k \;| X_n = j)
-&amp;= P(W_k \;| X_{n + 1} = j + 1) P(X_{n + 1} = j + 1\;| X_n = j) \\
-&amp;\qquad + P(W_k \;| X_{n + 1} = j - 1) P(X_{n + 1} = j - 1\;| X_n = j)
-\end{align*}
-\]</span> And therefore <span class="math inline">\(a_j = pa_{j + 1} + (1 - p)a_{j - 1}\)</span>. Some rearrangement yields that: <span class="math display">\[
-a_{j + 1} - a_j = (a_j - a_{j - 1})\left(\frac{1 - p}{p}\right)
-\]</span></p>
-<p>Since <span class="math inline">\(a_0 = 0\)</span>, <span class="math inline">\(a_2 - a_1 = a_1\left(\frac{1 - p}{p}\right)\)</span>, and then by recursion we obtain: <span class="math display">\[
-a_{j + 1} - a_j = a_1 \left(\frac{1 - p}{p}\right)^j
-\qquad j = 1, 2, \dots, k - 1
-\]</span> Then by writing <span class="math inline">\(a_{j + 1} - a_1\)</span> as a telescoping sum <span class="math inline">\(\sum_{i = 1}^j (a_{i + 1} - a_i)\)</span>, we can express <span class="math inline">\(a_{j + 1}\)</span> as a geometric series and obtian: <span class="math display">\[
-a_{j + 1} = \sum_{i = 0}^j a_1 \left(\frac{1 - p}{p}\right)^i
-=\begin{cases}
-a_1\left[\frac{1 - \left(\frac{1 - p}{p}\right)^{j + 1}}{1 - \left(\frac{1 - p}{p}\right)}\right], &amp;p\neq \frac{1}{2} \\
-a_1 (j + 1), &amp;p = \frac{1}{2}
-\end{cases}
-\]</span> Then, using the fact that <span class="math inline">\(a_k = 1\)</span>, we get: <span class="math display">\[
-a_1 = \begin{cases}
-\frac{1 - \left(\frac{1 - p}{p}\right)}{1 - \left(\frac{1 - p}{p}\right)^{k}}, &amp;p\neq \frac{1}{2} \\
-\frac{1}{k}, &amp;p = \frac{1}{2}
-\end{cases}
-\]</span> And finally, by substituting this into the expression above for <span class="math inline">\(a_{j + 1}\)</span>, we obtain for each <span class="math inline">\(j = 0, \dots, k\)</span>: <span class="math display">\[
-a_j = \begin{cases}
-\frac{1 - \left(\frac{1 - p}{p}\right)^j}{1 - \left(\frac{1 - p}{p}\right)^{k}}, &amp;p\neq \frac{1}{2} \\
-\frac{j}{k}, &amp;p = \frac{1}{2}
-\end{cases}
-\]</span></p>
-<p>We can use this to solve the problem. For instance, if the game is fair (<span class="math inline">\(p = \frac{1}{2}\)</span>) and the gambler starts with $10, their probability of winning $100 is <span class="math inline">\(P(W_{100}\;|X_n = 10) = \frac{10}{100} = 0.1\)</span>. If <span class="math inline">\(p = \frac{2}{3}\)</span>, the same probability is: <span class="math display">\[
-P(W_{100}\;| X_n = 10) = \frac{1 - \frac{1}{2^{10}}}{1 - \frac{1}{2^{100}}} \approx 0.999
-\]</span></p>
-<p>If the gambler could play forever, what is the probability of getting infinitely rich? Take the limit in <span class="math inline">\(k\)</span> to obtain: <span class="math display">\[
-\lim_{k \rightarrow \infty} P(W_k\;|X_n = j)
-= \begin{cases}
-0, &amp;p \leq \frac{1}{2}\\
-1 - \left(\frac{1 - p}{p}\right)^j, &amp;p &gt; \frac{1}{2}
-\end{cases}
-\]</span></p>
-<p>It’s actually somewhat interesting to plot the solution path in <span class="math inline">\(j\)</span> for various <span class="math inline">\(p, k\)</span>. For instance, when <span class="math inline">\(p = 0.49\)</span>, and the game is only <em>barely</em> unfavorable, the probability of winning $200 is negligible until the gambler acquires most of the money they wish to win.</p>
-<div class="cell">
-<div class="cell-output-display">
-<p><img src="week4-gambler_files/figure-html/unnamed-chunk-1-1.png" class="img-fluid" width="672"></p>
-</div>
-</div>
-<p>For an extension of the problem, consider finding the minimum <span class="math inline">\(j\)</span> such that <span class="math inline">\(P(W_k \;| X_n = j) \geq \frac{1}{2}\)</span> in terms of <span class="math inline">\(p\)</span>, in other words, the smallest amount of money to start with that ensures favorable odds of winning, given <span class="math inline">\(p\)</span>. Or, try plotting solution paths in <span class="math inline">\(p\)</span>.</p>
+<p>This may be updated with further advice, suggestions, and the like — check back.</p>
+<section id="midterm-details-and-scope" class="level3">
+<h3 class="anchored" data-anchor-id="midterm-details-and-scope">Midterm details and scope</h3>
+<p>The midterm exam will be given in class on Thursday, October 19. Here are the logistical details:</p>
+<ul>
+<li>50 minutes in duration</li>
+<li>you’re allowed one double-sided note sheet on standard 8.5 x 11 paper</li>
+<li>scratch paper will be available</li>
+<li>3 problems in length</li>
+<li>no calculator required</li>
+</ul>
+<p>Problems will draw on material from weeks 1-3, plus material covered Monday of week 4. You can expect one probability rules problem (week 1), one counting problem (week 2), and one conditional probability problem (week 3). Problems will emphasize application of course concepts; you need not expect to write</p>
+</section>
+<section id="topics-to-review" class="level3">
+<h3 class="anchored" data-anchor-id="topics-to-review">Topics to review</h3>
+<section id="probability-rules" class="level4">
+<h4 class="anchored" data-anchor-id="probability-rules">Probability rules</h4>
+<ul>
+<li><p>set concepts and operations</p></li>
+<li><p>set cardinality</p></li>
+<li><p>DeMorgan’s laws</p></li>
+<li><p>events, disjoint events, partitions</p></li>
+<li><p>probability axioms</p></li>
+<li><p>probability rules</p>
+<ul>
+<li>finite additivity</li>
+<li>complement rule</li>
+<li>monotonicity</li>
+<li>union rule</li>
+<li>limits for monotone sequences of events</li>
+<li>countable sub-additivity (Boole’s inequality)</li>
+<li>finite sub-additivity</li>
+<li>Bonferroni’s inequality</li>
+</ul></li>
+<li><p>construction of probability measures on finite sample spaces</p></li>
+</ul>
+</section>
+<section id="counting" class="level4">
+<h4 class="anchored" data-anchor-id="counting">Counting</h4>
+<ul>
+<li><p>multiplication rules for counting</p></li>
+<li><p>counting rules for combinations of elements drawn from a finite set</p>
+<ul>
+<li>ordered and drawn with replacement</li>
+<li>ordered and drawn without replacement</li>
+<li>unordered and drawn with replacement</li>
+<li>unordered and drawn without replacement</li>
+</ul></li>
+</ul>
+</section>
+<section id="conditional-probability" class="level4">
+<h4 class="anchored" data-anchor-id="conditional-probability">Conditional probability</h4>
+<ul>
+<li><p>definition of conditional probability</p></li>
+<li><p>multiplication rules for conditional probability</p></li>
+<li><p>law of total probability</p></li>
+<li><p>definition of independence, pairwise independence, and mutual independence</p></li>
+<li><p>Bayes’ theorem</p></li>
+<li><p>odds form of Bayes’ theorem</p></li>
+</ul>
+</section>
+</section>
+<section id="example-problems" class="level3">
+<h3 class="anchored" data-anchor-id="example-problems">Example problems</h3>
+<ol type="1">
+<li>Suppose you are performing <span class="math inline">\(k\)</span> hypothesis tests at exact level <span class="math inline">\(\alpha\)</span>, and assume all hypotheses are true. In other words, if <span class="math inline">\(R_i\)</span> denotes the event that the <span class="math inline">\(i\)</span>th hypothesis is rejected, <em>i.e.</em>, of making an error, then <span class="math inline">\(P(R_i) = \alpha\)</span>. However, when considering the tests as a group, there is a higher probability of making an error, as the individual error rates compound.It can be shown from the inclusion-exclusion principle that: <span class="math display">\[
+P\left(\bigcup_{i = 1}^k R_i\right) \geq \sum_{i = 1}^k P(R_i) - \sum_{1 \leq i &lt; j \leq k} P(R_i \cap R_j)
+\]</span>
+<ol type="i">
+<li>Use Boole’s inequality to find an upper bound for the probability of making at least one error.</li>
+<li>Use the fact above to derive a lower bound for the probability of making at least one error, assuming that the tests are independent.</li>
+<li>Compute the bound for performing 20 tests at <span class="math inline">\(\alpha = 0.05\)</span>.</li>
+<li>Find the smallest number of tests for which the lower bound in (ii) exceeds <span class="math inline">\(\frac{1}{2}\)</span>. (Hint: write <span class="math inline">\(0.05\)</span> as <span class="math inline">\(\frac{5}{100}\)</span>; you may find it useful to know that <span class="math inline">\(41^2 = 1681\)</span>.)</li>
+</ol></li>
+</ol>
+<p><em>Remark</em>: this last part is maybe a little more involved in terms of calculation than what I’d put on an exam.</p>
+<ol start="2" type="1">
+<li><p>Suppose you are reading an article on admission rates at a selective college for different demographic groups reporting that 20% of applicants from underrepresented groups were admitted in 2022-2023 compared with 10% of other applicants.</p>
+<ol type="i">
+<li>What is the probability that a randomly selected incoming student is from an underreppresented group if there were twice as many applicants from non-underrepresented groups?</li>
+<li>What is the probability that a randomly selected incoming student is from an underrepresented group if there were ten times as many applicants from non-underrepresented groups?</li>
+<li>Under the scenario in (i), find the probability that a randomly selected applicant was admitted.</li>
+</ol></li>
+<li><p>Imagine you’re out trick-or-treating with a friend and you arrive at a house handing out only two treats: Kit Kats and Snickers. The homeowner has mixed them up in a large pillowcase. You and your friend can each draw <span class="math inline">\(n\)</span> pieces of candy; assume either treat is equally likely to be selected on each draw. Supposing that when you arrive, there are <span class="math inline">\(N &gt; 2n\)</span> Snickers and <span class="math inline">\(M &gt; 2n\)</span> Kit Kats, and you draw first, find an expression for the probability that you draw <span class="math inline">\(k_1\)</span> Snickers and your friend draws <span class="math inline">\(k_2\)</span> Snickers.</p></li>
+</ol>
+<p><em>Extra practice</em>: find an expression for the probability that your friend draws <span class="math inline">\(k_2\)</span> Snickers.</p>
+</section>
+<section id="suggestions" class="level3">
+<h3 class="anchored" data-anchor-id="suggestions">Suggestions</h3>
+<p>Review your notes, homeworks, and the posted lecture notes. Think a bit about what would be most useful to put on your note sheet, and consider prioritizing (i) things you are likely to forget (counting formulae, for instance) and (ii) definitions or results you’d like to have handy for reference (<em>e.g.</em>, definition of conditional probability). You don’t need to use all of the space you’re allowed; sometimes fewer notes that are easier to navigate are more useful than dense notes.</p>
+<p>Try some example problems from the book. Look to the end of chapters 1 and 2, and pick a few that seem comfortable and relate to specific material you’d like to practice. No need to choose difficult problems — this can actually be counterproductive. Remember, you want practice and repetition, not a struggle.</p>
+<p>When you sit to take the test, read the whole exam first before beginning work. Take a moment to think, and start with the problem you feel most confident in — this can help to build a bit of momentum to carry you through any portions you find challenging.</p>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
