@@ -7,9 +7,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="STAT425, Fall 2023">
-<meta name="dcterms.date" content="2023-10-19">
+<meta name="dcterms.date" content="2023-11-02">
 
-<title>STAT425 - Homework 3</title>
+<title>STAT425 - Homework 4</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -121,7 +121,7 @@ gtag('config', 'G-H3YKZX4J88', { 'anonymize_ip': true});
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Homework 3</h1>
+<h1 class="title">Homework 4</h1>
 </div>
 
 
@@ -138,7 +138,7 @@ gtag('config', 'G-H3YKZX4J88', { 'anonymize_ip': true});
     <div>
     <div class="quarto-title-meta-heading">Due in class on</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">October 19, 2023</p>
+      <p class="date">November 2, 2023</p>
     </div>
   </div>
   
@@ -148,13 +148,41 @@ gtag('config', 'G-H3YKZX4J88', { 'anonymize_ip': true});
 
 </header>
 
+<p>Please prepare your solutions neatly, numbered, and in order; ideally, you’ll write up a final clean copy after completing all problems on scratch paper. Please note that if a prompt includes a question, you’re expected to support answers with reasoning, even if the prompt does not explicitly ask for a justification. Provide your name at the top of your submission, and if you collaborate with other students in the class, please list their names at the top of your submission beneath your own.</p>
+<p>*<strong>Note: this will be updated with more problems on Thursday, 10/26</strong></p>
 <ol type="1">
-<li><p>Random walk</p></li>
-<li><p>discrete rvs have countably many values</p></li>
-<li><p>continuous rvs have p(any point) = o</p></li>
+<li><p>(Random walk) Consider the natural numbers <span class="math inline">\(\mathbb{N} = \{0, 1, 2, \dots\}\)</span>, and imagine a random process whereby given a particular location on the number line you move one step to the right with probability <span class="math inline">\(p\)</span> and one step to the left with probability <span class="math inline">\(1 - p\)</span>. If you reach zero, the process stops.</p>
+<ol type="i">
+<li>Find the probability that you make it to 50 if you start at 1 and <span class="math inline">\(p = 0.6\)</span>.</li>
+<li>Find the probability that you make it to 50 if you start at 1 and <span class="math inline">\(p = 0.4\)</span>.</li>
+<li>Find an expression for the smallest starting point required to make it to <span class="math inline">\(n\)</span> with probability <span class="math inline">\(q\)</span> if the odds favor moving to the right.</li>
+<li>Find an expression for the smallest starting point required to make it to <span class="math inline">\(n\)</span> with probability <span class="math inline">\(q\)</span> if the odds favor moving to the left.</li>
+<li>Use your answers in (iii)-(iv) to find the smallest starting point for which the process will make it to 50 with probability <span class="math inline">\(0.8\)</span> when <span class="math inline">\(p=0.45\)</span> and when <span class="math inline">\(p = 0.55\)</span>.</li>
+<li>What is the minimum starting point for which the process is more likely to diverge than not when <span class="math inline">\(p = 0.55\)</span>?</li>
+</ol></li>
+<li><p>Show that if <span class="math inline">\(X\)</span> is a discrete random variable, then it has a countable support set.</p></li>
+<li><p>Use the definition of the CDF to show that:</p>
+<ol type="i">
+<li>If <span class="math inline">\(X\)</span> is a random variable with CDF <span class="math inline">\(F\)</span>, then <span class="math inline">\(P(a &lt; X \leq b) = F(b) - F(a)\)</span></li>
+<li>If <span class="math inline">\(X\)</span> is a random variable with CDF <span class="math inline">\(F\)</span>, then <span class="math inline">\(P(X &gt; a) = 1 - F(a)\)</span></li>
+</ol></li>
+<li><p>Let <span class="math inline">\(X\)</span> be a continuous random variable. Show that:</p>
+<ol type="i">
+<li>for every <span class="math inline">\(x \in \mathbb{R}\)</span>, <span class="math inline">\(P(X = x) = 0\)</span> (<em>Hint</em>: use the lemma defining <span class="math inline">\(P(X = x)\)</span> in terms of the CDF)</li>
+<li><span class="math inline">\(P(X \leq x) = P(X &lt; x)\)</span> (<em>Hint</em>: use the result in (i))</li>
+</ol></li>
+<li><p>(Triangular distribution) Let <span class="math inline">\(X\)</span> be a continuous random variable defined by the PDF: <span class="math display">\[
+f(x) = \begin{cases}
+  0 &amp;x &lt; -1 \\
+  x + 1 &amp; -1 \leq x &lt; 0 \\
+  1 - x &amp; 0 \leq x \leq 1 \\
+  0 &amp; x &gt; 1
+\end{cases}
+\]</span> Sketch the density and then find the CDF of <span class="math inline">\(X\)</span>.</p></li>
+<li><p>Let <span class="math inline">\(X\)</span> have a uniform distribution on the integers <span class="math inline">\(\{-3, -2, -1, 0, 1, 2, 3\}\)</span>. If <span class="math inline">\(Y = X^2\)</span>, find the CDF, PMF, and support of <span class="math inline">\(Y\)</span>, and sketch the CDF.</p></li>
+<li><p>Let <span class="math inline">\(X\)</span> have a uniform distribution on the interval <span class="math inline">\((0, 1)\)</span> and let <span class="math inline">\(Y = -\log(X)\)</span>. Find the distribution of <span class="math inline">\(Y\)</span>.</p></li>
+<li><p>(Negative binomial) Consider performing repeated independent trials in which each trial has a fixed probability of success <span class="math inline">\(p\)</span>. Let <span class="math inline">\(X\)</span> denote the number of failures before <span class="math inline">\(r\)</span> successes are obtained. Find the PMF of <span class="math inline">\(X\)</span>.</p></li>
 </ol>
-<p>If <span class="math inline">\(X\)</span> is a random variable with CDF <span class="math inline">\(F\)</span>, then <span class="math inline">\(P(a &lt; X \leq b) = F(b) - F(a)\)</span></p>
-<p>If <span class="math inline">\(X\)</span> is a random variable with CDF <span class="math inline">\(F\)</span>, then <span class="math inline">\(P(X &gt; a) = 1 - F(a)\)</span></p>
 
 
 

@@ -92,7 +92,9 @@ Consider the dice roll example above with the random variable $X((i, j)) = i + j
 | 12  | $\frac{1}{36}$ |               |
 :::
 
-If the random variable is evident from context, the subscript can be omitted and one can write $F$ instead of $F_X$. Four properties follow:
+If the random variable is evident from context, the subscript can be omitted and one can write $F$ instead of $F_X$.
+
+**Theorem**. $F$ is the CDF of a random variable if and only if it satisfies the following four properties:
 
 i.  $\lim_{x\rightarrow -\infty} F(x) = 0$
 ii. $\lim_{x\rightarrow\infty} F(x) = 1$
@@ -101,6 +103,8 @@ iv. $F$ is right-continuous: $\lim_{x\downarrow x_0} F(x) = F(x_0)$
 
 ::: callout-tip
 ## Proof
+
+We will prove the 'necessity' part: that if a random variable has CDF $X$, then it satisfies (i)-(iv) above. For sufficiency, one must construct a probability space and random variable $X$ such that $X$ has CDF $F$; we will skip this argument, as it is beyond the scope of this class.
 
 For (i), observe that $E_n = \{s \in S: X(s) \leq -n\}$ is a nonincreasing sequence of sets for $n \in\mathbb{N}$ and $\lim_n E_n = \bigcap_n E_n = \emptyset$. Then: $$
 \lim_{x \rightarrow -\infty} F(x) = \lim_{n \rightarrow \infty} F(-n) = \lim_{n \rightarrow\infty}P(E_n) = P\left(\lim_{n\rightarrow\infty} E_n\right) = 0
@@ -122,9 +126,9 @@ For (iv), let $\{x_n\}$ be any decreasing sequence with $x_n \rightarrow x_0$. F
 $$
 :::
 
-Moreover, if $F$ is any function satisfying properties (i)--(iv) then there exists a probability space and random variable $X$ such that $F_X = F$. We therefore say that $F$ is a CDF just in case properties (i)--(iv) hold. While the proof of this result is beyond the scope of this class, it does mean that we can omit reference to the underlying probability space $(S, \mathcal{S}, P)$, since the latter may be assumed to exist for any CDF. Thus, we will write probabilities simply as, *e.g.*, $P(X \leq x)$ in place of $P_X((-\infty, x])$ or $P(\{s \in S: X(s) \leq x\})$. Consistent with this change in notation, we will speak directly about probability distributions as distributions "of" (rather than "induced by") random variables.
+The portion of this theorem we didn't prove is perhaps the more consequential part of the result, as it establishes that if $F$ is any function satisfying properties (i)--(iv) then there exists a probability space and random variable $X$ such that $F_X = F$. This means that we can omit reference to the underlying probability space $(S, \mathcal{S}, P)$ since some such space exists for any CDF. Thus, we will write probabilities simply as, *e.g.*, $P(X \leq x)$ in place of $P_X((-\infty, x])$ or $P(\{s \in S: X(s) \leq x\})$. Consistent with this change in notation, we will speak directly about probability distributions as distributions "of" (rather than "induced by") random variables.
 
-CDFs are one class of functions that uniquely identify distributions. If two random variables $X, Y$ have the same CDF (that is if $F_X = F_Y$) then they have the same distribution and we write $X \stackrel{d}{=} Y$
+It's important to remember that distributions and random variables are distinct concepts: distributions are probability measures ($P_X$ above) and random variables are real-valued functions. Many random variables might have the same distribution, yet be distinct. Since CDFs are one class of functions that uniquely identify distributions, if two random variables $X, Y$ have the same CDF (that is if $F_X = F_Y$) then they have the same distribution and we write $X \stackrel{d}{=} Y$
 
 Two convenient properties of CDFs are:
 
@@ -149,6 +153,8 @@ P(X = x) &= P(\lim_{n\rightarrow\infty} E_n) \\
 \end{align*}
 $$
 :::
+
+Notice the implication that if $F$ is continuous everywhere, then $P(X = x) = 0$ for every $x \in \mathbb{R}$.
 
 ### Discrete random variables
 
@@ -236,23 +242,51 @@ grid %>%
 
 ```
 
-<!-- ### Common distributions -->
+### Common distributions
 
-<!-- #### Discrete distributions -->
+Conventionally, distributions are characterized by specifying either a PMF/PDF or a CDF. If the PDF/PMF is used, the support should be specified explicitly, for instance, by writing $P(X = x) = f(x), x \in S$; the implication is then that the PMF/PDF is zero elsewhere.
 
-<!-- **Hypergeometric** -->
+The distributions below arise frequently in many different scenarios. Most have one or more terms besides the value(s) of the random variable, which form the argument of the CDF/PDF/PMF; such terms are *parameters* that may be adjusted to suit certain problems. Of course, changing the parameter changes the distribution, but the distribution functions retain the same form. Thus, these common distributions are really *families* of distributions in which the distribution functions share a common functional form.
 
-<!-- **Discrete uniform** -->
+#### Discrete distributions
 
-<!-- **Bernoulli** -->
+**Hypergeometric**. This distribution was introduced in HW2, and arises from the physical experiment of drawing $n$ objects from a collection of $N$ objects of one type and $M$ objects of another when any object is equally likely to be drawn and objects are drawn without replacement. For example, imagine selecting $n$ marbles from a bag of $N$ blue marbles and $M$ red marbles. Define the random variable $X$ to be the number of objects of the first type drawn. Then $X$ has a hypergeometric distribution characterized by PMF:
 
-<!-- **Binomial** -->
+$$
+P(X = k) = \frac{{N \choose k}{M \choose n - k}}{{N + M \choose n}}
+\;,\qquad k \leq N,\; n \leq N + M
+$$ The terms $M, N$ are parameters and are positive integers. The CDF does not have a simplified form.
 
-<!-- **Geometric** -->
+**Discrete uniform**. This is perhaps the simplest distribution. Consider drawing an integer between 1 and $N$ at random, and let $X$ denote the integer drawn. This is the discrete uniform distribution, and it is characterized by the PMF: $$
+P(X = n) = \frac{1}{N} 
+\;, \qquad n = 1, 2, \dots, N
+$$ The term $N$ is a parameter and is a positive integer. The CDF is $P(X \leq x) = \frac{n(n + 1)}{2N}$.
 
-<!-- **Negative binomial** -->
+**Bernoulli**. This distribution characterizes any random variable with a binary outcome. Without loss of generality, we encode the outcomes as zero and one; otherwise, we need only define a new random variable mapping different outcomes to $\{0, 1\}$. Based on probability rules, if $P(X = 1) = p$, then $P(X = 0) = 1 - p$. A function that captures this is the PMF:
 
-<!-- **Poisson** -->
+$$
+P(X = x) = p^x (1 - p)^{1 - x}
+\;,\qquad x = 0, 1
+$$ The term $p$ is a parameter and may be any value in the interval $[0, 1]$. The CDF takes only three values: $0, 1 - p, 1$.
+
+**Binomial**. This distribution arises in the context of performing independent 'trials' of an experiment with a binary outcome, and corresponds to the random variable that counts the number of outcomes of one type. Suppose each trial has probability of 'success' $p$; the other outcome then has probability $(1 - p)$. If $X$ counts the number of successes, then the probability of *a particular sequence* of $x$ successes in $n$ trials is $p^x (1 - p)^{n - x}$, by the independence of the trials. However, there are multiple ways to realize the same number of successes, in correspondence with the number of ways to select $x$ trials to be the successes. Thus, the binomial distribution is characterized by the PMF: $$
+P(X = x) = {n \choose x}p^x (1 - p)^{n - x}
+\;,\qquad x = 0, 1, \dots, n
+$$ The terms $n, p$ are parameters --- $n$ is a positive integer and $p$ may be any number in the interval $[0, 1]$.
+
+**Poisson**. This distribution is commonly used to model counts, as its support set is $\mathbb{N}$. It can be viewed as a limiting case of the binomial as the number of trials increases indefinitely; however, we will simply state the PMF. $X$ has a Poisson distribution if its PMF is of the form: $$
+P(X = x) = \frac{\lambda^x e^{-\lambda}}{x!}
+\;,\qquad x \in \mathbb{N}
+$$ The term $\lambda$ is a parameter and may be any positive real number.
+
+**Geometric**. The geometric distribution arises, like the binomial, in the context of performing repeated independent trials with a fixed probability of 'success'. This distribution, however, corresponds to the number of trials performed before the first success is observed. If $p$ represents the probability of success on each trial, then the probability of performing $n$ trials before the first success is simply the probability of $n$ failures and $1$ success, which, by independence, is $(1-p)^n p$. So if $X$ is defined as the number of trials before the first success occurs, then its PMF is: $$
+P(X = n) = (1 - p)^n p
+\;,\qquad n \in \mathbb{N}
+$$ The term $p$ is a parameter and may be any number in the unit interval $[0, 1]$.
+
+**Negative binomial**. This distribution, similar to the binomial, arises from performing repeated independent trials with a binary outcome and fixed probabilities. Let $X$ count the number of trials performed until $r$ successes are obtained. Then the probability of a given count, say $n$, is simply the probability of $r$ successful trials and $n - r$ unsuccessful trials, adjusted for the number of ways to arrange the trials, except for the very last trial, which must be a success. Thus, the PMF is: $$
+P(X = n) = {n - 1 \choose r - 1} p^r (1 - p)^{n - r}
+$$ The terms $r, p$ are parameters --- $r$ may be any positive integer, and $p$ may be any number in the unit interval $[0, 1]$.
 
 <!-- #### Continuous distributions -->
 
