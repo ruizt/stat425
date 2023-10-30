@@ -1,0 +1,30 @@
+---
+title: "Homework 5"
+author: "STAT425, Fall 2023"
+author-title: "Course"
+date: "11/9/2023"
+published-title: "Due in class on"
+# format: 
+#   latex:
+#     include-in-header: 
+#       - text: 
+#           \usepackage{fancyhdr}
+#     include-before-body:
+#       - text:
+#           \pagestyle{fancy}
+#           \fancyhead[LH]{HW5}
+#           \fancyhead[RH]{STAT425, Fall 2023}
+---
+
+Please prepare your solutions neatly, numbered, and in order; ideally, you'll write up a final clean copy after completing all problems on scratch paper. Please note that if a prompt includes a question, you're expected to support answers with reasoning, even if the prompt does not explicitly ask for a justification. Provide your name at the top of your submission, and if you collaborate with other students in the class, please list their names at the top of your submission beneath your own.
+
+1.  Reparametrize the uniform distribution in terms of center and length: propose an alternative PDF for the uniform $(a, b)$ distribution with one parameter that indicates the center of the interval and one that indicates the length of the interval. Verify that your proposal is a PDF, and find the expectation and variance.
+
+2.  Poisson approximation to the binomial. In class it was noted that the Poisson distribution is a limiting case for the binomial with $np = \lambda$ fixed as $n \rightarrow \infty$. This fact can be leveraged to approximate binomial probabilities for large numbers of trials. Let $X_{n, p} \sim \text{binomial}(n, p)$ and $Y_{n, p} \sim \text{Poisson}(np)$. Then when $n$ is large, $P(X_{n, p} = x) \approx P(Y_{n, p} = x)$. Fill in the following table:
+
+| $n$    | $p$   | $P(X_{n, p} = 100)$ | $P(Y_{n, p} = 100)$ | approximation error |
+|---------------|---------------|---------------|---------------|---------------|
+| 1000   | 0.1   |                     |                     |                     |
+| 10000  | 0.01  |                     |                     |                     |
+| 100000 | 0.001 |                     |                     |                     |
+| 1000000 | 0.0001
