@@ -144,3 +144,27 @@ DG&S 3.1 --- 3.3
 #### Assignment
 
 -   [Homework 4](content/hw4.qmd) due Thursday 11/2
+
+### Week 6 (10/30/23)
+
+#### Suggested reading:
+
+This week lectures will cover a blend of material in DG&S 4.1 -- 4.4 and 5.1 -- 5.6, but some material in those sections is deferred until later sections.
+
+#### Lecture notes
+
+\[[common distributions](content/week6-distributions.qmd)\]
+
+#### Class meetings:
+
+***Monday:*** probability distributions based on Bernoulli trials
+
+***Tuesday:*** expected value; common discrete and continuous distributions
+
+***Wednesday:*** the Gaussian/normal distribution
+
+***Thursday:*** moments; the moment generating function
+
+#### Assignment
+
+-   Homework 5 due Thursday 11/9

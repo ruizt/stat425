@@ -18,8 +18,6 @@ published-title: "Due in class on"
 
 Please prepare your solutions neatly, numbered, and in order; ideally, you'll write up a final clean copy after completing all problems on scratch paper. Please note that if a prompt includes a question, you're expected to support answers with reasoning, even if the prompt does not explicitly ask for a justification. Provide your name at the top of your submission, and if you collaborate with other students in the class, please list their names at the top of your submission beneath your own.
 
-\***Note: this will be updated with more problems on Thursday, 10/26**
-
 1.  (Random walk) Consider the natural numbers $\mathbb{N} = \{0, 1, 2, \dots\}$, and imagine a random process whereby given a particular location on the number line you move one step to the right with probability $p$ and one step to the left with probability $1 - p$. If you reach zero, the process stops.
 
     i.  Find the probability that you make it to 50 if you start at 1 and $p = 0.6$.

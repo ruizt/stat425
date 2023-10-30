@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="STAT425, Fall 2023">
-<meta name="dcterms.date" content="2023-10-24">
+<meta name="dcterms.date" content="2023-10-30">
 
 <title>STAT425 - Random variables</title>
 <style>
@@ -122,8 +122,6 @@ gtag('config', 'G-H3YKZX4J88', { 'anonymize_ip': true});
   <li><a href="#cumulative-distribution-functions" id="toc-cumulative-distribution-functions" class="nav-link" data-scroll-target="#cumulative-distribution-functions">Cumulative distribution functions</a></li>
   <li><a href="#discrete-random-variables" id="toc-discrete-random-variables" class="nav-link" data-scroll-target="#discrete-random-variables">Discrete random variables</a></li>
   <li><a href="#continuous-random-variables" id="toc-continuous-random-variables" class="nav-link" data-scroll-target="#continuous-random-variables">Continuous random variables</a></li>
-  <li><a href="#exercise-characterizing-distributions" id="toc-exercise-characterizing-distributions" class="nav-link" data-scroll-target="#exercise-characterizing-distributions">Exercise: characterizing distributions</a></li>
-  <li><a href="#common-distributions" id="toc-common-distributions" class="nav-link" data-scroll-target="#common-distributions">Common distributions</a></li>
   </ul>
 </nav>
     </div>
@@ -149,7 +147,7 @@ gtag('config', 'G-H3YKZX4J88', { 'anonymize_ip': true});
     <div>
     <div class="quarto-title-meta-heading">Updated</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">October 24, 2023</p>
+      <p class="date">October 30, 2023</p>
     </div>
   </div>
   
@@ -440,7 +438,7 @@ Proof
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>If <span class="math inline">\(f\)</span> is a PMF of a random variable <span class="math inline">\(X\)</span>, then by definition <span class="math inline">\(f(x) = F(x) - F(x^-)\)</span>. Since <span class="math inline">\(F(x) \leq F(x^-)\)</span> by monotonicity of <span class="math inline">\(F\)</span>, <span class="math inline">\(f(x) \geq 0\)</span> for every <span class="math inline">\(x\)</span>. Since <span class="math inline">\(\lim_{x \rightarrow \infty} F(x) = 1\)</span> and <span class="math inline">\(F\)</span> is monotonic, <span class="math inline">\(F(x) \leq 1\)</span> for every <span class="math inline">\(x\)</span>; by construction <span class="math inline">\(f(x) \leq F(x) \leq 1\)</span>.</p>
+<p>If <span class="math inline">\(f\)</span> is a PMF of a discrete random variable <span class="math inline">\(X\)</span>, then by definition the PMF is <span class="math inline">\(f(x) = F(x) - F(x^-)\)</span>. Since <span class="math inline">\(F(x) \leq F(x^-)\)</span> by monotonicity of <span class="math inline">\(F\)</span>, <span class="math inline">\(f(x) \geq 0\)</span> for every <span class="math inline">\(x\)</span>. Since <span class="math inline">\(\lim_{x \rightarrow \infty} F(x) = 1\)</span> and <span class="math inline">\(F\)</span> is monotonic, <span class="math inline">\(F(x) \leq 1\)</span> for every <span class="math inline">\(x\)</span>; by construction <span class="math inline">\(f(x) \leq F(x) \leq 1\)</span>. So <span class="math inline">\(0 \leq f(x) \leq 1\)</span>.</p>
 <p>For the converse implication, if <span class="math inline">\(f\)</span> is a function satisfying (i)–(ii), then <span class="math inline">\(f(x) &gt; 0\)</span> for only countably many values. To see this, consider <span class="math inline">\(A_n = \left\{x \in \mathbb{R}: \frac{1}{n + 1} \leq f(x) &lt; \frac{1}{n}\right\}\)</span> for <span class="math inline">\(n = 1, 2, \dots\)</span> with <span class="math inline">\(A_0 = \{x \in \mathbb{R}: f(x) = 1\}\)</span>; by construction we must have <span class="math inline">\(\sum_{x \in \mathbb{R}} f(x) \geq \sum_{x \in A_n} f(x)\)</span> for every <span class="math inline">\(n\)</span> since <span class="math inline">\(f\)</span> is nonnegative per (i) and <span class="math inline">\(A_n \subseteq \mathbb{R}\)</span>. Now <span class="math inline">\(f(x) \geq \frac{1}{n + 1}\)</span> on <span class="math inline">\(A_n\)</span> so <span class="math inline">\(\sum_{x \in A_n} f(x) \geq \sum_{x \in A_n} \frac{1}{n + 1}\)</span>; but then if <span class="math inline">\(A_n\)</span> is infinite the sum on the right diverges, and thus so does the sum over all <span class="math inline">\(x \in \mathbb{R}\)</span> contrary to (ii). So (ii) entails that <span class="math inline">\(|A_n| &lt; \infty\)</span> for every <span class="math inline">\(n\)</span>, and thus the union <span class="math inline">\(\bigcup_{n = 1} A_n = \{x\in \mathbb{R}: f(x) &gt; 0\}\)</span> is a countable set.</p>
 <p>Let <span class="math inline">\(S\)</span> denote the set <span class="math inline">\(\{x \in \mathbb{R}: f(x) &gt; 0\}\)</span>. Let <span class="math inline">\(x_1, x_2, \dots\)</span> denote the elements of <span class="math inline">\(S\)</span> and <span class="math inline">\(p_1, p_2, \dots\)</span> denote the corresponding values of <span class="math inline">\(f\)</span>, that is, <span class="math inline">\(p_i = f(x_i)\)</span>. By hypothesis we have that <span class="math inline">\(0 \leq p_i \leq 1\)</span> (condition (i)) and <span class="math inline">\(\sum_{i = 1}^\infty p_i = 1\)</span> (condition (ii)). Let <span class="math inline">\(P(E) = \sum_{i: x_i \in E} p_i\)</span> for <span class="math inline">\(E \in 2^S\)</span>. Then <span class="math inline">\(P\)</span> is a probability measure on <span class="math inline">\((S, 2^S)\)</span> — it suffices to check that <span class="math inline">\(P\)</span> satisfies the probability axioms.</p>
 <ul>
@@ -475,51 +473,62 @@ P_X(E) = P(X \in E) = \int_E f(x)dx
 <li><span class="math inline">\(\int_\mathbb{R} f(x)dx = 1\)</span></li>
 </ol>
 <p>The proof of this result is omitted.</p>
-</section>
-<section id="exercise-characterizing-distributions" class="level3">
-<h3 class="anchored" data-anchor-id="exercise-characterizing-distributions">Exercise: characterizing distributions</h3>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Exercise: characterizing distributions
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <p>For each of the functions below, determine whether it is a CDF. Then, for the CDFs, identify whether a random variable with this distribution is discrete or continuous, and find or guesstimate the PMF/PDF if it exists. You can ignore the behavior at the endpoints, but to check your understanding, identify for each jump which value the function must take at the endpoint for it to be a valid CDF.</p>
 <div class="cell">
 <div class="cell-output-display">
 <p><img src="week5-rvs_files/figure-html/unnamed-chunk-1-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
-</section>
-<section id="common-distributions" class="level3">
-<h3 class="anchored" data-anchor-id="common-distributions">Common distributions</h3>
-<p>Conventionally, distributions are characterized by specifying either a PMF/PDF or a CDF. If the PDF/PMF is used, the support should be specified explicitly, for instance, by writing <span class="math inline">\(P(X = x) = f(x), x \in S\)</span>; the implication is then that the PMF/PDF is zero elsewhere.</p>
-<p>The distributions below arise frequently in many different scenarios. Most have one or more terms besides the value(s) of the random variable, which form the argument of the CDF/PDF/PMF; such terms are <em>parameters</em> that may be adjusted to suit certain problems. Of course, changing the parameter changes the distribution, but the distribution functions retain the same form. Thus, these common distributions are really <em>families</em> of distributions in which the distribution functions share a common functional form.</p>
-<section id="discrete-distributions" class="level4">
-<h4 class="anchored" data-anchor-id="discrete-distributions">Discrete distributions</h4>
-<p><strong>Hypergeometric</strong>. This distribution was introduced in HW2, and arises from the physical experiment of drawing <span class="math inline">\(n\)</span> objects from a collection of <span class="math inline">\(N\)</span> objects of one type and <span class="math inline">\(M\)</span> objects of another when any object is equally likely to be drawn and objects are drawn without replacement. For example, imagine selecting <span class="math inline">\(n\)</span> marbles from a bag of <span class="math inline">\(N\)</span> blue marbles and <span class="math inline">\(M\)</span> red marbles. Define the random variable <span class="math inline">\(X\)</span> to be the number of objects of the first type drawn. Then <span class="math inline">\(X\)</span> has a hypergeometric distribution characterized by PMF:</p>
+</div>
+</div>
+<p>These results establish that all distributions (again, recall that technically distributions are probability measures on <span class="math inline">\(\mathbb{R}\)</span> induced by random variables) can be characterized by CDFs or PDF/PMFs. If a random variable <span class="math inline">\(X\)</span> has the distribution given by the CDF <span class="math inline">\(F\)</span> or the PDF/PMF <span class="math inline">\(f\)</span>, we write</p>
 <p><span class="math display">\[
-P(X = k) = \frac{{N \choose k}{M \choose n - k}}{{N + M \choose n}}
-\;,\qquad k \leq N,\; n \leq N + M
-\]</span> The terms <span class="math inline">\(M, N\)</span> are parameters and are positive integers. The CDF does not have a simplified form.</p>
-<p><strong>Discrete uniform</strong>. This is perhaps the simplest distribution. Consider drawing an integer between 1 and <span class="math inline">\(N\)</span> at random, and let <span class="math inline">\(X\)</span> denote the integer drawn. This is the discrete uniform distribution, and it is characterized by the PMF: <span class="math display">\[
-P(X = n) = \frac{1}{N}
-\;, \qquad n = 1, 2, \dots, N
-\]</span> The term <span class="math inline">\(N\)</span> is a parameter and is a positive integer. The CDF is <span class="math inline">\(P(X \leq x) = \frac{n(n + 1)}{2N}\)</span>.</p>
-<p><strong>Bernoulli</strong>. This distribution characterizes any random variable with a binary outcome. Without loss of generality, we encode the outcomes as zero and one; otherwise, we need only define a new random variable mapping different outcomes to <span class="math inline">\(\{0, 1\}\)</span>. Based on probability rules, if <span class="math inline">\(P(X = 1) = p\)</span>, then <span class="math inline">\(P(X = 0) = 1 - p\)</span>. A function that captures this is the PMF:</p>
-<p><span class="math display">\[
-P(X = x) = p^x (1 - p)^{1 - x}
-\;,\qquad x = 0, 1
-\]</span> The term <span class="math inline">\(p\)</span> is a parameter and may be any value in the interval <span class="math inline">\([0, 1]\)</span>. The CDF takes only three values: <span class="math inline">\(0, 1 - p, 1\)</span>.</p>
-<p><strong>Binomial</strong>. This distribution arises in the context of performing independent ‘trials’ of an experiment with a binary outcome, and corresponds to the random variable that counts the number of outcomes of one type. Suppose each trial has probability of ‘success’ <span class="math inline">\(p\)</span>; the other outcome then has probability <span class="math inline">\((1 - p)\)</span>. If <span class="math inline">\(X\)</span> counts the number of successes, then the probability of <em>a particular sequence</em> of <span class="math inline">\(x\)</span> successes in <span class="math inline">\(n\)</span> trials is <span class="math inline">\(p^x (1 - p)^{n - x}\)</span>, by the independence of the trials. However, there are multiple ways to realize the same number of successes, in correspondence with the number of ways to select <span class="math inline">\(x\)</span> trials to be the successes. Thus, the binomial distribution is characterized by the PMF: <span class="math display">\[
-P(X = x) = {n \choose x}p^x (1 - p)^{n - x}
-\;,\qquad x = 0, 1, \dots, n
-\]</span> The terms <span class="math inline">\(n, p\)</span> are parameters — <span class="math inline">\(n\)</span> is a positive integer and <span class="math inline">\(p\)</span> may be any number in the interval <span class="math inline">\([0, 1]\)</span>.</p>
-<p><strong>Poisson</strong>. This distribution is commonly used to model counts, as its support set is <span class="math inline">\(\mathbb{N}\)</span>. It can be viewed as a limiting case of the binomial as the number of trials increases indefinitely; however, we will simply state the PMF. <span class="math inline">\(X\)</span> has a Poisson distribution if its PMF is of the form: <span class="math display">\[
-P(X = x) = \frac{\lambda^x e^{-\lambda}}{x!}
-\;,\qquad x \in \mathbb{N}
-\]</span> The term <span class="math inline">\(\lambda\)</span> is a parameter and may be any positive real number.</p>
-<p><strong>Geometric</strong>. The geometric distribution arises, like the binomial, in the context of performing repeated independent trials with a fixed probability of ‘success’. This distribution, however, corresponds to the number of trials performed before the first success is observed. If <span class="math inline">\(p\)</span> represents the probability of success on each trial, then the probability of performing <span class="math inline">\(n\)</span> trials before the first success is simply the probability of <span class="math inline">\(n\)</span> failures and <span class="math inline">\(1\)</span> success, which, by independence, is <span class="math inline">\((1-p)^n p\)</span>. So if <span class="math inline">\(X\)</span> is defined as the number of trials before the first success occurs, then its PMF is: <span class="math display">\[
-P(X = n) = (1 - p)^n p
-\;,\qquad n \in \mathbb{N}
-\]</span> The term <span class="math inline">\(p\)</span> is a parameter and may be any number in the unit interval <span class="math inline">\([0, 1]\)</span>.</p>
-<p><strong>Negative binomial</strong>. This distribution, similar to the binomial, arises from performing repeated independent trials with a binary outcome and fixed probabilities. Let <span class="math inline">\(X\)</span> count the number of trials performed until <span class="math inline">\(r\)</span> successes are obtained. Then the probability of a given count, say <span class="math inline">\(n\)</span>, is simply the probability of <span class="math inline">\(r\)</span> successful trials and <span class="math inline">\(n - r\)</span> unsuccessful trials, adjusted for the number of ways to arrange the trials, except for the very last trial, which must be a success. Thus, the PMF is: <span class="math display">\[
-P(X = n) = {n - 1 \choose r - 1} p^r (1 - p)^{n - r}
-\]</span> The terms <span class="math inline">\(r, p\)</span> are parameters — <span class="math inline">\(r\)</span> may be any positive integer, and <span class="math inline">\(p\)</span> may be any number in the unit interval <span class="math inline">\([0, 1]\)</span>.</p>
+X \sim F(x) \qquad\text{or}\qquad X\sim f(x)
+\]</span></p>
+<p>respectively.</p>
+<!-- ### Common distributions -->
+<!-- Conventionally, distributions are characterized by specifying either a PMF/PDF or a CDF. If the PDF/PMF is used, the support should be specified explicitly, for instance, by writing $P(X = x) = f(x), x \in S$; the implication is then that the PMF/PDF is zero elsewhere. -->
+<!-- The distributions below arise frequently in many different scenarios. Most have one or more terms besides the value(s) of the random variable, which form the argument of the CDF/PDF/PMF; such terms are *parameters* that may be adjusted to suit certain problems. Of course, changing the parameter changes the distribution, but the distribution functions retain the same form. Thus, these common distributions are really *families* of distributions in which the distribution functions share a common functional form. -->
+<!-- #### Discrete distributions -->
+<!-- **Hypergeometric**. This distribution was introduced in HW2, and arises from the physical experiment of drawing $n$ objects from a collection of $N$ objects of one type and $M$ objects of another when any object is equally likely to be drawn and objects are drawn without replacement. For example, imagine selecting $n$ marbles from a bag of $N$ blue marbles and $M$ red marbles. Define the random variable $X$ to be the number of objects of the first type drawn. Then $X$ has a hypergeometric distribution characterized by PMF: -->
+<!-- $$ -->
+<!-- P(X = k) = \frac{{N \choose k}{M \choose n - k}}{{N + M \choose n}} -->
+<!-- \;,\qquad k \leq N,\; n \leq N + M -->
+<!-- $$ The terms $M, N$ are parameters and are positive integers. The CDF does not have a simplified form. -->
+<!-- **Discrete uniform**. This is perhaps the simplest distribution. Consider drawing an integer between 1 and $N$ at random, and let $X$ denote the integer drawn. This is the discrete uniform distribution, and it is characterized by the PMF: $$ -->
+<!-- P(X = n) = \frac{1}{N}  -->
+<!-- \;, \qquad n = 1, 2, \dots, N -->
+<!-- $$ The term $N$ is a parameter and is a positive integer. The CDF is $P(X \leq x) = \frac{n(n + 1)}{2N}$. -->
+<!-- **Bernoulli**. This distribution characterizes any random variable with a binary outcome. Without loss of generality, we encode the outcomes as zero and one; otherwise, we need only define a new random variable mapping different outcomes to $\{0, 1\}$. Based on probability rules, if $P(X = 1) = p$, then $P(X = 0) = 1 - p$. A function that captures this is the PMF: -->
+<!-- $$ -->
+<!-- P(X = x) = p^x (1 - p)^{1 - x} -->
+<!-- \;,\qquad x = 0, 1 -->
+<!-- $$ The term $p$ is a parameter and may be any value in the interval $[0, 1]$. The CDF takes only three values: $0, 1 - p, 1$. -->
+<!-- **Binomial**. This distribution arises in the context of performing independent 'trials' of an experiment with a binary outcome, and corresponds to the random variable that counts the number of outcomes of one type. Suppose each trial has probability of 'success' $p$; the other outcome then has probability $(1 - p)$. If $X$ counts the number of successes, then the probability of *a particular sequence* of $x$ successes in $n$ trials is $p^x (1 - p)^{n - x}$, by the independence of the trials. However, there are multiple ways to realize the same number of successes, in correspondence with the number of ways to select $x$ trials to be the successes. Thus, the binomial distribution is characterized by the PMF: $$ -->
+<!-- P(X = x) = {n \choose x}p^x (1 - p)^{n - x} -->
+<!-- \;,\qquad x = 0, 1, \dots, n -->
+<!-- $$ The terms $n, p$ are parameters --- $n$ is a positive integer and $p$ may be any number in the interval $[0, 1]$. -->
+<!-- **Poisson**. This distribution is commonly used to model counts, as its support set is $\mathbb{N}$. It can be viewed as a limiting case of the binomial as the number of trials increases indefinitely; however, we will simply state the PMF. $X$ has a Poisson distribution if its PMF is of the form: $$ -->
+<!-- P(X = x) = \frac{\lambda^x e^{-\lambda}}{x!} -->
+<!-- \;,\qquad x \in \mathbb{N} -->
+<!-- $$ The term $\lambda$ is a parameter and may be any positive real number. -->
+<!-- **Geometric**. The geometric distribution arises, like the binomial, in the context of performing repeated independent trials with a fixed probability of 'success'. This distribution, however, corresponds to the number of trials performed before the first success is observed. If $p$ represents the probability of success on each trial, then the probability of performing $n$ trials before the first success is simply the probability of $n$ failures and $1$ success, which, by independence, is $(1-p)^n p$. So if $X$ is defined as the number of trials before the first success occurs, then its PMF is: $$ -->
+<!-- P(X = n) = (1 - p)^n p -->
+<!-- \;,\qquad n \in \mathbb{N} -->
+<!-- $$ The term $p$ is a parameter and may be any number in the unit interval $[0, 1]$. -->
+<!-- **Negative binomial**. This distribution, similar to the binomial, arises from performing repeated independent trials with a binary outcome and fixed probabilities. Let $X$ count the number of trials performed until $r$ successes are obtained. Then the probability of a given count, say $n$, is simply the probability of $r$ successful trials and $n - r$ unsuccessful trials, adjusted for the number of ways to arrange the trials, except for the very last trial, which must be a success. Thus, the PMF is: $$ -->
+<!-- P(X = n) = {n - 1 \choose r - 1} p^r (1 - p)^{n - r} -->
+<!-- $$ The terms $r, p$ are parameters --- $r$ may be any positive integer, and $p$ may be any number in the unit interval $[0, 1]$. -->
 <!-- #### Continuous distributions -->
 <!-- **Uniform** -->
 <!-- **Exponential** -->
@@ -528,7 +537,6 @@ P(X = n) = {n - 1 \choose r - 1} p^r (1 - p)^{n - r}
 <!-- **Cauchy** -->
 
 
-</section>
 </section>
 
 </main> <!-- /main -->

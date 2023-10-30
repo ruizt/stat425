@@ -7,9 +7,7 @@ published-title: 'Updated'
 ::: callout-note
 ## Announcements
 
--   Week 5 notes posted
--   Midterm grades and solutions posted
--   Section 2 (5:10pm) will *not* be held on Wednesday
+-   Week 6 notes posted
 :::
 
 This is the class website for Probability Theory (STAT 425) offered at Cal Poly in Fall 2023. Note that this site is for *both* sections (01-3585 held 4:10pm MTWR and 02-3430 held 5:10pm MTWR).
