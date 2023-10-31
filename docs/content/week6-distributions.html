@@ -120,6 +120,7 @@ gtag('config', 'G-H3YKZX4J88', { 'anonymize_ip': true});
   <ul>
   <li><a href="#distributions-based-on-bernoulli-trials" id="toc-distributions-based-on-bernoulli-trials" class="nav-link active" data-scroll-target="#distributions-based-on-bernoulli-trials">Distributions based on Bernoulli trials</a></li>
   <li><a href="#basic-continuous-distributions" id="toc-basic-continuous-distributions" class="nav-link" data-scroll-target="#basic-continuous-distributions">Basic continuous distributions</a></li>
+  <li><a href="#the-gaussian-distribution" id="toc-the-gaussian-distribution" class="nav-link" data-scroll-target="#the-gaussian-distribution">The Gaussian distribution</a></li>
   </ul>
 </nav>
     </div>
@@ -204,7 +205,7 @@ k = 0, 1, 2, \dots
 &amp;= (-1)^k \frac{(-r)(-r - 1)\cdots (-r - k + 2) (-r - k + 1)}{k!} \\
 &amp;= (-1)^k {-r \choose k}
 \end{align*}
-\]</span> Then, using the limit of the binomial series, one obtains: <span class="math display">\[
+\]</span> Technically, <span class="math inline">\({-r\choose k}\)</span> is a generalized binomial coefficient. While the above should make this notation plausible, we won’t give a full treatment here; however, binomial series with generalized coefficients are convergent under certain conditions, and the limit exhibits the same form as the more familiar binomial theorem. We’ll simply apply the result. Using the limit of the binomial series, one obtains: <span class="math display">\[
 \sum_{k = 0}^\infty {k + r - 1\choose k} (1 - p)^k = \sum_{k = 0}^\infty {-r \choose k} (p - 1)^k = (1 + p - 1)^{-r} = p^{-r}
 \]</span> From which it follows that: <span class="math display">\[
 \sum_{k = 0}^\infty P(Y = k) = p^r \sum_{k = 0}^\infty {k + r - 1\choose k} (1 - p)^k = p^r p^{-r} = 1
@@ -395,6 +396,64 @@ x &gt; 0
 \end{align*}
 \]</span></p>
 <p>The exponential distribution is often used to model waiting times and failure times.</p>
+</section>
+<section id="the-gaussian-distribution" class="level3">
+<h3 class="anchored" data-anchor-id="the-gaussian-distribution">The Gaussian distribution</h3>
+<p>The Gaussian or normal distribution is of central importance in statistical inference, and arises in relation to averages. Here we’ll develop the density in the standard case (no parameters) and then introduce the center and scale parameters through a simple linear transformation. We’ll start with an important calculus result.</p>
+<p><strong>Theorem (Gaussian integral)</strong>. <span class="math inline">\(\int_\mathbb{R} e^{-z^2}dz = \sqrt\pi\)</span>.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Proof
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Let <span class="math inline">\(I\)</span> denote the integral of interest. Then: <span class="math display">\[
+I^2 = \left(\int_\mathbb{R} e^{-z^2}dz\right)\left(\int_\mathbb{R} e^{-w^2}dw\right) = \int_\mathbb{R}\int_\mathbb{R} e^{-(z^2 + w^2)}dzdw
+\]</span> Now converting to polar coordinates — that is, applying the transformation <span class="math inline">\(z = r\cos\theta\)</span> and <span class="math inline">\(w = r\sin\theta\)</span> and using the result from calculus that <span class="math inline">\(dzdw = rdrd\theta\)</span> — one obtains: <span class="math display">\[
+I^2 = \int_0^{2\pi}\int_0^\infty e^{-r^2}rdrd\theta = \int_0^{2\pi} \left(\left[-\frac{1}{2}e^{-r^2}\right]^\infty_0\right)d\theta = \int_0^{2\pi} \frac{1}{2}d\theta = \pi
+\]</span> Taking square roots yields <span class="math inline">\(I = \sqrt\pi\)</span> as required.</p>
+</div>
+</div>
+<p><strong>Gaussian distribution</strong>. The standard Gaussian or normal distribution is given by the PDF <span class="math inline">\(\varphi (x) = \frac{1}{\sqrt{2\pi}}e^{-\frac{x^2}{2}}\)</span> for <span class="math inline">\(x \in \mathbb{R}\)</span>. There is no closed form for the CDF, but we write the CDF as <span class="math inline">\(\Phi(x) = \int_{-\infty}^x \varphi(z)dz\)</span>. If a random variable <span class="math inline">\(Z\)</span> has this PDF/CDF, write <span class="math inline">\(Z \sim N(0, 1)\)</span>.</p>
+<p>As a remark, special notation is used for the PDF and CDF of the standard normal/Gaussian because it is used so frequently. <span class="math inline">\(\varphi\)</span> and <span class="math inline">\(\Phi\)</span> are typical. <span class="math inline">\(\varphi\)</span> is a valid PDF since it is evidently non-negative and: <span class="math display">\[
+\begin{align*}
+\int_\mathbb{R} \varphi(x)dx
+&amp;= \frac{1}{\sqrt{2\pi}} \int_\mathbb{R} e^{-\frac{x^2}{2}}dx \\
+&amp;= \frac{1}{\sqrt{2\pi}} \int_\mathbb{R} e^{-z^2}\sqrt{2}dz \qquad \left(z^2 = \frac{x^2}{2} \Rightarrow dz = \frac{dx}{\sqrt{2}}\right) \\
+&amp;= \sqrt{\frac{2}{2\pi}} \int_\mathbb{R} e^{-z^2}dz \\
+&amp;= \sqrt{\frac{2}{2\pi}} \cdot\sqrt{\pi} \\
+&amp;= 1
+\end{align*}
+\]</span></p>
+<p>If <span class="math inline">\(Z \sim N(0, 1)\)</span> then the expectation of <span class="math inline">\(Z\)</span> is: <span class="math display">\[
+\begin{align*}
+\mathbb{E}Z &amp;= \int_\mathbb{R} x\varphi(x)dx \\
+&amp;= \int_{-\infty}^0 x\varphi(x)dx + \int_0^\infty x\varphi(x)dx \\
+&amp;= -\int_{-\infty}^0 -x\varphi(-x)dx + \int_0^\infty x\varphi(x)dx \\
+&amp;= -\int_0^\infty x\varphi(x)dx + \int_0^\infty x\varphi(x)dx \\
+&amp;= 0
+\end{align*}
+\]</span></p>
+<p>This argument leverages the fact, immediate from the functional form of <span class="math inline">\(\varphi\)</span>, that <span class="math inline">\(\varphi(x) = \varphi(-x)\)</span>, <em>i.e.</em>, <span class="math inline">\(\varphi\)</span> is an <em>even</em> function.</p>
+<p>Now let <span class="math inline">\(Z \sim N(0, 1)\)</span> and define <span class="math inline">\(X = \sigma Z + \mu\)</span> for arbitrary numbers <span class="math inline">\(\sigma &gt; 0\)</span> and <span class="math inline">\(\mu \in \mathbb{R}\)</span>. <span class="math inline">\(\sigma\)</span> is referred to as a scale parameter and <span class="math inline">\(\mu\)</span> is referred to as a location parameter. The CDF of <span class="math inline">\(X\)</span> is: <span class="math display">\[
+F_X (x) = P(X \leq x) = P(\sigma Z + \mu \leq x) = P\left(Z \leq \frac{x - \mu}{\sigma}\right) = \Phi\left(\frac{x - \mu}{\sigma}\right)
+\]</span> It follows that the PDF is: <span class="math display">\[
+f_X (x) = \frac{d}{dx} \Phi\left(\frac{x - \mu}{\sigma}\right) = \frac{1}{\sigma}\varphi\left(\frac{x - \mu}{\sigma}\right) = \frac{1}{\sqrt{2\pi\sigma^2}}\exp\left\{-\frac{1}{2\sigma^2}\left(x - \mu\right)^2\right\}
+\]</span> We write <span class="math inline">\(X \sim N(\mu, \sigma^2)\)</span> to indicate that <span class="math inline">\(X\)</span> has a Gaussian distribution with parameters <span class="math inline">\(\mu\)</span> and <span class="math inline">\(\sigma\)</span>. Furthermore, <span class="math inline">\(X\)</span> has expectation: <span class="math display">\[
+\begin{align*}
+\mathbb{E}X
+&amp;= \int_\mathbb{R} x\cdot\frac{1}{\sqrt{2\pi\sigma^2}}\exp\left\{-\frac{1}{2\sigma^2}\left(x - \mu\right)^2\right\}dx \\
+&amp;= \int_\mathbb{R} (\sigma z + \mu)\cdot\frac{1}{\sqrt{2\pi}}\exp\left\{-\frac{1}{2}z^2\right\}dz \qquad \left(z = \frac{x - \mu}{\sigma} \Rightarrow dz = \frac{1}{\sigma}dx\right) \\
+&amp;= \sigma\int_\mathbb{R} z \cdot\frac{1}{\sqrt{2\pi}}\exp\left\{-\frac{1}{2}z^2\right\}dz + \mu\int_\mathbb{R} \frac{1}{\sqrt{2\pi}}\exp\left\{-\frac{1}{2}z^2\right\}dz \\
+&amp;= \sigma\mathbb{E}Z + \mu \int_\mathbb{R}\varphi(z)dz \\
+&amp;= \mu
+\end{align*}
+\]</span></p>
+<p>Notice that <span class="math inline">\(\mathbb{E}X = \mathbb{E}\left(\sigma Z + \mu\right) = \sigma\mathbb{E}Z + \mu\)</span>. It turns out that, in general, expectation is linear.</p>
 
 
 </section>

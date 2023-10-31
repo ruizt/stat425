@@ -53,7 +53,7 @@ $$ To show that this is a valid PMF, use the second form and write: $$
 &= (-1)^k \frac{(-r)(-r - 1)\cdots (-r - k + 2) (-r - k + 1)}{k!} \\
 &= (-1)^k {-r \choose k}
 \end{align*}
-$$ Then, using the limit of the binomial series, one obtains: $$
+$$ Technically, ${-r\choose k}$ is a generalized binomial coefficient. While the above should make this notation plausible, we won't give a full treatment here; however, binomial series with generalized coefficients are convergent under certain conditions, and the limit exhibits the same form as the more familiar binomial theorem. We'll simply apply the result. Using the limit of the binomial series, one obtains: $$
 \sum_{k = 0}^\infty {k + r - 1\choose k} (1 - p)^k = \sum_{k = 0}^\infty {-r \choose k} (p - 1)^k = (1 + p - 1)^{-r} = p^{-r}
 $$ From which it follows that: $$
 \sum_{k = 0}^\infty P(Y = k) = p^r \sum_{k = 0}^\infty {k + r - 1\choose k} (1 - p)^k = p^r p^{-r} = 1
@@ -205,3 +205,72 @@ $$
 
 The exponential distribution is often used to model waiting times and failure times.
 
+### The Gaussian distribution
+
+The Gaussian or normal distribution is of central importance in statistical inference, and arises in relation to averages. Here we'll develop the density in the standard case (no parameters) and then introduce the center and scale parameters through a simple linear transformation. We'll start with an important calculus result.
+
+**Theorem (Gaussian integral)**. $\int_\mathbb{R} e^{-z^2}dz = \sqrt\pi$.
+
+::: callout-tip
+## Proof
+
+Let $I$ denote the integral of interest. Then:
+$$
+I^2 = \left(\int_\mathbb{R} e^{-z^2}dz\right)\left(\int_\mathbb{R} e^{-w^2}dw\right) = \int_\mathbb{R}\int_\mathbb{R} e^{-(z^2 + w^2)}dzdw
+$$
+Now converting to polar coordinates --- that is, applying the transformation $z = r\cos\theta$ and $w = r\sin\theta$ and using the result from calculus that $dzdw = rdrd\theta$ --- one obtains:
+$$
+I^2 = \int_0^{2\pi}\int_0^\infty e^{-r^2}rdrd\theta = \int_0^{2\pi} \left(\left[-\frac{1}{2}e^{-r^2}\right]^\infty_0\right)d\theta = \int_0^{2\pi} \frac{1}{2}d\theta = \pi
+$$
+Taking square roots yields $I = \sqrt\pi$ as required.
+
+:::
+
+**Gaussian distribution**. The standard Gaussian or normal distribution is given by the PDF $\varphi (x) = \frac{1}{\sqrt{2\pi}}e^{-\frac{x^2}{2}}$ for $x \in \mathbb{R}$. There is no closed form for the CDF, but we write the CDF as $\Phi(x) = \int_{-\infty}^x \varphi(z)dz$. If a random variable $Z$ has this PDF/CDF, write $Z \sim N(0, 1)$.
+
+As a remark, special notation is used for the PDF and CDF of the standard normal/Gaussian because it is used so frequently. $\varphi$ and $\Phi$ are typical. $\varphi$ is a valid PDF since it is evidently non-negative and:
+$$
+\begin{align*}
+\int_\mathbb{R} \varphi(x)dx 
+&= \frac{1}{\sqrt{2\pi}} \int_\mathbb{R} e^{-\frac{x^2}{2}}dx \\
+&= \frac{1}{\sqrt{2\pi}} \int_\mathbb{R} e^{-z^2}\sqrt{2}dz \qquad \left(z^2 = \frac{x^2}{2} \Rightarrow dz = \frac{dx}{\sqrt{2}}\right) \\
+&= \sqrt{\frac{2}{2\pi}} \int_\mathbb{R} e^{-z^2}dz \\
+&= \sqrt{\frac{2}{2\pi}} \cdot\sqrt{\pi} \\
+&= 1
+\end{align*}
+$$
+
+If $Z \sim N(0, 1)$ then the expectation of $Z$ is:
+$$
+\begin{align*}
+\mathbb{E}Z &= \int_\mathbb{R} x\varphi(x)dx \\
+&= \int_{-\infty}^0 x\varphi(x)dx + \int_0^\infty x\varphi(x)dx \\
+&= -\int_{-\infty}^0 -x\varphi(-x)dx + \int_0^\infty x\varphi(x)dx \\
+&= -\int_0^\infty x\varphi(x)dx + \int_0^\infty x\varphi(x)dx \\
+&= 0
+\end{align*}
+$$
+
+This argument leverages the fact, immediate from the functional form of $\varphi$, that $\varphi(x) = \varphi(-x)$, *i.e.*, $\varphi$ is an *even* function.
+
+Now let $Z \sim N(0, 1)$ and define $X = \sigma Z + \mu$ for arbitrary numbers $\sigma > 0$ and $\mu \in \mathbb{R}$. $\sigma$ is referred to as a scale parameter and $\mu$ is referred to as a location parameter. The CDF of $X$ is:
+$$
+F_X (x) = P(X \leq x) = P(\sigma Z + \mu \leq x) = P\left(Z \leq \frac{x - \mu}{\sigma}\right) = \Phi\left(\frac{x - \mu}{\sigma}\right) 
+$$
+It follows that the PDF is:
+$$
+f_X (x) = \frac{d}{dx} \Phi\left(\frac{x - \mu}{\sigma}\right) = \frac{1}{\sigma}\varphi\left(\frac{x - \mu}{\sigma}\right) = \frac{1}{\sqrt{2\pi\sigma^2}}\exp\left\{-\frac{1}{2\sigma^2}\left(x - \mu\right)^2\right\}
+$$
+We write $X \sim N(\mu, \sigma^2)$ to indicate that $X$ has a Gaussian distribution with parameters $\mu$ and $\sigma$. Furthermore, $X$ has expectation:
+$$
+\begin{align*}
+\mathbb{E}X
+&= \int_\mathbb{R} x\cdot\frac{1}{\sqrt{2\pi\sigma^2}}\exp\left\{-\frac{1}{2\sigma^2}\left(x - \mu\right)^2\right\}dx \\
+&= \int_\mathbb{R} (\sigma z + \mu)\cdot\frac{1}{\sqrt{2\pi}}\exp\left\{-\frac{1}{2}z^2\right\}dz \qquad \left(z = \frac{x - \mu}{\sigma} \Rightarrow dz = \frac{1}{\sigma}dx\right) \\
+&= \sigma\int_\mathbb{R} z \cdot\frac{1}{\sqrt{2\pi}}\exp\left\{-\frac{1}{2}z^2\right\}dz + \mu\int_\mathbb{R} \frac{1}{\sqrt{2\pi}}\exp\left\{-\frac{1}{2}z^2\right\}dz \\
+&= \sigma\mathbb{E}Z + \mu \int_\mathbb{R}\varphi(z)dz \\
+&= \mu
+\end{align*}
+$$
+
+Notice that $\mathbb{E}X = \mathbb{E}\left(\sigma Z + \mu\right) = \sigma\mathbb{E}Z + \mu$. It turns out that, in general, expectation is linear.
