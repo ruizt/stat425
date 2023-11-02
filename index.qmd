@@ -7,7 +7,7 @@ published-title: 'Updated'
 ::: callout-note
 ## Announcements
 
--   Week 6 notes posted
+-   HW5 posted
 -   Please fill out [feedback survey](https://forms.gle/hpAB4Jtgnhaky3QTA) by the end of the week
 :::
 

@@ -151,7 +151,7 @@ gtag('config', 'G-H3YKZX4J88', { 'anonymize_ip': true});
 <p>Please prepare your solutions neatly, numbered, and in order; ideally, you’ll write up a final clean copy after completing all problems on scratch paper. Please note that if a prompt includes a question, you’re expected to support answers with reasoning, even if the prompt does not explicitly ask for a justification. Provide your name at the top of your submission, and if you collaborate with other students in the class, please list their names at the top of your submission beneath your own.</p>
 <ol type="1">
 <li><p>Reparametrize the uniform distribution in terms of center and length: propose an alternative PDF for the uniform <span class="math inline">\((a, b)\)</span> distribution with one parameter that indicates the center of the interval and one that indicates the length of the interval. Verify that your proposal is a PDF, and find the expectation and variance.</p></li>
-<li><p>Poisson approximation to the binomial. In class it was noted that the Poisson distribution is a limiting case for the binomial with <span class="math inline">\(np = \lambda\)</span> fixed as <span class="math inline">\(n \rightarrow \infty\)</span>. This fact can be leveraged to approximate binomial probabilities for large numbers of trials. Let <span class="math inline">\(X_{n, p} \sim \text{binomial}(n, p)\)</span> and <span class="math inline">\(Y_{n, p} \sim \text{Poisson}(np)\)</span>. Then when <span class="math inline">\(n\)</span> is large, <span class="math inline">\(P(X_{n, p} = x) \approx P(Y_{n, p} = x)\)</span>. Fill in the following table:</p></li>
+<li><p>(Poisson approximation to the binomial.) In class it was noted that the Poisson distribution is a limiting case for the binomial with <span class="math inline">\(np = \lambda\)</span> fixed as <span class="math inline">\(n \rightarrow \infty\)</span>. This fact can be leveraged to approximate binomial probabilities for large numbers of trials. Let <span class="math inline">\(X_{n, p} \sim \text{binomial}(n, p)\)</span> and <span class="math inline">\(Y_{n, p} \sim \text{Poisson}(np)\)</span>. Then when <span class="math inline">\(n\)</span> is large, <span class="math inline">\(P(X_{n, p} = x) \approx P(Y_{n, p} = x)\)</span>. Fill in the following table:</p></li>
 </ol>
 <table class="table">
 <colgroup>
@@ -201,6 +201,21 @@ gtag('config', 'G-H3YKZX4J88', { 'anonymize_ip': true});
 </tr>
 </tbody>
 </table>
+<ol start="3" type="1">
+<li>The <span class="math inline">\(k\)</span>th factorial moment of a random variable <span class="math inline">\(X\)</span> is <span class="math inline">\(\mathbb{E} \left( \frac{X!}{(X - k)!} \right)\)</span>, assuming the expectation exists.
+<ol type="i">
+<li>Find the second factorial moment of the Poisson distribution.</li>
+<li>Find the second factorial moment of the binomial distribution.</li>
+<li>Use your answers above to calculate the variance of each distribution.</li>
+</ol></li>
+<li>(Exponential distribution) Let <span class="math inline">\(X \sim F(x)\)</span> where <span class="math inline">\(F(x) = 1 - e^{-\alpha x}\)</span>. Find the mean and variance of <span class="math inline">\(X\)</span>.</li>
+<li>(Truncated Poisson) Let <span class="math inline">\(X \sim \text{Poisson}(\lambda)\)</span> and define <span class="math inline">\(Y\)</span> by the probability mass function <span class="math display">\[
+P(Y = y) = \frac{P(X = y)}{P(X &gt; 0)}
+\;,\qquad y = 1, 2, \dots
+\]</span> Find an expression for the PMF of <span class="math inline">\(Y\)</span>, and calculate its mean and variance.</li>
+<li>With <span class="math inline">\(Y\)</span> as in the previous problem, show that <span class="math inline">\(\mathbb{E}\log(Y) \geq 0\)</span>.</li>
+<li>(Probability integral transform) Let <span class="math inline">\(X\)</span> be a continuous random variable with strictly increasing CDF <span class="math inline">\(F\)</span>, and let <span class="math inline">\(Y = F(X)\)</span>. Show that <span class="math inline">\(Y \sim \text{uniform}(0, 1)\)</span>. (If <span class="math inline">\(F\)</span> is strictly increasing, then <span class="math inline">\(F^{-1}(x)\)</span> is well-defined).</li>
+</ol>
 
 
 

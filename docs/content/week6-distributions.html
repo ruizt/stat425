@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="STAT425, Fall 2023">
-<meta name="dcterms.date" content="2023-10-31">
+<meta name="dcterms.date" content="2023-11-02">
 
 <title>STAT425 - Common probability distributions</title>
 <style>
@@ -121,6 +121,7 @@ gtag('config', 'G-H3YKZX4J88', { 'anonymize_ip': true});
   <li><a href="#distributions-based-on-bernoulli-trials" id="toc-distributions-based-on-bernoulli-trials" class="nav-link active" data-scroll-target="#distributions-based-on-bernoulli-trials">Distributions based on Bernoulli trials</a></li>
   <li><a href="#basic-continuous-distributions" id="toc-basic-continuous-distributions" class="nav-link" data-scroll-target="#basic-continuous-distributions">Basic continuous distributions</a></li>
   <li><a href="#the-gaussian-distribution" id="toc-the-gaussian-distribution" class="nav-link" data-scroll-target="#the-gaussian-distribution">The Gaussian distribution</a></li>
+  <li><a href="#more-expectations" id="toc-more-expectations" class="nav-link" data-scroll-target="#more-expectations">More expectations</a></li>
   </ul>
 </nav>
     </div>
@@ -146,7 +147,7 @@ gtag('config', 'G-H3YKZX4J88', { 'anonymize_ip': true});
     <div>
     <div class="quarto-title-meta-heading">Updated</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">October 31, 2023</p>
+      <p class="date">November 2, 2023</p>
     </div>
   </div>
   
@@ -453,7 +454,167 @@ f_X (x) = \frac{d}{dx} \Phi\left(\frac{x - \mu}{\sigma}\right) = \frac{1}{\sigma
 &amp;= \mu
 \end{align*}
 \]</span></p>
-<p>Notice that <span class="math inline">\(\mathbb{E}X = \mathbb{E}\left(\sigma Z + \mu\right) = \sigma\mathbb{E}Z + \mu\)</span>. It turns out that, in general, expectation is linear.</p>
+<p>Notice that <span class="math inline">\(\mathbb{E}X = \mathbb{E}\left(\sigma Z + \mu\right) = \sigma\mathbb{E}Z + \mu\)</span>.</p>
+</section>
+<section id="more-expectations" class="level3">
+<h3 class="anchored" data-anchor-id="more-expectations">More expectations</h3>
+<p><strong>Theorem</strong>. If <span class="math inline">\(X\)</span> is a random variable and <span class="math inline">\(g\)</span> is a function, then the expectation of <span class="math inline">\(Y = g(X)\)</span>, provided it exists, is: <span class="math display">\[
+\mathbb{E}X = \begin{cases}
+  \sum_{x \in \mathbb{R}} g(x) P(X = x) &amp;,\;X \text{ is discrete}\\
+  \int_\mathbb{R} g(x)f(x)dx &amp;,\;X \text{ is continuous}\\
+\end{cases}
+\]</span></p>
+<p>The proof requires some advanced techniques, so we’ll skip it. Hogg &amp; Craig provide a sketch in the discrete case and otherwise defer to references. Some texts simply state this as a definition.</p>
+<p><strong>Corollaries</strong>. If <span class="math inline">\(X\)</span> is a random variable, <span class="math inline">\(a, b, c\)</span> are constants, and <span class="math inline">\(g_1, g_2\)</span> are functions whose expectations exist, then the following statements are true.</p>
+<ol type="i">
+<li><span class="math inline">\(\mathbb{E}\left(ag_1(X) + bg_2(X) + c\right) = a\mathbb{E}g_1(X) + b\mathbb{E}g_2(X) + c\)</span>.</li>
+<li>If <span class="math inline">\(g_1(x) \geq 0\)</span> for all <span class="math inline">\(x\)</span> in the support of <span class="math inline">\(X\)</span>, then <span class="math inline">\(\mathbb{E}g_1(X) \geq 0\)</span>.</li>
+<li>If <span class="math inline">\(g_1(x) \geq g_2(x)\)</span> for all <span class="math inline">\(x\)</span> in the support of <span class="math inline">\(X\)</span>, then <span class="math inline">\(\mathbb{E}g_1(X) \geq \mathbb{E}g_2(X)\)</span>.</li>
+<li>If <span class="math inline">\(a \leq g_1(x) \leq b\)</span> then for all <span class="math inline">\(x\)</span> in the support of <span class="math inline">\(X\)</span>, <span class="math inline">\(a \leq \mathbb{E}g_1(X) \leq b\)</span>.</li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Proof
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Notice that (ii) and (iv) are special cases of (iii), so it suffices to prove (i) and (iv). Essentially, these properties follow directly from properties of integration/summation.</p>
+<p>For (i), in the discrete case:</p>
+<p><span class="math display">\[
+\begin{align*}
+\mathbb{E}\left(ag_1(X) + bg_2(X) + c\right)
+&amp;= \sum_x \left(ag_1(x) + bg_2(x) + c\right) P(X = x) \\
+&amp;= a\sum_x g_1(x)P(X = x) + b\sum_x g_2(x)P(X = x) + c\sum_x P(X = x) \\
+&amp;= a\mathbb{E}g_1(X) + b\mathbb{E}g_2(X) + c
+\end{align*}
+\]</span></p>
+<p>In the continuous case, the argument is essentially the same:</p>
+<p><span class="math display">\[
+\begin{align*}
+\mathbb{E}\left(ag_1(X) + bg_2(X) + c\right)
+&amp;= \int_\mathbb{R} \left(ag_1(x) + bg_2(x) + c\right) f(x)dx \\
+&amp;= a\int_\mathbb{R} g_1(x)f(x)dx + b\int_\mathbb{R} g_2(x)f(x)dx + c\int_\mathbb{R}f(x)dx \\
+&amp;= a\mathbb{E}g_1(X) + b\mathbb{E}g_2(X) + c
+\end{align*}
+\]</span></p>
+<p>For (iii), let <span class="math inline">\(g_2(x) \leq g_1(x)\)</span> for every <span class="math inline">\(x \in \mathbb{R}\)</span>. Then, in the discrete case:</p>
+<p><span class="math display">\[
+\mathbb{E}g_2(X) = \sum_x g_2(x) P(X = x) \leq \sum_x g_1(x) P(X = x) = \mathbb{E}g_1(X)
+\]</span></p>
+<p>In the continuous case:</p>
+<p><span class="math display">\[
+\mathbb{E}g_2(X) = \int_\mathbb{R} g_2(x) f(x) dx \leq \int_\mathbb{R} g_1(x) f(x) dx = \mathbb{E}g_1(X)
+\]</span></p>
+<p>To obtain (ii), set <span class="math inline">\(g_2(x) \equiv 0\)</span>. Then if <span class="math inline">\(0 \leq g_1(x)\)</span> for every <span class="math inline">\(x\in\mathbb{R}\)</span>, one has <span class="math inline">\(g_2 (x) \leq g_1(x)\)</span> and so <span class="math inline">\(\mathbb{E}g_2(X) \leq \mathbb{E}g_1(X)\)</span>. But <span class="math inline">\(\mathbb{E}g_2(X) = 0\)</span>, so <span class="math inline">\(0 \leq \mathbb{E}g_1(X)\)</span>.</p>
+<p>To obtain (iv), set <span class="math inline">\(g_2(x) \equiv a\)</span> and consider a function <span class="math inline">\(g_3(x) \equiv b\)</span>. Then the expectations exist and <span class="math inline">\(\mathbb{E}g_2(X) = a\)</span> and <span class="math inline">\(\mathbb{E}g_3(X) = b\)</span>. apply (iii) to obtain that if <span class="math inline">\(g_2(x) \leq g_1(x) \leq g_3(x)\)</span> for all <span class="math inline">\(x \in \mathbb{R}\)</span>, the expectations are similarly ordered and thus <span class="math inline">\(a \leq \mathbb{E}g_1(X) \leq b\)</span>.</p>
+</div>
+</div>
+<p>These corollaries can often ease calculations. For example, it is immediate that for any random variable whose expectation exists, <span class="math inline">\(\mathbb{E}X^2 \geq 0\)</span>. Similarly, scaling and shifting a random variable scales and shifts the mean: <span class="math inline">\(\mathbb{E}(aX + b) = a\mathbb{E}X + b\)</span>.</p>
+<p>The <span style="color:blue">variance</span> of a random variable is defined as the expectation: <span class="math display">\[
+\text{var}X = \mathbb{E}\left(X - \mathbb{E}X\right)^2
+\]</span></p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Example: Bernoulli variance
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>If <span class="math inline">\(X \sim \text{Bernoulli}(p)\)</span> then, noting that from above <span class="math inline">\(\mathbb{E}X = p\)</span>, the variance of <span class="math inline">\(X\)</span> is: <span class="math display">\[
+\begin{align*}
+\text{var}X
+&amp;= \mathbb{E}(X - \mathbb{E}X)^2 \\
+&amp;= \mathbb{E}(X - p)^2 \\
+&amp;= (1 - p)^2 P(X = 1) + (0 - p)^2 P(X = 0) \\
+&amp;= (1 - p)^2 p + p^2 (1 - p) \\
+&amp;= (1 - p)\left((1 - p)p + p^2\right) \\
+&amp;= (1 - p)\left(p - p^2 + p^2\right) \\
+&amp;= (1 - p)p
+\end{align*}
+\]</span></p>
+</div>
+</div>
+<p>While one could calculate the variance directly, as in the example above, this is often a cumbersome calculation in more complex cases. Instead, by the corollary, and noting that <span class="math inline">\(\mathbb{E}g(X)\)</span> is a constant, one can obtain the <span style="color:blue">variance formula</span> as: <span class="math display">\[
+\text{var}X = \mathbb{E}\left(X^2 - 2X\mathbb{E}X + \mathbb{E}X\mathbb{E}X\right) = \mathbb{E}X^2 - 2\mathbb{E}X\mathbb{E}X + \mathbb{E}X\mathbb{E}X = \mathbb{E}X^2 - \left(\mathbb{E}X\right)^2
+\]</span> Thus, to calculate the variance of a random variable, one simply needs to know <span class="math inline">\(\mathbb{E}X\)</span> and <span class="math inline">\(\mathbb{E}X^2\)</span>.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Example: Poisson variance
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>If <span class="math inline">\(X \sim \text{Poisson}(\lambda)\)</span>, then from before <span class="math inline">\(\mathbb{E}X = \lambda\)</span>, and: <span class="math display">\[
+\begin{align*}
+\mathbb{E}X^2
+&amp;= \sum_{x = 0}^\infty x^2 \frac{\lambda^x e^{-\lambda}}{x!} \\
+&amp;= \lambda \sum_{x = 0}^\infty x \frac{\lambda^{x-1} e^{-\lambda}}{(x - 1)!} \\
+&amp;= \lambda \sum_{x = 0}^\infty (x + 1) \frac{\lambda^{x} e^{-\lambda}}{x!} \\
+&amp;= \lambda \left[\sum_{x = 0}^\infty x \frac{\lambda^{x} e^{-\lambda}}{x!} + 1 \cdot \frac{\lambda^{x} e^{-\lambda}}{x!} \right] \\
+&amp;= \lambda \left[\sum_{x = 0}^\infty x \frac{\lambda^{x} e^{-\lambda}}{x!} + \sum_{x = 0}^\infty 1 \cdot \frac{\lambda^{x} e^{-\lambda}}{x!} \right] \\
+&amp;= \lambda(\lambda + 1)
+\end{align*}
+\]</span></p>
+<p>Then, by the variance formula: <span class="math display">\[
+\text{var}X = \mathbb{E}X^2 - \left(\mathbb{E}X\right)^2 = \lambda(\lambda + 1) - \lambda^2 = \lambda^2 + \lambda - \lambda^2 = \lambda
+\]</span></p>
+</div>
+</div>
+<p>More generally, the expected values of integer exponents of a random variable are known as <span style="color:blue">moments</span> of the random variable (or its distribution). We’ll write moments as: <span class="math display">\[
+\mu_k = \mathbb{E}X^k
+\]</span></p>
+<p>The <span style="color:blue">centered moments</span> of a random variable (or its distribution) are defined as: <span class="math display">\[
+\tilde{\mu}_k = \mathbb{E}(X - \mu_1)^k
+\]</span> Note that the mean of a random variable is its first moment. The variance is its second centered moment.</p>
+<p>The moment sequence uniquely defines a random variable whenever moments exist for every <span class="math inline">\(k \in \mathbb{N}\)</span> and the random variable has bounded support. The moments of a random variable can under many circumstances be obtained from the <span style="color:blue">moment generating function</span> (MGF) rather than direct calculation. The MGF is defined as the expectation <span class="math display">\[
+m_X (t) = \mathbb{E}e^{tX}
+\;,\qquad
+t \in (-h, h)
+\]</span> provided it exists for some <span class="math inline">\(h&gt;0\)</span>. This is called the moment generating function because: <span class="math display">\[
+\frac{d^k}{d^kt} m_X(t)\Big\rvert_{t = 0} = \mathbb{E}X^ke^{tX}\Big\rvert_{t = 0} = \mathbb{E}X^k
+\]</span></p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Example: Poisson MGF
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>If <span class="math inline">\(X \sim \text{Poisson}(\lambda)\)</span> then for all <span class="math inline">\(t\in \mathbb{R}\)</span>: <span class="math display">\[
+\begin{align*}
+m_X (t)
+&amp;= \mathbb{E}e^{tX} \\
+&amp;= \sum_{x = 0}^\infty e^{tx} \frac{\lambda^x e^{-\lambda}}{x!} \\
+&amp;= e^{-\lambda(1 - e^t)} \sum_{x = 0}^\infty \underbrace{\frac{(\lambda e^t)^x e^{-\lambda e^t}}{x!}}_{\text{Poisson}(\lambda e^t) \text{ PMF}} \\
+&amp;= \exp\left\{-\lambda(1 - e^t)\right\}
+\end{align*}
+\]</span></p>
+<p>Then, to find the first and second moments, differentiate and evaluate at <span class="math inline">\(t = 0\)</span>: <span class="math display">\[
+\begin{align*}
+\frac{d}{dt}m_X(t)\Big\rvert_{t = 0}
+&amp;= \lambda e^t \exp\left\{-\lambda(1 - e^t)\right\} \Big\rvert_{t = 0} = \lambda \\
+\frac{d^2}{d^2t}m_X(t)\Big\rvert_{t = 0}
+&amp;= \frac{d}{dt} \left[\lambda e^t \exp\left\{-\lambda(1 - e^t)\right\} \right]\Big\rvert_{t = 0} \\
+&amp;= \left[\lambda e^t \exp\left\{-\lambda(1 - e^t)\right\} + (\lambda e^t)^2 \exp\left\{-\lambda(1 - e^t)\right\} \right]\Big\rvert_{t = 0} \\
+&amp;= \lambda + \lambda^2
+\end{align*}
+\]</span> This matches the previous calculation for <span class="math inline">\(\mu_1, \mu_2\)</span>.</p>
+</div>
+</div>
+<p><strong>Theorem</strong>. If <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> are two random variables whose moment generating functions exist, then <span class="math inline">\(X \stackrel{d}{=} Y\)</span> if and only if <span class="math inline">\(m_X(t) = m_Y(t)\)</span> for all <span class="math inline">\(t\)</span> in a neighborhood of zero.</p>
 
 
 </section>
