@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="STAT425, Fall 2023">
-<meta name="dcterms.date" content="2023-11-02">
+<meta name="dcterms.date" content="2023-11-05">
 
 <title>STAT425 - Common probability distributions</title>
 <style>
@@ -147,7 +147,7 @@ gtag('config', 'G-H3YKZX4J88', { 'anonymize_ip': true});
     <div>
     <div class="quarto-title-meta-heading">Updated</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">November 2, 2023</p>
+      <p class="date">November 5, 2023</p>
     </div>
   </div>
   
@@ -570,51 +570,6 @@ Example: Poisson variance
 \]</span></p>
 </div>
 </div>
-<p>More generally, the expected values of integer exponents of a random variable are known as <span style="color:blue">moments</span> of the random variable (or its distribution). We’ll write moments as: <span class="math display">\[
-\mu_k = \mathbb{E}X^k
-\]</span></p>
-<p>The <span style="color:blue">centered moments</span> of a random variable (or its distribution) are defined as: <span class="math display">\[
-\tilde{\mu}_k = \mathbb{E}(X - \mu_1)^k
-\]</span> Note that the mean of a random variable is its first moment. The variance is its second centered moment.</p>
-<p>The moment sequence uniquely defines a random variable whenever moments exist for every <span class="math inline">\(k \in \mathbb{N}\)</span> and the random variable has bounded support. The moments of a random variable can under many circumstances be obtained from the <span style="color:blue">moment generating function</span> (MGF) rather than direct calculation. The MGF is defined as the expectation <span class="math display">\[
-m_X (t) = \mathbb{E}e^{tX}
-\;,\qquad
-t \in (-h, h)
-\]</span> provided it exists for some <span class="math inline">\(h&gt;0\)</span>. This is called the moment generating function because: <span class="math display">\[
-\frac{d^k}{d^kt} m_X(t)\Big\rvert_{t = 0} = \mathbb{E}X^ke^{tX}\Big\rvert_{t = 0} = \mathbb{E}X^k
-\]</span></p>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Example: Poisson MGF
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>If <span class="math inline">\(X \sim \text{Poisson}(\lambda)\)</span> then for all <span class="math inline">\(t\in \mathbb{R}\)</span>: <span class="math display">\[
-\begin{align*}
-m_X (t)
-&amp;= \mathbb{E}e^{tX} \\
-&amp;= \sum_{x = 0}^\infty e^{tx} \frac{\lambda^x e^{-\lambda}}{x!} \\
-&amp;= e^{-\lambda(1 - e^t)} \sum_{x = 0}^\infty \underbrace{\frac{(\lambda e^t)^x e^{-\lambda e^t}}{x!}}_{\text{Poisson}(\lambda e^t) \text{ PMF}} \\
-&amp;= \exp\left\{-\lambda(1 - e^t)\right\}
-\end{align*}
-\]</span></p>
-<p>Then, to find the first and second moments, differentiate and evaluate at <span class="math inline">\(t = 0\)</span>: <span class="math display">\[
-\begin{align*}
-\frac{d}{dt}m_X(t)\Big\rvert_{t = 0}
-&amp;= \lambda e^t \exp\left\{-\lambda(1 - e^t)\right\} \Big\rvert_{t = 0} = \lambda \\
-\frac{d^2}{d^2t}m_X(t)\Big\rvert_{t = 0}
-&amp;= \frac{d}{dt} \left[\lambda e^t \exp\left\{-\lambda(1 - e^t)\right\} \right]\Big\rvert_{t = 0} \\
-&amp;= \left[\lambda e^t \exp\left\{-\lambda(1 - e^t)\right\} + (\lambda e^t)^2 \exp\left\{-\lambda(1 - e^t)\right\} \right]\Big\rvert_{t = 0} \\
-&amp;= \lambda + \lambda^2
-\end{align*}
-\]</span> This matches the previous calculation for <span class="math inline">\(\mu_1, \mu_2\)</span>.</p>
-</div>
-</div>
-<p><strong>Theorem</strong>. If <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> are two random variables whose moment generating functions exist, then <span class="math inline">\(X \stackrel{d}{=} Y\)</span> if and only if <span class="math inline">\(m_X(t) = m_Y(t)\)</span> for all <span class="math inline">\(t\)</span> in a neighborhood of zero.</p>
 
 
 </section>

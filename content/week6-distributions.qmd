@@ -366,45 +366,4 @@ Then, by the variance formula: $$
 $$
 :::
 
-More generally, the expected values of integer exponents of a random variable are known as [moments]{style="color:blue"} of the random variable (or its distribution). We'll write moments as: $$
-\mu_k = \mathbb{E}X^k
-$$
 
-The [centered moments]{style="color:blue"} of a random variable (or its distribution) are defined as: $$
-\tilde{\mu}_k = \mathbb{E}(X - \mu_1)^k
-$$ Note that the mean of a random variable is its first moment. The variance is its second centered moment.
-
-The moment sequence uniquely defines a random variable whenever moments exist for every $k \in \mathbb{N}$ and the random variable has bounded support. The moments of a random variable can under many circumstances be obtained from the [moment generating function]{style="color:blue"} (MGF) rather than direct calculation. The MGF is defined as the expectation $$
-m_X (t) = \mathbb{E}e^{tX}
-\;,\qquad
-t \in (-h, h)
-$$ provided it exists for some $h>0$. This is called the moment generating function because: $$
-\frac{d^k}{d^kt} m_X(t)\Big\rvert_{t = 0} = \mathbb{E}X^ke^{tX}\Big\rvert_{t = 0} = \mathbb{E}X^k
-$$
-
-::: callout-note
-## Example: Poisson MGF
-
-If $X \sim \text{Poisson}(\lambda)$ then for all $t\in \mathbb{R}$: $$
-\begin{align*}
-m_X (t) 
-&= \mathbb{E}e^{tX} \\
-&= \sum_{x = 0}^\infty e^{tx} \frac{\lambda^x e^{-\lambda}}{x!} \\
-&= e^{-\lambda(1 - e^t)} \sum_{x = 0}^\infty \underbrace{\frac{(\lambda e^t)^x e^{-\lambda e^t}}{x!}}_{\text{Poisson}(\lambda e^t) \text{ PMF}} \\
-&= \exp\left\{-\lambda(1 - e^t)\right\}
-\end{align*}
-$$
-
-Then, to find the first and second moments, differentiate and evaluate at $t = 0$: $$
-\begin{align*}
-\frac{d}{dt}m_X(t)\Big\rvert_{t = 0} 
-&= \lambda e^t \exp\left\{-\lambda(1 - e^t)\right\} \Big\rvert_{t = 0} = \lambda \\
-\frac{d^2}{d^2t}m_X(t)\Big\rvert_{t = 0} 
-&= \frac{d}{dt} \left[\lambda e^t \exp\left\{-\lambda(1 - e^t)\right\} \right]\Big\rvert_{t = 0} \\
-&= \left[\lambda e^t \exp\left\{-\lambda(1 - e^t)\right\} + (\lambda e^t)^2 \exp\left\{-\lambda(1 - e^t)\right\} \right]\Big\rvert_{t = 0} \\
-&= \lambda + \lambda^2
-\end{align*}
-$$ This matches the previous calculation for $\mu_1, \mu_2$.
-:::
-
-**Theorem**. If $X$ and $Y$ are two random variables whose moment generating functions exist, then $X \stackrel{d}{=} Y$ if and only if $m_X(t) = m_Y(t)$ for all $t$ in a neighborhood of zero.
