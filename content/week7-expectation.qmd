@@ -12,6 +12,28 @@ The expected values of integer exponents of a random variable are known as [mome
 \mu_k = \mathbb{E}X^k
 $$
 
+We say that the $k$th moment exists if $\mathbb{E}\left[|X|^k\right] < \infty$. It can be shown that if $\mu_k < \infty$ then also $\mu_j < \infty$ for every $j < k$; that is, if the $k$th moment exists, then so do all the lower moments.
+
+::: callout-tip
+## Proof
+
+Suppose the $k$th moment exists, so that $\mathbb{E}\left[|X|^k\right] < \infty$, and let $j \leq k$ (assume $j, k$ are integers). The $j$th moment exists just in case $\mathbb{E}\left[|X|^j\right] < \infty$. The strategy will be to show that $\mathbb{E}\left[|X|^j\right] \leq \mathbb{E}\left[|X|^k\right]$
+
+If $X$ is continuous, then: $$
+\begin{align*}
+\mathbb{E}\left[|X^j|\right] 
+&= \int_\mathbb{R} |x|^j f(x) dx \\
+&= \int_{|x| \leq 1} |x|^j f(x) dx + \int_{|x| > 1} |x|^j f(x) dx \\
+&\leq \int_{|x| \leq 1} f(x)dx + \int_{|x| > 1} |x|^k f(x) dx \\
+&\leq \int_\mathbb{R} f(x)dx + \int_\mathbb{R} |x|^k f(x) dx \\
+&= 1 + \mathbb{E}\left[|x|^k\right] \\
+&\leq \mathbb{E}\left[|x|^k\right]
+\end{align*}
+$$
+
+The proof in the discrete case is a parallel argument but with sums in place of integrals, and is left as an exercise.
+:::
+
 The [centered moments]{style="color:blue"} of a random variable (or its distribution) are defined as: $$
 \tilde{\mu}_k = \mathbb{E}(X - \mu_1)^k
 $$ Note that the mean of a random variable is its first moment. The variance is its second centered moment.
@@ -58,8 +80,7 @@ As a consequence, an MGF can be both a way of describing a distribution and a us
 ::: callout-note
 ## Gaussian MGF
 
-If $Z \sim N(0, 1)$ then the MGF of $Z$ is:
-$$
+If $Z \sim N(0, 1)$ then the MGF of $Z$ is: $$
 \begin{align*}
 m_Z (t) 
 &= \mathbb{E}e^{tZ} \\
@@ -68,17 +89,14 @@ m_Z (t)
 &= e^{\frac{1}{2}t^2} \underbrace{\int_\mathbb{R} \frac{1}{\sqrt{2\pi}} e^{-\frac{1}{2} (z - t)^2} dz}_{N(t, 1) \text{ PDF}} \\
 &= e^{\frac{1}{2}t^2}
 \end{align*}
-$$
-Now if $X \sim N(\mu, \sigma^2)$ then $X \stackrel{d}{=} \sigma Z + \mu$, so $X$ has MGF:
-$$
+$$ Now if $X \sim N(\mu, \sigma^2)$ then $X \stackrel{d}{=} \sigma Z + \mu$, so $X$ has MGF: $$
 m_X (t) 
 = \mathbb{E}e^{tX} 
 = \mathbb{E}e^{t(\sigma Z + \mu)} 
 = \mathbb{E}e^{(t\sigma)Z}e^{t\mu}
 = e^{t\mu}m_Z(t\sigma)
 = \exp\left\{t\mu + \frac{1}{2}t^2\sigma^2\right\}
-$$
-Then the first two moments of each distribution are:
+$$ Then the first two moments of each distribution are:
 
 $$
 \begin{align*}
@@ -87,15 +105,12 @@ $$
 \mathbb{E}X &= m'_X(0) = (\mu + t\sigma^2)e^{\mu t + \frac{1}{2}t^2\sigma^2}\Big\rvert_{t = 0} = \mu \\
 \mathbb{E}X^2 &= m''_X(0) = \sigma^2 m_X(t) + (\mu + t\sigma^2)^2 m_X(t)\Big\rvert_{t = 0} = \mu^2 + \sigma^2
 \end{align*}
-$$
-So then by the variance formula, one has:
-$$
+$$ So then by the variance formula, one has: $$
 \begin{align*}
 \text{var}Z &= \mathbb{E}Z^2 - (\mathbb{E}Z)^2 = 1 - 0^2 = 1 \\
 \text{var}X &= \mathbb{E}X^2 - (\mathbb{E}X)^2 = \mu^2 + \sigma^2 - \mu^2 = \sigma^2 \\
 \end{align*}
 $$
-
 :::
 
 Notice that in the above example, it is easy to find the MGF of a linear function of a random variable with a known MGF. We can state this as a lemma.
@@ -113,15 +128,11 @@ The MGF occasionally comes in handy for other transformations, as the next examp
 ::: callout-note
 ## Lognormal moments
 
-$X$ has a [lognormal distribution]{style="color:blue"} if $\log X \sim N(\mu, \sigma^2)$. The moments of $X$ can actually be found from the MGF of $\log X$, since:
-$$
+$X$ has a [lognormal distribution]{style="color:blue"} if $\log X \sim N(\mu, \sigma^2)$. The moments of $X$ can actually be found from the MGF of $\log X$, since: $$
 m_{\log X} (t) = \mathbb{E}e^{t\log X} = \mathbb{E}X^t
-$$
-Since $\log X$ is Gaussian, $m_{\log X} (t) = \exp\left\{\mu t + \frac{1}{2}t^2\sigma^2\right\}$, so:
-$$
+$$ Since $\log X$ is Gaussian, $m_{\log X} (t) = \exp\left\{\mu t + \frac{1}{2}t^2\sigma^2\right\}$, so: $$
 \mathbb{E}X^t = \exp\left\{\mu t + \frac{1}{2}t^2\sigma^2\right\}
-$$
-Interestingly, this expression holds for non-integer values of $t$, since the MGF exists for every $t \in \mathbb{R}$.
+$$ Interestingly, this expression holds for non-integer values of $t$, since the MGF exists for every $t \in \mathbb{R}$.
 :::
 
 One of many interesting properties of the standard Gaussian distribution are that all its moments exist, and all odd moments are zero. Moreover, for any Gaussian distribution, the moments can be calculated explicitly using a recursion. The next example explores these properties.
@@ -131,12 +142,9 @@ One of many interesting properties of the standard Gaussian distribution are tha
 
 If $Z \sim N(0, 1)$ so that $Z$ has a standard Gaussian distribution, then $m_Z (t) = e^{\frac{1}{2}t^2}$.
 
-The MGF is infinitely differentiable, and a Taylor expansion about zero gives:
-$$
+The MGF is infinitely differentiable, and a Taylor expansion about zero gives: $$
 m_Z (t) = m_Z(0) + m'_Z(0) \frac{t}{1!} + m''_Z(0)\frac{t^2}{2!} + \cdots + m^{(k)}_Z (0) \frac{t^k}{k!} + \cdots
-$$
-Notice, however, that the series expansion of the exponential function $e^x = \sum_{n = 0}^\infty \frac{x^n}{n!}$ (also a Taylor expansion about zero) gives that:
-$$
+$$ Notice, however, that the series expansion of the exponential function $e^x = \sum_{n = 0}^\infty \frac{x^n}{n!}$ (also a Taylor expansion about zero) gives that: $$
 \begin{align*}
 e^{\frac{1}{2}t^2} 
 &= 1 + \frac{1}{1!}\left(\frac{t^2}{2}\right)^1 + \frac{1}{2!}\left(\frac{t^2}{2}\right)^2 + \cdots + \frac{1}{k!}\left(\frac{t^2}{2}\right)^k + \cdots \\
@@ -144,52 +152,44 @@ e^{\frac{1}{2}t^2}
 &= 1 + \frac{t^2}{2!}\cdot \frac{2!}{2^1 1!} + \frac{t^4}{4!}\cdot \frac{4!}{2^2 2!} + \cdots + \frac{t^{2k}}{(2k)!} \cdot \frac{(2k)!}{2^k k!} + \cdots \\
 &= 1 + c_2 \frac{t^2}{2!} + c_4\frac{t^4}{4!} + \cdots + c_{2k}\frac{t^{2k}}{(2k)!} + \cdots
 \end{align*}
-$$
-Above, $c_{2k} = \frac{(2k)!}{2^k k!}$ for $k = 1, 2, \dots$, and $c_{2k - 1} = 0$. By equating the series, which entails that the coefficients match, one has that $c_k = m_Z^{(k)} (0)$, and thus for $k = 1, 2, \dots$:
-$$
+$$ Above, $c_{2k} = \frac{(2k)!}{2^k k!}$ for $k = 1, 2, \dots$, and $c_{2k - 1} = 0$. By equating the series, which entails that the coefficients match, one has that $c_k = m_Z^{(k)} (0)$, and thus for $k = 1, 2, \dots$: $$
 \begin{align*}
 \mathbb{E} Z^{2k} &= c_{2k} = \frac{(2k)!}{2^k k!} \\
 \mathbb{E} Z^{2k - 1} &= c_{2k - 1} = 0
 \end{align*}
 $$
 
-Now if $X \sim N(\mu, \sigma^2)$, then $X \stackrel{d}{=} \sigma Z + \mu$, and by the binomimal theorem, one has:
-$$
+Now if $X \sim N(\mu, \sigma^2)$, then $X \stackrel{d}{=} \sigma Z + \mu$, and by the binomimal theorem, one has: $$
 \mathbb{E}X^k 
 = \mathbb{E}\left[(\sigma Z + \mu)^k\right]
 = \mathbb{E}\left[ \sum_{j = 0}^k {k \choose j} (\sigma Z)^j \mu^{k - j}\right]
 = \sum_{j = 0}^k {k \choose j} \sigma^j \mathbb{E}Z^j \mu^{k - j}
-$$
-Thus, the moment sequence for any Gaussian random variable can be obtained by direct calculation by first computing the moments of the standard Gaussian distribution via $c_{2k}$, and then applying the formula above.
-
+$$ Thus, the moment sequence for any Gaussian random variable can be obtained by direct calculation by first computing the moments of the standard Gaussian distribution via $c_{2k}$, and then applying the formula above.
 :::
 
 ### The Gamma distribution
 
-We'll cover one last common family of distributions closely connected with the gamma or factorial function. The [gamma function]{style="color:blue"} is defined as the integral:
-$$
+We'll cover one last common family of distributions closely connected with the gamma or factorial function. The [gamma function]{style="color:blue"} is defined as the integral: $$
 \Gamma(\alpha) = \int_0^\infty y^{\alpha - 1} e^{-y} dy
 $$
 
 **Lemma**. Some key properties of the gamma function are:
 
-i. $\Gamma(1) = 1$
+i.  $\Gamma(1) = 1$
 ii. $\Gamma\left(\frac{1}{2}\right) = \sqrt{pi}$
 iii. $\Gamma(\alpha) = (\alpha - 1)\Gamma(\alpha - 1)$
 
 ::: callout-tip
 ## Proof
 
-For (i), $\Gamma(1) = \int_0^\infty e^{-y}dy = 1$. For (ii), writing the definition and making the substituion $z^2 = y$ yields the Gaussian integral:
-$$
+For (i), $\Gamma(1) = \int_0^\infty e^{-y}dy = 1$. For (ii), writing the definition and making the substituion $z^2 = y$ yields the Gaussian integral: $$
 \Gamma\left(\frac{1}{2}\right) 
 = \int_0^\infty y^{-\frac{1}{2}}e^{-y}dy 
 = 2\int_0^\infty e^{-z^2}dz 
 = \int_{-\infty}^\infty e^{-z^2}dz = \sqrt{pi}
 $$
 
-Lastly, (iii) is established via integration by parts:
-$$
+Lastly, (iii) is established via integration by parts: $$
 \begin{align*}
 \Gamma(\alpha) 
 &= \int_0^\infty \underbrace{y^{\alpha - 1}}_{u}\underbrace{e^{-y}}_{dv}dy \\
@@ -200,15 +200,13 @@ $$
 $$
 :::
 
-Consider now the kernel $x^{\alpha - 1}e^{-\frac{x}{\beta}}$ for $\alpha > 0, \beta > 0$:
-$$
+Consider now the kernel $x^{\alpha - 1}e^{-\frac{x}{\beta}}$ for $\alpha > 0, \beta > 0$: $$
 \int_0^\infty x^{\alpha - 1}e^{-\frac{x}{\beta}}
 = \int_0^\infty (z\beta)^{\alpha - 1}e^{-z}\beta dz
 = \beta^\alpha \Gamma(\alpha)
 $$
 
-Normalizing the kernel to integrate to one yields the gamma density. $X\sim \Gamma(\alpha, \beta)$ if the PDF of $X$ is:
-$$
+Normalizing the kernel to integrate to one yields the gamma density. $X\sim \Gamma(\alpha, \beta)$ if the PDF of $X$ is: $$
 f(x) = \frac{1}{\Gamma(\alpha)\beta^\alpha} x^{\alpha - 1}e^{-\frac{x}{\beta}}
 \;,\qquad
 x > 0, \alpha > 0, \beta > 0
@@ -219,8 +217,7 @@ Since this is a nonnegative function that integrates to one over the support, it
 ::: callout-note
 ## Gamma moments
 
-The moments of a gamma random variable can in fact be computed directly. If $X \sim \Gamma (\alpha, \beta)$, then:
-$$
+The moments of a gamma random variable can in fact be computed directly. If $X \sim \Gamma (\alpha, \beta)$, then: $$
 \begin{align*}
 \mathbb{E}X^k 
 &= \frac{1}{\Gamma(\alpha)\beta^\alpha} \int_0^\infty x^k \cdot x^{\alpha - 1} e^{-\frac{x}{\beta}}dx \\
@@ -228,9 +225,7 @@ $$
 &= \frac{\Gamma(\alpha + k)\beta^{\alpha + k}}{\Gamma(\alpha)\beta^\alpha}\int_0^\infty \frac{1}{\Gamma(\alpha + k)\beta^{\alpha + k}} x^{(\alpha + k) - 1} e^{-\frac{x}{\beta}}dx \\
 &= \frac{\Gamma(\alpha + k)\beta^{\alpha + k}}{\Gamma(\alpha)\beta^\alpha}
 \end{align*}
-$$
-Nonetheless, the moment generating function of $X$ is:
-$$
+$$ Nonetheless, the moment generating function of $X$ is: $$
 \begin{align*}
 m_X (t) 
 &= \mathbb{E}e^{tX} \\
@@ -240,13 +235,103 @@ m_X (t)
 &= (1 - \beta t)^{-\alpha}
 \;,\quad t < \frac{1}{\beta}
 \end{align*}
-$$
-The MGF is useful primarily for determining whether, *e.g.*, a transformation has a gamma distribution. We'll see examples later.
+$$ The MGF is useful primarily for determining whether, *e.g.*, a transformation has a gamma distribution. We'll see examples later.
 :::
 
 Some special cases include:
 
-- the [chi square distribution]{style="color:blue"} with parameter $\nu > 0$ is a gamma distribution with parameters $\alpha = \frac{\nu}{2}$ and $\beta = 2$
-- the [exponential distribution]{style="color:blue"} with parameter $\beta$ is a gamma distribution with parameter $\alpha = 1$
+-   the [chi square distribution]{style="color:blue"} with parameter $\nu > 0$ is a gamma distribution with parameters $\alpha = \frac{\nu}{2}$ and $\beta = 2$
+-   the [exponential distribution]{style="color:blue"} with parameter $\beta$ is a gamma distribution with parameter $\alpha = 1$
 
 There is a special relationship between the standard Gaussian and the chi-square (and therefore gamma) distributions: if $Z\sim N(0, 1)$ then $Z^2 \sim \chi^2_1$. This is shown by finding the CDF of $Z^2$ and differentiating; the proof is left as an exercise.
+
+### Expectation inequalities
+
+There are three 'classical' inequalities related to expectation of a random variable: the Markov inequality, the Chebyshev inequality, and Jensen's inequality.
+
+**Markov inequality**. Let $X$ be a random variable. If $g(x) \geq 0$ on the support of $X$, then for any real number $c > 0$: $$
+P\left(g(X) \geq c\right) \leq \frac{1}{c}\mathbb{E}\left[g(X)\right]
+$$
+
+::: callout-tip
+## Proof
+
+Let $A = \{x \in \mathbb{R}: g(x) \geq c\}$. Then if $X$ is continuous, by hypothesis $g(x)f(x)$ is nonnegative everywhere, so: $$
+\begin{align*}
+\mathbb{E}\left[g(X)\right]
+&= \int_\mathbb{R} g(x)f(x)dx \\
+&= \int_A g(x)f(x)dx + \int_{\mathbb{R}\setminus A} g(x)f(x)dx \\
+&\geq \int_A g(x)f(x)dx \\
+&\geq \int_A c f(x)dx \\
+&= c P(X \in A) \\
+&= c P\left(g(X) \geq c\right)
+\end{align*}
+$$ If $X$ is discrete, then by hypothesis $g(x)P(X = x)$ is nonnegative everywhere, so: $$
+\begin{align*}
+\mathbb{E}\left[g(X)\right]
+&= \sum_\mathbb{R} g(x)P(X = x) \\
+&= \sum_A g(x)P(X = x) + \sum_{\mathbb{R}\setminus A} g(x)P(X = x) \\
+&\geq \sum_A g(x)P(X = x) \\
+&\geq \sum_A c P(X = x) \\
+&= c P\left(g(X) \geq c\right)
+\end{align*}
+$$
+:::
+
+**Chebyshev inequality**. For any random variable $X$ whose first two moments exist, then for any real number $c > 0$: $$
+P\left(|X - \mathbb{E}X| \geq c\right) \leq \frac{1}{c^2}\text{var}(X)
+$$
+
+::: callout-tip
+## Proof
+
+Let $\mu$ denote the expected value of $X$. Then since $g(x) = (x - \mu)^2$ is a nonnegative function everywhere, by Markov's inequality one has: $$
+P\left(|X - \mu| \geq c \right) = P\left[(X - \mu)^2 \geq c^2\right] \leq \frac{1}{c^2}\mathbb{E}(X - \mu)^2
+$$
+:::
+
+The Chebyshev inequality is sometimes written where $c$ is replaced by a nonnegative multiple of the standard deviation of $X$. If $\sigma^2 = \text{var}(X)$, then one has: $$
+P\left(|X - \mu| \geq k\sigma\right) \leq \frac{1}{k^2}
+$$
+
+The Chebyshev inequality is important since it provides a means of bounding the probability of deviations from the mean. In particular, note that for any random variable, one has by the inequality: $$
+\begin{align*}
+&P\left(|X - \mu| \geq 2\sigma\right) \leq \frac{1}{4} \\
+&P\left(|X - \mu| \geq 3\sigma\right) \leq \frac{1}{9} \\
+&P\left(|X - \mu| \geq 4\sigma\right) \leq \frac{1}{16} \\
+&P\left(|X - \mu| \geq 5\sigma\right) \leq \frac{1}{25}
+\end{align*}
+$$
+
+::: callout-note
+## Example
+
+Suppose that the random variable $X$ represents the concentration of a arsenic measured in soil samples, and data suggests that for a particular area the average value is 8.7 parts per million and the average deviation is 5.3 ppm. Levels above 20ppm are considered unsafe. Since 20 is 2.3 standard deviations from the mean, the probability that a sample returns a level within that many standard deviations is: $$
+P\left(|X - \mu| < 2.3\sigma) \geq 1 - \frac{1}{2.3^2} = 0.78
+$$ If we are willing to assume that the distribution of arsenic concentrations is symmetric, then the probability of obtaining a sample value above the safety threshold is about 0.11.
+:::
+
+The Chebyshev inequality also has an important application in probability theory as providing a proof technique for the weak law of large numbers. If $X_n\sim N\left(\mu, \frac{\sigma^2}{n}\right)$, then for any positive number $\epsilon > 0$, $P(|X_n - \mu|\geq \epsilon) \leq \frac{\sigma^2}{\epsilon^2n^2} \rightarrow 0$ as $n \rightarrow \infty$. Since $\epsilon$ may be chosen to be arbitrarily small, this tells us that $X_n$ is arbitrarily close to $\mu$ for large $n$ and with probability tending to one; in the limit, $X_\infty = \mu$ with probability 1.
+
+The last inequality pertains to convex (or concave) functions. A function $g$ is [convex]{style="color:blue"} on an open interval $(a, b)$ if for every $c \in (0, 1)$ and $a < x < y < b$: $$
+g\left(cx + (1 - c)y\right) \leq cg(x) + (1 - c)g(y)
+$$ If $g$ is twice differentiable on $(a, b)$ then $g$ is convex just in case either of the following conditions hold:
+
+i.  $g'(x) \leq g'(y)$ for all $a < x < y < b$
+ii. $g''(x) \geq 0$ for all $a < x < b$.
+
+The function is said to be strictly convex if the above inequalities are strict. A function $g$ is concave on an open interval $(a, b)$ just in case $-g$ is convex.
+
+**Jensen's inequality**. Let $X$ be a random variable. If $g$ is convex and twice differentiable on the support of $X$ and the expectation $\mathbb{E}\left[g(X)\right]$ exists then: $$
+g\left(\mathbb{E}X\right) \leq \mathbb{E}\left[g(X)\right]
+$$ The inequality is strict when $g$ is strictly convex and $X$ is not constant.
+
+::: callout-tip
+## Proof
+
+Let $\mu = \mathbb{E}X$. A second-order Taylor expansion of $g$ about $\mu$ gives: $$
+g(x) = g(\mu) + g'(\mu) (x - \mu) + \frac{1}{2} g''(r)(x - \mu)^2 \geq g(\mu) + g'(\mu) (x - \mu)
+$$ Taking expectations gives: $$
+\mathbb{E}\left[g(X)\right] \geq g(\mu) + g'(\mu) (\mathbb{E}X - \mu) = g(\mu) = g\left(\mathbb{E}X\right)
+$$
+:::

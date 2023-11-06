@@ -1,0 +1,259 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
+%
+\documentclass[
+  letterpaper,
+  DIV=11,
+  numbers=noendperiod]{scrartcl}
+
+\usepackage{amsmath,amssymb}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else  
+    % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+% Make \paragraph and \subparagraph free-standing
+\ifx\paragraph\undefined\else
+  \let\oldparagraph\paragraph
+  \renewcommand{\paragraph}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+  \let\oldsubparagraph\subparagraph
+  \renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
+
+
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}\usepackage{longtable,booktabs,array}
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+
+\usepackage{fancyhdr}
+\KOMAoption{captions}{tableheading}
+\makeatletter
+\makeatother
+\makeatletter
+\makeatother
+\makeatletter
+\@ifpackageloaded{caption}{}{\usepackage{caption}}
+\AtBeginDocument{%
+\ifdefined\contentsname
+  \renewcommand*\contentsname{Table of contents}
+\else
+  \newcommand\contentsname{Table of contents}
+\fi
+\ifdefined\listfigurename
+  \renewcommand*\listfigurename{List of Figures}
+\else
+  \newcommand\listfigurename{List of Figures}
+\fi
+\ifdefined\listtablename
+  \renewcommand*\listtablename{List of Tables}
+\else
+  \newcommand\listtablename{List of Tables}
+\fi
+\ifdefined\figurename
+  \renewcommand*\figurename{Figure}
+\else
+  \newcommand\figurename{Figure}
+\fi
+\ifdefined\tablename
+  \renewcommand*\tablename{Table}
+\else
+  \newcommand\tablename{Table}
+\fi
+}
+\@ifpackageloaded{float}{}{\usepackage{float}}
+\floatstyle{ruled}
+\@ifundefined{c@chapter}{\newfloat{codelisting}{h}{lop}}{\newfloat{codelisting}{h}{lop}[chapter]}
+\floatname{codelisting}{Listing}
+\newcommand*\listoflistings{\listof{codelisting}{List of Listings}}
+\makeatother
+\makeatletter
+\@ifpackageloaded{caption}{}{\usepackage{caption}}
+\@ifpackageloaded{subcaption}{}{\usepackage{subcaption}}
+\makeatother
+\makeatletter
+\@ifpackageloaded{tcolorbox}{}{\usepackage[skins,breakable]{tcolorbox}}
+\makeatother
+\makeatletter
+\@ifundefined{shadecolor}{\definecolor{shadecolor}{rgb}{.97, .97, .97}}
+\makeatother
+\makeatletter
+\makeatother
+\makeatletter
+\makeatother
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same} % disable monospaced font for URLs
+\hypersetup{
+  pdftitle={Homework 5},
+  pdfauthor={STAT425, Fall 2023},
+  colorlinks=true,
+  linkcolor={blue},
+  filecolor={Maroon},
+  citecolor={Blue},
+  urlcolor={Blue},
+  pdfcreator={LaTeX via pandoc}}
+
+\title{Homework 5}
+\author{STAT425, Fall 2023}
+\date{2023-11-09}
+
+\begin{document}
+\maketitle
+\pagestyle{fancy} \fancyhead[LH]{HW5} \fancyhead[RH]{STAT425, Fall 2023}
+
+\ifdefined\Shaded\renewenvironment{Shaded}{\begin{tcolorbox}[frame hidden, sharp corners, boxrule=0pt, borderline west={3pt}{0pt}{shadecolor}, interior hidden, enhanced, breakable]}{\end{tcolorbox}}\fi
+
+Please prepare your solutions neatly, numbered, and in order; ideally,
+you'll write up a final clean copy after completing all problems on
+scratch paper. Please note that if a prompt includes a question, you're
+expected to support answers with reasoning, even if the prompt does not
+explicitly ask for a justification. Provide your name at the top of your
+submission, and if you collaborate with other students in the class,
+please list their names at the top of your submission beneath your own.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  Reparametrize the uniform distribution in terms of center and length:
+  propose an alternative PDF for the uniform \((a, b)\) distribution
+  with one parameter that indicates the center of the interval and one
+  that indicates the length of the interval. Verify that your proposal
+  is a PDF, and find the expectation and variance.
+\item
+  (Poisson approximation to the binomial.) In class it was noted that
+  the Poisson distribution is a limiting case for the binomial with
+  \(np = \lambda\) fixed as \(n \rightarrow \infty\). This fact can be
+  leveraged to approximate binomial probabilities for large numbers of
+  trials. Let \(X_{n, p} \sim \text{binomial}(n, p)\) and
+  \(Y_{n, p} \sim \text{Poisson}(np)\). Then when \(n\) is large,
+  \(P(X_{n, p} = x) \approx P(Y_{n, p} = x)\). Fill in the following
+  table:
+\end{enumerate}
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2000}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2000}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2000}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2000}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2000}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+\(n\)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\(p\)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\(P(X_{n, p} = 100)\)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\(P(Y_{n, p} = 100)\)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+approximation error
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+1000 & 0.1 & & & \\
+10000 & 0.01 & & & \\
+100000 & 0.001 & & & \\
+1000000 & 0.0001 & & & \\
+\end{longtable}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{2}
+\tightlist
+\item
+  The \(k\)th factorial moment of a random variable \(X\) is
+  \(\mathbb{E} \left( \frac{X!}{(X - k)!} \right)\), assuming the
+  expectation exists.
+
+  \begin{enumerate}
+  \def\labelenumii{\roman{enumii}.}
+  \tightlist
+  \item
+    Find the second factorial moment of the Poisson distribution.
+  \item
+    Find the second factorial moment of the binomial distribution.
+  \item
+    Use your answers above to calculate the variance of each
+    distribution.
+  \end{enumerate}
+\item
+  (Exponential distribution) Let \(X \sim F(x)\) where
+  \(F(x) = 1 - e^{-\alpha x}\). Find the mean and variance of \(X\).
+\item
+  (Truncated Poisson) Let \(X \sim \text{Poisson}(\lambda)\) and define
+  \(Y\) by the probability mass function \[
+  P(Y = y) = \frac{P(X = y)}{P(X > 0)}
+  \;,\qquad y = 1, 2, \dots
+  \] Find an expression for the PMF of \(Y\), and calculate its mean and
+  variance.
+\item
+  With \(Y\) as in the previous problem, show that
+  \(\mathbb{E}\log(Y) \geq 0\).
+\item
+  (Probability integral transform) Let \(X\) be a continuous random
+  variable with strictly increasing CDF \(F\), and let \(Y = F(X)\).
+  Show that \(Y \sim \text{uniform}(0, 1)\). (If \(F\) is strictly
+  increasing, then \(F^{-1}(x)\) is well-defined).
+\end{enumerate}
+
+
+
+\end{document}

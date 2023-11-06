@@ -6,9 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2023-11-06">
+<meta name="author" content="STAT425, Fall 2023">
+<meta name="dcterms.date" content="2023-11-16">
 
-<title>STAT425 - Probability Theory</title>
+<title>STAT425 - Homework 6</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -24,22 +25,22 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -70,8 +71,10 @@ gtag('js', new Date());
 gtag('config', 'G-H3YKZX4J88', { 'anonymize_ip': true});
 </script>
 
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="../styles.css">
 </head>
 
 <body class="nav-fixed">
@@ -81,7 +84,7 @@ gtag('config', 'G-H3YKZX4J88', { 'anonymize_ip': true});
     <nav class="navbar navbar-expand-lg navbar-dark ">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../index.html">
     <span class="navbar-title">STAT425</span>
     </a>
   </div>
@@ -92,11 +95,11 @@ gtag('config', 'G-H3YKZX4J88', { 'anonymize_ip': true});
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./syllabus.html" rel="" target="">
+    <a class="nav-link" href="../syllabus.html" rel="" target="">
  <span class="menu-text">Course syllabus</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./content.html" rel="" target="">
+    <a class="nav-link" href="../content.html" rel="" target="">
  <span class="menu-text">Materials</span></a>
   </li>  
 </ul>
@@ -118,18 +121,24 @@ gtag('config', 'G-H3YKZX4J88', { 'anonymize_ip': true});
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Probability Theory</h1>
+<h1 class="title">Homework 6</h1>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
+    <div>
+    <div class="quarto-title-meta-heading">Course</div>
+    <div class="quarto-title-meta-contents">
+             <p>STAT425, Fall 2023 </p>
+          </div>
+  </div>
     
     <div>
-    <div class="quarto-title-meta-heading">Updated</div>
+    <div class="quarto-title-meta-heading">Due in class on</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">November 6, 2023</p>
+      <p class="date">November 16, 2023</p>
     </div>
   </div>
   
@@ -139,24 +148,13 @@ gtag('config', 'G-H3YKZX4J88', { 'anonymize_ip': true});
 
 </header>
 
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Announcements
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<ul>
-<li>Week 7 notes posted</li>
-<li>Leaving open <a href="https://forms.gle/hpAB4Jtgnhaky3QTA">feedback survey</a> one more week</li>
-</ul>
-</div>
-</div>
-<p>This is the class website for Probability Theory (STAT 425) offered at Cal Poly in Fall 2023. Note that this site is for <em>both</em> sections (01-3585 held 4:10pm MTWR and 02-3430 held 5:10pm MTWR).</p>
-<p>Material posted on this site is intended for use by currently enrolled students for course-related purposes only. Please do not reproduce any material on this site without permission.</p>
+<p>Please prepare your solutions neatly, numbered, and in order; ideally, you’ll write up a final clean copy after completing all problems on scratch paper. Please note that if a prompt includes a question, you’re expected to support answers with reasoning, even if the prompt does not explicitly ask for a justification. Provide your name at the top of your submission, and if you collaborate with other students in the class, please list their names at the top of your submission beneath your own.</p>
+<ol type="1">
+<li>(Normal-<span class="math inline">\(\chi^2\)</span> relationship) Show that if <span class="math inline">\(Z\sim N(0, 1)\)</span> then <span class="math inline">\(Z^2 \sim \chi^2_1\)</span>.</li>
+<li>(Stochastic ordering) Two random variables <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> are stochastically ordered if either <span class="math inline">\(F_X(x) \geq F_Y(x)\)</span> or the reverse inequality is true for every <span class="math inline">\(x \in \mathbb{R}\)</span>. If <span class="math inline">\(F_X(x) \geq F_Y(x)\)</span> for every <span class="math inline">\(x\in\mathbb{R}\)</span>, then <span class="math inline">\(X \leq_{st} Y\)</span>. Show that the exponential distribution is stochastically ordered in its parameter: that is, if <span class="math inline">\(X \sim \text{exponential}(\alpha)\)</span> and <span class="math inline">\(Y \sim \text{exponential}(\alpha + c)\)</span>, then <span class="math inline">\(X \geq_{st} Y\)</span>. (Use the ‘rate’ parametrization: <span class="math inline">\(f(x) = \alpha e^{-\alpha x}, x &gt; 0, \alpha &gt; 0\)</span>.</li>
+<li>(Lognormal density) Let <span class="math inline">\(\log X \sim N(\mu, \sigma^2)\)</span>. Find the PDF of <span class="math inline">\(X\)</span>.</li>
+<li>Let <span class="math inline">\(X\)</span> be a discrete random variable. Show that if the <span class="math inline">\(k\)</span>th moment exists, then so does the <span class="math inline">\(j\)</span>th moment for every integer <span class="math inline">\(j \leq k\)</span>.</li>
+</ol>
 
 
 

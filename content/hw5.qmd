@@ -4,10 +4,10 @@ author: "STAT425, Fall 2023"
 author-title: "Course"
 date: "11/9/2023"
 published-title: "Due in class on"
-# format: 
+# format:
 #   latex:
-#     include-in-header: 
-#       - text: 
+#     include-in-header:
+#       - text:
 #           \usepackage{fancyhdr}
 #     include-before-body:
 #       - text:
