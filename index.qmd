@@ -7,8 +7,7 @@ published-title: 'Updated'
 ::: callout-note
 ## Announcements
 
--   Week 7 notes posted
--   Leaving open [feedback survey](https://forms.gle/hpAB4Jtgnhaky3QTA) one more week
+-   HW6 posted
 :::
 
 This is the class website for Probability Theory (STAT 425) offered at Cal Poly in Fall 2023. Note that this site is for *both* sections (01-3585 held 4:10pm MTWR and 02-3430 held 5:10pm MTWR).

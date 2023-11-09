@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="STAT425, Fall 2023">
-<meta name="dcterms.date" content="2023-11-06">
+<meta name="dcterms.date" content="2023-11-09">
 
 <title>STAT425 - Expectation</title>
 <style>
@@ -146,7 +146,7 @@ gtag('config', 'G-H3YKZX4J88', { 'anonymize_ip': true});
     <div>
     <div class="quarto-title-meta-heading">Updated</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">November 6, 2023</p>
+      <p class="date">November 9, 2023</p>
     </div>
   </div>
   
@@ -307,7 +307,7 @@ m_{\log X} (t) = \mathbb{E}e^{t\log X} = \mathbb{E}X^t
 \]</span> Interestingly, this expression holds for non-integer values of <span class="math inline">\(t\)</span>, since the MGF exists for every <span class="math inline">\(t \in \mathbb{R}\)</span>.</p>
 </div>
 </div>
-<p>One of many interesting properties of the standard Gaussian distribution are that all its moments exist, and all odd moments are zero. Moreover, for any Gaussian distribution, the moments can be calculated explicitly using a recursion. The next example explores these properties.</p>
+<p>One of many interesting properties of the standard Gaussian distribution are that all its moments exist, and all odd moments are zero. Moreover, for any Gaussian distribution, the full moment sequence can be calculated explicitly. The next example explores these properties.</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -508,8 +508,8 @@ Example
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Suppose that the random variable <span class="math inline">\(X\)</span> represents the concentration of a arsenic measured in soil samples, and data suggests that for a particular area the average value is 8.7 parts per million and the average deviation is 5.3 ppm. Levels above 20ppm are considered unsafe. Since 20 is 2.3 standard deviations from the mean, the probability that a sample returns a level within that many standard deviations is: <span class="math display">\[
-P\left(|X - \mu| &lt; 2.3\sigma) \geq 1 - \frac{1}{2.3^2} = 0.78
+<p>Suppose that the random variable <span class="math inline">\(X\)</span> represents the concentration of arsenic measured in soil samples, and data suggests that for a particular area the average value is 8.7 parts per million and the average deviation is 5.3 ppm. Levels above 20ppm are considered unsafe. Since 20 is 2.3 standard deviations from the mean, the probability that a sample returns a level within that many standard deviations is: <span class="math display">\[
+P\left(|X - \mu| &lt; 2.3\sigma\right) \geq 1 - \frac{1}{2.3^2} = 0.78
 \]</span> If we are willing to assume that the distribution of arsenic concentrations is symmetric, then the probability of obtaining a sample value above the safety threshold is about 0.11.</p>
 </div>
 </div>
@@ -540,6 +540,37 @@ g(x) = g(\mu) + g'(\mu) (x - \mu) + \frac{1}{2} g''(r)(x - \mu)^2 \geq g(\mu) + 
 \]</span> Taking expectations gives: <span class="math display">\[
 \mathbb{E}\left[g(X)\right] \geq g(\mu) + g'(\mu) (\mathbb{E}X - \mu) = g(\mu) = g\left(\mathbb{E}X\right)
 \]</span></p>
+</div>
+</div>
+<p>The next example applies Jensen’s inequality to show that for positive numbers, the harmonic mean is smaller than the geometric mean and the geometric mean is smaller than the arithmetic mean. It illustrates an interesting and well-known technique of representing the arithmetic average of finitely many positive numbers as the expectation of a discrete uniform random variable.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Ordering of means
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Suppose <span class="math inline">\(A = \{a_1, a_2, \dots, a_n\}\)</span> is a set of positive numbers <span class="math inline">\(a_i\)</span>. There are many types of averages one might consider. The <span style="color:blue">arithmetic mean</span> of the numbers is: <span class="math display">\[
+\bar{a}_{AM} = \frac{1}{n}\sum_{i = 1}^n a_i
+\]</span> This is what most of us think of when we hear ‘mean’. However, there are other types of means. The <span style="color:blue">geometric mean</span> of the numbers is: <span class="math display">\[
+\bar{a}_{GM} = \left(\prod_{i = 1}^n a_i\right)^\frac{1}{n}
+\]</span> The geometric mean is often used with percentages; in finance, for example, annualized growth over time for an asset is the geometric mean of percentage change in the asset value for each year in the time period.</p>
+<p>There is also the <span style="color:blue">harmonic mean</span>, which is defined as: <span class="math display">\[
+\bar{a}_{HM} = \left(\frac{1}{n}\sum_{i = 1}^n \frac{1}{a_i}\right)^{-1}
+\]</span> This average is often used with rates and ratios.</p>
+<p>The arithmetic mean can be expressed as an expectation. Let <span class="math inline">\(X\)</span> be uniform on the set <span class="math inline">\(A\)</span>, so that <span class="math inline">\(P(X = a_i) = \frac{1}{n}\)</span> for each <span class="math inline">\(a_i\)</span>. Then: <span class="math display">\[
+\mathbb{E}X = \sum_i a_i P(X = a_i) = \frac{1}{n} \sum_{i} a_i = \bar{a}_{AM}
+\]</span> Now consider <span class="math inline">\(\log(X)\)</span>. Since the logarithm is a concave function, by Jensen’s inequality one has: <span class="math display">\[
+\log\left(\mathbb{E}X\right) \geq \mathbb{E}\left[\log(X)\right] = \frac{1}{n}\sum_{i = 1}^n \log (a_i) = \log\left(\bar{a}_{GM}\right)
+\]</span> Thus <span class="math inline">\(\log(\bar{a}_{AM}) \geq \log(\bar{a}_{GM})\)</span>, so since <span class="math inline">\(\log\)</span> is monotone increasing one has that <span class="math inline">\(\bar{a}_{AM}\geq\bar{a}_{GM}\)</span>.</p>
+<p>Now consider <span class="math inline">\(\frac{1}{X}\)</span>; since the reciprocal function is convex, by Jensen’s inequality one has: <span class="math display">\[
+\frac{1}{\mathbb{E}X} \leq \mathbb{E}\left(\frac{1}{X}\right) = \frac{1}{n}\sum_{i = 1}^n \frac{1}{a_i} = \frac{1}{\bar{a}_{HM}}
+\]</span> So one also has that <span class="math inline">\(\bar{a}_{AM}\geq\bar{a}_{HM}\)</span>. Moreover, since <span class="math inline">\(b_i = \frac{1}{a_i}\)</span> are positive numbers, one has by the result just established that <span class="math inline">\(\bar{b}_{AM} \geq \bar{b}_{GM}\)</span>. But it is easy to check that <span class="math inline">\(\bar{b}_{AM} = \bar{a}_{HM}^{-1}\)</span> and <span class="math inline">\(\bar{b}_{GM} = \bar{a}_{GM}^-1\)</span>. So one has, all together: <span class="math display">\[
+\bar{a}_{HM} \leq \bar{a}_{GM} \leq \bar{a}_{AM}
+\]</span> This is true for any positive numbers.</p>
 </div>
 </div>
 
