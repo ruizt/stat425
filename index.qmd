@@ -8,6 +8,7 @@ published-title: 'Updated'
 ## Announcements
 
 -   HW6 posted
+-   Midterm 2 study guide posted
 :::
 
 This is the class website for Probability Theory (STAT 425) offered at Cal Poly in Fall 2023. Note that this site is for *both* sections (01-3585 held 4:10pm MTWR and 02-3430 held 5:10pm MTWR).

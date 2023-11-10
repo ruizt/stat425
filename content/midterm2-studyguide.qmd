@@ -1,0 +1,54 @@
+---
+title: "Midterm 2 study guide"
+author: "STAT425, Fall 2023"
+author-title: "Course"
+date: today
+published-title: "Updated"
+# format: 
+#   latex:
+#     include-in-header: 
+#       - text: 
+#           \usepackage{fancyhdr}
+#     include-before-body:
+#       - text:
+#           \pagestyle{fancy}
+#           \fancyhead[LH]{HW2}
+#           \fancyhead[RH]{STAT425, Fall 2023}
+---
+
+This may be updated with further advice, suggestions, and the like --- check back.
+
+### Midterm details and scope
+
+The midterm exam will be given in class on Thursday, November 16. Here are the logistical details:
+
+-   50 minutes in duration
+-   you're allowed one double-sided note sheet on standard 8.5 x 11 paper
+-   scratch paper will be available
+-   3 problems in length
+-   no calculator required, but calculators allowed
+-   a table of common distributions will be provided
+
+The exam will focus on material covered since the last exam, *i.e.*, from weeks 4 through 7: random variables, common distributions, and expectation. Questions will focus on your ability to use distribution functions (CDF, PDF/PMF, MGF) to characterize distributions of random variables and find expected values. You can expect at least one question to require you to apply these concepts in the context of an unfamiliar distribution.
+
+### Topics for review
+
+For this exam, you should be prepared to demonstrate you understand the following:
+
+- definition of a random variable
+- definition and properties of the cumulative distribution function
+- distinction between discrete and continuous random variables
+- definition and properties of the probability mass function and the probability density function
+- definition and properties of expected value
+- how to compute expectations of functions of discrete and continuous random variables
+- definition of variance 
+- how to compute the variances of discrete and continuous random variables
+- definition and use of moment generating functions
+- PDF/PMFs, expectations, variances, and moment generating functions for common probability distributions
+- properties of the Gaussian distribution
+
+Please note that you will be provided with a table of the distributions we covered in class, so you do not need to include these on your note sheet.
+
+### To prepare
+
+Review posted course notes, focusing especially on definitions, results (lemma, theorem, corollary), and keywords in blue appearing *outside* of the proof and example boxes. Consult also your notes from class; see if you can boil the main ideas and results down to a few pages of notes. Skim the examples and identify which results and concepts are being used in each example. While you're not responsible for reproducing the proofs or calculations that we cover in class, they do illustrate useful techniques that may come in handy.

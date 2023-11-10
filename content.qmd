@@ -201,3 +201,9 @@ This week lectures will cover a blend of material in DG&S 4.1 -- 4.4 and 5.1 -- 
 #### Assignment
 
 -   [Homework 6](content/hw6.qmd) due Thursday 11/16
+
+### Week 8 (11/13/23)
+
+*Review of random variables and common distributions; expectation inequalities*
+
+[midterm 2 study guide](content/midterm2-studyguide.qmd)
