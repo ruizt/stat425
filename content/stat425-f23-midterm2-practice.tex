@@ -78,6 +78,7 @@
 \def\fps@figure{htbp}
 \makeatother
 
+\usepackage{fancyhdr}
 \KOMAoption{captions}{tableheading}
 \makeatletter
 \makeatother
@@ -139,30 +140,80 @@
 \IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
 \urlstyle{same} % disable monospaced font for URLs
 \hypersetup{
-  pdftitle={Common distributions},
+  pdftitle={Midterm 2},
+  pdfauthor={STAT425, Fall 2023},
   colorlinks=true,
   linkcolor={blue},
   filecolor={Maroon},
   citecolor={Blue},
   urlcolor={Blue},
   pdfcreator={LaTeX via pandoc}}
-
-\title{Common distributions}
-\author{}
-\date{}
+\usepackage{pdflscape}
+\title{Midterm 2}
+\author{STAT425, Fall 2023}
+\date{2023-11-16}
 
 \begin{document}
-\maketitle
-\ifdefined\Shaded\renewenvironment{Shaded}{\begin{tcolorbox}[breakable, boxrule=0pt, frame hidden, interior hidden, borderline west={3pt}{0pt}{shadecolor}, sharp corners, enhanced]}{\end{tcolorbox}}\fi
+% \maketitle
+\pagestyle{fancy} \fancyhead[LH]{Midterm 2 Practice} \fancyhead[RH]{STAT425, Fall 2023} 
 
+\textit{This is a practice test -- we will work through it as an in-class activity in small groups.}
+
+Name \rule{8cm}{0.15mm} 
+
+Section \rule{8cm}{0.15mm}
+
+\vskip 20pt
+\ifdefined\Shaded\renewenvironment{Shaded}{\begin{tcolorbox}[interior hidden, frame hidden, borderline west={3pt}{0pt}{shadecolor}, sharp corners, enhanced, breakable, boxrule=0pt]}{\end{tcolorbox}}\fi
+
+
+\textbf{Instructions:} read each problem carefully and provide solutions
+in the space below the prompt or on the reverse side of the page. You
+should provide as much justification and detail in calculation as
+needed to clearly display your thought process, but need not show or
+justify every step. If you use results from class in your solution, you
+can simply write, ``by a theorem/problem/example from class\ldots{}''.
+None of the problems require you to perform numerical calculations.If
+you are unable to obtain a complete solution, a solution sketch may
+receive partial credit if it reflects a clear understanding of the
+problem and a well-reasoned approach.Please feel free to ask any
+clarifying questions about the problems as they arise. Good luck!
+
+\newpage
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  Let \(f(x) = c\left[1 - (x - 1)^2\right]\). Find the value of \(c\)
+  and support set for which \(f\) is a PDF.
+\newpage\item
+  Intuitively, a log transformation should reduce the skewness of a
+  distribution. The skewness of a random variable is defined as the
+  third standardized moment, i.e., the expectation
+  \(\mathbb{E}\left[\left(\frac{X - \mu}{\sigma}\right)^3\right] = \frac{\mu_3 - 3\mu_1\sigma^2 - \mu_1^3}{\sigma^3}\),
+  where \(\mu_k\) denotes the \(k\)th moment and \(\sigma\) denotes the
+  square root of the variance, i.e.,
+  \(\sigma = \sqrt{\mu_2 - \mu_1^2}\). Let \(\log(X) \sim N(0, 1)\);
+  show that the skewness of \(X\) is larger than the skewness of
+  \(\log(X)\).
+\newpage\item
+  Let \(X \sim \text{exponential}(\beta)\) and \(c > 0\) and define \[
+   Y = \begin{cases}
+     1 &,\; X > c \\
+     0 &,\; X \leq c
+   \end{cases}
+   \] Find the distribution of \(Y\) and its mean and variance.
+\end{enumerate}
+
+\newpage
+\begin{landscape}
 \begin{longtable}[]{@{}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.0650}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.2384}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.0743}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.10}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.2}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.143}}
   >{\raggedright\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.1084}}
   >{\raggedright\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.0712}}
   >{\raggedright\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.1486}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.2786}}@{}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.2586}}@{}}
 \toprule\noalign{}
 \begin{minipage}[b]{\linewidth}\raggedright
 Name
@@ -190,9 +241,7 @@ Bernoulli & \(p^x (1 - p)^{1 - x}\) & \(\{0, 1\}\) & \(p \in (0, 1)\) &
 \(p\) & \(p(1 - p)\) & \(1 - p + pe^t\) \\
 Geometric & \((1 - p)^x p\) & \(\mathbb{N}\) & \(p \in (0, 1)\) &
 \(\frac{1 - p}{p}\) & \(\frac{1 - p}{p^2}\) &
-\(\frac{p}{1 - (1 - p)e^t}\)
-
-\(t < -\log(1 - p)\) \\
+\(\frac{p}{1 - (1 - p)e^t}\), \(t < -\log(1 - p)\) \\
 Binomial & \({n \choose p} p^x (1 - p)^{n - x}\) &
 \(\{0, 1, \dots, n\}\) & \(n \in \mathbb{Z}^+\)
 
@@ -202,9 +251,7 @@ Negative binomial & \({r + x - 1 \choose x} p^r (1 - p)^x\) &
 \(\mathbb{N}\) & \(r \in \mathbb{Z}^+\)
 
 \(p \in (0, 1)\) & \(\frac{r(1 - p)}{p}\) & \(\frac{r(1 - p)}{p^2}\) &
-\(\left(\frac{p}{1 - (1 - p)e^t}\right)^r\)
-
-\(t < -\log(1 - p)\) \\
+\(\left(\frac{p}{1 - (1 - p)e^t}\right)^r\), \(t < -\log(1 - p)\) \\
 Poisson & \(\frac{\lambda^xe^{-\lambda}}{x!}\) & \(\mathbb{N}\) &
 \(\lambda > 0\) & \(\lambda\) & \(\lambda\) &
 \(\exp\left\{-\lambda(1 - e^t)\right\}\) \\
@@ -219,9 +266,9 @@ Gaussian &
 Gamma &
 \(\frac{1}{\Gamma(\alpha)\beta^\alpha} x^{\alpha - 1} e^{-\frac{x}{\beta}}\)
 & \(x > 0\) & \(\alpha > 0, \beta > 0\) & \(\alpha\beta\) &
-\(\alpha\beta^2\) & \(\left(1 - \beta t\right)^{-\alpha}\) \\
+\(\alpha\beta^2\) & \(\left(1 - \beta t\right)^{-\alpha}\),  \(t < \frac{1}{\beta}\) \\
 \end{longtable}
-
+\end{landscape}
 
 
 \end{document}

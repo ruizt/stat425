@@ -196,7 +196,7 @@ DG&S section 4.4, select material from sections 5.1 -- 5.6, and section 5.7
 
 ***Wednesday:*** recap of common distributions and their properties
 
-***Thursday:*** probability inequalities related to expectation
+***Thursday:*** practice problems
 
 #### Assignment
 
@@ -206,7 +206,9 @@ DG&S section 4.4, select material from sections 5.1 -- 5.6, and section 5.7
 
 *Review of random variables and common distributions; expectation inequalities*
 
-[midterm 2 study guide](content/midterm2-studyguide.qmd)
+\[[midterm 2 study guide](content/midterm2-studyguide.qmd)\]
+
+\[[practice test](content/stat425-f23-midterm2-practice.pdf)\]
 
 #### Suggested reading:
 
@@ -218,9 +220,9 @@ Hogg & Craig section 1.8
 
 #### Class meetings:
 
-***Monday:*** practice problems
+***Monday:*** review and practice problems
 
-***Tuesday:*** midterm review
+***Tuesday:*** review and practice problems
 
 ***Wednesday:*** expectation inequalities
 

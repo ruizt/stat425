@@ -78,6 +78,7 @@
 \def\fps@figure{htbp}
 \makeatother
 
+\usepackage{fancyhdr} \usepackage{pdflscape}
 \KOMAoption{captions}{tableheading}
 \makeatletter
 \makeatother
@@ -139,7 +140,8 @@
 \IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
 \urlstyle{same} % disable monospaced font for URLs
 \hypersetup{
-  pdftitle={Common distributions},
+  pdftitle={Midterm 2},
+  pdfauthor={STAT425, Fall 2023},
   colorlinks=true,
   linkcolor={blue},
   filecolor={Maroon},
@@ -147,13 +149,51 @@
   urlcolor={Blue},
   pdfcreator={LaTeX via pandoc}}
 
-\title{Common distributions}
-\author{}
-\date{}
+\title{Midterm 2}
+\author{STAT425, Fall 2023}
+\date{2023-11-16}
 
 \begin{document}
 \maketitle
-\ifdefined\Shaded\renewenvironment{Shaded}{\begin{tcolorbox}[breakable, boxrule=0pt, frame hidden, interior hidden, borderline west={3pt}{0pt}{shadecolor}, sharp corners, enhanced]}{\end{tcolorbox}}\fi
+\pagestyle{fancy} \fancyhead[LH]{Midterm 2 Practice} \fancyhead[RH]{STAT425, Fall 2023} Name \rule{8cm}{0.15mm} Section \rule{8cm}{0.15mm}
+
+\ifdefined\Shaded\renewenvironment{Shaded}{\begin{tcolorbox}[enhanced, sharp corners, breakable, borderline west={3pt}{0pt}{shadecolor}, frame hidden, boxrule=0pt, interior hidden]}{\end{tcolorbox}}\fi
+
+\textbf{Instructions:} read each problem carefully and provide solutions
+in the space below the prompt or on the reverse side of the page. You
+should provide as much justification and detail in calculation as needed
+to clearly display your thought process, but need not show or justify
+every step. If you use results from class in your solution, you can
+simply write, ``by a theorem/problem/example from class\ldots{}``. None
+of the problems require you to perform numerical calculations.If you are
+unable to obtain a complete solution, a solution sketch may receive
+partial credit if it reflects a clear understanding of the problem and a
+well-reasoned approach.Please feel free to ask any clarifying questions
+about the problems as they arise. Good luck!
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  Let \(f(x) = c\left[1 - (x - 1)^2\right]\). Find the value of \(c\)
+  and support set for which \(f\) is a PDF.
+\item
+  Intuitively, a log transformation should reduce the skewness of a
+  distribution. The skewness of a random variable is defined as the
+  third standardized moment, i.e., the expectation
+  \(\mathbb{E}\left[\left(\frac{X - \mu}{\sigma}\right)^3\right] = \frac{\mu_3 - 3\mu_1\sigma^2 - \mu_1^3}{\sigma^3}\),
+  where \(\mu_k\) denotes the \(k\)th moment and \(\sigma\) denotes the
+  square root of the variance, i.e.,
+  \(\sigma = \sqrt{\mu_2 - \mu_1^2}\). Let \(\log(X) \sim N(0, 1)\);
+  show that the skewness of \(X\) is larger than the skewness of
+  \(\log(X)\).
+\item
+  Let \(X \sim \text{exponential}(\beta)\) and \(c > 0\) and define \[
+   Y = \begin{cases}
+     1 &,\; X > c \\
+     0 &,\; X \leq c
+   \end{cases}
+   \] Find the distribution of \(Y\) and its mean and variance.
+\end{enumerate}
 
 \begin{longtable}[]{@{}
   >{\raggedright\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.0650}}
