@@ -214,7 +214,7 @@ Hogg & Craig section 1.8
 
 #### Lecture notes
 
-\[[expectation inequalities](content/week7-inequalities.qmd)\]
+\[[expectation inequalities](content/week8-inequalities.qmd)\]
 
 #### Class meetings:
 
