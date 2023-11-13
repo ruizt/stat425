@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="STAT425, Fall 2023">
-<meta name="dcterms.date" content="2023-11-10">
+<meta name="dcterms.date" content="2023-11-12">
 
 <title>STAT425 - Expectation</title>
 <style>
@@ -120,7 +120,6 @@ gtag('config', 'G-H3YKZX4J88', { 'anonymize_ip': true});
   <ul>
   <li><a href="#moments" id="toc-moments" class="nav-link active" data-scroll-target="#moments">Moments</a></li>
   <li><a href="#the-gamma-distribution" id="toc-the-gamma-distribution" class="nav-link" data-scroll-target="#the-gamma-distribution">The Gamma distribution</a></li>
-  <li><a href="#expectation-inequalities" id="toc-expectation-inequalities" class="nav-link" data-scroll-target="#expectation-inequalities">Expectation inequalities</a></li>
   </ul>
 </nav>
     </div>
@@ -146,7 +145,7 @@ gtag('config', 'G-H3YKZX4J88', { 'anonymize_ip': true});
     <div>
     <div class="quarto-title-meta-heading">Updated</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">November 10, 2023</p>
+      <p class="date">November 12, 2023</p>
     </div>
   </div>
   
@@ -430,149 +429,6 @@ m_X (t)
 <li>the <span style="color:blue">exponential distribution</span> with parameter <span class="math inline">\(\beta\)</span> is a gamma distribution with parameter <span class="math inline">\(\alpha = 1\)</span></li>
 </ul>
 <p>There is a special relationship between the standard Gaussian and the chi-square (and therefore gamma) distributions: if <span class="math inline">\(Z\sim N(0, 1)\)</span> then <span class="math inline">\(Z^2 \sim \chi^2_1\)</span>. This is shown by finding the CDF of <span class="math inline">\(Z^2\)</span> and differentiating; the proof is left as an exercise.</p>
-</section>
-<section id="expectation-inequalities" class="level3">
-<h3 class="anchored" data-anchor-id="expectation-inequalities">Expectation inequalities</h3>
-<p>There are three ‘classical’ inequalities related to expectation of a random variable: the Markov inequality, the Chebyshev inequality, and Jensen’s inequality.</p>
-<p><strong>Markov inequality</strong>. Let <span class="math inline">\(X\)</span> be a random variable. If <span class="math inline">\(g(x) \geq 0\)</span> on the support of <span class="math inline">\(X\)</span>, then for any real number <span class="math inline">\(c &gt; 0\)</span>: <span class="math display">\[
-P\left(g(X) \geq c\right) \leq \frac{1}{c}\mathbb{E}\left[g(X)\right]
-\]</span></p>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Proof
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Let <span class="math inline">\(A = \{x \in \mathbb{R}: g(x) \geq c\}\)</span>. Then if <span class="math inline">\(X\)</span> is continuous, by hypothesis <span class="math inline">\(g(x)f(x)\)</span> is nonnegative everywhere, so: <span class="math display">\[
-\begin{align*}
-\mathbb{E}\left[g(X)\right]
-&amp;= \int_\mathbb{R} g(x)f(x)dx \\
-&amp;= \int_A g(x)f(x)dx + \int_{\mathbb{R}\setminus A} g(x)f(x)dx \\
-&amp;\geq \int_A g(x)f(x)dx \\
-&amp;\geq \int_A c f(x)dx \\
-&amp;= c P(X \in A) \\
-&amp;= c P\left(g(X) \geq c\right)
-\end{align*}
-\]</span> If <span class="math inline">\(X\)</span> is discrete, then by hypothesis <span class="math inline">\(g(x)P(X = x)\)</span> is nonnegative everywhere, so: <span class="math display">\[
-\begin{align*}
-\mathbb{E}\left[g(X)\right]
-&amp;= \sum_\mathbb{R} g(x)P(X = x) \\
-&amp;= \sum_A g(x)P(X = x) + \sum_{\mathbb{R}\setminus A} g(x)P(X = x) \\
-&amp;\geq \sum_A g(x)P(X = x) \\
-&amp;\geq \sum_A c P(X = x) \\
-&amp;= c P\left(g(X) \geq c\right)
-\end{align*}
-\]</span></p>
-</div>
-</div>
-<p><strong>Chebyshev inequality</strong>. For any random variable <span class="math inline">\(X\)</span> whose first two moments exist, then for any real number <span class="math inline">\(c &gt; 0\)</span>: <span class="math display">\[
-P\left(|X - \mathbb{E}X| \geq c\right) \leq \frac{1}{c^2}\text{var}(X)
-\]</span></p>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Proof
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Let <span class="math inline">\(\mu\)</span> denote the expected value of <span class="math inline">\(X\)</span>. Then since <span class="math inline">\(g(x) = (x - \mu)^2\)</span> is a nonnegative function everywhere, by Markov’s inequality one has: <span class="math display">\[
-P\left(|X - \mu| \geq c \right) = P\left[(X - \mu)^2 \geq c^2\right] \leq \frac{1}{c^2}\mathbb{E}(X - \mu)^2
-\]</span></p>
-</div>
-</div>
-<p>The Chebyshev inequality is sometimes written where <span class="math inline">\(c\)</span> is replaced by a nonnegative multiple of the standard deviation of <span class="math inline">\(X\)</span>. If <span class="math inline">\(\sigma^2 = \text{var}(X)\)</span>, then one has: <span class="math display">\[
-P\left(|X - \mu| \geq k\sigma\right) \leq \frac{1}{k^2}
-\]</span></p>
-<p>The Chebyshev inequality is important since it provides a means of bounding the probability of deviations from the mean. In particular, note that for any random variable, one has by the inequality: <span class="math display">\[
-\begin{align*}
-&amp;P\left(|X - \mu| \geq 2\sigma\right) \leq \frac{1}{4} \\
-&amp;P\left(|X - \mu| \geq 3\sigma\right) \leq \frac{1}{9} \\
-&amp;P\left(|X - \mu| \geq 4\sigma\right) \leq \frac{1}{16} \\
-&amp;P\left(|X - \mu| \geq 5\sigma\right) \leq \frac{1}{25}
-\end{align*}
-\]</span></p>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Example
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Suppose that the random variable <span class="math inline">\(X\)</span> represents the concentration of arsenic measured in soil samples, and data suggests that for a particular area the average value is 8.7 parts per million and the average deviation is 5.3 ppm. Levels above 20ppm are considered unsafe. Since 20 is 2.3 standard deviations from the mean, the probability that a sample returns a level within that many standard deviations is: <span class="math display">\[
-P\left(|X - \mu| &lt; 2.3\sigma\right) \geq 1 - \frac{1}{2.3^2} = 0.78
-\]</span> If we are willing to assume that the distribution of arsenic concentrations is symmetric, then the probability of obtaining a sample value above the safety threshold is about 0.11.</p>
-</div>
-</div>
-<p>The Chebyshev inequality also has an important application in probability theory as providing a proof technique for the weak law of large numbers. If <span class="math inline">\(X_n\sim N\left(\mu, \frac{\sigma^2}{n}\right)\)</span>, then for any positive number <span class="math inline">\(\epsilon &gt; 0\)</span>, <span class="math inline">\(P(|X_n - \mu|\geq \epsilon) \leq \frac{\sigma^2}{\epsilon^2n^2} \rightarrow 0\)</span> as <span class="math inline">\(n \rightarrow \infty\)</span>. Since <span class="math inline">\(\epsilon\)</span> may be chosen to be arbitrarily small, this tells us that <span class="math inline">\(X_n\)</span> is arbitrarily close to <span class="math inline">\(\mu\)</span> for large <span class="math inline">\(n\)</span> and with probability tending to one; in the limit, <span class="math inline">\(X_\infty = \mu\)</span> with probability 1.</p>
-<p>The last inequality pertains to convex (or concave) functions. A function <span class="math inline">\(g\)</span> is <span style="color:blue">convex</span> on an open interval <span class="math inline">\((a, b)\)</span> if for every <span class="math inline">\(c \in (0, 1)\)</span> and <span class="math inline">\(a &lt; x &lt; y &lt; b\)</span>: <span class="math display">\[
-g\left(cx + (1 - c)y\right) \leq cg(x) + (1 - c)g(y)
-\]</span> If <span class="math inline">\(g\)</span> is twice differentiable on <span class="math inline">\((a, b)\)</span> then <span class="math inline">\(g\)</span> is convex just in case either of the following conditions hold:</p>
-<ol type="i">
-<li><span class="math inline">\(g'(x) \leq g'(y)\)</span> for all <span class="math inline">\(a &lt; x &lt; y &lt; b\)</span></li>
-<li><span class="math inline">\(g''(x) \geq 0\)</span> for all <span class="math inline">\(a &lt; x &lt; b\)</span>.</li>
-</ol>
-<p>The function is said to be strictly convex if the above inequalities are strict. A function <span class="math inline">\(g\)</span> is concave on an open interval <span class="math inline">\((a, b)\)</span> just in case <span class="math inline">\(-g\)</span> is convex.</p>
-<p><strong>Jensen’s inequality</strong>. Let <span class="math inline">\(X\)</span> be a random variable. If <span class="math inline">\(g\)</span> is convex and twice differentiable on the support of <span class="math inline">\(X\)</span> and the expectation <span class="math inline">\(\mathbb{E}\left[g(X)\right]\)</span> exists then: <span class="math display">\[
-g\left(\mathbb{E}X\right) \leq \mathbb{E}\left[g(X)\right]
-\]</span> The inequality is strict when <span class="math inline">\(g\)</span> is strictly convex and <span class="math inline">\(X\)</span> is not constant.</p>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Proof
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Let <span class="math inline">\(\mu = \mathbb{E}X\)</span>. A second-order Taylor expansion of <span class="math inline">\(g\)</span> about <span class="math inline">\(\mu\)</span> gives: <span class="math display">\[
-g(x) = g(\mu) + g'(\mu) (x - \mu) + \frac{1}{2} g''(r)(x - \mu)^2 \geq g(\mu) + g'(\mu) (x - \mu)
-\]</span> Taking expectations gives: <span class="math display">\[
-\mathbb{E}\left[g(X)\right] \geq g(\mu) + g'(\mu) (\mathbb{E}X - \mu) = g(\mu) = g\left(\mathbb{E}X\right)
-\]</span></p>
-</div>
-</div>
-<p>The next example applies Jensen’s inequality to show that for positive numbers, the harmonic mean is smaller than the geometric mean and the geometric mean is smaller than the arithmetic mean. It illustrates an interesting and well-known technique of representing the arithmetic average of finitely many positive numbers as the expectation of a discrete uniform random variable.</p>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Ordering of means
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Suppose <span class="math inline">\(A = \{a_1, a_2, \dots, a_n\}\)</span> is a set of positive numbers <span class="math inline">\(a_i\)</span>. There are many types of averages one might consider. The <span style="color:blue">arithmetic mean</span> of the numbers is: <span class="math display">\[
-\bar{a}_{AM} = \frac{1}{n}\sum_{i = 1}^n a_i
-\]</span> This is what most of us think of when we hear ‘mean’. However, there are other types of means. The <span style="color:blue">geometric mean</span> of the numbers is: <span class="math display">\[
-\bar{a}_{GM} = \left(\prod_{i = 1}^n a_i\right)^\frac{1}{n}
-\]</span> The geometric mean is often used with percentages; in finance, for example, annualized growth over time for an asset is the geometric mean of percentage change in the asset value for each year in the time period.</p>
-<p>There is also the <span style="color:blue">harmonic mean</span>, which is defined as: <span class="math display">\[
-\bar{a}_{HM} = \left(\frac{1}{n}\sum_{i = 1}^n \frac{1}{a_i}\right)^{-1}
-\]</span> This average is often used with rates and ratios.</p>
-<p>The arithmetic mean can be expressed as an expectation. Let <span class="math inline">\(X\)</span> be uniform on the set <span class="math inline">\(A\)</span>, so that <span class="math inline">\(P(X = a_i) = \frac{1}{n}\)</span> for each <span class="math inline">\(a_i\)</span>. Then: <span class="math display">\[
-\mathbb{E}X = \sum_i a_i P(X = a_i) = \frac{1}{n} \sum_{i} a_i = \bar{a}_{AM}
-\]</span> Now consider <span class="math inline">\(\log(X)\)</span>. Since the logarithm is a concave function, by Jensen’s inequality one has: <span class="math display">\[
-\log\left(\mathbb{E}X\right) \geq \mathbb{E}\left[\log(X)\right] = \frac{1}{n}\sum_{i = 1}^n \log (a_i) = \log\left(\bar{a}_{GM}\right)
-\]</span> Thus <span class="math inline">\(\log(\bar{a}_{AM}) \geq \log(\bar{a}_{GM})\)</span>, so since <span class="math inline">\(\log\)</span> is monotone increasing one has that <span class="math inline">\(\bar{a}_{AM}\geq\bar{a}_{GM}\)</span>.</p>
-<p>Now consider <span class="math inline">\(\frac{1}{X}\)</span>; since the reciprocal function is convex, by Jensen’s inequality one has: <span class="math display">\[
-\frac{1}{\mathbb{E}X} \leq \mathbb{E}\left(\frac{1}{X}\right) = \frac{1}{n}\sum_{i = 1}^n \frac{1}{a_i} = \frac{1}{\bar{a}_{HM}}
-\]</span> So one also has that <span class="math inline">\(\bar{a}_{AM}\geq\bar{a}_{HM}\)</span>. Moreover, since <span class="math inline">\(b_i = \frac{1}{a_i}\)</span> are positive numbers, one has by the result just established that <span class="math inline">\(\bar{b}_{AM} \geq \bar{b}_{GM}\)</span>. But it is easy to check that <span class="math inline">\(\bar{b}_{AM} = \bar{a}_{HM}^{-1}\)</span> and <span class="math inline">\(\bar{b}_{GM} = \bar{a}_{GM}^-1\)</span>. So one has, all together: <span class="math display">\[
-\bar{a}_{HM} \leq \bar{a}_{GM} \leq \bar{a}_{AM}
-\]</span> This is true for any positive numbers.</p>
-</div>
-</div>
 
 
 </section>

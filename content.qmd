@@ -178,11 +178,11 @@ This week lectures will cover a blend of material in DG&S 4.1 -- 4.4 and 5.1 -- 
 
 ### Week 7 (11/6/23)
 
-*Moments; probability inequalities involving expected value*
+*Moments and moment generating functions; the gamma distribution*
 
-#### Suggested reading:
+#### Suggested reading
 
-This week lectures will cover a blend of material in DG&S 4.1 -- 4.4 and 5.1 -- 5.6, but some material in those sections is deferred until later sections.
+DG&S section 4.4, select material from sections 5.1 -- 5.6, and section 5.7
 
 #### Lecture notes
 
@@ -207,3 +207,25 @@ This week lectures will cover a blend of material in DG&S 4.1 -- 4.4 and 5.1 -- 
 *Review of random variables and common distributions; expectation inequalities*
 
 [midterm 2 study guide](content/midterm2-studyguide.qmd)
+
+#### Suggested reading:
+
+Hogg & Craig section 1.8
+
+#### Lecture notes
+
+\[[expectation inequalities](content/week7-inequalities.qmd)\]
+
+#### Class meetings:
+
+***Monday:*** practice problems
+
+***Tuesday:*** midterm review
+
+***Wednesday:*** expectation inequalities
+
+***Thursday:*** **Midterm 2** in class
+
+#### Assignment
+
+None; enjoy!
