@@ -20,7 +20,9 @@ Please prepare your solutions neatly, numbered, and in order; ideally, you'll wr
 
 1.  (Normal-$\chi^2$ relationship) Show that if $Z\sim N(0, 1)$ then $Z^2 \sim \chi^2_1$.
 
-2.  (Stochastic ordering) Two random variables $X$ and $Y$ are stochastically ordered if either $F_X(x) \geq F_Y(x)$ or the reverse inequality is true for every $x \in \mathbb{R}$. If $F_X(x) \geq F_Y(x)$ for every $x\in\mathbb{R}$, then $X \leq_{st} Y$. Show that the exponential distribution is stochastically ordered in its parameter: that is, if $X \sim \text{exponential}(\alpha)$ and $Y \sim \text{exponential}(\alpha + c)$, then $X \geq_{st} Y$. (Use the 'rate' parametrization: $f(x) = \alpha e^{-\alpha x}, x > 0, \alpha > 0$.
+2.  (Stochastic ordering) Two random variables $X$ and $Y$ are stochastically ordered if either $F_X(x) \leq F_Y(x)$ or the reverse inequality is true for every $x \in \mathbb{R}$. We say that:
+$$X \geq_{st} Y \quad\text{if}\quad F_X(x) \leq F_Y(x) \quad\text{for every}\quad x\in\mathbb{R}$$
+Show that the exponential distribution is stochastically ordered in its parameter: that is, if $X \sim \text{exponential}(\alpha)$ and $Y \sim \text{exponential}(\alpha + c)$ where $c > 0$, then $X \geq_{st} Y$. (Use the 'rate' parametrization: $f(x) = \alpha e^{-\alpha x}, x > 0, \alpha > 0$).
 
 <!-- (Lognormal density) Let $\log X \sim N(\mu, \sigma^2)$. Find the PDF of $X$ and show that $e^\mu$ is a median of $X$, *i.e.*, $P(X \leq e^\mu) \geq \frac{1}{2}$ and $P(X > e^\mu) \leq \frac{1}{2}$. -->
 
