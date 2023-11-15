@@ -173,8 +173,8 @@ This week lectures will cover a blend of material in DG&S 4.1 -- 4.4 and 5.1 -- 
 
 #### Assignment
 
-- Please fill out [feedback survey](https://forms.gle/hpAB4Jtgnhaky3QTA) by the end of the week
--   [Homework 5](content/hw5.qmd) due Thursday 11/9
+-   Please fill out [feedback survey](https://forms.gle/hpAB4Jtgnhaky3QTA) by the end of the week
+-   [Homework 5](content/hw5.qmd) due Thursday 11/9 \[[solutions](https://drive.google.com/file/d/1IaIKW_1JR8e61fWh_dDxKLznn-m6-OpD/view?usp=sharing)\]
 
 ### Week 7 (11/6/23)
 
@@ -208,7 +208,7 @@ DG&S section 4.4, select material from sections 5.1 -- 5.6, and section 5.7
 
 \[[midterm 2 study guide](content/midterm2-studyguide.qmd)\]
 
-\[[practice test](content/stat425-f23-midterm2-practice.pdf)\]
+\[[practice test](content/stat425-f23-midterm2-practice.pdf)\] \[[solutions](https://drive.google.com/file/d/1u-UdBCQ8DaSWCCEl--xAU5DK3GUvJx_1/view?usp=share_link)\]
 
 #### Suggested reading:
 

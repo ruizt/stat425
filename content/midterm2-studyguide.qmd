@@ -75,6 +75,8 @@ The problems below vary in length and difficulty.
       0 &,\; X \leq c
     \end{cases}
     $$ Find the distribution of $Y$ and its mean and variance.
+    
+Textbook problems: 
 
 ### Common distributions
 
