@@ -76,7 +76,7 @@ The problems below vary in length and difficulty.
     \end{cases}
     $$ Find the distribution of $Y$ and its mean and variance.
     
-Textbook problems: 
+Textbook problems: end of sections 3.1 -- 3.3, 3.8, 4.1
 
 ### Common distributions
 

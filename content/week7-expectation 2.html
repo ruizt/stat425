@@ -7,9 +7,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="STAT425, Fall 2023">
-<meta name="dcterms.date" content="2023-11-27">
+<meta name="dcterms.date" content="2023-11-05">
 
-<title>STAT425 - Expectation inequalities</title>
+<title>STAT425 - Expectation</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -114,14 +114,21 @@ gtag('config', 'G-H3YKZX4J88', { 'anonymize_ip': true});
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#moments" id="toc-moments" class="nav-link active" data-scroll-target="#moments">Moments</a></li>
+  <li><a href="#the-gamma-distribution" id="toc-the-gamma-distribution" class="nav-link" data-scroll-target="#the-gamma-distribution">The Gamma distribution</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Expectation inequalities</h1>
+<h1 class="title">Expectation</h1>
 </div>
 
 
@@ -138,7 +145,7 @@ gtag('config', 'G-H3YKZX4J88', { 'anonymize_ip': true});
     <div>
     <div class="quarto-title-meta-heading">Updated</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">November 27, 2023</p>
+      <p class="date">November 5, 2023</p>
     </div>
   </div>
   
@@ -148,70 +155,22 @@ gtag('config', 'G-H3YKZX4J88', { 'anonymize_ip': true});
 
 </header>
 
-<p>There are three ‘classical’ inequalities related to expectation of a random variable: the Markov inequality, the Chebyshev inequality, and Jensen’s inequality.</p>
-<p><strong>Markov inequality</strong>. Let <span class="math inline">\(X\)</span> be a random variable. If <span class="math inline">\(g(x) \geq 0\)</span> on the support of <span class="math inline">\(X\)</span>, then for any real number <span class="math inline">\(c &gt; 0\)</span>: <span class="math display">\[
-P\left(g(X) \geq c\right) \leq \frac{1}{c}\mathbb{E}\left[g(X)\right]
+<section id="moments" class="level3">
+<h3 class="anchored" data-anchor-id="moments">Moments</h3>
+<p>The expected values of integer exponents of a random variable are known as <span style="color:blue">moments</span> of the random variable (or its distribution). We’ll write moments as: <span class="math display">\[
+\mu_k = \mathbb{E}X^k
 \]</span></p>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Proof
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Let <span class="math inline">\(A = \{x \in \mathbb{R}: g(x) \geq c\}\)</span>. Then if <span class="math inline">\(X\)</span> is continuous, by hypothesis <span class="math inline">\(g(x)f(x)\)</span> is nonnegative everywhere, so: <span class="math display">\[
-\begin{align*}
-\mathbb{E}\left[g(X)\right]
-&amp;= \int_\mathbb{R} g(x)f(x)dx \\
-&amp;= \int_A g(x)f(x)dx + \int_{\mathbb{R}\setminus A} g(x)f(x)dx \\
-&amp;\geq \int_A g(x)f(x)dx \\
-&amp;\geq \int_A c f(x)dx \\
-&amp;= c P(X \in A) \\
-&amp;= c P\left(g(X) \geq c\right)
-\end{align*}
-\]</span> If <span class="math inline">\(X\)</span> is discrete, then by hypothesis <span class="math inline">\(g(x)P(X = x)\)</span> is nonnegative everywhere, so: <span class="math display">\[
-\begin{align*}
-\mathbb{E}\left[g(X)\right]
-&amp;= \sum_\mathbb{R} g(x)P(X = x) \\
-&amp;= \sum_A g(x)P(X = x) + \sum_{\mathbb{R}\setminus A} g(x)P(X = x) \\
-&amp;\geq \sum_A g(x)P(X = x) \\
-&amp;\geq \sum_A c P(X = x) \\
-&amp;= c P\left(g(X) \geq c\right)
-\end{align*}
-\]</span></p>
-</div>
-</div>
-<p><strong>Chebyshev inequality</strong>. For any random variable <span class="math inline">\(X\)</span> whose first two moments exist, then for any real number <span class="math inline">\(c &gt; 0\)</span>: <span class="math display">\[
-P\left(|X - \mathbb{E}X| \geq c\right) \leq \frac{1}{c^2}\text{var}(X)
-\]</span></p>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Proof
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Let <span class="math inline">\(\mu\)</span> denote the expected value of <span class="math inline">\(X\)</span>. Then since <span class="math inline">\(g(x) = (x - \mu)^2\)</span> is a nonnegative function everywhere, by Markov’s inequality one has: <span class="math display">\[
-P\left(|X - \mu| \geq c \right) = P\left[(X - \mu)^2 \geq c^2\right] \leq \frac{1}{c^2}\mathbb{E}(X - \mu)^2
-\]</span></p>
-</div>
-</div>
-<p>The Chebyshev inequality is sometimes written where <span class="math inline">\(c\)</span> is replaced by a nonnegative multiple of the standard deviation of <span class="math inline">\(X\)</span>. If <span class="math inline">\(\sigma^2 = \text{var}(X)\)</span>, then one has: <span class="math display">\[
-P\left(|X - \mu| \geq k\sigma\right) \leq \frac{1}{k^2}
-\]</span></p>
-<p>The Chebyshev inequality is important since it provides a means of bounding the probability of deviations from the mean. In particular, note that for any random variable, one has by the inequality: <span class="math display">\[
-\begin{align*}
-&amp;P\left(|X - \mu| \geq 2\sigma\right) \leq \frac{1}{4} \\
-&amp;P\left(|X - \mu| \geq 3\sigma\right) \leq \frac{1}{9} \\
-&amp;P\left(|X - \mu| \geq 4\sigma\right) \leq \frac{1}{16} \\
-&amp;P\left(|X - \mu| \geq 5\sigma\right) \leq \frac{1}{25}
-\end{align*}
+<p>The <span style="color:blue">centered moments</span> of a random variable (or its distribution) are defined as: <span class="math display">\[
+\tilde{\mu}_k = \mathbb{E}(X - \mu_1)^k
+\]</span> Note that the mean of a random variable is its first moment. The variance is its second centered moment.</p>
+<p>The moment sequence uniquely defines a random variable whenever moments exist for every <span class="math inline">\(k \in \mathbb{N}\)</span> and the random variable has bounded support. The moments of a random variable can under many circumstances be obtained from the <span style="color:blue">moment generating function</span> (MGF) rather than direct calculation. The MGF is defined as the expectation <span class="math display">\[
+m_X (t) = \mathbb{E}e^{tX}
+\;,\qquad
+t \in (-h, h)
+\]</span> provided it exists for some <span class="math inline">\(h&gt;0\)</span>. This is called the moment generating function because: <span class="math display">\[
+\frac{d^k}{d^k t} m_X (t)\Big\rvert_{t = 0}
+= \mathbb{E}X^k e^{tX}\Big\rvert_{t = 0}
+= \mathbb{E}X^k
 \]</span></p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -219,27 +178,156 @@ P\left(|X - \mu| \geq k\sigma\right) \leq \frac{1}{k^2}
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Example
+Example: Poisson MGF
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Suppose that the random variable <span class="math inline">\(X\)</span> represents the concentration of arsenic measured in soil samples, and data suggests that for a particular area the average value is 8.7 parts per million and the average deviation is 5.3 ppm. Levels above 20ppm are considered unsafe. Since 20 is 2.3 standard deviations from the mean, the probability that a sample returns a level within that many standard deviations is: <span class="math display">\[
-P\left(|X - \mu| &lt; 2.3\sigma\right) \geq 1 - \frac{1}{2.3^2} = 0.78
-\]</span> If we are willing to assume that the distribution of arsenic concentrations is symmetric, then the probability of obtaining a sample value above the safety threshold is about 0.11.</p>
+<p>If <span class="math inline">\(X \sim \text{Poisson}(\lambda)\)</span> then for all <span class="math inline">\(t\in \mathbb{R}\)</span>: <span class="math display">\[
+\begin{align*}
+m_X (t)
+&amp;= \mathbb{E}e^{tX} \\
+&amp;= \sum_{x = 0}^\infty e^{tx} \frac{\lambda^x e^{-\lambda}}{x!} \\
+&amp;= e^{-\lambda(1 - e^t)} \sum_{x = 0}^\infty \underbrace{\frac{(\lambda e^t)^x e^{-\lambda e^t}}{x!}}_{\text{Poisson}(\lambda e^t) \text{ PMF}} \\
+&amp;= \exp\left\{-\lambda(1 - e^t)\right\}
+\end{align*}
+\]</span></p>
+<p>Then, to find the first and second moments, differentiate and evaluate at <span class="math inline">\(t = 0\)</span>: <span class="math display">\[
+\begin{align*}
+\frac{d}{dt}m_X(t)\Big\rvert_{t = 0}
+&amp;= \lambda e^t \exp\left\{-\lambda(1 - e^t)\right\} \Big\rvert_{t = 0} = \lambda \\
+\frac{d^2}{d^2t}m_X(t)\Big\rvert_{t = 0}
+&amp;= \frac{d}{dt} \left[\lambda e^t \exp\left\{-\lambda(1 - e^t)\right\} \right]\Big\rvert_{t = 0} \\
+&amp;= \left[\lambda e^t \exp\left\{-\lambda(1 - e^t)\right\} + (\lambda e^t)^2 \exp\left\{-\lambda(1 - e^t)\right\} \right]\Big\rvert_{t = 0} \\
+&amp;= \lambda + \lambda^2
+\end{align*}
+\]</span> This matches the previous calculation for <span class="math inline">\(\mu_1, \mu_2\)</span>.</p>
 </div>
 </div>
-<p>The Chebyshev inequality also has an important application in probability theory as providing a proof technique for the weak law of large numbers. If <span class="math inline">\(X_n\sim N\left(\mu, \frac{\sigma^2}{n}\right)\)</span>, then for any positive number <span class="math inline">\(\epsilon &gt; 0\)</span>, <span class="math inline">\(P(|X_n - \mu|\geq \epsilon) \leq \frac{\sigma^2}{\epsilon^2n^2} \rightarrow 0\)</span> as <span class="math inline">\(n \rightarrow \infty\)</span>. Since <span class="math inline">\(\epsilon\)</span> may be chosen to be arbitrarily small, this tells us that <span class="math inline">\(X_n\)</span> is arbitrarily close to <span class="math inline">\(\mu\)</span> for large <span class="math inline">\(n\)</span> and with probability tending to one; in the limit, <span class="math inline">\(X_\infty = \mu\)</span> with probability 1.</p>
-<p>The last inequality pertains to convex (or concave) functions. A function <span class="math inline">\(g\)</span> is <span style="color:blue">convex</span> on an open interval <span class="math inline">\((a, b)\)</span> if for every <span class="math inline">\(c \in (0, 1)\)</span> and <span class="math inline">\(a &lt; x &lt; y &lt; b\)</span>: <span class="math display">\[
-g\left(cx + (1 - c)y\right) \leq cg(x) + (1 - c)g(y)
-\]</span> If <span class="math inline">\(g\)</span> is twice differentiable on <span class="math inline">\((a, b)\)</span> then <span class="math inline">\(g\)</span> is convex just in case either of the following conditions hold:</p>
+<p>Moment generating functions, when they exist, uniquely characterize probability distributions. If <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> are two random variables whose moment generating functions exist, then <span class="math inline">\(X \stackrel{d}{=} Y\)</span> if and only if <span class="math inline">\(m_X(t) = m_Y(t)\)</span> for all <span class="math inline">\(t\)</span> in a neighborhood of zero. The proof is advanced, so we will simply state this as a fact.</p>
+<p>As a consequence, an MGF can be both a way of describing a distribution and a useful tool, as the examples below illustrate.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Gaussian MGF
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>If <span class="math inline">\(Z \sim N(0, 1)\)</span> then the MGF of <span class="math inline">\(Z\)</span> is: <span class="math display">\[
+\begin{align*}
+m_Z (t)
+&amp;= \mathbb{E}e^{tZ} \\
+&amp;= \int_\mathbb{R} e^{tz} \frac{1}{\sqrt{2\pi}} e^{-\frac{z^2}{2}} dz \\
+&amp;= \int_\mathbb{R} \frac{1}{\sqrt{2\pi}} e^{tz - \frac{z^2}{2}} dz \\
+&amp;= e^{\frac{1}{2}t^2} \underbrace{\int_\mathbb{R} \frac{1}{\sqrt{2\pi}} e^{-\frac{1}{2} (z - t)^2} dz}_{N(t, 1) \text{ PDF}} \\
+&amp;= e^{\frac{1}{2}t^2}
+\end{align*}
+\]</span> Now if <span class="math inline">\(X \sim N(\mu, \sigma^2)\)</span> then <span class="math inline">\(X \stackrel{d}{=} \sigma Z + \mu\)</span>, so <span class="math inline">\(X\)</span> has MGF: <span class="math display">\[
+m_X (t)
+= \mathbb{E}e^{tX}
+= \mathbb{E}e^{t(\sigma Z + \mu)}
+= \mathbb{E}e^{(t\sigma)Z}e^{t\mu}
+= e^{t\mu}m_Z(t\sigma)
+= \exp\left\{t\mu + \frac{1}{2}t^2\sigma^2\right\}
+\]</span> Then the first two moments of each distribution are:</p>
+<p><span class="math display">\[
+\begin{align*}
+\mathbb{E}Z &amp;= m'_Z(0) = t e^{\frac{1}{2}t^2}\Big\rvert_{t = 0} = 0 \\
+\mathbb{E}Z^2 &amp;= m''_Z(0) = e^{\frac{1}{2}t^2} + t^2 e^{\frac{1}{2}t^2}\Big\rvert_{t = 0} = 0 \\
+\mathbb{E}X &amp;= m'_X(0) = (\mu + t\sigma^2)e^{\mu t + \frac{1}{2}t^2\sigma^2}\Big\rvert_{t = 0} = \mu \\
+\mathbb{E}X^2 &amp;= m''_X(0) = \sigma^2 m_X(t) + (\mu + t\sigma^2)^2 m_X(t)\Big\rvert_{t = 0} = \mu^2 + \sigma^2
+\end{align*}
+\]</span> So then by the variance formula, one has: <span class="math display">\[
+\begin{align*}
+\text{var}Z &amp;= \mathbb{E}Z^2 - (\mathbb{E}Z)^2 = 1 - 0^2 = 1 \\
+\text{var}X &amp;= \mathbb{E}X^2 - (\mathbb{E}X)^2 = \mu^2 + \sigma^2 - \mu^2 = \sigma^2 \\
+\end{align*}
+\]</span></p>
+</div>
+</div>
+<p>Notice that in the above example, it is easy to find the MGF of a linear function of a random variable with a known MGF. We can state this as a lemma.</p>
+<p><strong>Lemma</strong>. If the MGF of <span class="math inline">\(X\)</span> exists and <span class="math inline">\(Y = aX + b\)</span>, then the MGF of <span class="math inline">\(Y\)</span> is <span class="math inline">\(m_Y (t) = e^{bt}m_X (at)\)</span>.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Proof
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><span class="math inline">\(m_Y (t) = \mathbb{E}e^{tY} = \mathbb{E}e^{t(aX + b)} = e^{tb}\mathbb{E} e^{(ta)X} = e^{tb}m_X (at)\)</span></p>
+</div>
+</div>
+<p>The MGF occasionally comes in handy for other transformations, as the next example illustrates.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Lognormal moments
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><span class="math inline">\(X\)</span> has a <span style="color:blue">lognormal distribution</span> if <span class="math inline">\(\log X \sim N(\mu, \sigma^2)\)</span>. The moments of <span class="math inline">\(X\)</span> can actually be found from the MGF of <span class="math inline">\(\log X\)</span>, since: <span class="math display">\[
+m_{\log X} (t) = \mathbb{E}e^{t\log X} = \mathbb{E}X^t
+\]</span> Since <span class="math inline">\(\log X\)</span> is Gaussian, <span class="math inline">\(m_{\log X} (t) = \exp\left\{\mu t + \frac{1}{2}t^2\sigma^2\right\}\)</span>, so: <span class="math display">\[
+\mathbb{E}X^t = \exp\left\{\mu t + \frac{1}{2}t^2\sigma^2\right\}
+\]</span> Interestingly, this expression holds for non-integer values of <span class="math inline">\(t\)</span>, since the MGF exists for every <span class="math inline">\(t \in \mathbb{R}\)</span>.</p>
+</div>
+</div>
+<p>One of many interesting properties of the standard Gaussian distribution are that all its moments exist, and all odd moments are zero. Moreover, for any Gaussian distribution, the moments can be calculated explicitly using a recursion. The next example explores these properties.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Gaussian moment sequence
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>If <span class="math inline">\(Z \sim N(0, 1)\)</span> so that <span class="math inline">\(Z\)</span> has a standard Gaussian distribution, then <span class="math inline">\(m_Z (t) = e^{\frac{1}{2}t^2}\)</span>.</p>
+<p>The MGF is infinitely differentiable, and a Taylor expansion about zero gives: <span class="math display">\[
+m_Z (t) = m_Z(0) + m'_Z(0) \frac{t}{1!} + m''_Z(0)\frac{t^2}{2!} + \cdots + m^{(k)}_Z (0) \frac{t^k}{k!} + \cdots
+\]</span> Notice, however, that the series expansion of the exponential function <span class="math inline">\(e^x = \sum_{n = 0}^\infty \frac{x^n}{n!}\)</span> (also a Taylor expansion about zero) gives that: <span class="math display">\[
+\begin{align*}
+e^{\frac{1}{2}t^2}
+&amp;= 1 + \frac{1}{1!}\left(\frac{t^2}{2}\right)^1 + \frac{1}{2!}\left(\frac{t^2}{2}\right)^2 + \cdots + \frac{1}{k!}\left(\frac{t^2}{2}\right)^k + \cdots \\
+&amp;= 1 + \frac{t^2}{2\cdot 1!} + \frac{t^4}{2\cdot 2!} + \cdots + \frac{t^{2k}}{2^k \cdot k!} + \cdots \\
+&amp;= 1 + \frac{t^2}{2!}\cdot \frac{2!}{2^1 1!} + \frac{t^4}{4!}\cdot \frac{4!}{2^2 2!} + \cdots + \frac{t^{2k}}{(2k)!} \cdot \frac{(2k)!}{2^k k!} + \cdots \\
+&amp;= 1 + c_2 \frac{t^2}{2!} + c_4\frac{t^4}{4!} + \cdots + c_{2k}\frac{t^{2k}}{(2k)!} + \cdots
+\end{align*}
+\]</span> Above, <span class="math inline">\(c_{2k} = \frac{(2k)!}{2^k k!}\)</span> for <span class="math inline">\(k = 1, 2, \dots\)</span>, and <span class="math inline">\(c_{2k - 1} = 0\)</span>. By equating the series, which entails that the coefficients match, one has that <span class="math inline">\(c_k = m_Z^{(k)} (0)\)</span>, and thus for <span class="math inline">\(k = 1, 2, \dots\)</span>: <span class="math display">\[
+\begin{align*}
+\mathbb{E} Z^{2k} &amp;= c_{2k} = \frac{(2k)!}{2^k k!} \\
+\mathbb{E} Z^{2k - 1} &amp;= c_{2k - 1} = 0
+\end{align*}
+\]</span></p>
+<p>Now if <span class="math inline">\(X \sim N(\mu, \sigma^2)\)</span>, then <span class="math inline">\(X \stackrel{d}{=} \sigma Z + \mu\)</span>, and by the binomimal theorem, one has: <span class="math display">\[
+\mathbb{E}X^k
+= \mathbb{E}\left[(\sigma Z + \mu)^k\right]
+= \mathbb{E}\left[ \sum_{j = 0}^k {k \choose j} (\sigma Z)^j \mu^{k - j}\right]
+= \sum_{j = 0}^k {k \choose j} \sigma^j \mathbb{E}Z^j \mu^{k - j}
+\]</span> Thus, the moment sequence for any Gaussian random variable can be obtained by direct calculation by first computing the moments of the standard Gaussian distribution via <span class="math inline">\(c_{2k}\)</span>, and then applying the formula above.</p>
+</div>
+</div>
+</section>
+<section id="the-gamma-distribution" class="level3">
+<h3 class="anchored" data-anchor-id="the-gamma-distribution">The Gamma distribution</h3>
+<p>We’ll cover one last common family of distributions closely connected with the gamma or factorial function. The <span style="color:blue">gamma function</span> is defined as the integral: <span class="math display">\[
+\Gamma(\alpha) = \int_0^\infty y^{\alpha - 1} e^{-y} dy
+\]</span></p>
+<p><strong>Lemma</strong>. Some key properties of the gamma function are:</p>
 <ol type="i">
-<li><span class="math inline">\(g'(x) \leq g'(y)\)</span> for all <span class="math inline">\(a &lt; x &lt; y &lt; b\)</span></li>
-<li><span class="math inline">\(g''(x) \geq 0\)</span> for all <span class="math inline">\(a &lt; x &lt; b\)</span>.</li>
+<li><span class="math inline">\(\Gamma(1) = 1\)</span></li>
+<li><span class="math inline">\(\Gamma\left(\frac{1}{2}\right) = \sqrt{pi}\)</span></li>
+<li><span class="math inline">\(\Gamma(\alpha) = (\alpha - 1)\Gamma(\alpha - 1)\)</span></li>
 </ol>
-<p>The function is said to be strictly convex if the above inequalities are strict. A function <span class="math inline">\(g\)</span> is concave on an open interval <span class="math inline">\((a, b)\)</span> just in case <span class="math inline">\(-g\)</span> is convex.</p>
-<p><strong>Jensen’s inequality</strong>. Let <span class="math inline">\(X\)</span> be a random variable. If <span class="math inline">\(g\)</span> is convex and twice differentiable on the support of <span class="math inline">\(X\)</span> and the expectation <span class="math inline">\(\mathbb{E}\left[g(X)\right]\)</span> exists then: <span class="math display">\[
-g\left(\mathbb{E}X\right) \leq \mathbb{E}\left[g(X)\right]
-\]</span> The inequality is strict when <span class="math inline">\(g\)</span> is strictly convex and <span class="math inline">\(X\)</span> is not constant.</p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -250,46 +338,74 @@ Proof
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Let <span class="math inline">\(\mu = \mathbb{E}X\)</span>. A second-order Taylor expansion of <span class="math inline">\(g\)</span> about <span class="math inline">\(\mu\)</span> gives: <span class="math display">\[
-g(x) = g(\mu) + g'(\mu) (x - \mu) + \frac{1}{2} g''(r)(x - \mu)^2 \geq g(\mu) + g'(\mu) (x - \mu)
-\]</span> Taking expectations gives: <span class="math display">\[
-\mathbb{E}\left[g(X)\right] \geq g(\mu) + g'(\mu) (\mathbb{E}X - \mu) = g(\mu) = g\left(\mathbb{E}X\right)
+<p>For (i), <span class="math inline">\(\Gamma(1) = \int_0^\infty e^{-y}dy = 1\)</span>. For (ii), writing the definition and making the substituion <span class="math inline">\(z^2 = y\)</span> yields the Gaussian integral: <span class="math display">\[
+\Gamma\left(\frac{1}{2}\right)
+= \int_0^\infty y^{-\frac{1}{2}}e^{-y}dy
+= 2\int_0^\infty e^{-z^2}dz
+= \int_{-\infty}^\infty e^{-z^2}dz = \sqrt{pi}
+\]</span></p>
+<p>Lastly, (iii) is established via integration by parts: <span class="math display">\[
+\begin{align*}
+\Gamma(\alpha)
+&amp;= \int_0^\infty \underbrace{y^{\alpha - 1}}_{u}\underbrace{e^{-y}}_{dv}dy \\
+&amp;= \left[-y^{\alpha - 1} e^{-y}\right]_0^\infty + \int_0^\infty (\alpha - 1) y^{\alpha - 2} e^{-y}dy \\
+&amp;= (\alpha - 1) \int_0^\infty y^{(\alpha - 1) - 1} e^{-y}dy \\
+&amp;= (\alpha - 1) \Gamma(\alpha - 1)
+\end{align*}
 \]</span></p>
 </div>
 </div>
-<p>The next example applies Jensen’s inequality to show that for positive numbers, the harmonic mean is smaller than the geometric mean and the geometric mean is smaller than the arithmetic mean. It illustrates an interesting and well-known technique of representing the arithmetic average of finitely many positive numbers as the expectation of a discrete uniform random variable.</p>
+<p>Consider now the kernel <span class="math inline">\(x^{\alpha - 1}e^{-\frac{x}{\beta}}\)</span> for <span class="math inline">\(\alpha &gt; 0, \beta &gt; 0\)</span>: <span class="math display">\[
+\int_0^\infty x^{\alpha - 1}e^{-\frac{x}{\beta}}
+= \int_0^\infty (z\beta)^{\alpha - 1}e^{-z}\beta dz
+= \beta^\alpha \Gamma(\alpha)
+\]</span></p>
+<p>Normalizing the kernel to integrate to one yields the gamma density. <span class="math inline">\(X\sim \Gamma(\alpha, \beta)\)</span> if the PDF of <span class="math inline">\(X\)</span> is: <span class="math display">\[
+f(x) = \frac{1}{\Gamma(\alpha)\beta^\alpha} x^{\alpha - 1}e^{-\frac{x}{\beta}}
+\;,\qquad
+x &gt; 0, \alpha &gt; 0, \beta &gt; 0
+\]</span></p>
+<p>Since this is a nonnegative function that integrates to one over the support, it defines a valid probability distribution. The moments can be obtained by direct calculation.</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Ordering of means
+Gamma moments
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Suppose <span class="math inline">\(A = \{a_1, a_2, \dots, a_n\}\)</span> is a set of positive numbers <span class="math inline">\(a_i\)</span>. There are many types of averages one might consider. The <span style="color:blue">arithmetic mean</span> of the numbers is: <span class="math display">\[
-\bar{a}_{AM} = \frac{1}{n}\sum_{i = 1}^n a_i
-\]</span> This is what most of us think of when we hear ‘mean’. However, there are other types of means. The <span style="color:blue">geometric mean</span> of the numbers is: <span class="math display">\[
-\bar{a}_{GM} = \left(\prod_{i = 1}^n a_i\right)^\frac{1}{n}
-\]</span> The geometric mean is often used with percentages; in finance, for example, annualized growth over time for an asset is the geometric mean of percentage change in the asset value for each year in the time period.</p>
-<p>There is also the <span style="color:blue">harmonic mean</span>, which is defined as: <span class="math display">\[
-\bar{a}_{HM} = \left(\frac{1}{n}\sum_{i = 1}^n \frac{1}{a_i}\right)^{-1}
-\]</span> This average is often used with rates and ratios.</p>
-<p>The arithmetic mean can be expressed as an expectation. Let <span class="math inline">\(X\)</span> be uniform on the set <span class="math inline">\(A\)</span>, so that <span class="math inline">\(P(X = a_i) = \frac{1}{n}\)</span> for each <span class="math inline">\(a_i\)</span>. Then: <span class="math display">\[
-\mathbb{E}X = \sum_i a_i P(X = a_i) = \frac{1}{n} \sum_{i} a_i = \bar{a}_{AM}
-\]</span> Now consider <span class="math inline">\(\log(X)\)</span>. Since the logarithm is a concave function, by Jensen’s inequality one has: <span class="math display">\[
-\log\left(\mathbb{E}X\right) \geq \mathbb{E}\left[\log(X)\right] = \frac{1}{n}\sum_{i = 1}^n \log (a_i) = \log\left(\bar{a}_{GM}\right)
-\]</span> Thus <span class="math inline">\(\log(\bar{a}_{AM}) \geq \log(\bar{a}_{GM})\)</span>, so since <span class="math inline">\(\log\)</span> is monotone increasing one has that <span class="math inline">\(\bar{a}_{AM}\geq\bar{a}_{GM}\)</span>.</p>
-<p>Now consider <span class="math inline">\(\frac{1}{X}\)</span>; since the reciprocal function is convex, by Jensen’s inequality one has: <span class="math display">\[
-\frac{1}{\mathbb{E}X} \leq \mathbb{E}\left(\frac{1}{X}\right) = \frac{1}{n}\sum_{i = 1}^n \frac{1}{a_i} = \frac{1}{\bar{a}_{HM}}
-\]</span> So one also has that <span class="math inline">\(\bar{a}_{AM}\geq\bar{a}_{HM}\)</span>. Moreover, since <span class="math inline">\(b_i = \frac{1}{a_i}\)</span> are positive numbers, one has by the result just established that <span class="math inline">\(\bar{b}_{AM} \geq \bar{b}_{GM}\)</span>. But it is easy to check that <span class="math inline">\(\bar{b}_{AM} = \bar{a}_{HM}^{-1}\)</span> and <span class="math inline">\(\bar{b}_{GM} = \bar{a}_{GM}^-1\)</span>. So one has, all together: <span class="math display">\[
-\bar{a}_{HM} \leq \bar{a}_{GM} \leq \bar{a}_{AM}
-\]</span> This is true for any positive numbers.</p>
+<p>The moments of a gamma random variable can in fact be computed directly. If <span class="math inline">\(X \sim \Gamma (\alpha, \beta)\)</span>, then: <span class="math display">\[
+\begin{align*}
+\mathbb{E}X^k
+&amp;= \frac{1}{\Gamma(\alpha)\beta^\alpha} \int_0^\infty x^k \cdot x^{\alpha - 1} e^{-\frac{x}{\beta}}dx \\
+&amp;= \frac{1}{\Gamma(\alpha)\beta^\alpha} \int_0^\infty x^{(\alpha + k) - 1} e^{-\frac{x}{\beta}}dx \\
+&amp;= \frac{\Gamma(\alpha + k)\beta^{\alpha + k}}{\Gamma(\alpha)\beta^\alpha}\int_0^\infty \frac{1}{\Gamma(\alpha + k)\beta^{\alpha + k}} x^{(\alpha + k) - 1} e^{-\frac{x}{\beta}}dx \\
+&amp;= \frac{\Gamma(\alpha + k)\beta^{\alpha + k}}{\Gamma(\alpha)\beta^\alpha}
+\end{align*}
+\]</span> Nonetheless, the moment generating function of <span class="math inline">\(X\)</span> is: <span class="math display">\[
+\begin{align*}
+m_X (t)
+&amp;= \mathbb{E}e^{tX} \\
+&amp;= \frac{1}{\Gamma(\alpha)\beta^\alpha}\int_0^\infty e^{tx}x^{\alpha - 1}e^{-x}dx \\
+&amp;= \frac{1}{\Gamma(\alpha)\beta^\alpha}\int_0^\infty x^{\alpha - 1}e^{-x\left(\frac{1}{\beta} - t\right)}dx \\
+&amp;= \frac{1}{\left(\frac{1}{\beta} - t\right)^\alpha \beta^\alpha}\int_0^\infty \frac{\left(\frac{1}{\beta} - t\right)^\alpha}{\Gamma(\alpha)} x^{\alpha - 1}e^{-x\left(\frac{1}{\beta} - t\right)}dx \\
+&amp;= (1 - \beta t)^{-\alpha}
+\;,\quad t &lt; \frac{1}{\beta}
+\end{align*}
+\]</span> The MGF is useful primarily for determining whether, <em>e.g.</em>, a transformation has a gamma distribution. We’ll see examples later.</p>
 </div>
 </div>
+<p>Some special cases include:</p>
+<ul>
+<li>the <span style="color:blue">chi square distribution</span> with parameter <span class="math inline">\(\nu &gt; 0\)</span> is a gamma distribution with parameters <span class="math inline">\(\alpha = \frac{\nu}{2}\)</span> and <span class="math inline">\(\beta = 2\)</span></li>
+<li>the <span style="color:blue">exponential distribution</span> with parameter <span class="math inline">\(\beta\)</span> is a gamma distribution with parameter <span class="math inline">\(\alpha = 1\)</span></li>
+</ul>
+<p>There is a special relationship between the standard Gaussian and the chi-square (and therefore gamma) distributions: if <span class="math inline">\(Z\sim N(0, 1)\)</span> then <span class="math inline">\(Z^2 \sim \chi^2_1\)</span>. This is shown by finding the CDF of <span class="math inline">\(Z^2\)</span> and differentiating; the proof is left as an exercise.</p>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

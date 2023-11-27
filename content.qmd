@@ -231,3 +231,30 @@ Hogg & Craig section 1.8
 #### Assignment
 
 None; enjoy!
+
+### Week 9 (11/27/23)
+
+*Multivariate distributions and transformations*
+
+#### Suggested reading:
+
+DG&S 3.4 --3.5
+
+#### Lecture notes
+
+\[[multivariate distributions](content/week9-joint.qmd)\]
+
+#### Class meetings:
+
+***Monday:*** random vectors
+
+***Tuesday:*** joint distribution functions
+
+***Wednesday:*** transformations of continuous random vectors
+
+***Thursday:*** the sum of jointly uniform random variables on the unit square
+
+#### Assignment
+
+Midterm corrections due Thursday 11/30
+Homework 7 due Thursday 12/7

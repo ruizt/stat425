@@ -140,7 +140,7 @@
 \IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
 \urlstyle{same} % disable monospaced font for URLs
 \hypersetup{
-  pdftitle={Homework 5},
+  pdftitle={Midterm 2},
   pdfauthor={STAT425, Fall 2023},
   colorlinks=true,
   linkcolor={blue},
@@ -148,112 +148,127 @@
   citecolor={Blue},
   urlcolor={Blue},
   pdfcreator={LaTeX via pandoc}}
-
-\title{Homework 5}
+\usepackage{pdflscape}
+\title{Midterm 2}
 \author{STAT425, Fall 2023}
-\date{2023-11-09}
+\date{2023-11-16}
 
 \begin{document}
-\maketitle
-\pagestyle{fancy} \fancyhead[LH]{HW5} \fancyhead[RH]{STAT425, Fall 2023}
+% \maketitle
+\pagestyle{fancy} \fancyhead[LH]{Midterm 2 Practice} \fancyhead[RH]{STAT425, Fall 2023} 
 
-\ifdefined\Shaded\renewenvironment{Shaded}{\begin{tcolorbox}[frame hidden, sharp corners, boxrule=0pt, borderline west={3pt}{0pt}{shadecolor}, interior hidden, enhanced, breakable]}{\end{tcolorbox}}\fi
+\textit{This is a practice test -- we will work through it as an in-class activity in small groups.}
 
-Please prepare your solutions neatly, numbered, and in order; ideally,
-you'll write up a final clean copy after completing all problems on
-scratch paper. Please note that if a prompt includes a question, you're
-expected to support answers with reasoning, even if the prompt does not
-explicitly ask for a justification. Provide your name at the top of your
-submission, and if you collaborate with other students in the class,
-please list their names at the top of your submission beneath your own.
+Name \rule{8cm}{0.15mm} 
 
+Section \rule{8cm}{0.15mm}
+
+\vskip 20pt
+\ifdefined\Shaded\renewenvironment{Shaded}{\begin{tcolorbox}[interior hidden, frame hidden, borderline west={3pt}{0pt}{shadecolor}, sharp corners, enhanced, breakable, boxrule=0pt]}{\end{tcolorbox}}\fi
+
+
+\textbf{Instructions:} read each problem carefully and provide solutions
+in the space below the prompt or on the reverse side of the page. You
+should provide as much justifictation and detail in calculation as
+needed to clearly display your thought process, but need not show or
+justify every step. If you use results from class in your solution, you
+can simply write, ``by a theorem/problem/example from class\ldots{}''.
+None of the problems require you to perform numerical calculations.If
+you are unable to obtain a complete solution, a solution sketch may
+receive partial creditif it reflects a clear understanding of the
+problem and a well-reasoned approach.Please feel free to ask any
+clarifying questions about the problems as they arise. Good luck!
+
+\newpage
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
 \item
-  Reparametrize the uniform distribution in terms of center and length:
-  propose an alternative PDF for the uniform \((a, b)\) distribution
-  with one parameter that indicates the center of the interval and one
-  that indicates the length of the interval. Verify that your proposal
-  is a PDF, and find the expectation and variance.
-\item
-  (Poisson approximation to the binomial.) In class it was noted that
-  the Poisson distribution is a limiting case for the binomial with
-  \(np = \lambda\) fixed as \(n \rightarrow \infty\). This fact can be
-  leveraged to approximate binomial probabilities for large numbers of
-  trials. Let \(X_{n, p} \sim \text{binomial}(n, p)\) and
-  \(Y_{n, p} \sim \text{Poisson}(np)\). Then when \(n\) is large,
-  \(P(X_{n, p} = x) \approx P(Y_{n, p} = x)\). Fill in the following
-  table:
+  Let \(f(x) = c\left[1 - (x - 1)^2\right]\). Find the value of \(c\)
+  and support set for which \(f\) is a PDF.
+\newpage\item
+  Intuitively, a log transformation should reduce the skewness of a
+  distribution. The skewness of a random variable is defined as the
+  third standardized moment, i.e., the expectation
+  \(\mathbb{E}\left[\left(\frac{X - \mu}{\sigma}\right)^3\right] = \frac{\mu_3 - 3\mu_1\sigma^2 - \mu_1^3}{\sigma^3}\),
+  where \(\mu_k\) denotes the \(k\)th moment and \(\sigma\) denotes the
+  square root of the variance, i.e.,
+  \(\sigma = \sqrt{\mu_2 - \mu_1^2}\). Let \(\log(X) \sim N(0, 1)\);
+  show that the skewness of \(X\) is larger than the skewness of
+  \(\log(X)\).
+\newpage\item
+  Let \(X \sim \text{exponential}(\beta)\) and \(c > 0\) and define \[
+   Y = \begin{cases}
+     1 &,\; X > c \\
+     0 &,\; X \leq c
+   \end{cases}
+   \] Find the distribution of \(Y\) and its mean and variance.
 \end{enumerate}
 
+\newpage
+\begin{landscape}
 \begin{longtable}[]{@{}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2000}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2000}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2000}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2000}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2000}}@{}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.10}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.2}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.143}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.1084}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.0712}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.1486}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.2586}}@{}}
 \toprule\noalign{}
 \begin{minipage}[b]{\linewidth}\raggedright
-\(n\)
+Name
 \end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-\(p\)
+PDF/PMF
 \end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-\(P(X_{n, p} = 100)\)
+Support
 \end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-\(P(Y_{n, p} = 100)\)
+Parameters
 \end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-approximation error
+Mean
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Variance
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+MGF
 \end{minipage} \\
 \midrule\noalign{}
 \endhead
 \bottomrule\noalign{}
 \endlastfoot
-1000 & 0.1 & & & \\
-10000 & 0.01 & & & \\
-100000 & 0.001 & & & \\
-1000000 & 0.0001 & & & \\
+Discrete uniform & \(\frac{1}{n}\) & \(\{a_1, \dots, a_n\}\) & none &
+\(\bar{a}\) & \(\frac{1}{n}\sum_{i = 1}^n (a_i - \bar{a})^2\) &
+\(\frac{1}{n}\sum_{i = 1}^n e^{ta_i}\) \\
+Bernoulli & \(p^x (1 - p)^{1 - x}\) & \(\{0, 1\}\) & \(p \in (0, 1)\) &
+\(p\) & \(p(1 - p)\) & \(1 - p + pe^t\) \\
+Geometric & \((1 - p)^x p\) & \(\mathbb{N}\) & \(p \in (0, 1)\) &
+\(\frac{1 - p}{p}\) & \(\frac{1 - p}{p^2}\) &
+\(\frac{p}{1 - (1 - p)e^t}\), \(t < -\log(1 - p)\) \\
+Binomial & \({n \choose p} p^x (1 - p)^{n - x}\) &
+\(\{0, 1, \dots, n\}\) & \(n \in \mathbb{Z}^+\)
+
+\(p \in (0, 1)\) & \(np\) & \(np(1 - p)\) &
+\(\left(1 - p + pe^t\right)^n\) \\
+Negative binomial & \({r + x - 1 \choose x} p^r (1 - p)^x\) &
+\(\mathbb{N}\) & \(r \in \mathbb{Z}^+\)
+
+\(p \in (0, 1)\) & \(\frac{r(1 - p)}{p}\) & \(\frac{r(1 - p)}{p^2}\) &
+\(\left(\frac{p}{1 - (1 - p)e^t}\right)^r\), \(t < -\log(1 - p)\) \\
+Poisson & \(\frac{\lambda^xe^{-\lambda}}{x!}\) & \(\mathbb{N}\) &
+\(\lambda > 0\) & \(\lambda\) & \(\lambda\) &
+\(\exp\left\{-\lambda(1 - e^t)\right\}\) \\
+Continuous uniform & \(\frac{1}{b - a}\) & \((a, b)\) &
+\(-\infty < a < b < \infty\) & \(\frac{b + a}{2}\) &
+\(\frac{(b - a)^2}{12}\) &
+\(\begin{cases}\frac{e^{ta} - e^{tb}}{t(b - a)} &,\;t\neq 0 \\ 1 &,\; t = 0 \end{cases}\) \\
+Gaussian &
+\(\frac{1}{\sqrt{2\pi\sigma^2}} e^{-\frac{1}{2\sigma^2} (x - \mu)^2}\) &
+\(\mathbb{R}\) & \(\mu \in \mathbb{R}, \sigma > 0\) & \(\mu\) &
+\(\sigma^2\) & \(\exp\left\{\mu t + \frac{1}{2}t^2\sigma^2\right\}\) \\
+Gamma &
+\(\frac{1}{\Gamma(\alpha)\beta^\alpha} x^{\alpha - 1} e^{-\frac{x}{\beta}}\)
+& \(x > 0\) & \(\alpha > 0, \beta > 0\) & \(\alpha\beta\) &
+\(\alpha\beta^2\) & \(\left(1 - \beta t\right)^{-\alpha}\),  \(t < \frac{1}{\beta}\) \\
 \end{longtable}
-
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\setcounter{enumi}{2}
-\tightlist
-\item
-  The \(k\)th factorial moment of a random variable \(X\) is
-  \(\mathbb{E} \left( \frac{X!}{(X - k)!} \right)\), assuming the
-  expectation exists.
-
-  \begin{enumerate}
-  \def\labelenumii{\roman{enumii}.}
-  \tightlist
-  \item
-    Find the second factorial moment of the Poisson distribution.
-  \item
-    Find the second factorial moment of the binomial distribution.
-  \item
-    Use your answers above to calculate the variance of each
-    distribution.
-  \end{enumerate}
-\item
-  (Exponential distribution) Let \(X \sim F(x)\) where
-  \(F(x) = 1 - e^{-\alpha x}\). Find the mean and variance of \(X\).
-\item
-  (Truncated Poisson) Let \(X \sim \text{Poisson}(\lambda)\) and define
-  \(Y\) by the probability mass function \[
-  P(Y = y) = \frac{P(X = y)}{P(X > 0)}
-  \;,\qquad y = 1, 2, \dots
-  \] Find an expression for the PMF of \(Y\), and calculate its mean and
-  variance.
-\item
-  With \(Y\) as in the previous problem, show that
-  \(\mathbb{E}\log(Y) \geq 0\).
-\item
-  (Probability integral transform) Let \(X\) be a continuous random
-  variable with strictly increasing CDF \(F\), and let \(Y = F(X)\).
-  Show that \(Y \sim \text{uniform}(0, 1)\). (If \(F\) is strictly
-  increasing, then \(F^{-1}(x)\) is well-defined).
-\end{enumerate}
-
+\end{landscape}
 
 
 \end{document}

@@ -1,0 +1,19 @@
+---
+title: "Homework 7"
+author: "STAT425, Fall 2023"
+author-title: "Course"
+date: "12/7/2023"
+published-title: "Due in class on"
+# format:
+#   latex:
+#     include-in-header:
+#       - text:
+#           \usepackage{fancyhdr}
+#     include-before-body:
+#       - text:
+#           \pagestyle{fancy}
+#           \fancyhead[LH]{HW7}
+#           \fancyhead[RH]{STAT425, Fall 2023}
+---
+
+1. Show that if $X = (X_1, X_2)$ is a random vector, then $\mathbb{E}\left[aX_1 + bX_2 + c\right] = a\mathbb{E}X_1 + b\mathbb{E}X_2 + c$. Establish the result in both the discrete and continuous cases.
