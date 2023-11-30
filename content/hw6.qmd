@@ -4,16 +4,16 @@ author: "STAT425, Fall 2023"
 author-title: "Course"
 date: "11/16/2023"
 published-title: "Due in class on"
-# format:
-#   latex:
-#     include-in-header:
-#       - text:
-#           \usepackage{fancyhdr}
-#     include-before-body:
-#       - text:
-#           \pagestyle{fancy}
-#           \fancyhead[LH]{HW6}
-#           \fancyhead[RH]{STAT425, Fall 2023}
+format:
+  latex:
+    include-in-header:
+      - text:
+          \usepackage{fancyhdr}
+    include-before-body:
+      - text:
+          \pagestyle{fancy}
+          \fancyhead[LH]{HW6}
+          \fancyhead[RH]{STAT425, Fall 2023}
 ---
 
 Please prepare your solutions neatly, numbered, and in order; ideally, you'll write up a final clean copy after completing all problems on scratch paper. Please note that if a prompt includes a question, you're expected to support answers with reasoning, even if the prompt does not explicitly ask for a justification. Provide your name at the top of your submission, and if you collaborate with other students in the class, please list their names at the top of your submission beneath your own.

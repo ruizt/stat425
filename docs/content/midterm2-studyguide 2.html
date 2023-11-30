@@ -7,9 +7,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="STAT425, Fall 2023">
-<meta name="dcterms.date" content="2023-11-30">
+<meta name="dcterms.date" content="2023-11-27">
 
-<title>STAT425 - Expectation inequalities</title>
+<title>STAT425 - Midterm 2 study guide</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -114,14 +114,24 @@ gtag('config', 'G-H3YKZX4J88', { 'anonymize_ip': true});
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#midterm-details-and-scope" id="toc-midterm-details-and-scope" class="nav-link active" data-scroll-target="#midterm-details-and-scope">Midterm details and scope</a></li>
+  <li><a href="#topics-for-review" id="toc-topics-for-review" class="nav-link" data-scroll-target="#topics-for-review">Topics for review</a></li>
+  <li><a href="#to-prepare" id="toc-to-prepare" class="nav-link" data-scroll-target="#to-prepare">To prepare</a></li>
+  <li><a href="#practice-problems" id="toc-practice-problems" class="nav-link" data-scroll-target="#practice-problems">Practice problems</a></li>
+  <li><a href="#common-distributions" id="toc-common-distributions" class="nav-link" data-scroll-target="#common-distributions">Common distributions</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Expectation inequalities</h1>
+<h1 class="title">Midterm 2 study guide</h1>
 </div>
 
 
@@ -129,7 +139,7 @@ gtag('config', 'G-H3YKZX4J88', { 'anonymize_ip': true});
 <div class="quarto-title-meta">
 
     <div>
-    <div class="quarto-title-meta-heading">Course notes</div>
+    <div class="quarto-title-meta-heading">Course</div>
     <div class="quarto-title-meta-contents">
              <p>STAT425, Fall 2023 </p>
           </div>
@@ -138,7 +148,7 @@ gtag('config', 'G-H3YKZX4J88', { 'anonymize_ip': true});
     <div>
     <div class="quarto-title-meta-heading">Updated</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">November 30, 2023</p>
+      <p class="date">November 27, 2023</p>
     </div>
   </div>
   
@@ -148,148 +158,176 @@ gtag('config', 'G-H3YKZX4J88', { 'anonymize_ip': true});
 
 </header>
 
-<p>There are three ‘classical’ inequalities related to expectation of a random variable: the Markov inequality, the Chebyshev inequality, and Jensen’s inequality.</p>
-<p><strong>Markov inequality</strong>. Let <span class="math inline">\(X\)</span> be a random variable. If <span class="math inline">\(g(x) \geq 0\)</span> on the support of <span class="math inline">\(X\)</span>, then for any real number <span class="math inline">\(c &gt; 0\)</span>: <span class="math display">\[
-P\left(g(X) \geq c\right) \leq \frac{1}{c}\mathbb{E}\left[g(X)\right]
-\]</span></p>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Proof
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Let <span class="math inline">\(A = \{x \in \mathbb{R}: g(x) \geq c\}\)</span>. Then if <span class="math inline">\(X\)</span> is continuous, by hypothesis <span class="math inline">\(g(x)f(x)\)</span> is nonnegative everywhere, so: <span class="math display">\[
-\begin{align*}
-\mathbb{E}\left[g(X)\right]
-&amp;= \int_\mathbb{R} g(x)f(x)dx \\
-&amp;= \int_A g(x)f(x)dx + \int_{\mathbb{R}\setminus A} g(x)f(x)dx \\
-&amp;\geq \int_A g(x)f(x)dx \\
-&amp;\geq \int_A c f(x)dx \\
-&amp;= c P(X \in A) \\
-&amp;= c P\left(g(X) \geq c\right)
-\end{align*}
-\]</span> If <span class="math inline">\(X\)</span> is discrete, then by hypothesis <span class="math inline">\(g(x)P(X = x)\)</span> is nonnegative everywhere, so: <span class="math display">\[
-\begin{align*}
-\mathbb{E}\left[g(X)\right]
-&amp;= \sum_\mathbb{R} g(x)P(X = x) \\
-&amp;= \sum_A g(x)P(X = x) + \sum_{\mathbb{R}\setminus A} g(x)P(X = x) \\
-&amp;\geq \sum_A g(x)P(X = x) \\
-&amp;\geq \sum_A c P(X = x) \\
-&amp;= c P\left(g(X) \geq c\right)
-\end{align*}
-\]</span></p>
-</div>
-</div>
-<p><strong>Chebyshev inequality</strong>. For any random variable <span class="math inline">\(X\)</span> whose first two moments exist, then for any real number <span class="math inline">\(c &gt; 0\)</span>: <span class="math display">\[
-P\left(|X - \mathbb{E}X| \geq c\right) \leq \frac{1}{c^2}\text{var}(X)
-\]</span></p>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Proof
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Let <span class="math inline">\(\mu\)</span> denote the expected value of <span class="math inline">\(X\)</span>. Then since <span class="math inline">\(g(x) = (x - \mu)^2\)</span> is a nonnegative function everywhere, by Markov’s inequality one has: <span class="math display">\[
-P\left(|X - \mu| \geq c \right) = P\left[(X - \mu)^2 \geq c^2\right] \leq \frac{1}{c^2}\mathbb{E}(X - \mu)^2
-\]</span></p>
-</div>
-</div>
-<p>The Chebyshev inequality is sometimes written where <span class="math inline">\(c\)</span> is replaced by a nonnegative multiple of the standard deviation of <span class="math inline">\(X\)</span>. If <span class="math inline">\(\sigma^2 = \text{var}(X)\)</span>, then one has: <span class="math display">\[
-P\left(|X - \mu| \geq k\sigma\right) \leq \frac{1}{k^2}
-\]</span></p>
-<p>The Chebyshev inequality is important since it provides a means of bounding the probability of deviations from the mean. In particular, note that for any random variable, one has by the inequality: <span class="math display">\[
-\begin{align*}
-&amp;P\left(|X - \mu| \geq 2\sigma\right) \leq \frac{1}{4} \\
-&amp;P\left(|X - \mu| \geq 3\sigma\right) \leq \frac{1}{9} \\
-&amp;P\left(|X - \mu| \geq 4\sigma\right) \leq \frac{1}{16} \\
-&amp;P\left(|X - \mu| \geq 5\sigma\right) \leq \frac{1}{25}
-\end{align*}
-\]</span></p>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Example
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Suppose that the random variable <span class="math inline">\(X\)</span> represents the concentration of arsenic measured in soil samples, and data suggests that for a particular area the average value is 8.7 parts per million and the average deviation is 5.3 ppm. Levels above 20ppm are considered unsafe. Since 20 is 2.3 standard deviations from the mean, the probability that a sample returns a level within that many standard deviations is: <span class="math display">\[
-P\left(|X - \mu| &lt; 2.3\sigma\right) \geq 1 - \frac{1}{2.3^2} = 0.78
-\]</span> If we are willing to assume that the distribution of arsenic concentrations is symmetric, then the probability of obtaining a sample value above the safety threshold is about 0.11.</p>
-</div>
-</div>
-<p>The Chebyshev inequality also has an important application in probability theory as providing a proof technique for the weak law of large numbers. If <span class="math inline">\(X_n\sim N\left(\mu, \frac{\sigma^2}{n}\right)\)</span>, then for any positive number <span class="math inline">\(\epsilon &gt; 0\)</span>, <span class="math inline">\(P(|X_n - \mu|\geq \epsilon) \leq \frac{\sigma^2}{\epsilon^2n^2} \rightarrow 0\)</span> as <span class="math inline">\(n \rightarrow \infty\)</span>. Since <span class="math inline">\(\epsilon\)</span> may be chosen to be arbitrarily small, this tells us that <span class="math inline">\(X_n\)</span> is arbitrarily close to <span class="math inline">\(\mu\)</span> for large <span class="math inline">\(n\)</span> and with probability tending to one; in the limit, <span class="math inline">\(X_\infty = \mu\)</span> with probability 1.</p>
-<p>The last inequality pertains to convex (or concave) functions. A function <span class="math inline">\(g\)</span> is <span style="color:blue">convex</span> on an open interval <span class="math inline">\((a, b)\)</span> if for every <span class="math inline">\(c \in (0, 1)\)</span> and <span class="math inline">\(a &lt; x &lt; y &lt; b\)</span>: <span class="math display">\[
-g\left(cx + (1 - c)y\right) \leq cg(x) + (1 - c)g(y)
-\]</span> If <span class="math inline">\(g\)</span> is twice differentiable on <span class="math inline">\((a, b)\)</span> then <span class="math inline">\(g\)</span> is convex just in case either of the following conditions hold:</p>
-<ol type="i">
-<li><span class="math inline">\(g'(x) \leq g'(y)\)</span> for all <span class="math inline">\(a &lt; x &lt; y &lt; b\)</span></li>
-<li><span class="math inline">\(g''(x) \geq 0\)</span> for all <span class="math inline">\(a &lt; x &lt; b\)</span>.</li>
+<p>This may be updated with further advice, suggestions, and the like — check back.</p>
+<section id="midterm-details-and-scope" class="level3">
+<h3 class="anchored" data-anchor-id="midterm-details-and-scope">Midterm details and scope</h3>
+<p>The midterm exam will be given in class on Thursday, November 16. Here are the logistical details:</p>
+<ul>
+<li>50 minutes in duration</li>
+<li>you’re allowed one double-sided note sheet on standard 8.5 x 11 paper</li>
+<li>scratch paper will be available</li>
+<li>3 problems in length</li>
+<li>no calculator required, but calculators allowed</li>
+<li>a table of common distributions will be provided</li>
+</ul>
+<p>The exam will focus on material covered since the last exam, <em>i.e.</em>, from weeks 4 through 7: random variables, common distributions, and expectation. Questions will focus on your ability to use distribution functions (CDF, PDF/PMF, MGF) to characterize distributions of random variables and find expected values. You can expect at least one question to require you to apply these concepts in the context of an unfamiliar distribution.</p>
+</section>
+<section id="topics-for-review" class="level3">
+<h3 class="anchored" data-anchor-id="topics-for-review">Topics for review</h3>
+<p>For this exam, you should be prepared to demonstrate you understand the following:</p>
+<ul>
+<li>definition of a random variable</li>
+<li>definition and properties of the cumulative distribution function</li>
+<li>distinction between discrete and continuous random variables</li>
+<li>definition and properties of the probability mass function and the probability density function</li>
+<li>definition and properties of expected value</li>
+<li>how to compute expectations of functions of discrete and continuous random variables</li>
+<li>definition of variance</li>
+<li>how to compute the variances of discrete and continuous random variables</li>
+<li>definition and use of moment generating functions</li>
+<li>PDF/PMFs, expectations, variances, and moment generating functions for common probability distributions</li>
+<li>properties of the Gaussian distribution</li>
+</ul>
+<p>Please note that you will be provided with a table of the distributions we covered in class, so you do not need to include these on your note sheet.</p>
+</section>
+<section id="to-prepare" class="level3">
+<h3 class="anchored" data-anchor-id="to-prepare">To prepare</h3>
+<p>Review posted course notes, focusing especially on definitions, results (lemma, theorem, corollary), and keywords in blue appearing <em>outside</em> of the proof and example boxes. Consult also your notes from class; see if you can boil the main ideas and results down to a few pages of notes. Skim the examples and identify which results and concepts are being used in each example. While you’re not responsible for reproducing the proofs or calculations that we cover in class, they do illustrate useful techniques that may come in handy.</p>
+</section>
+<section id="practice-problems" class="level3">
+<h3 class="anchored" data-anchor-id="practice-problems">Practice problems</h3>
+<p>The problems below vary in length and difficulty.</p>
+<ol type="1">
+<li><p>Let <span class="math inline">\(\log X \sim N(\mu, \sigma^2)\)</span>. If <span class="math inline">\(k\)</span> is an arbitrary positive integer, find an expression for <span class="math inline">\(\mathbb{E}X^k\)</span> and use it to compute the first three moments.</p></li>
+<li><p>Intuitively, a log transformation should reduce the skewness of a distribution. The skewness of a random variable is defined as the third standardized moment, i.e., the expectation <span class="math inline">\(\mathbb{E}\left[\left(\frac{X - \mu}{\sigma}\right)^3\right] = \frac{\mu_3 - 3\mu_1\sigma^2 - \mu_1^3}{\sigma^3}\)</span>, where <span class="math inline">\(\mu_k\)</span> denotes the <span class="math inline">\(k\)</span>th moment and <span class="math inline">\(\sigma\)</span> denotes the square root of the variance, i.e., <span class="math inline">\(\sigma = \sqrt{\mu_2 - \mu_1^2}\)</span>. Let <span class="math inline">\(\log(X) \sim N(0, 1)\)</span>; show that the skewness of <span class="math inline">\(X\)</span> is larger than the skewness of <span class="math inline">\(\log(X)\)</span>.</p></li>
+<li><p>Show that the skewness of a gamma random variable decreases with the value of the parameter <span class="math inline">\(\alpha\)</span>.</p></li>
+<li><p>Let <span class="math inline">\(\log(X) \sim \Gamma(\alpha, \beta)\)</span>. Find the mean and variance of <span class="math inline">\(X\)</span>.</p></li>
+<li><p>Suppose that you have an hour to answer letters each day, and the number of letters that arrive follows a Poisson distribution. If <span class="math inline">\(k\)</span> letters arrive, you can dedicate <span class="math inline">\(\frac{1}{k}\)</span> hours to answering each letter. What is the distribution of answering times? Let <span class="math inline">\(X \sim \text{Poisson}(\lambda)\)</span> and <span class="math inline">\(Y = \frac{1}{X}\)</span>. Find the PMF of <span class="math inline">\(Y\)</span>.</p></li>
+<li><p>Let <span class="math inline">\(f(x) = c\left[1 - (x - 1)^2\right]\)</span>. Find the value of <span class="math inline">\(c\)</span> and support set for which <span class="math inline">\(f\)</span> is a PDF.</p></li>
+<li><p>Let <span class="math inline">\(X \sim \text{exponential}(\beta)\)</span> and <span class="math inline">\(c &gt; 0\)</span> and define <span class="math display">\[
+Y = \begin{cases}
+  1 &amp;,\; X &gt; c \\
+  0 &amp;,\; X \leq c
+\end{cases}
+\]</span> Find the distribution of <span class="math inline">\(Y\)</span> and its mean and variance.</p></li>
 </ol>
-<p>The function is said to be strictly convex if the above inequalities are strict. A function <span class="math inline">\(g\)</span> is concave on an open interval <span class="math inline">\((a, b)\)</span> just in case <span class="math inline">\(-g\)</span> is convex.</p>
-<p><strong>Jensen’s inequality</strong>. Let <span class="math inline">\(X\)</span> be a random variable. If <span class="math inline">\(g\)</span> is convex and twice differentiable on the support of <span class="math inline">\(X\)</span> and the expectation <span class="math inline">\(\mathbb{E}\left[g(X)\right]\)</span> exists then: <span class="math display">\[
-g\left(\mathbb{E}X\right) \leq \mathbb{E}\left[g(X)\right]
-\]</span> The inequality is strict when <span class="math inline">\(g\)</span> is strictly convex and <span class="math inline">\(X\)</span> is not constant.</p>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Proof
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Let <span class="math inline">\(\mu = \mathbb{E}X\)</span>. A second-order Taylor expansion of <span class="math inline">\(g\)</span> about <span class="math inline">\(\mu\)</span> gives: <span class="math display">\[
-g(x) = g(\mu) + g'(\mu) (x - \mu) + \frac{1}{2} g''(r)(x - \mu)^2 \geq g(\mu) + g'(\mu) (x - \mu)
-\]</span> Taking expectations gives: <span class="math display">\[
-\mathbb{E}\left[g(X)\right] \geq g(\mu) + g'(\mu) (\mathbb{E}X - \mu) = g(\mu) = g\left(\mathbb{E}X\right)
-\]</span></p>
-</div>
-</div>
-<p>The next example applies Jensen’s inequality to show that for positive numbers, the harmonic mean is smaller than the geometric mean and the geometric mean is smaller than the arithmetic mean. It illustrates an interesting and well-known technique of representing the arithmetic average of finitely many positive numbers as the expectation of a discrete uniform random variable.</p>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Ordering of means
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Suppose <span class="math inline">\(A = \{a_1, a_2, \dots, a_n\}\)</span> is a set of positive numbers <span class="math inline">\(a_i\)</span>. There are many types of averages one might consider. The <span style="color:blue">arithmetic mean</span> of the numbers is: <span class="math display">\[
-\bar{a}_{AM} = \frac{1}{n}\sum_{i = 1}^n a_i
-\]</span> This is what most of us think of when we hear ‘mean’. However, there are other types of means. The <span style="color:blue">geometric mean</span> of the numbers is: <span class="math display">\[
-\bar{a}_{GM} = \left(\prod_{i = 1}^n a_i\right)^\frac{1}{n}
-\]</span> The geometric mean is often used with percentages; in finance, for example, annualized growth over time for an asset is the geometric mean of percentage change in the asset value for each year in the time period.</p>
-<p>There is also the <span style="color:blue">harmonic mean</span>, which is defined as: <span class="math display">\[
-\bar{a}_{HM} = \left(\frac{1}{n}\sum_{i = 1}^n \frac{1}{a_i}\right)^{-1}
-\]</span> This average is often used with rates and ratios.</p>
-<p>The arithmetic mean can be expressed as an expectation. Let <span class="math inline">\(X\)</span> be uniform on the set <span class="math inline">\(A\)</span>, so that <span class="math inline">\(P(X = a_i) = \frac{1}{n}\)</span> for each <span class="math inline">\(a_i\)</span>. Then: <span class="math display">\[
-\mathbb{E}X = \sum_i a_i P(X = a_i) = \frac{1}{n} \sum_{i} a_i = \bar{a}_{AM}
-\]</span> Now consider <span class="math inline">\(\log(X)\)</span>. Since the logarithm is a concave function, by Jensen’s inequality one has: <span class="math display">\[
-\log\left(\mathbb{E}X\right) \geq \mathbb{E}\left[\log(X)\right] = \frac{1}{n}\sum_{i = 1}^n \log (a_i) = \log\left(\bar{a}_{GM}\right)
-\]</span> Thus <span class="math inline">\(\log(\bar{a}_{AM}) \geq \log(\bar{a}_{GM})\)</span>, so since <span class="math inline">\(\log\)</span> is monotone increasing one has that <span class="math inline">\(\bar{a}_{AM}\geq\bar{a}_{GM}\)</span>.</p>
-<p>Now consider <span class="math inline">\(\frac{1}{X}\)</span>; since the reciprocal function is convex, by Jensen’s inequality one has: <span class="math display">\[
-\frac{1}{\mathbb{E}X} \leq \mathbb{E}\left(\frac{1}{X}\right) = \frac{1}{n}\sum_{i = 1}^n \frac{1}{a_i} = \frac{1}{\bar{a}_{HM}}
-\]</span> So one also has that <span class="math inline">\(\bar{a}_{AM}\geq\bar{a}_{HM}\)</span>. Moreover, since <span class="math inline">\(b_i = \frac{1}{a_i}\)</span> are positive numbers, one has by the result just established that <span class="math inline">\(\bar{b}_{AM} \geq \bar{b}_{GM}\)</span>. But it is easy to check that <span class="math inline">\(\bar{b}_{AM} = \bar{a}_{HM}^{-1}\)</span> and <span class="math inline">\(\bar{b}_{GM} = \bar{a}_{GM}^-1\)</span>. So one has, all together: <span class="math display">\[
-\bar{a}_{HM} \leq \bar{a}_{GM} \leq \bar{a}_{AM}
-\]</span> This is true for any positive numbers.</p>
-</div>
-</div>
+<p>Textbook problems: end of sections 3.1 – 3.3, 3.8, 4.1</p>
+</section>
+<section id="common-distributions" class="level3">
+<h3 class="anchored" data-anchor-id="common-distributions">Common distributions</h3>
+<p>You will have access during the test to this table of common distributions.</p>
+<table class="table">
+<colgroup>
+<col style="width: 6%">
+<col style="width: 23%">
+<col style="width: 7%">
+<col style="width: 10%">
+<col style="width: 7%">
+<col style="width: 14%">
+<col style="width: 27%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Name</th>
+<th>PDF/PMF</th>
+<th>Support</th>
+<th>Parameters</th>
+<th>Mean</th>
+<th>Variance</th>
+<th>MGF</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Discrete uniform</td>
+<td><span class="math inline">\(\frac{1}{n}\)</span></td>
+<td><span class="math inline">\(\{a_1, \dots, a_n\}\)</span></td>
+<td>none</td>
+<td><span class="math inline">\(\bar{a}\)</span></td>
+<td><span class="math inline">\(\frac{1}{n}\sum_{i = 1}^n (a_i - \bar{a})^2\)</span></td>
+<td><span class="math inline">\(\frac{1}{n}\sum_{i = 1}^n e^{ta_i}\)</span></td>
+</tr>
+<tr class="even">
+<td>Bernoulli</td>
+<td><span class="math inline">\(p^x (1 - p)^{1 - x}\)</span></td>
+<td><span class="math inline">\(\{0, 1\}\)</span></td>
+<td><span class="math inline">\(p \in (0, 1)\)</span></td>
+<td><span class="math inline">\(p\)</span></td>
+<td><span class="math inline">\(p(1 - p)\)</span></td>
+<td><span class="math inline">\(1 - p + pe^t\)</span></td>
+</tr>
+<tr class="odd">
+<td>Geometric</td>
+<td><span class="math inline">\((1 - p)^x p\)</span></td>
+<td><span class="math inline">\(\mathbb{N}\)</span></td>
+<td><span class="math inline">\(p \in (0, 1)\)</span></td>
+<td><span class="math inline">\(\frac{1 - p}{p}\)</span></td>
+<td><span class="math inline">\(\frac{1 - p}{p^2}\)</span></td>
+<td><p><span class="math inline">\(\frac{p}{1 - (1 - p)e^t}\)</span></p>
+<p><span class="math inline">\(t &lt; -\log(1 - p)\)</span></p></td>
+</tr>
+<tr class="even">
+<td>Binomial</td>
+<td><span class="math inline">\({n \choose p} p^x (1 - p)^{n - x}\)</span></td>
+<td><span class="math inline">\(\{0, 1, \dots, n\}\)</span></td>
+<td><p><span class="math inline">\(n \in \mathbb{Z}^+\)</span></p>
+<p><span class="math inline">\(p \in (0, 1)\)</span></p></td>
+<td><span class="math inline">\(np\)</span></td>
+<td><span class="math inline">\(np(1 - p)\)</span></td>
+<td><span class="math inline">\(\left(1 - p + pe^t\right)^n\)</span></td>
+</tr>
+<tr class="odd">
+<td>Negative binomial</td>
+<td><span class="math inline">\({r + x - 1 \choose x} p^r (1 - p)^x\)</span></td>
+<td><span class="math inline">\(\mathbb{N}\)</span></td>
+<td><p><span class="math inline">\(r \in \mathbb{Z}^+\)</span></p>
+<p><span class="math inline">\(p \in (0, 1)\)</span></p></td>
+<td><span class="math inline">\(\frac{r(1 - p)}{p}\)</span></td>
+<td><span class="math inline">\(\frac{r(1 - p)}{p^2}\)</span></td>
+<td><p><span class="math inline">\(\left(\frac{p}{1 - (1 - p)e^t}\right)^r\)</span></p>
+<p><span class="math inline">\(t &lt; -\log(1 - p)\)</span></p></td>
+</tr>
+<tr class="even">
+<td>Poisson</td>
+<td><span class="math inline">\(\frac{\lambda^xe^{-\lambda}}{x!}\)</span></td>
+<td><span class="math inline">\(\mathbb{N}\)</span></td>
+<td><span class="math inline">\(\lambda &gt; 0\)</span></td>
+<td><span class="math inline">\(\lambda\)</span></td>
+<td><span class="math inline">\(\lambda\)</span></td>
+<td><span class="math inline">\(\exp\left\{-\lambda(1 - e^t)\right\}\)</span></td>
+</tr>
+<tr class="odd">
+<td>Continuous uniform</td>
+<td><span class="math inline">\(\frac{1}{b - a}\)</span></td>
+<td><span class="math inline">\((a, b)\)</span></td>
+<td><span class="math inline">\(-\infty &lt; a &lt; b &lt; \infty\)</span></td>
+<td><span class="math inline">\(\frac{b + a}{2}\)</span></td>
+<td><span class="math inline">\(\frac{(b - a)^2}{12}\)</span></td>
+<td><span class="math inline">\(\begin{cases}\frac{e^{ta} - e^{tb}}{t(b - a)} &amp;,\;t\neq 0 \\ 1 &amp;,\; t = 0 \end{cases}\)</span></td>
+</tr>
+<tr class="even">
+<td>Gaussian</td>
+<td><span class="math inline">\(\frac{1}{\sqrt{2\pi\sigma^2}} e^{-\frac{1}{2\sigma^2} (x - \mu)^2}\)</span></td>
+<td><span class="math inline">\(\mathbb{R}\)</span></td>
+<td><span class="math inline">\(\mu \in \mathbb{R}, \sigma &gt; 0\)</span></td>
+<td><span class="math inline">\(\mu\)</span></td>
+<td><span class="math inline">\(\sigma^2\)</span></td>
+<td><span class="math inline">\(\exp\left\{\mu t + \frac{1}{2}t^2\sigma^2\right\}\)</span></td>
+</tr>
+<tr class="odd">
+<td>Gamma</td>
+<td><span class="math inline">\(\frac{1}{\Gamma(\alpha)\beta^\alpha} x^{\alpha - 1} e^{-\frac{x}{\beta}}\)</span></td>
+<td><span class="math inline">\(x &gt; 0\)</span></td>
+<td><span class="math inline">\(\alpha &gt; 0, \beta &gt; 0\)</span></td>
+<td><span class="math inline">\(\alpha\beta\)</span></td>
+<td><span class="math inline">\(\alpha\beta^2\)</span></td>
+<td><span class="math inline">\(\left(1 - \beta t\right)^{-\alpha}\)</span></td>
+</tr>
+</tbody>
+</table>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

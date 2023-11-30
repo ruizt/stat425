@@ -243,6 +243,7 @@ DG&S 3.4 --3.5
 #### Lecture notes
 
 \[[multivariate distributions](content/week9-joint.qmd)\]
+\[[multivariate transformations](content/week9-transformations.qmd)\]
 
 #### Class meetings:
 
@@ -257,4 +258,4 @@ DG&S 3.4 --3.5
 #### Assignment
 
 Midterm corrections due Thursday 11/30
-Homework 7 due Thursday 12/7
+[Homework 7](content/hw7.qmd) due Thursday 12/7

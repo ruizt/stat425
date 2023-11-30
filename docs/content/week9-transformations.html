@@ -6,8 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="STAT425, Fall 2023">
+<meta name="dcterms.date" content="2023-11-30">
 
-<title>STAT425 - Materials</title>
+<title>STAT425 - Transformations</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,22 +25,22 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -69,8 +71,10 @@ gtag('js', new Date());
 gtag('config', 'G-H3YKZX4J88', { 'anonymize_ip': true});
 </script>
 
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="../styles.css">
 </head>
 
 <body class="nav-fixed">
@@ -80,7 +84,7 @@ gtag('config', 'G-H3YKZX4J88', { 'anonymize_ip': true});
     <nav class="navbar navbar-expand-lg navbar-dark ">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../index.html">
     <span class="navbar-title">STAT425</span>
     </a>
   </div>
@@ -91,11 +95,11 @@ gtag('config', 'G-H3YKZX4J88', { 'anonymize_ip': true});
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./syllabus.html" rel="" target="">
+    <a class="nav-link" href="../syllabus.html" rel="" target="">
  <span class="menu-text">Course syllabus</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./content.html" rel="" target="" aria-current="page">
+    <a class="nav-link" href="../content.html" rel="" target="">
  <span class="menu-text">Materials</span></a>
   </li>  
 </ul>
@@ -110,188 +114,132 @@ gtag('config', 'G-H3YKZX4J88', { 'anonymize_ip': true});
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#week-0-92123" id="toc-week-0-92123" class="nav-link active" data-scroll-target="#week-0-92123">Week 0 (9/21/23)</a></li>
-  <li><a href="#week-1-92523" id="toc-week-1-92523" class="nav-link" data-scroll-target="#week-1-92523">Week 1 (9/25/23)</a></li>
-  <li><a href="#week-2-10223" id="toc-week-2-10223" class="nav-link" data-scroll-target="#week-2-10223">Week 2 (10/2/23)</a></li>
-  <li><a href="#week-3-10923" id="toc-week-3-10923" class="nav-link" data-scroll-target="#week-3-10923">Week 3 (10/9/23)</a></li>
-  <li><a href="#week-4-101623" id="toc-week-4-101623" class="nav-link" data-scroll-target="#week-4-101623">Week 4 (10/16/23)</a></li>
-  <li><a href="#week-5-102323" id="toc-week-5-102323" class="nav-link" data-scroll-target="#week-5-102323">Week 5 (10/23/23)</a></li>
-  <li><a href="#week-6-103023" id="toc-week-6-103023" class="nav-link" data-scroll-target="#week-6-103023">Week 6 (10/30/23)</a></li>
-  </ul>
-</nav>
+        
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header">
-<h1 class="title display-7">Materials</h1>
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Transformations</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Course notes</div>
+    <div class="quarto-title-meta-contents">
+             <p>STAT425, Fall 2023 </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Updated</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">November 30, 2023</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
 
 </header>
 
-<section id="week-0-92123" class="level3">
-<h3 class="anchored" data-anchor-id="week-0-92123">Week 0 (9/21/23)</h3>
-<p><em>Course introduction; syllabus.</em></p>
-<section id="class-meetings" class="level4">
-<h4 class="anchored" data-anchor-id="class-meetings">Class meetings</h4>
-<p><strong><em>Thursday</em></strong>: course introduction [<a href="./content/week0-intro.html">slides</a>]</p>
-</section>
-<section id="assignments" class="level4">
-<h4 class="anchored" data-anchor-id="assignments">Assignments</h4>
-<p>Complete <a href="https://forms.gle/uWWTaZrVvL7jykz86">intake survey</a></p>
-</section>
-</section>
-<section id="week-1-92523" class="level3">
-<h3 class="anchored" data-anchor-id="week-1-92523">Week 1 (9/25/23)</h3>
-<p><em>Sets and set operations; probability spaces; properties of probability.</em></p>
-<section id="suggested-reading" class="level4">
-<h4 class="anchored" data-anchor-id="suggested-reading">Suggested reading</h4>
-<p>DG&amp;S 1.4 — 1.6</p>
-</section>
-<section id="lecture-notes" class="level4">
-<h4 class="anchored" data-anchor-id="lecture-notes">Lecture notes</h4>
-<p>[<a href="./content/week1-sets.html">sets</a>] [<a href="./content/week1-probability.html">probability measures</a>]</p>
-</section>
-<section id="class-meetings-1" class="level4">
-<h4 class="anchored" data-anchor-id="class-meetings-1">Class meetings</h4>
-<p><strong><em>Monday:</em></strong> sets</p>
-<p><strong><em>Tuesday:</em></strong> sets, cont’d</p>
-<p><strong><em>Wednesday:</em></strong> probability spaces</p>
-<p><strong><em>Thursday:</em></strong> properties of probability measures</p>
-</section>
-<section id="assignment" class="level4">
-<h4 class="anchored" data-anchor-id="assignment">Assignment</h4>
-<p><a href="./content/hw1.html">Homework 1</a> due Thursday 10/5 [<a href="https://drive.google.com/file/d/1ESqVD-HpfdNOYHUcgjWvxSA6Ed7XhkhV/view?usp=sharing">solutions</a>]</p>
-</section>
-</section>
-<section id="week-2-10223" class="level3">
-<h3 class="anchored" data-anchor-id="week-2-10223">Week 2 (10/2/23)</h3>
-<p><em>Probability on finite sample spaces; counting rules and applications.</em></p>
-<section id="suggested-reading-1" class="level4">
-<h4 class="anchored" data-anchor-id="suggested-reading-1">Suggested reading</h4>
-<p>DG&amp;S 1.7 — 1.10</p>
-</section>
-<section id="lecture-notes-1" class="level4">
-<h4 class="anchored" data-anchor-id="lecture-notes-1">Lecture notes</h4>
-<p>[<a href="./content/week2-counting.html">counting</a>]</p>
-</section>
-<section id="class-meetings-2" class="level4">
-<h4 class="anchored" data-anchor-id="class-meetings-2">Class meetings</h4>
-<p><strong><em>Monday:</em></strong> wrap-up; probability on finite sample spaces</p>
-<p><strong><em>Tuesday:</em></strong> counting principles and multiplication rules</p>
-<p><strong><em>Wednesday:</em></strong> combinations and permutations</p>
-<p><strong><em>Thursday:</em></strong> combinations and permutations</p>
-</section>
-<section id="assignment-1" class="level4">
-<h4 class="anchored" data-anchor-id="assignment-1">Assignment</h4>
-<p><a href="./content/hw2.html">Homework 2</a> due Thursday 10/12 [<a href="https://drive.google.com/file/d/1GXVu0K3DaRE8UTcqLDPrAtoi19bgGZiM/view?usp=sharing">solutions</a>]</p>
-</section>
-</section>
-<section id="week-3-10923" class="level3">
-<h3 class="anchored" data-anchor-id="week-3-10923">Week 3 (10/9/23)</h3>
-<p><em>Conditional probability; independence; Bayes’ theorem.</em></p>
-<section id="suggested-reading-2" class="level4">
-<h4 class="anchored" data-anchor-id="suggested-reading-2">Suggested reading:</h4>
-<p>DG&amp;S 2.1 — 2.3</p>
-</section>
-<section id="lecture-notes-2" class="level4">
-<h4 class="anchored" data-anchor-id="lecture-notes-2">Lecture notes</h4>
-<p>[<a href="./content/week3-conditional.html">conditional probability</a>]</p>
-</section>
-<section id="class-meetings-3" class="level4">
-<h4 class="anchored" data-anchor-id="class-meetings-3">Class meetings:</h4>
-<p><strong><em>Monday:</em></strong> conditional probability and basic properties</p>
-<p><strong><em>Tuesday:</em></strong> independence</p>
-<p><strong><em>Wednesday:</em></strong> Bayes’ theorem</p>
-<p><strong><em>Thursday:</em></strong> odds and conditional odds</p>
-</section>
-<section id="assignment-2" class="level4">
-<h4 class="anchored" data-anchor-id="assignment-2">Assignment</h4>
-<ul>
-<li><a href="./content/hw3.html">Homework 3</a> due Thursday 10/19</li>
-</ul>
-</section>
-</section>
-<section id="week-4-101623" class="level3">
-<h3 class="anchored" data-anchor-id="week-4-101623">Week 4 (10/16/23)</h3>
-<p><a href="./content/midterm1-studyguide.html">Midterm study guide</a> — check back for updates [<a href="https://drive.google.com/file/d/1Ap8C4hfH8_Q5bUIi0o4SL5-TXzV9OJHw/view?usp=share_link">solutions to practice problems</a>]</p>
-<section id="suggested-reading-3" class="level4">
-<h4 class="anchored" data-anchor-id="suggested-reading-3">Suggested reading:</h4>
-<p>DG&amp;S 2.4</p>
-</section>
-<section id="lecture-notes-3" class="level4">
-<h4 class="anchored" data-anchor-id="lecture-notes-3">Lecture notes</h4>
-<p>[<a href="./content/week4-gambler.html">gambler’s ruin</a>]</p>
-</section>
-<section id="class-meetings-4" class="level4">
-<h4 class="anchored" data-anchor-id="class-meetings-4">Class meetings:</h4>
-<p><strong><em>Monday:</em></strong> the gambler’s ruin problem</p>
-<p><strong><em>Tuesday:</em></strong> midterm review session</p>
-<p><strong><em>Wednesday:</em></strong> random variables</p>
-<p><strong><em>Thursday:</em></strong> <strong>Midterm 1</strong></p>
-</section>
-<section id="assignment-3" class="level4">
-<h4 class="anchored" data-anchor-id="assignment-3">Assignment</h4>
-<ul>
-<li>None — enjoy!</li>
-</ul>
-</section>
-</section>
-<section id="week-5-102323" class="level3">
-<h3 class="anchored" data-anchor-id="week-5-102323">Week 5 (10/23/23)</h3>
-<p>[<a href="https://drive.google.com/file/d/1Z8eJ41CJ9rnUI9a5wN0mIfHgzqrt-0sO/view?usp=share_link">midterm solutions</a>]</p>
-<section id="suggested-reading-4" class="level4">
-<h4 class="anchored" data-anchor-id="suggested-reading-4">Suggested reading:</h4>
-<p>DG&amp;S 3.1 — 3.3</p>
-</section>
-<section id="lecture-notes-4" class="level4">
-<h4 class="anchored" data-anchor-id="lecture-notes-4">Lecture notes</h4>
-<p>[<a href="./content/week5-rvs.html">random variables</a>]</p>
-</section>
-<section id="class-meetings-5" class="level4">
-<h4 class="anchored" data-anchor-id="class-meetings-5">Class meetings:</h4>
-<p><strong><em>Monday:</em></strong> definition of a random variable; the CDF</p>
-<p><strong><em>Tuesday:</em></strong> discrete and continuous random variables</p>
-<p><strong><em>Wednesday:</em></strong> characterizing distributions</p>
-<p><strong><em>Thursday:</em></strong> common distributions</p>
-</section>
-<section id="assignment-4" class="level4">
-<h4 class="anchored" data-anchor-id="assignment-4">Assignment</h4>
-<ul>
-<li><a href="./content/hw4.html">Homework 4</a> due Thursday 11/2</li>
-</ul>
-</section>
-</section>
-<section id="week-6-103023" class="level3">
-<h3 class="anchored" data-anchor-id="week-6-103023">Week 6 (10/30/23)</h3>
-<section id="suggested-reading-5" class="level4">
-<h4 class="anchored" data-anchor-id="suggested-reading-5">Suggested reading:</h4>
-<p>This week lectures will cover a blend of material in DG&amp;S 4.1 – 4.4 and 5.1 – 5.6, but some material in those sections is deferred until later sections.</p>
-</section>
-<section id="lecture-notes-5" class="level4">
-<h4 class="anchored" data-anchor-id="lecture-notes-5">Lecture notes</h4>
-<p>[<a href="./content/week6-distributions.html">common distributions</a>]</p>
-</section>
-<section id="class-meetings-6" class="level4">
-<h4 class="anchored" data-anchor-id="class-meetings-6">Class meetings:</h4>
-<p><strong><em>Monday:</em></strong> probability distributions based on Bernoulli trials</p>
-<p><strong><em>Tuesday:</em></strong> expected value; common discrete and continuous distributions</p>
-<p><strong><em>Wednesday:</em></strong> the Gaussian/normal distribution</p>
-<p><strong><em>Thursday:</em></strong> moments; the moment generating function</p>
-</section>
-<section id="assignment-5" class="level4">
-<h4 class="anchored" data-anchor-id="assignment-5">Assignment</h4>
-<ul>
-<li>Please fill out <a href="https://forms.gle/hpAB4Jtgnhaky3QTA">feedback survey</a> by the end of the week</li>
-<li>Homework 5 due Thursday 11/9</li>
-</ul>
+<p>Consider an arbitrary transformation of a random vector <span class="math inline">\(X\)</span>; we’ll use the generic notation <span class="math inline">\(Y = T(X)\)</span>. If <span class="math inline">\(T\)</span> is one-to-one, then it has a well-defined inverse <span class="math inline">\(X = T^{-1}(Y)\)</span>. This entails that each vector component of <span class="math inline">\(X\)</span> can be written as a function of the components of <span class="math inline">\(Y\)</span>, which makes the problem of finding the distribution of <span class="math inline">\(Y\)</span> tractable using methods similar to those discussed earlier for transformations of random variables.</p>
+<p>To simplify matters, consider the bivariate setting, so that <span class="math inline">\(X = (X_1, X_2)\)</span>. If <span class="math inline">\(T\)</span> is one-to-one, then we can write <span class="math inline">\(X\)</span> as: <span class="math display">\[
+\begin{align*}
+X_1 &amp;= w_1(Y_1, Y_2) \\
+X_2 &amp;= w_2(Y_1, Y_2)
+\end{align*}
+\]</span> If <span class="math inline">\(S\)</span> denotes the support set of <span class="math inline">\(X\)</span>, let <span class="math inline">\(\mathcal{T}(S)\)</span> denote the image of <span class="math inline">\(S\)</span> under the transformation <span class="math inline">\(T\)</span>.</p>
+<p>When <span class="math inline">\(X\)</span> is a discrete random vector, the distribution of <span class="math inline">\(Y\)</span> can be obtained by direct substitution using the joint mass function: <span class="math display">\[
+P(Y_1 = y_1, Y_2 = y_2) = P(X_1 = w_1(y_1, y_2), X_2 = w_2(y_1, y_2))
+\;,\quad
+(y_1, y_2) \in \mathcal{T}(S)
+\]</span></p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Example
+</div>
+</div>
+<div class="callout-body-container callout-body">
+
+</div>
+</div>
+<p>When <span class="math inline">\(X\)</span> is continuous, finding the distribution of <span class="math inline">\(Y = T(X)\)</span> is a little more complex, but when the inverse transformation is smooth — specifically, when first-order partial derivatives exist — the PDF of <span class="math inline">\(Y\)</span> can be found using a change of variable technique.</p>
+<p>Since <span class="math inline">\(T\)</span> is one-to-one, for any event <span class="math inline">\(B \in \mathcal{T}(S)\)</span>, <span class="math inline">\(\{Y\in B\}\)</span> and <span class="math inline">\(\{X \in T^{-1}(B)\}\)</span> are equivalent events, so one has that <span class="math inline">\(P(Y \in B) = P(X \in T^{-1}(B))\)</span>. As a result: <span class="math display">\[
+P(Y \in B) = \int\int_{T^{-1}(B)} f(x_1, x_2) dx_1 dx_2
+\]</span> Now consider applying a multivariate change of variables to this integral by applying the transformation <span class="math inline">\(T\)</span>. Denoting the inverse transformations by <span class="math inline">\(w_1 = w_1(y_1, y_2)\)</span> and <span class="math inline">\(w_2 = w_2(y_1, y_2)\)</span> for short, from calculus one has: <span class="math display">\[
+\int\int_{T^{-1}(B)} f(x_1, x_2) dx_1 dx_2
+= \int\int_{T(T^{-1}(B))} f(w_1, w_2) |J| dw_1 dw_2
+\]</span> In the latter expression, <span class="math inline">\(J\)</span> is the determinant of the Jacobian matrix, <em>i.e.</em>, the determinant of the matrix of partial derivatives of the inverse transformation: <span class="math display">\[
+J = \left| \begin{array}{cc}
+  \frac{\partial w_1}{\partial y_1} &amp;\frac{\partial w_1}{\partial y_2} \\
+  \frac{\partial w_2}{\partial y_1} &amp;\frac{\partial w_2}{\partial y_2} \\
+  \end{array}\right|
+\]</span> Thus one has: <span class="math display">\[
+P(Y \in B) = \int\int_B f(w_1, w_2) |J| dw_1 dw_2
+\]</span> And since densities are unique to distributions, the PDF of <span class="math inline">\(Y\)</span> must be: <span class="math display">\[
+f_Y(y_1, y_2) = f_X \left(w_1(y_1, y_2), w_2(y_1, y_2)\right) |J|
+\]</span> This provides a general formula for obtaining the PDF of a one-to-one transformation of a random vector; the technique extends directly to the multivariate case from the bivariate case, in the sense that: <span class="math display">\[
+f_Y (y_1, \dots, y_n) = f_X(w_1, \dots, w_n) |J|
+\]</span></p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Example: sum and difference
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Let <span class="math inline">\(X = (X_1, X_2)\)</span> be a continuous random vector distributed according to joint PDF <span class="math inline">\(f_X(x_1, x_2)\)</span> and supported on <span class="math inline">\(S\)</span>. What is the distribution of <span class="math inline">\(X_1 + X_2\)</span>? What about the difference <span class="math inline">\(X_1 - X_2\)</span>?</p>
+<p>First we’ll solve this problem in general, and then consider a specific density function. For the general solution, consider this transformation: <span class="math display">\[
+\begin{align*}
+Y_1 &amp;= X_1 + X_2 \\
+Y_2 &amp;= X_1 - X_2
+\end{align*}
+\]</span> This is one-to-one, and the inverse transformation is: <span class="math display">\[
+\begin{align*}
+X_1 &amp;= \frac{1}{2}(Y_1 + Y_2) \\
+X_2 &amp;= \frac{1}{2}(Y_1 - Y_2)
+\end{align*}
+\]</span> The support of <span class="math inline">\(Y_1\)</span> will depend on the specific distribution of <span class="math inline">\(X\)</span> under consideration, but <span class="math inline">\(-Y_1 \leq Y_2 \leq Y_1\)</span>, since the difference cannot exceed the positive or negative sum. We’ll simply write that <span class="math inline">\(Y\)</span> is supported on <span class="math inline">\(\mathcal{T}(S)\)</span>. The Jacobian determinant of this transformation is: <span class="math display">\[
+J = \left|\begin{array}{cc}
+  \frac{1}{2} &amp;\frac{1}{2} \\
+  \frac{1}{2} &amp;-\frac{1}{2}
+  \end{array}\right|
+= -\frac{1}{2}
+\]</span> So using the change of variables technique, the joint PDF of <span class="math inline">\(Y\)</span> is: <span class="math display">\[
+f_Y (y_1, y_2) = \frac{1}{2} f_X\left(\frac{1}{2}(y_1 + y_2), \frac{1}{2}(y_1 - y_2)\right)
+\;,\quad (y_1, y_2) \in \mathcal{T}(S)
+\]</span> The marginals are: <span class="math display">\[
+\begin{align*}
+f_{Y_1}(y_1) &amp;= \int \frac{1}{2} f_X\left(\frac{1}{2}(y_1 + y_2), \frac{1}{2}(y_1 - y_2)\right)dy_2 \\
+f_{Y_2}(y_2) &amp;= \int \frac{1}{2} f_X\left(\frac{1}{2}(y_1 + y_2), \frac{1}{2}(y_1 - y_2)\right)dy_1 \\
+\end{align*}
+\]</span> For a specific example, consider <span class="math inline">\(f_X(x_1, x_2) = \frac{1}{4}\exp\left\{-\frac{1}{2}(x_1 + x_2)\right\}\)</span> supported on the positive quadrant <span class="math inline">\(x_1 &gt; 0, x_2 &gt; 0\)</span>. Using the expression above, the joint distribution is: <span class="math display">\[
+f_Y(y_1, y_2) = \frac{1}{8}\exp\left\{-\frac{1}{2} y_1 \right\}
+\;,\quad
+y_1 &gt; 0, -y_1 &lt; y_2 &lt; y_1
+\]</span> So the distribution of the sum <span class="math inline">\(X_1 + X_2\)</span> is the marginal distribution of <span class="math inline">\(Y_1\)</span>, which is characterized by the density: <span class="math display">\[
+f_{Y_1} (y_1) = \int_{-y_1}^{y_1} \frac{1}{8}\exp\left\{-\frac{1}{2} y_1 \right\} = \frac{1}{4} y_1 \exp\left\{-\frac{1}{2}y_1\right\}
+\;,\quad
+y_1 &gt; 0
+\]</span> A bit of rearrangement of the density reveals that <span class="math inline">\(Y_1\)</span> follows a gamma distribution with parameters <span class="math inline">\(\alpha = 2, \beta = 2\)</span>.</p>
+<p>The distribution of the difference <span class="math inline">\(X_1 - X_2\)</span> is the marginal of <span class="math inline">\(Y_2\)</span>; we’ll find this distribution in class.</p>
+</div>
+</div>
 
 
-</section>
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

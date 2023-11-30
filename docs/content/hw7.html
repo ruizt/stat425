@@ -149,7 +149,58 @@ gtag('config', 'G-H3YKZX4J88', { 'anonymize_ip': true});
 </header>
 
 <ol type="1">
-<li>Show that if <span class="math inline">\(X = (X_1, X_2)\)</span> is a random vector, then <span class="math inline">\(\mathbb{E}\left[aX_1 + bX_2 + c\right] = a\mathbb{E}X_1 + b\mathbb{E}X_2 + c\)</span>. Establish the result in both the discrete and continuous cases.</li>
+<li><p>Show that if <span class="math inline">\(X = (X_1, X_2)\)</span> is a random vector, then <span class="math inline">\(\mathbb{E}\left[aX_1 + bX_2 + c\right] = a\mathbb{E}X_1 + b\mathbb{E}X_2 + c\)</span>. Establish the result in both the discrete and continuous cases.</p></li>
+<li><p>(Covariance formula) Show that <span class="math inline">\(\mathbb{E}\left[(X - \mathbb{E}X)(Y - \mathbb{E}Y)\right] = \mathbb{E}(XY) - \mathbb{E}X\mathbb{E}Y\)</span>.</p></li>
+<li><p>Suppose <span class="math inline">\((X_1, X_2)\)</span> are uniformly distributed on the unit square, <em>i.e.</em>, <span class="math display">\[f(x_1, x_2) = 1\;,\qquad 0 &lt; x_1 &lt; 1, 0 &lt; x_2 &lt; 1\]</span> Find the distribution of <span class="math inline">\(Y = X_1 + X_2\)</span> by finding the CDF of <span class="math inline">\(Y\)</span>.</p></li>
+<li><p>Consider again the house hunting example from class where <span class="math inline">\(X_1\)</span> denotes the number of bedrooms and <span class="math inline">\(X_2\)</span> denotes the number of bathrooms, and for a randomly selected listing the vector <span class="math inline">\((X_1, X_2)\)</span> has joint distribution:</p></li>
+</ol>
+<table class="table">
+<thead>
+<tr class="header">
+<th></th>
+<th><span class="math inline">\(x_1 = 0\)</span></th>
+<th><span class="math inline">\(x_1 = 1\)</span></th>
+<th><span class="math inline">\(x_1 = 2\)</span></th>
+<th><span class="math inline">\(x_1 = 3\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(x_2 = 1\)</span></td>
+<td>0.1</td>
+<td>0.1</td>
+<td>0.2</td>
+<td>0</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(x_2 = 1.5\)</span></td>
+<td>0</td>
+<td>0.2</td>
+<td>0.2</td>
+<td>0</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(x_2 = 2\)</span></td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0.3</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(x_2 = 2.5\)</span></td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+<p>Find the covariance and correlation of <span class="math inline">\(X_1\)</span> and <span class="math inline">\(X_2\)</span>.</p>
+<ol start="5" type="1">
+<li><p>Let <span class="math inline">\((X_1, X_2)\)</span> be independent exponential random variables with parameter <span class="math inline">\(\beta = 2\)</span>, so that they have joint distribution <span class="math display">\[f(x_1, x_2) = \frac{1}{4} \exp\left\{-\frac{1}{2}(x_1 + x_2)\right\}\;,\qquad x_1 &gt; 0, x_2 &gt; 0\]</span> Let <span class="math inline">\(Y_1, Y_2\)</span> denote the sum and difference, respectively, of <span class="math inline">\(X_1, X_2\)</span>. Find the correlation <span class="math inline">\(\text{corr}(Y_1, Y_2)\)</span>.</p></li>
+<li><p>Suppose that you arrive at work within a 2-minute window of your expected arrival time uniformly at random, and your expected arrival time may shift slightly depending on whether there are traffic delays. That is, if <span class="math inline">\(X\)</span> denotes your arrival time where <span class="math inline">\(X = 0\)</span> indicates you are exactly on time, and <span class="math inline">\(Y\)</span> denotes the traffic delay, then assume: <span class="math display">\[
+X|Y \sim \text{uniform}(Y - 1, Y + 1)
+\]</span> If <span class="math inline">\(Y \sim \text{exponential}(1)\)</span>, find the mean arrival time <span class="math inline">\(\mathbb{E}X\)</span>.</p></li>
 </ol>
 
 
