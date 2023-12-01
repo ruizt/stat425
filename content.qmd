@@ -200,7 +200,7 @@ DG&S section 4.4, select material from sections 5.1 -- 5.6, and section 5.7
 
 #### Assignment
 
--   [Homework 6](content/hw6.qmd) due Thursday 11/16
+-   [Homework 6](content/hw6.qmd) due Thursday 11/16 \[[solutions](https://drive.google.com/file/d/1hd2x9lVKwpddxfiKdY0dbzIgNTHqk66r/view?usp=sharing)\]
 
 ### Week 8 (11/13/23)
 
