@@ -259,3 +259,37 @@ DG&S 3.4 --3.5
 
 Midterm corrections due Thursday 11/30
 [Homework 7](content/hw7.qmd) due Thursday 12/7
+
+### Week 10 (12/4/23)
+
+*Covariance, correlation, independence, and conditional distributions*
+
+#### Lecture notes
+
+\[[week10-covariance.qmd\]
+
+#### Class meetings:
+
+***Monday:*** covariance and correlation
+
+***Tuesday:*** conditional distributions
+
+***Wednesday:*** independence
+
+***Thursday:*** wrapping up
+
+### Final exam week (12/11/23)
+
+#### Office hours
+
+***Tuesday:*** 1pm-3pm in 25-107G
+
+***Wednesday:*** 1pm-3pm in 25-107G
+
+### Final exams
+
+*Held in usual classroom (186-C201)*
+
+***Section 1*** Wednesday 12/13/23 4:10pm -- 7pm
+
+***Section 2*** Friday 12/15/23 4:10pm -- 7pm

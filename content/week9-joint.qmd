@@ -28,14 +28,14 @@ Suppose the [joint distribution]{style="color:blue"} of $(X_1, X_2)$, that is, t
 |             | $x_1 = 0$ | $x_1 = 1$ | $x_1 = 2$                | $x_1 = 3$ |
 |-------------|-----------|-----------|--------------------------|-----------|
 | $x_2 = 1$   | 0.1       | 0.1       | 0.2                      | 0         |
-| $x_2 = 1.5$ | 0         | 0.2       | [0.2]{style="color:red"} | 0         |
+| $x_2 = 1.5$ | 0         | 0.1       | [0.2]{style="color:red"} | 0         |
 | $x_2 = 2$   | 0         | 0         | 0                        | 0.3       |
 | $x_2 = 2.5$ | 0         | 0         | 0                        | 0         |
 
 The table indicates, for instance, that [$P(X_1 = 2, X_2 = 1.5) = 0.2$]{style="color:red"}, meaning the probability that a randomly selected listing has 2 bedrooms and 1.5 bathrooms is 0.2.
 
 The [marginal probability]{style="color:blue"} that a randomly selected home has 1.5 bathrooms (regardless of the number of bedrooms) can be obtained by summing the probabilities in the corresponding row: $$
-P(X_2 = 1.5) = \sum_{x_1} P(X_1 = x_1, X_2, = 1.5) = 0 + 0.2 + 0.2 + 0 = 0.4
+P(X_2 = 1.5) = \sum_{x_1} P(X_1 = x_1, X_2, = 1.5) = 0 + 0.1 + 0.2 + 0 = 0.3
 $$
 
 Notice that these probabilities are not necessarily information you could obtain if you knew the frequencies of values of $x_1$ and of $x_2$ separately. For instance, computing the marginal probabilities indicates that the most common number of bathrooms is 1.5 and the most common number of bedrooms is 2, but that doesn't entail that the most frequent pair is 2 bed and 1.5 bath. Rather, 3 bed, 2 bath homes are most common. This is possible because the variables are measured *together* on each home rather than, say, on separate collections of homes.
@@ -213,7 +213,7 @@ Consider again the house hunting example where $X_1$ denotes the number of bedro
 |             | $x_1 = 0$ | $x_1 = 1$ | $x_1 = 2$ | $x_1 = 3$ |
 |-------------|-----------|-----------|-----------|-----------|
 | $x_2 = 1$   | 0.1       | 0.1       | 0.2       | 0         |
-| $x_2 = 1.5$ | 0         | 0.2       | 0.2       | 0         |
+| $x_2 = 1.5$ | 0         | 0.1       | 0.2       | 0         |
 | $x_2 = 2$   | 0         | 0         | 0         | 0.3       |
 | $x_2 = 2.5$ | 0         | 0         | 0         | 0         |
 
@@ -223,12 +223,12 @@ $$
 \begin{align*}
 \mathbb{E}\left[\frac{X_1}{X_2}\right] 
 &= \sum_{(x_1, x_2)} \frac{x_1}{x_2}P(X_1 = x_1, X_2 = x_2) \\
-&= \frac{0}{1}\cdot 0.1 + \frac{1}{1}\cdot 0.1 + \frac{2}{1}\cdot 0.2 + \frac{1}{1.5}\cdot 0.2 + \frac{2}{1.5}\cdot 0.2 + \frac{3}{2}\cdot 0.3 \\
-&= 1.35
+&= \frac{0}{1}\cdot 0.1 + \frac{1}{1}\cdot 0.1 + \frac{2}{1}\cdot 0.2 + \frac{1}{1.5}\cdot 0.1 + \frac{2}{1.5}\cdot 0.2 + \frac{3}{2}\cdot 0.3 \\
+&= 1.283
 \end{align*}
 $$
 
-So on average, a randomly selected home will have 1.35 bedrooms to every bathroom.
+So on average, a randomly selected home will have 1.283 bedrooms to every bathroom.
 :::
 
 Based on this definition, it is easy to show that expectation is a linear operator. In the bivariate case: $$

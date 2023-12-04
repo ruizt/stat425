@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="STAT425, Fall 2023">
-<meta name="dcterms.date" content="2023-12-01">
+<meta name="dcterms.date" content="2023-12-04">
 
 <title>STAT425 - Joint distributions</title>
 <style>
@@ -147,7 +147,7 @@ gtag('config', 'G-H3YKZX4J88', { 'anonymize_ip': true});
     <div>
     <div class="quarto-title-meta-heading">Updated</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">December 1, 2023</p>
+      <p class="date">December 4, 2023</p>
     </div>
   </div>
   
@@ -200,7 +200,7 @@ P(X_1 = x_1, X_2 = x_2) = P(\{X_1 = x_1\} \cap \{X_2 = x_2\})
 <tr class="even">
 <td><span class="math inline">\(x_2 = 1.5\)</span></td>
 <td>0</td>
-<td>0.2</td>
+<td>0.1</td>
 <td><span style="color:red">0.2</span></td>
 <td>0</td>
 </tr>
@@ -222,7 +222,7 @@ P(X_1 = x_1, X_2 = x_2) = P(\{X_1 = x_1\} \cap \{X_2 = x_2\})
 </table>
 <p>The table indicates, for instance, that <span style="color:red"><span class="math inline">\(P(X_1 = 2, X_2 = 1.5) = 0.2\)</span></span>, meaning the probability that a randomly selected listing has 2 bedrooms and 1.5 bathrooms is 0.2.</p>
 <p>The <span style="color:blue">marginal probability</span> that a randomly selected home has 1.5 bathrooms (regardless of the number of bedrooms) can be obtained by summing the probabilities in the corresponding row: <span class="math display">\[
-P(X_2 = 1.5) = \sum_{x_1} P(X_1 = x_1, X_2, = 1.5) = 0 + 0.2 + 0.2 + 0 = 0.4
+P(X_2 = 1.5) = \sum_{x_1} P(X_1 = x_1, X_2, = 1.5) = 0 + 0.1 + 0.2 + 0 = 0.3
 \]</span></p>
 <p>Notice that these probabilities are not necessarily information you could obtain if you knew the frequencies of values of <span class="math inline">\(x_1\)</span> and of <span class="math inline">\(x_2\)</span> separately. For instance, computing the marginal probabilities indicates that the most common number of bathrooms is 1.5 and the most common number of bedrooms is 2, but that doesn’t entail that the most frequent pair is 2 bed and 1.5 bath. Rather, 3 bed, 2 bath homes are most common. This is possible because the variables are measured <em>together</em> on each home rather than, say, on separate collections of homes.</p>
 <p>The joint distribution therefore takes account of how variables interact across the outcomes of a random process. The example illustrates that when multiple variables are measured together, a joint distribution is needed to fully capture the probabilistic behavior of the variables.</p>
@@ -404,7 +404,7 @@ Example: house hunting
 <tr class="even">
 <td><span class="math inline">\(x_2 = 1.5\)</span></td>
 <td>0</td>
-<td>0.2</td>
+<td>0.1</td>
 <td>0.2</td>
 <td>0</td>
 </tr>
@@ -429,11 +429,11 @@ Example: house hunting
 \begin{align*}
 \mathbb{E}\left[\frac{X_1}{X_2}\right]
 &amp;= \sum_{(x_1, x_2)} \frac{x_1}{x_2}P(X_1 = x_1, X_2 = x_2) \\
-&amp;= \frac{0}{1}\cdot 0.1 + \frac{1}{1}\cdot 0.1 + \frac{2}{1}\cdot 0.2 + \frac{1}{1.5}\cdot 0.2 + \frac{2}{1.5}\cdot 0.2 + \frac{3}{2}\cdot 0.3 \\
-&amp;= 1.35
+&amp;= \frac{0}{1}\cdot 0.1 + \frac{1}{1}\cdot 0.1 + \frac{2}{1}\cdot 0.2 + \frac{1}{1.5}\cdot 0.1 + \frac{2}{1.5}\cdot 0.2 + \frac{3}{2}\cdot 0.3 \\
+&amp;= 1.283
 \end{align*}
 \]</span></p>
-<p>So on average, a randomly selected home will have 1.35 bedrooms to every bathroom.</p>
+<p>So on average, a randomly selected home will have 1.283 bedrooms to every bathroom.</p>
 </div>
 </div>
 <p>Based on this definition, it is easy to show that expectation is a linear operator. In the bivariate case: <span class="math display">\[
