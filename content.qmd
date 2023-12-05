@@ -266,7 +266,7 @@ Midterm corrections due Thursday 11/30
 
 #### Lecture notes
 
-\[[week10-covariance.qmd\]
+\[[covariance and correlation](content/week10-covariance.qmd)\]
 
 #### Class meetings:
 

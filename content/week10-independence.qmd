@@ -1,0 +1,7 @@
+---
+title: "Conditional distributions and independence"
+author: "STAT425, Fall 2023"
+author-title: "Course notes"
+date: today
+published-title: "Updated"
+---
