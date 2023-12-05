@@ -267,6 +267,7 @@ Midterm corrections due Thursday 11/30
 #### Lecture notes
 
 \[[covariance and correlation](content/week10-covariance.qmd)\]
+
 \[[conditional distributions](content/week10-independence.qmd)\]
 
 #### Class meetings:
@@ -287,7 +288,7 @@ Midterm corrections due Thursday 11/30
 
 ***Wednesday:*** 1pm-3pm in 25-107G
 
-### Final exams
+#### Final exams
 
 *Held in usual classroom (186-C201)*
 
