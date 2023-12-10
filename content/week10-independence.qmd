@@ -119,14 +119,87 @@ We will review the proof in class. Check that the result holds in the example ab
 
 We will review the proof in class. Check that the result holds in the example above.
 
-<!-- ### Conditional probability models -->
+### Independence
 
-<!-- Notice that the definitions of conditional PDF/PMFs entail that the joint PDF/PMFs can be obtained from either conditional and the remaining marginal: -->
-<!-- $$ -->
-<!-- \begin{align*} -->
-<!-- P(X_1 = x_1, X_2 = x_2) &= P(X_1 = x_1 | X_2 = x_2) P(X_2 = x_2) \quad\text{(discrete case)} \\ -->
-<!-- f(x_1, x_2) &= f_{1 | 2}(x_1) f_2 (x_2) \quad\text{(continuous case)} -->
-<!-- \end{align*} -->
-<!-- $$ -->
+Intuitively, random variables are independent if the value of one does not affect the distribution of another. In other words, $X, Y$ are independent if for every $B$:
+$$
+P(X \in A | Y \in B) = P(X \in A)
+$$
+Just as with independent events, however, we do not define independent random variables according to whether conditional and marginal probabilities match, but rather according to whether joint probabilities factor. That is, $X$ and $Y$ are [independent]{style="color:blue"} just in case for every $A, B$:
+$$
+P(X \in A, Y \in B) = P(X \in A)P(Y \in B)
+$$
+In terms of distribution functions, this is equivalent to the following condition:
+$$
+\begin{cases}
+f(x, y) = f(x)f(y) \quad&\text{(continuous case)} \\
+P(X = x, Y = y) = P(X = x)P(Y = y) \quad&\text{(discrete case)}
+\end{cases}
+$$
 
-<!-- This allows one to construct models for multivariate processes from conditional distributions in a hierarchical fashion. -->
+We write $X \perp Y$ to indicate that the random variables are independent. Since the condition above involves knowing the marginal PDF/PMFs, the following theorem provides a useful heuristic for checking independence.
+
+**Theorem** (factorization theorem). $X \perp Y$ if and only if there exist functions $g, h$ such that, if $f$ is the joint PMF/PDF:
+$$
+f(x, y) = g(x)h(y)
+$$
+
+::: callout-tip
+## Proof
+
+:::
+
+::: callout-note
+## Example
+
+Let $X_1, X_2$ be distributed according to the joint PDF:
+$$
+f(x_1, x_2) = \frac{1}{2\pi}\exp\left\{-\frac{1}{2}\left[(x_1 - \mu_1)^2 + (x_2 - \mu_2)^2\right]\right\}
+\;,\quad (x_1, x_2) \in \mathbb{R}^2
+$$
+The factorization theorem entails almost immediately that $X_1 \perp X_2$, without knowing the marginal distributions, since the joint density can be written:
+$$
+f(x_1, x_2) = \underbrace{\left[\frac{1}{2\pi}\exp\left\{-\frac{1}{2}(x_1 - \mu_1)^2\right\}\right]}_{g(x_1)}
+\underbrace{\left[\exp\left\{-\frac{1}{2} (x_2 - \mu_2)^2\right\}\right]}_{h(x_2)}
+\;,\quad x_1 \in \mathbb{R}, x_2 \in \mathbb{R}
+$$
+Notice that the support set also has to be expressible as a Cartesian product.
+:::
+
+**Lemma**. If $X\perp Y$ then the support of $(X, Y)$ is a Cartesian product.
+
+::: callout-tip
+## Proof
+
+:::
+
+The contrapositive tells us that if the joint support set of any random variables is *not* a Cartesian product, then they cannot be independent. Moreover, the lemma makes it rather straightforward to establish the following result.
+
+**Corrollary**. If $X \perp Y$ and $g, h$ are functions whose expectations exist then:
+$$
+\mathbb{E}\left[g(X)h(Y)\right] = \mathbb{E}[g(X)]\mathbb{E}[h(Y)]
+$$
+
+::: callout-tip
+## Proof
+
+:::
+
+### Conditional probability models
+
+Notice that the definitions of conditional PDF/PMFs entail that the joint PDF/PMFs can be obtained from either conditional and the remaining marginal:
+$$
+\begin{align*}
+P(X_1 = x_1, X_2 = x_2) &= P(X_1 = x_1 | X_2 = x_2) P(X_2 = x_2) \quad\text{(discrete case)} \\
+f(x_1, x_2) &= f_{1 | 2}(x_1) f_2 (x_2) \quad\text{(continuous case)}
+\end{align*}
+$$
+
+This allows one to construct models for multivariate processes from conditional distributions in a hierarchical fashion. For example:
+$$
+\begin{align*}
+(X_1 | X_2 = x_2) \sim f(x_1) \\
+X_2 \sim g(x_2)
+\end{align*}
+$$
+We'll explore this idea a little in class.

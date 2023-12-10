@@ -115,7 +115,8 @@ DG&S 2.4
 
 ***Wednesday:*** random variables
 
-***Thursday:*** **Midterm 1**
+***Thursday:*** **Midterm 1** \[[solutions](https://drive.google.com/file/d/1Z8eJ41CJ9rnUI9a5wN0mIfHgzqrt-0sO/view?usp=share_link)\]
+
 
 #### Assignment
 
@@ -124,8 +125,6 @@ DG&S 2.4
 ### Week 5 (10/23/23)
 
 *Discrete and continuous random variables; characterizing probability distributions*
-
-\[[midterm solutions](https://drive.google.com/file/d/1Z8eJ41CJ9rnUI9a5wN0mIfHgzqrt-0sO/view?usp=share_link)\]
 
 #### Suggested reading:
 
@@ -226,7 +225,7 @@ Hogg & Craig section 1.8
 
 ***Wednesday:*** expectation inequalities
 
-***Thursday:*** **Midterm 2** in class
+***Thursday:*** **Midterm 2** in class \[[solutions](https://drive.google.com/file/d/1jl_ROlg19f_M_FuGXeNnoo1r2PAA2dbt/view?usp=share_link)\]
 
 #### Assignment
 
@@ -281,6 +280,8 @@ Midterm corrections due Thursday 11/30
 ***Thursday:*** wrapping up
 
 ### Final exam week (12/11/23)
+
+\[[final study guide](content/final-studyguide.qmd)\]
 
 #### Office hours
 

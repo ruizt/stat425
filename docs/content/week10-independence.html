@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="STAT425, Fall 2023">
-<meta name="dcterms.date" content="2023-12-05">
+<meta name="dcterms.date" content="2023-12-09">
 
 <title>STAT425 - Conditional distributions and independence</title>
 <style>
@@ -119,6 +119,8 @@ gtag('config', 'G-H3YKZX4J88', { 'anonymize_ip': true});
    
   <ul>
   <li><a href="#conditional-expectation" id="toc-conditional-expectation" class="nav-link active" data-scroll-target="#conditional-expectation">Conditional expectation</a></li>
+  <li><a href="#independence" id="toc-independence" class="nav-link" data-scroll-target="#independence">Independence</a></li>
+  <li><a href="#conditional-probability-models" id="toc-conditional-probability-models" class="nav-link" data-scroll-target="#conditional-probability-models">Conditional probability models</a></li>
   </ul>
 </nav>
     </div>
@@ -144,7 +146,7 @@ gtag('config', 'G-H3YKZX4J88', { 'anonymize_ip': true});
     <div>
     <div class="quarto-title-meta-heading">Updated</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">December 5, 2023</p>
+      <p class="date">December 9, 2023</p>
     </div>
   </div>
   
@@ -243,15 +245,102 @@ Example: computing a conditional mean
 <p>We will review the proof in class. Check that the result holds in the example above.</p>
 <p><strong>Theorem</strong> (Total variance). For any random variables <span class="math inline">\(X, Y\)</span>: <span class="math display">\[\text{var}X = \text{var}\left[\mathbb{E}(X|Y)\right] + \mathbb{E}\left[\text{var}(X|Y)\right]\]</span></p>
 <p>We will review the proof in class. Check that the result holds in the example above.</p>
-<!-- ### Conditional probability models -->
-<!-- Notice that the definitions of conditional PDF/PMFs entail that the joint PDF/PMFs can be obtained from either conditional and the remaining marginal: -->
-<!-- $$ -->
-<!-- \begin{align*} -->
-<!-- P(X_1 = x_1, X_2 = x_2) &= P(X_1 = x_1 | X_2 = x_2) P(X_2 = x_2) \quad\text{(discrete case)} \\ -->
-<!-- f(x_1, x_2) &= f_{1 | 2}(x_1) f_2 (x_2) \quad\text{(continuous case)} -->
-<!-- \end{align*} -->
-<!-- $$ -->
-<!-- This allows one to construct models for multivariate processes from conditional distributions in a hierarchical fashion. -->
+</section>
+<section id="independence" class="level3">
+<h3 class="anchored" data-anchor-id="independence">Independence</h3>
+<p>Intuitively, random variables are independent if the value of one does not affect the distribution of another. In other words, <span class="math inline">\(X, Y\)</span> are independent if for every <span class="math inline">\(B\)</span>: <span class="math display">\[
+P(X \in A | Y \in B) = P(X \in A)
+\]</span> Just as with independent events, however, we do not define independent random variables according to whether conditional and marginal probabilities match, but rather according to whether joint probabilities factor. That is, <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> are <span style="color:blue">independent</span> just in case for every <span class="math inline">\(A, B\)</span>: <span class="math display">\[
+P(X \in A, Y \in B) = P(X \in A)P(Y \in B)
+\]</span> In terms of distribution functions, this is equivalent to the following condition: <span class="math display">\[
+\begin{cases}
+f(x, y) = f(x)f(y) \quad&amp;\text{(continuous case)} \\
+P(X = x, Y = y) = P(X = x)P(Y = y) \quad&amp;\text{(discrete case)}
+\end{cases}
+\]</span></p>
+<p>We write <span class="math inline">\(X \perp Y\)</span> to indicate that the random variables are independent. Since the condition above involves knowing the marginal PDF/PMFs, the following theorem provides a useful heuristic for checking independence.</p>
+<p><strong>Theorem</strong> (factorization theorem). <span class="math inline">\(X \perp Y\)</span> if and only if there exist functions <span class="math inline">\(g, h\)</span> such that, if <span class="math inline">\(f\)</span> is the joint PMF/PDF: <span class="math display">\[
+f(x, y) = g(x)h(y)
+\]</span></p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Proof
+</div>
+</div>
+<div class="callout-body-container callout-body">
+
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Example
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Let <span class="math inline">\(X_1, X_2\)</span> be distributed according to the joint PDF: <span class="math display">\[
+f(x_1, x_2) = \frac{1}{2\pi}\exp\left\{-\frac{1}{2}\left[(x_1 - \mu_1)^2 + (x_2 - \mu_2)^2\right]\right\}
+\;,\quad (x_1, x_2) \in \mathbb{R}^2
+\]</span> The factorization theorem entails almost immediately that <span class="math inline">\(X_1 \perp X_2\)</span>, without knowing the marginal distributions, since the joint density can be written: <span class="math display">\[
+f(x_1, x_2) = \underbrace{\left[\frac{1}{2\pi}\exp\left\{-\frac{1}{2}(x_1 - \mu_1)^2\right\}\right]}_{g(x_1)}
+\underbrace{\left[\exp\left\{-\frac{1}{2} (x_2 - \mu_2)^2\right\}\right]}_{h(x_2)}
+\;,\quad x_1 \in \mathbb{R}, x_2 \in \mathbb{R}
+\]</span> Notice that the support set also has to be expressible as a Cartesian product.</p>
+</div>
+</div>
+<p><strong>Lemma</strong>. If <span class="math inline">\(X\perp Y\)</span> then the support of <span class="math inline">\((X, Y)\)</span> is a Cartesian product.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Proof
+</div>
+</div>
+<div class="callout-body-container callout-body">
+
+</div>
+</div>
+<p>The contrapositive tells us that if the joint support set of any random variables is <em>not</em> a Cartesian product, then they cannot be independent. Moreover, the lemma makes it rather straightforward to establish the following result.</p>
+<p><strong>Corrollary</strong>. If <span class="math inline">\(X \perp Y\)</span> and <span class="math inline">\(g, h\)</span> are functions whose expectations exist then: <span class="math display">\[
+\mathbb{E}\left[g(X)h(Y)\right] = \mathbb{E}[g(X)]\mathbb{E}[h(Y)]
+\]</span></p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Proof
+</div>
+</div>
+<div class="callout-body-container callout-body">
+
+</div>
+</div>
+</section>
+<section id="conditional-probability-models" class="level3">
+<h3 class="anchored" data-anchor-id="conditional-probability-models">Conditional probability models</h3>
+<p>Notice that the definitions of conditional PDF/PMFs entail that the joint PDF/PMFs can be obtained from either conditional and the remaining marginal: <span class="math display">\[
+\begin{align*}
+P(X_1 = x_1, X_2 = x_2) &amp;= P(X_1 = x_1 | X_2 = x_2) P(X_2 = x_2) \quad\text{(discrete case)} \\
+f(x_1, x_2) &amp;= f_{1 | 2}(x_1) f_2 (x_2) \quad\text{(continuous case)}
+\end{align*}
+\]</span></p>
+<p>This allows one to construct models for multivariate processes from conditional distributions in a hierarchical fashion. For example: <span class="math display">\[
+\begin{align*}
+(X_1 | X_2 = x_2) \sim f(x_1) \\
+X_2 \sim g(x_2)
+\end{align*}
+\]</span> We’ll explore this idea a little in class.</p>
 
 
 </section>

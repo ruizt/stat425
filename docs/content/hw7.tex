@@ -140,7 +140,7 @@
 \IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
 \urlstyle{same} % disable monospaced font for URLs
 \hypersetup{
-  pdftitle={Homework 6},
+  pdftitle={Homework 7},
   pdfauthor={STAT425, Fall 2023},
   colorlinks=true,
   linkcolor={blue},
@@ -149,59 +149,71 @@
   urlcolor={Blue},
   pdfcreator={LaTeX via pandoc}}
 
-\title{Homework 6}
+\title{Homework 7}
 \author{STAT425, Fall 2023}
-\date{2023-11-16}
+\date{2023-12-07}
 
 \begin{document}
 \maketitle
-\pagestyle{fancy} \fancyhead[LH]{HW6} \fancyhead[RH]{STAT425, Fall 2023}
+\pagestyle{fancy} \fancyhead[LH]{HW7} \fancyhead[RH]{STAT425, Fall 2023}
 
-\ifdefined\Shaded\renewenvironment{Shaded}{\begin{tcolorbox}[interior hidden, enhanced, boxrule=0pt, breakable, sharp corners, borderline west={3pt}{0pt}{shadecolor}, frame hidden]}{\end{tcolorbox}}\fi
-
-Please prepare your solutions neatly, numbered, and in order; ideally,
-you'll write up a final clean copy after completing all problems on
-scratch paper. Please note that if a prompt includes a question, you're
-expected to support answers with reasoning, even if the prompt does not
-explicitly ask for a justification. Provide your name at the top of your
-submission, and if you collaborate with other students in the class,
-please list their names at the top of your submission beneath your own.
+\ifdefined\Shaded\renewenvironment{Shaded}{\begin{tcolorbox}[borderline west={3pt}{0pt}{shadecolor}, interior hidden, sharp corners, enhanced, boxrule=0pt, breakable, frame hidden]}{\end{tcolorbox}}\fi
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
 \item
-  (Normal-\(\chi^2\) relationship) Show that if \(Z\sim N(0, 1)\) then
-  \(Z^2 \sim \chi^2_1\).
+  Show that if \(X = (X_1, X_2)\) is a random vector, then
+  \(\mathbb{E}\left[aX_1 + bX_2 + c\right] = a\mathbb{E}X_1 + b\mathbb{E}X_2 + c\).
+  Establish the result in both the discrete and continuous cases.
 \item
-  (Stochastic ordering) Two random variables \(X\) and \(Y\) are
-  stochastically ordered if either \(F_X(x) \leq F_Y(x)\) or the reverse
-  inequality is true for every \(x \in \mathbb{R}\). We say that:
-  \[X \geq_{st} Y \quad\text{if}\quad F_X(x) \leq F_Y(x) \quad\text{for every}\quad x\in\mathbb{R}\]
-  Show that the exponential distribution is stochastically ordered in
-  its parameter: that is, if \(X \sim \text{exponential}(\alpha)\) and
-  \(Y \sim \text{exponential}(\alpha + c)\) where \(c > 0\), then
-  \(X \geq_{st} Y\). (Use the `rate' parametrization:
-  \(f(x) = \alpha e^{-\alpha x}, x > 0, \alpha > 0\)).
+  (Covariance formula) Show that
+  \(\mathbb{E}\left[(X - \mathbb{E}X)(Y - \mathbb{E}Y)\right] = \mathbb{E}(XY) - \mathbb{E}X\mathbb{E}Y\).
+\item
+  Suppose \((X_1, X_2)\) are uniformly distributed on the unit square,
+  \emph{i.e.}, \[f(x_1, x_2) = 1\;,\qquad 0 < x_1 < 1, 0 < x_2 < 1\]
+  Find the distribution of \(Y = X_1 + X_2\) by finding the CDF of
+  \(Y\).
+\item
+  Consider again the house hunting example from class where \(X_1\)
+  denotes the number of bedrooms and \(X_2\) denotes the number of
+  bathrooms, and for a randomly selected listing the vector
+  \((X_1, X_2)\) has joint distribution:
 \end{enumerate}
 
+\begin{longtable}[]{@{}lllll@{}}
+\toprule\noalign{}
+& \(x_1 = 0\) & \(x_1 = 1\) & \(x_1 = 2\) & \(x_1 = 3\) \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\(x_2 = 1\) & 0.1 & 0.1 & 0.2 & 0 \\
+\(x_2 = 1.5\) & 0 & 0.1 & 0.2 & 0 \\
+\(x_2 = 2\) & 0 & 0 & 0 & 0.3 \\
+\(x_2 = 2.5\) & 0 & 0 & 0 & 0 \\
+\end{longtable}
+
+Find the covariance and correlation of \(X_1\) and \(X_2\).
+
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
-\setcounter{enumi}{2}
+\setcounter{enumi}{4}
 \item
-  Let \(X\) be a random variable with moment generating function
-  \(m_X (t)\). Define \(s_X (t) = \log\left(m_X(t)\right)\). Show that
-  \(s'_X(0) = \mathbb{E}X\) and \(s_X''(0) = \text{var}(X)\). Then use
-  this approach to find the mean and variance of a random variable \(X\)
-  when:
-
-  \begin{enumerate}
-  \def\labelenumii{\roman{enumii}.}
-  \tightlist
-  \item
-    \(X\sim N(\mu, \sigma^2)\)
-  \item
-    \(X \sim \Gamma(\alpha, \beta)\)
-  \end{enumerate}
+  Let \((X_1, X_2)\) be independent exponential random variables with
+  parameter \(\beta = 2\), so that they have joint distribution
+  \[f(x_1, x_2) = \frac{1}{4} \exp\left\{-\frac{1}{2}(x_1 + x_2)\right\}\;,\qquad x_1 > 0, x_2 > 0\]
+  Let \(Y_1, Y_2\) denote the sum and difference, respectively, of
+  \(X_1, X_2\). Find the correlation \(\text{corr}(Y_1, Y_2)\).
+\item
+  Suppose that you arrive at work within a 2-minute window of your
+  expected arrival time uniformly at random, and your expected arrival
+  time may shift slightly depending on whether there are traffic delays.
+  That is, if \(X\) denotes your arrival time where \(X = 0\) indicates
+  you are exactly on time, and \(Y\) denotes the traffic delay, then
+  assume: \[
+  X|Y \sim \text{uniform}(Y - 1, Y + 1)
+  \] If \(Y \sim \text{exponential}(1)\), find the mean arrival time
+  \(\mathbb{E}X\).
 \end{enumerate}
 
 

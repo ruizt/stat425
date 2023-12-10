@@ -1,0 +1,116 @@
+---
+title: "Midterm 2 study guide"
+author: "STAT425, Fall 2023"
+author-title: "Course"
+date: today
+published-title: "Updated"
+# format: 
+#   latex:
+#     include-in-header: 
+#       - text: 
+#           \usepackage{fancyhdr}
+#     include-before-body:
+#       - text:
+#           \pagestyle{fancy}
+#           \fancyhead[LH]{HW2}
+#           \fancyhead[RH]{STAT425, Fall 2023}
+---
+
+### Details and scope
+
+The final exam will be given at the following times:
+
+-   **Section 1** Wednesday, December 13, 4:10pm -- 7:00pm in Construction Innovations Center C201
+-   **Section 2** Friday, December 15, 4:10pm -- 7:00pm in Construction Innovations Center C201
+
+You are expected to sit for the exam with your scheduled section unless prior arrangements have been made. Logistical details are as follows:
+
+-   5 questions in length
+-   calculators allowed but not required
+-   three 8.5 x 11 pages of notes are allowed
+-   scratch paper provided
+-   table of common distributions provided
+
+The exam is comprehensive but focuses more on the latter portion of the class --- random variables, expectations, and joint distributions. You can expect one question pertaining to probability axioms, basic probability rules, conditional probability, or probability on finite sample spaces; the remaining questions will focus on distributions of random variables and random vectors.
+
+### Key concepts
+
+The following is a short list of central concepts from the course.
+
+1.  Probability axioms and basic probability calculus
+2.  Conditional probability
+3.  Independence of events
+4.  Bayes' rule
+5.  Probability on finite sample spaces
+6.  Random variables
+7.  Cumulative distribution function
+8.  Probability mass function
+9.  Probability density function
+10. Expectation of a function of a random variable
+11. Mean, variance, and moments of a random variable
+12. Moment generating function
+13. Common parametric families (*e.g.*, Bernoulli, binomial, Gaussian, etc.)
+14. Random vectors
+15. Joint PMF/PDFs
+16. Transformations of random vectors
+17. Expectation of a function of a random vector
+18. Covariance
+19. Correlation
+20. Conditional distributions
+21. Independence of random variables
+
+The final involves using these concepts for problem-solving based on definitions, associated properties, and examples developed in class and on homework assignments. Questions assess (a) your understanding of definitions and (b) your ability to apply them in a problem-solving context. Usually, the best starting point for resolving a problem is to identify givens and apply relevant definitions to move towards a solution; some credit is always awarded for answers that interpret problems appropriately. Thus, a good starting point for review is to cement your fluency with definitions of the above concepts and your understanding of how concepts are related.
+
+### Preparations
+
+Suggested preparations are:
+
+1.  Review class notes (posted and your own)
+2.  Review homeworks, midterms, and posted solutions
+3.  Work the practice problems below
+4.  Prepare your notesheet(s)
+
+Be sure to also leave some time between your studying and sitting for the exam.
+
+### Practice problems
+
+These problems are intended to help you prepare. They are not representative of the length of exam problems, but are closely related to exam questions in some instances.
+
+1.  Let $X \sim N(\mu, 1)$.
+
+    a.  Find the distribution of $X^2$ when $\mu = 0$. Is this from a common family?
+    b.  Find the distribution of $X^2$ when $\mu \neq 0$. Is this from a common family?
+
+2.  Suppose $X, Y$ are each binary random variables with joint distribution given by the table below. Based on the table:
+
+    a.  Find the marginal distributions
+    b.  Determine whether $X \perp Y$
+    c.  Find the conditional distribution of $X$ given $Y = 0$
+
+|         | $X = 0$ | $X = 1$ |
+|---------|---------|---------|
+| $Y = 0$ | 0.1     | 0.4     |
+| $Y = 1$ | 0.2     | 0.3     |
+
+3.  Let $(X, Y)$ be distributed according to the PDF $f(x, y) = e^{-y}$ for $0 < x < y < \infty$.
+
+    a.  Find the marginal and conditional distributions of $X, Y, X|Y, Y|X$
+    b.  Find the distribution of $X + Y$
+
+4.  Let $X, Y$ be random variables and consider $U_1 = a_1X + b_1Y + c_1$ and $U_2 = a_2X + b_2Y + c_2$ for constants $a_1, a_2, b_1, b_2, c_1, c_2$. Express $\text{cov}(U_1, U_2)$ in terms of the variances and covariance of $X, Y$.
+
+5.  Let $X, Y$ be independent Poisson random variables, each with parameter $\lambda$. Find the MGF of $U = aX + bY$.
+
+6.  Let $X, Y$ be uniformly distributed on the unit circle. Find the PDF and show that the random variables are uncorrelated, but dependent.
+
+<!-- 1.  Imagine a study of habitat preference in which randomly sampled individuals from two species of birds are tracked for a length of time to determine the primary habitat type of each individual. Define habitat utilization to be the conditional probability that an individual occupies a particular habitat type, given species. The study produces the following estimates of habitat utilization. -->
+
+<!-- |           | Woodland | Grassland | Marshland | -->
+
+<!-- |-----------|----------|-----------|-----------| -->
+
+<!-- | Species A | 0.2      | 0.3       | 0.5       | -->
+
+<!-- | Species B | 0.4      | 0.4       | 0.2       | -->
+
+<!-- Suppose you're out walking in grassland within the study area and spot a bird from too far away to identify the species, but you're certain it's one of the two types from the study. If 8 in 10 individuals in the area are species B, what is the probability that you observed species A on your walk? -->
