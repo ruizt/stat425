@@ -257,7 +257,7 @@ DG&S 3.4 --3.5
 #### Assignment
 
 Midterm corrections due Thursday 11/30
-[Homework 7](content/hw7.qmd) due Thursday 12/7
+[Homework 7](content/hw7.qmd) due Thursday 12/7 \[[solutions](https://drive.google.com/file/d/1ydMKtBSD2swqT1AYW_-MJV0WwpdONCwj/view?usp=share_link)\]
 
 ### Week 10 (12/4/23)
 
@@ -282,6 +282,7 @@ Midterm corrections due Thursday 11/30
 ### Final exam week (12/11/23)
 
 \[[final study guide](content/final-studyguide.qmd)\]
+\[[final exam solutions](https://drive.google.com/file/d/1ApPnvjKXiwXjJEKCGTJMlciEOHAgvCPe/view?usp=share_link)\]
 
 #### Office hours
 
