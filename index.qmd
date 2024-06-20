@@ -1,5 +1,5 @@
 ---
-title: "Probability Theory"
+title: "Applied Statistics for Life Sciences"
 date: today
 published-title: 'Updated'
 ---
@@ -7,9 +7,16 @@ published-title: 'Updated'
 ::: callout-note
 ## Announcements
 
--   Final exam solutions posted
+Site under development. Check back in Fall 2024.
 :::
 
-This is the class website for Probability Theory (STAT 425) offered at Cal Poly in Fall 2023. Note that this site is for *both* sections (01-3585 held 4:10pm MTWR and 02-3430 held 5:10pm MTWR).
+### Course information
 
-Material posted on this site is intended for use by currently enrolled students for course-related purposes only. Please do not reproduce any material on this site without permission.
+**Instructor:** Trevor Ruiz (he/him/his) \[[email](mailto:truiz01@calpoly.edu)\] \[[website](https://tdruiz.com)\]
+
+**Class meetings:**
+
+-   \[Section 01\] 12:10pm -- 2:00pm MW 186-C300
+-   \[Section 02\] 2:10pm -- 4:00pm MW 186-C300
+
+**Office hours:** 9:30am -- 11:00am MW \[[by appointment](https://calendly.com/tdruiz/office-hour)\]

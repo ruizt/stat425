@@ -3,9 +3,6 @@
 .RData
 .Ruserdata
 .DS_Store
-refs
-solutions
-docs/solutions
 /.quarto/
 /_site/
-gradebook
+_zz-*
