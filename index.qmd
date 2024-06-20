@@ -7,7 +7,7 @@ published-title: 'Updated'
 ::: callout-note
 ## Announcements
 
-Site under development. Check back in Fall 2024.
+Site under development for Fall 2024. Check back later.
 :::
 
 ### Course information
