@@ -1,5 +1,5 @@
 ---
-title: "Applied Statistics for Life Sciences"
+title: "Probability Theory"
 date: today
 published-title: 'Updated'
 ---
