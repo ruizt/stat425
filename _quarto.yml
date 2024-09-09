@@ -6,16 +6,17 @@ website:
   title: "STAT425"
   google-analytics: "G-H3YKZX4J88"
   page-footer: "\u00a9 2024 Trevor Ruiz"
+  search: false
   navbar:
     background: dark
     foreground: light
-    search: true
+    search: false
 
 format:
   html:
     theme: cosmo
     css: styles.css
-    toc: true
+    toc: false
 
 execute:
   freeze: auto
