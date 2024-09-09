@@ -1,0 +1,302 @@
+---
+title: 'Fall 2023 Materials (archived)'
+title-block-style: none
+---
+
+\[[Fall 2023 course syllabus](syllabus.qmd)\]
+
+### Week 0 (9/21/23)
+
+*Course introduction.*
+
+
+#### Class meetings
+
+***Thursday***: course introduction \[[slides](notes/week0-intro.qmd)\]
+
+#### Assignments
+
+Complete [intake survey](https://forms.gle/uWWTaZrVvL7jykz86)
+
+### Week 1 (9/25/23)
+
+*Sets and set operations; probability spaces; properties of probability.*
+
+#### Suggested reading
+
+DG&S 1.4 --- 1.6
+
+#### Lecture notes
+
+\[[sets](notes/week1-sets.qmd)\] \[[probability measures](notes/week1-probability.qmd)\]
+
+#### Class meetings
+
+***Monday:*** sets
+
+***Tuesday:*** sets, cont'd
+
+***Wednesday:*** probability spaces
+
+***Thursday:*** properties of probability measures
+
+#### Assignment
+
+[Homework 1](hw/hw1.qmd) due Thursday 10/5 \[[solutions](https://drive.google.com/file/d/1ESqVD-HpfdNOYHUcgjWvxSA6Ed7XhkhV/view?usp=sharing)\]
+
+### Week 2 (10/2/23)
+
+*Probability on finite sample spaces; counting rules and applications.*
+
+#### Suggested reading
+
+DG&S 1.7 --- 1.10
+
+#### Lecture notes
+
+\[[counting](notes/week2-counting.qmd)\]
+
+#### Class meetings
+
+***Monday:*** wrap-up; probability on finite sample spaces
+
+***Tuesday:*** counting principles and multiplication rules
+
+***Wednesday:*** combinations and permutations
+
+***Thursday:*** combinations and permutations
+
+#### Assignment
+
+[Homework 2](hw/hw2.qmd) due Thursday 10/12 \[[solutions](https://drive.google.com/file/d/1GXVu0K3DaRE8UTcqLDPrAtoi19bgGZiM/view?usp=sharing)\]
+
+### Week 3 (10/9/23)
+
+*Conditional probability; independence; Bayes' theorem.*
+
+#### Suggested reading:
+
+DG&S 2.1 --- 2.3
+
+#### Lecture notes
+
+\[[conditional probability](notes/week3-conditional.qmd)\]
+
+#### Class meetings:
+
+***Monday:*** conditional probability and basic properties
+
+***Tuesday:*** independence
+
+***Wednesday:*** Bayes' theorem
+
+***Thursday:*** odds and conditional odds
+
+#### Assignment
+
+-   [Homework 3](hw/hw3.qmd) due Thursday 10/19 \[[solutions](https://drive.google.com/file/d/1hDMiq2-H9focHZGHTDIGlijPWJzfmR3d/view?usp=share_link)\]
+
+### Week 4 (10/16/23)
+
+*Gambler's ruin; introduction to random variables; midterm review*
+
+[Midterm study guide](exams/midterm1-studyguide.qmd) --- check back for updates \[[solutions to practice problems](https://drive.google.com/file/d/1Ap8C4hfH8_Q5bUIi0o4SL5-TXzV9OJHw/view?usp=share_link)\]
+
+#### Suggested reading:
+
+DG&S 2.4
+
+#### Lecture notes
+
+\[[gambler's ruin](notes/week4-gambler.qmd)\]
+
+#### Class meetings:
+
+***Monday:*** the gambler's ruin problem
+
+***Tuesday:*** midterm review session
+
+***Wednesday:*** random variables
+
+***Thursday:*** **Midterm 1** \[[solutions](https://drive.google.com/file/d/1Z8eJ41CJ9rnUI9a5wN0mIfHgzqrt-0sO/view?usp=share_link)\]
+
+
+#### Assignment
+
+-   None --- enjoy!
+
+### Week 5 (10/23/23)
+
+*Discrete and continuous random variables; characterizing probability distributions*
+
+#### Suggested reading:
+
+DG&S 3.1 --- 3.3
+
+#### Lecture notes
+
+\[[random variables](notes/week5-rvs.qmd)\]
+
+#### Class meetings:
+
+***Monday:*** definition of a random variable; the CDF
+
+***Tuesday:*** discrete and continuous random variables
+
+***Wednesday:*** characterizing distributions
+
+***Thursday:*** common distributions
+
+#### Assignment
+
+-   [Homework 4](hw/hw4.qmd) due Thursday 11/2 \[[solutions](https://drive.google.com/file/d/1_CSDRy3zL4v374OK_tuSIso7Kj9cf_eS/view?usp=share_link)\]
+
+### Week 6 (10/30/23)
+
+*Common families of probability distributions*
+
+#### Suggested reading:
+
+This week lectures will cover a blend of material in DG&S 4.1 -- 4.4 and 5.1 -- 5.6, but some material in those sections is deferred until later sections.
+
+#### Lecture notes
+
+\[[common distributions](notes/week6-distributions.qmd)\]
+
+#### Class meetings:
+
+***Monday:*** probability distributions based on Bernoulli trials
+
+***Tuesday:*** expected value; common discrete and continuous distributions
+
+***Wednesday:*** the Gaussian/normal distribution
+
+***Thursday:*** moments; the moment generating function
+
+#### Assignment
+
+-   Please fill out [feedback survey](https://forms.gle/hpAB4Jtgnhaky3QTA) by the end of the week
+-   [Homework 5](hw/hw5.qmd) due Thursday 11/9 \[[solutions](https://drive.google.com/file/d/1IaIKW_1JR8e61fWh_dDxKLznn-m6-OpD/view?usp=sharing)\]
+
+### Week 7 (11/6/23)
+
+*Moments and moment generating functions; the gamma distribution*
+
+#### Suggested reading
+
+DG&S section 4.4, select material from sections 5.1 -- 5.6, and section 5.7
+
+#### Lecture notes
+
+\[[moments](notes/week7-expectation.qmd)\]
+
+#### Class meetings:
+
+***Monday:*** moments and moment generating functions
+
+***Tuesday:*** the gamma distribution
+
+***Wednesday:*** recap of common distributions and their properties
+
+***Thursday:*** practice problems
+
+#### Assignment
+
+-   [Homework 6](hw/hw6.qmd) due Thursday 11/16 \[[solutions](https://drive.google.com/file/d/1hd2x9lVKwpddxfiKdY0dbzIgNTHqk66r/view?usp=sharing)\]
+
+### Week 8 (11/13/23)
+
+*Review of random variables and common distributions; expectation inequalities*
+
+\[[midterm 2 study guide](exams/midterm2-studyguide.qmd)\]
+
+\[[practice test](exams/midterm2-practice.qmd)\] \[[solutions](https://drive.google.com/file/d/1u-UdBCQ8DaSWCCEl--xAU5DK3GUvJx_1/view?usp=share_link)\]
+
+#### Suggested reading:
+
+Hogg & Craig section 1.8
+
+#### Lecture notes
+
+\[[expectation inequalities](notes/week8-inequalities.qmd)\]
+
+#### Class meetings:
+
+***Monday:*** review and practice problems
+
+***Tuesday:*** review and practice problems
+
+***Wednesday:*** expectation inequalities
+
+***Thursday:*** **Midterm 2** in class \[[solutions](https://drive.google.com/file/d/1jl_ROlg19f_M_FuGXeNnoo1r2PAA2dbt/view?usp=share_link)\]
+
+#### Assignment
+
+None; enjoy!
+
+### Week 9 (11/27/23)
+
+*Multivariate distributions and transformations*
+
+#### Suggested reading:
+
+DG&S 3.4 --3.5
+
+#### Lecture notes
+
+\[[multivariate distributions](notes/week9-joint.qmd)\]
+\[[multivariate transformations](notes/week9-transformations.qmd)\]
+
+#### Class meetings:
+
+***Monday:*** random vectors
+
+***Tuesday:*** joint distribution functions
+
+***Wednesday:*** transformations of continuous random vectors
+
+***Thursday:*** the sum of jointly uniform random variables on the unit square
+
+#### Assignment
+
+Midterm corrections due Thursday 11/30
+[Homework 7](hw/hw7.qmd) due Thursday 12/7 \[[solutions](https://drive.google.com/file/d/1ydMKtBSD2swqT1AYW_-MJV0WwpdONCwj/view?usp=share_link)\]
+
+### Week 10 (12/4/23)
+
+*Covariance, correlation, independence, and conditional distributions*
+
+#### Lecture notes
+
+\[[covariance and correlation](notes/week10-covariance.qmd)\]
+
+\[[conditional distributions](notes/week10-independence.qmd)\]
+
+#### Class meetings:
+
+***Monday:*** covariance and correlation
+
+***Tuesday:*** conditional distributions
+
+***Wednesday:*** independence
+
+***Thursday:*** wrapping up
+
+### Final exam week (12/11/23)
+
+\[[final study guide](exams/final-studyguide.qmd)\]
+\[[final exam solutions](https://drive.google.com/file/d/1ApPnvjKXiwXjJEKCGTJMlciEOHAgvCPe/view?usp=share_link)\]
+
+#### Office hours
+
+***Tuesday:*** 1pm-3pm in 25-107G
+
+***Wednesday:*** 1pm-3pm in 25-107G
+
+#### Final exams
+
+*Held in usual classroom (186-C201)*
+
+***Section 1*** Wednesday 12/13/23 4:10pm -- 7pm
+
+***Section 2*** Friday 12/15/23 4:10pm -- 7pm

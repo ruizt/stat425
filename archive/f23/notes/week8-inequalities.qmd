@@ -1,0 +1,124 @@
+---
+title: "Expectation inequalities"
+author: "STAT425, Fall 2023"
+author-title: "Course notes"
+date: "12/15/2023"
+published-title: "Archived"
+---
+
+There are three 'classical' inequalities related to expectation of a random variable: the Markov inequality, the Chebyshev inequality, and Jensen's inequality.
+
+**Markov inequality**. Let $X$ be a random variable. If $g(x) \geq 0$ on the support of $X$, then for any real number $c > 0$: $$
+P\left(g(X) \geq c\right) \leq \frac{1}{c}\mathbb{E}\left[g(X)\right]
+$$
+
+::: callout-tip
+## Proof
+
+Let $A = \{x \in \mathbb{R}: g(x) \geq c\}$. Then if $X$ is continuous, by hypothesis $g(x)f(x)$ is nonnegative everywhere, so: $$
+\begin{align*}
+\mathbb{E}\left[g(X)\right]
+&= \int_\mathbb{R} g(x)f(x)dx \\
+&= \int_A g(x)f(x)dx + \int_{\mathbb{R}\setminus A} g(x)f(x)dx \\
+&\geq \int_A g(x)f(x)dx \\
+&\geq \int_A c f(x)dx \\
+&= c P(X \in A) \\
+&= c P\left(g(X) \geq c\right)
+\end{align*}
+$$ If $X$ is discrete, then by hypothesis $g(x)P(X = x)$ is nonnegative everywhere, so: $$
+\begin{align*}
+\mathbb{E}\left[g(X)\right]
+&= \sum_\mathbb{R} g(x)P(X = x) \\
+&= \sum_A g(x)P(X = x) + \sum_{\mathbb{R}\setminus A} g(x)P(X = x) \\
+&\geq \sum_A g(x)P(X = x) \\
+&\geq \sum_A c P(X = x) \\
+&= c P\left(g(X) \geq c\right)
+\end{align*}
+$$
+:::
+
+**Chebyshev inequality**. For any random variable $X$ whose first two moments exist, then for any real number $c > 0$: $$
+P\left(|X - \mathbb{E}X| \geq c\right) \leq \frac{1}{c^2}\text{var}(X)
+$$
+
+::: callout-tip
+## Proof
+
+Let $\mu$ denote the expected value of $X$. Then since $g(x) = (x - \mu)^2$ is a nonnegative function everywhere, by Markov's inequality one has: $$
+P\left(|X - \mu| \geq c \right) = P\left[(X - \mu)^2 \geq c^2\right] \leq \frac{1}{c^2}\mathbb{E}(X - \mu)^2
+$$
+:::
+
+The Chebyshev inequality is sometimes written where $c$ is replaced by a nonnegative multiple of the standard deviation of $X$. If $\sigma^2 = \text{var}(X)$, then one has: $$
+P\left(|X - \mu| \geq k\sigma\right) \leq \frac{1}{k^2}
+$$
+
+The Chebyshev inequality is important since it provides a means of bounding the probability of deviations from the mean. In particular, note that for any random variable, one has by the inequality: $$
+\begin{align*}
+&P\left(|X - \mu| \geq 2\sigma\right) \leq \frac{1}{4} \\
+&P\left(|X - \mu| \geq 3\sigma\right) \leq \frac{1}{9} \\
+&P\left(|X - \mu| \geq 4\sigma\right) \leq \frac{1}{16} \\
+&P\left(|X - \mu| \geq 5\sigma\right) \leq \frac{1}{25}
+\end{align*}
+$$
+
+::: callout-note
+## Example
+
+Suppose that the random variable $X$ represents the concentration of arsenic measured in soil samples, and data suggests that for a particular area the average value is 8.7 parts per million and the average deviation is 5.3 ppm. Levels above 20ppm are considered unsafe. Since 20 is 2.3 standard deviations from the mean, the probability that a sample returns a level within that many standard deviations is: $$
+P\left(|X - \mu| < 2.3\sigma\right) \geq 1 - \frac{1}{2.3^2} = 0.78
+$$ If we are willing to assume that the distribution of arsenic concentrations is symmetric, then the probability of obtaining a sample value above the safety threshold is about 0.11.
+:::
+
+The Chebyshev inequality also has an important application in probability theory as providing a proof technique for the weak law of large numbers. If $X_n\sim N\left(\mu, \frac{\sigma^2}{n}\right)$, then for any positive number $\epsilon > 0$, $P(|X_n - \mu|\geq \epsilon) \leq \frac{\sigma^2}{\epsilon^2n^2} \rightarrow 0$ as $n \rightarrow \infty$. Since $\epsilon$ may be chosen to be arbitrarily small, this tells us that $X_n$ is arbitrarily close to $\mu$ for large $n$ and with probability tending to one; in the limit, $X_\infty = \mu$ with probability 1.
+
+The last inequality pertains to convex (or concave) functions. A function $g$ is [convex]{style="color:blue"} on an open interval $(a, b)$ if for every $c \in (0, 1)$ and $a < x < y < b$: $$
+g\left(cx + (1 - c)y\right) \leq cg(x) + (1 - c)g(y)
+$$ If $g$ is twice differentiable on $(a, b)$ then $g$ is convex just in case either of the following conditions hold:
+
+i.  $g'(x) \leq g'(y)$ for all $a < x < y < b$
+ii. $g''(x) \geq 0$ for all $a < x < b$.
+
+The function is said to be strictly convex if the above inequalities are strict. A function $g$ is concave on an open interval $(a, b)$ just in case $-g$ is convex.
+
+**Jensen's inequality**. Let $X$ be a random variable. If $g$ is convex and twice differentiable on the support of $X$ and the expectation $\mathbb{E}\left[g(X)\right]$ exists then: $$
+g\left(\mathbb{E}X\right) \leq \mathbb{E}\left[g(X)\right]
+$$ The inequality is strict when $g$ is strictly convex and $X$ is not constant.
+
+::: callout-tip
+## Proof
+
+Let $\mu = \mathbb{E}X$. A second-order Taylor expansion of $g$ about $\mu$ gives: $$
+g(x) = g(\mu) + g'(\mu) (x - \mu) + \frac{1}{2} g''(r)(x - \mu)^2 \geq g(\mu) + g'(\mu) (x - \mu)
+$$ Taking expectations gives: $$
+\mathbb{E}\left[g(X)\right] \geq g(\mu) + g'(\mu) (\mathbb{E}X - \mu) = g(\mu) = g\left(\mathbb{E}X\right)
+$$
+:::
+
+The next example applies Jensen's inequality to show that for positive numbers, the harmonic mean is smaller than the geometric mean and the geometric mean is smaller than the arithmetic mean. It illustrates an interesting and well-known technique of representing the arithmetic average of finitely many positive numbers as the expectation of a discrete uniform random variable.
+
+::: callout-note
+## Ordering of means
+
+Suppose $A = \{a_1, a_2, \dots, a_n\}$ is a set of positive numbers $a_i$. There are many types of averages one might consider. The [arithmetic mean]{style="color:blue"} of the numbers is: $$
+\bar{a}_{AM} = \frac{1}{n}\sum_{i = 1}^n a_i
+$$ This is what most of us think of when we hear 'mean'. However, there are other types of means. The [geometric mean]{style="color:blue"} of the numbers is: $$
+\bar{a}_{GM} = \left(\prod_{i = 1}^n a_i\right)^\frac{1}{n}
+$$ The geometric mean is often used with percentages; in finance, for example, annualized growth over time for an asset is the geometric mean of percentage change in the asset value for each year in the time period.
+
+There is also the [harmonic mean]{style="color:blue"}, which is defined as: $$
+\bar{a}_{HM} = \left(\frac{1}{n}\sum_{i = 1}^n \frac{1}{a_i}\right)^{-1}
+$$ This average is often used with rates and ratios.
+
+The arithmetic mean can be expressed as an expectation. Let $X$ be uniform on the set $A$, so that $P(X = a_i) = \frac{1}{n}$ for each $a_i$. Then: $$
+\mathbb{E}X = \sum_i a_i P(X = a_i) = \frac{1}{n} \sum_{i} a_i = \bar{a}_{AM}
+$$ Now consider $\log(X)$. Since the logarithm is a concave function, by Jensen's inequality one has: $$
+\log\left(\mathbb{E}X\right) \geq \mathbb{E}\left[\log(X)\right] = \frac{1}{n}\sum_{i = 1}^n \log (a_i) = \log\left(\bar{a}_{GM}\right)
+$$ Thus $\log(\bar{a}_{AM}) \geq \log(\bar{a}_{GM})$, so since $\log$ is monotone increasing one has that $\bar{a}_{AM}\geq\bar{a}_{GM}$.
+
+Now consider $\frac{1}{X}$; since the reciprocal function is convex, by Jensen's inequality one has: $$
+\frac{1}{\mathbb{E}X} \leq \mathbb{E}\left(\frac{1}{X}\right) = \frac{1}{n}\sum_{i = 1}^n \frac{1}{a_i} = \frac{1}{\bar{a}_{HM}}
+$$ So one also has that $\bar{a}_{AM}\geq\bar{a}_{HM}$. Moreover, since $b_i = \frac{1}{a_i}$ are positive numbers, one has by the result just established that $\bar{b}_{AM} \geq \bar{b}_{GM}$. But it is easy to check that $\bar{b}_{AM} = \bar{a}_{HM}^{-1}$ and $\bar{b}_{GM} = \bar{a}_{GM}^-1$. So one has, all together: $$
+\bar{a}_{HM} \leq \bar{a}_{GM} \leq \bar{a}_{AM}
+$$ This is true for any positive numbers.
+:::

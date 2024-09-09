@@ -1,0 +1,39 @@
+---
+title: "Midterm 1 study guide"
+author: "STAT425, Fall 2023"
+author-title: "Course"
+date: today
+published-title: "Updated"
+format:
+  latex:
+    include-in-header:
+      - text:
+          \usepackage{fancyhdr}
+    include-before-body:
+      - text:
+          \pagestyle{fancy}
+          \fancyhead[LH]{Midterm practice}
+          \fancyhead[RH]{STAT425, Fall 2023}
+---
+
+
+1.  Suppose you are performing $k$ hypothesis tests at exact level $\alpha$, and assume all hypotheses are true. In other words, if $R_i$ denotes the event that the $i$th hypothesis is rejected, *i.e.*, of making an error, then $P(R_i) = \alpha$. However, when considering the tests as a group, there is a higher probability of making an error, as the individual error rates compound.It can be shown from the inclusion-exclusion principle that: $$
+    P\left(\bigcup_{i = 1}^k R_i\right) \geq \sum_{i = 1}^k P(R_i) - \sum_{1 \leq i < j \leq k} P(R_i \cap R_j)
+    $$
+    i.  Use Boole's inequality to find an upper bound for the probability of making at least one error.
+    ii. Use the fact above to derive a lower bound for the probability of making at least one error, assuming that the tests are independent.
+    iii. Compute the bound for performing 20 tests at $\alpha = 0.05$.
+    iv. Find the smallest number of tests for which the lower bound in (ii) exceeds $\frac{1}{2}$. (Hint: write $0.05$ as $\frac{5}{100}$; you may find it useful to know that $41^2 = 1681$.)
+
+*Remark*: this last part is maybe a little more involved in terms of calculation than what I'd put on an exam.
+
+2.  Suppose you are reading an article on admission rates at a selective college for different demographic groups reporting that 20% of applicants from underrepresented groups were admitted in 2022-2023 compared with 10% of other applicants.
+
+    i.  What is the probability that a randomly selected incoming student is from an underreppresented group if there were twice as many applicants from non-underrepresented groups?
+    ii. What is the probability that a randomly selected incoming student is from an underrepresented group if there were ten times as many applicants from non-underrepresented groups?
+    iii. Under the scenario in (i), find the probability that a randomly selected applicant was admitted.
+
+3.  Imagine you're out trick-or-treating with a friend and you arrive at a house handing out only two treats: Kit Kats and Snickers. The homeowner has mixed them up in a large pillowcase. You and your friend can each draw $n$ pieces of candy; assume either treat is equally likely to be selected on each draw. Supposing that when you arrive, there are $N > 2n$ Snickers and $M > 2n$ Kit Kats, and you draw first, find an expression for the probability that you draw $k_1$ Snickers and your friend draws $k_2$ Snickers.
+
+*Extra practice*: find an expression for the probability that your friend draws $k_2$ Snickers.
+

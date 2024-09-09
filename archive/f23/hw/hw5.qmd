@@ -1,0 +1,42 @@
+---
+title: "Homework 5"
+author: "STAT425, Fall 2023"
+author-title: "Course"
+date: "11/9/2023"
+published-title: "Due in class on"
+# format:
+#   latex:
+#     include-in-header:
+#       - text:
+#           \usepackage{fancyhdr}
+#     include-before-body:
+#       - text:
+#           \pagestyle{fancy}
+#           \fancyhead[LH]{HW5}
+#           \fancyhead[RH]{STAT425, Fall 2023}
+---
+
+Please prepare your solutions neatly, numbered, and in order; ideally, you'll write up a final clean copy after completing all problems on scratch paper. Please note that if a prompt includes a question, you're expected to support answers with reasoning, even if the prompt does not explicitly ask for a justification. Provide your name at the top of your submission, and if you collaborate with other students in the class, please list their names at the top of your submission beneath your own.
+
+1.  Reparametrize the uniform distribution in terms of center and length: propose an alternative PDF for the uniform $(a, b)$ distribution with one parameter that indicates the center of the interval and one that indicates the length of the interval. Verify that your proposal is a PDF, and find the expectation and variance. You may use the expectation and variance of the uniform in terms of the usual parametrization in your answer.
+
+2.  (Poisson approximation to the binomial.) In class it was noted that the Poisson distribution is a limiting case for the binomial with $np = \lambda$ fixed as $n \rightarrow \infty$. This fact can be leveraged to approximate binomial probabilities for large numbers of trials. Let $X_{n, p} \sim \text{binomial}(n, p)$ and $Y_{n, p} \sim \text{Poisson}(np)$. Then when $n$ is large, $P(X_{n, p} = x) \approx P(Y_{n, p} = x)$. Fill in the following table:
+
+| $n$     | $p$    | $P(X_{n, p} = 100)$ | $P(Y_{n, p} = 100)$ | approximation error |
+|---------------|---------------|---------------|---------------|---------------|
+| 1000    | 0.1    |                     |                     |                     |
+| 10000   | 0.01   |                     |                     |                     |
+| 100000  | 0.001  |                     |                     |                     |
+| 1000000 | 0.0001 |                     |                     |                     |
+
+3.  The $k$th factorial moment of a random variable $X$ is $\mathbb{E} \left( \frac{X!}{(X - k)!} \right)$, assuming the expectation exists.
+    i.  Find the second factorial moment of the Poisson distribution.
+    ii. Find the second factorial moment of the binomial distribution.
+    iii. Use your answers above to calculate the variance of each distribution. You do not need to re-compute the mean of each distribution.
+4.  (Exponential distribution) Let $X \sim F(x)$ where $F(x) = 1 - e^{-\alpha x}$ for $x > 0$ and $F(x) = 0$ for $x \leq 0$; assume $\alpha > 0$. Find the mean and variance of $X$.
+5.  (Truncated Poisson) Let $X \sim \text{Poisson}(\lambda)$ and define $Y$ by the probability mass function $$
+    P(Y = y) = \frac{P(X = y)}{P(X > 0)}
+    \;,\qquad y = 1, 2, \dots
+    $$ Find an expression for the PMF of $Y$, and calculate its mean and variance.
+6.  With $Y$ as in the previous problem, show that $\mathbb{E}\log(Y) \geq 0$.
+7.  (Probability integral transform) Let $X$ be a continuous random variable with strictly increasing CDF $F$, and let $Y = F(X)$. Show that $Y \sim \text{uniform}(0, 1)$. (If $F$ is strictly increasing, then $F^{-1}(x)$ is well-defined).

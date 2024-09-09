@@ -1,0 +1,1079 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.4.550">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="STAT425, Fall 2023">
+<meta name="dcterms.date" content="2023-12-15">
+
+<title>STAT425 - Conditional probability</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../">
+<script src="../../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-H3YKZX4J88"></script>
+
+<script type="text/javascript">
+
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-H3YKZX4J88', { 'anonymize_ip': true});
+</script>
+
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../../../styles.css">
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../../../index.html">
+    <span class="navbar-title">STAT425</span>
+    </a>
+  </div>
+        <div class="quarto-navbar-tools">
+</div>
+          <div id="quarto-search" class="" title="Search"></div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#basic-properties" id="toc-basic-properties" class="nav-link active" data-scroll-target="#basic-properties">Basic properties</a></li>
+  <li><a href="#independence" id="toc-independence" class="nav-link" data-scroll-target="#independence">Independence</a></li>
+  <li><a href="#bayes-theorem" id="toc-bayes-theorem" class="nav-link" data-scroll-target="#bayes-theorem">Bayes’ theorem</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Conditional probability</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Course notes</div>
+    <div class="quarto-title-meta-contents">
+             <p>STAT425, Fall 2023 </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Archived</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">December 15, 2023</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>Let <span class="math inline">\((S, \mathcal{S}, P)\)</span> be a probability space and let <span class="math inline">\(A \in \mathcal{S}\)</span> be an event with <span class="math inline">\(P(A) &gt; 0\)</span>. The <span style="color:blue">conditional probability</span> of any event <span class="math inline">\(E\in\mathcal{S}\)</span> <span style="color:blue">given <span class="math inline">\(A\)</span></span> is defined as: <span class="math display">\[
+P(E\;|A) = \frac{P(E\cap A)}{P(A)}
+\]</span></p>
+<p>This is interpreted as the chance of <span class="math inline">\(E\)</span> provided that <span class="math inline">\(A\)</span> has occurred. Importantly, <span class="math inline">\(E|A\)</span> is not an event; rather, <span class="math inline">\(P(\cdot\;| A)\)</span> is a new probability measure. To see this, check the axioms:</p>
+<ul>
+<li>(A1) Since <span class="math inline">\(P\)</span> is a probability measure, <span class="math inline">\(P(E\cap A) \geq 0\)</span>, so it follows <span class="math inline">\(P(E\;|A) = \frac{P(E\cap A)}{P(A)} \geq 0\)</span>.</li>
+<li>(A2) <span class="math inline">\(P(S\;|A) = \frac{P(S\cap A)}{P(A)} = \frac{P(A)}{P(A)} = 1\)</span></li>
+<li>(A3) If <span class="math inline">\(\{E_i\}\)</span> is a disjoint collection, then <span class="math inline">\(\{E_i \cap A\}\)</span> is also a disjoint collection, so by countable additivity of <span class="math inline">\(P\)</span>, one has: <span class="math display">\[
+P\left(\bigcup_i E_i \;\big|\; A\right) = \frac{P\left(\left[\bigcup_i E_i\right]\cap A\right)}{P(A)} = \frac{P\left(\bigcup_i (E_i\cap A)\right)}{P(A)} = \sum_i \frac{P(E_i\cap A)}{P(A)} = \sum_i P(E_i\;|A)
+\]</span></li>
+</ul>
+<p>One can view <span class="math inline">\(P(\cdot\;|A)\)</span> as a probability measure on <span class="math inline">\((S, \mathcal{S})\)</span>, or as a probability measure on <span class="math inline">\(\left(A, \mathcal{S}^A\right)\)</span> where <span class="math inline">\(\mathcal{S}^A = \{E\cap A: E \in \mathcal{S}\}\)</span>. Some prefer the latter view, since it aligns with the interpretation that by conditioning on <span class="math inline">\(A\)</span> one is redefining the sample space.</p>
+<section id="basic-properties" class="level3">
+<h3 class="anchored" data-anchor-id="basic-properties">Basic properties</h3>
+<p>An immediate consequence of the definition is that: <span class="math display">\[
+P(E\cap A) = P(E\;| A) P(A)
+\]</span></p>
+<p>In fact, this <span style="color:blue">multiplication rule for conditional probabilities</span> can be generalized to an arbitrary finite collection of events: <span class="math display">\[
+P\left(\bigcap_{i = 1}^n E_i\right) = P(E_1) \times P(E_2\;|E_1) \times P(E_3\;|E_1 \cap E_2) \times\cdots\times P(E_n\;| E_1 \cap \cdots \cap E_{n - 1})
+\]</span></p>
+<p>Or, written more compactly: <span class="math display">\[
+P\left(\bigcap_{i = 1}^n E_i\right) = P(E_1) \times \prod_{i = 2}^n P\left(E_i \;\Bigg| \bigcap_{j = 1}^{i - 1} E_j \right)
+\]</span></p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Proof
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Apply the definition of conditional probability to the terms in the product on the right hand side to see that: <span class="math display">\[
+\begin{align*}
+P(E_1) \times \prod_{i = 2}^n P\left(E_i \;\Bigg| \bigcap_{j = 1}^{i - 1} E_j \right)
+&amp;= P(E_1) \times \prod_{j = 2}^n \left[\frac{P\left(\bigcap_{j = 1}^i E_j\right)}{P\left(\bigcap_{j = 1}^{i - 1} E_j \right)}\right] \\
+&amp;= P(E_1) \times \frac{P\left(\bigcap_{j = 1}^2 E_j\right)}{P\left( E_1 \right)}
+  \times \frac{P\left(\bigcap_{j = 1}^3 E_j\right)}{P\left(\bigcap_{j = 1}^{2} E_j \right)}
+  \times\cdots
+  \times \frac{P\left(\bigcap_{j = 1}^n E_j\right)}{P\left(\bigcap_{j = 1}^{n - 1} E_j \right)}
+\end{align*}
+\]</span> Then notice that all terms cancel, leaving only <span class="math inline">\(P\left(\bigcap_{j = 1}^n E_j\right)\)</span>, and establishing the result.</p>
+</div>
+</div>
+<p>The multiplication rule provides a convenient way to compute certain probabilities, as in some problems it’s easier to find a conditional probability than an unconditional one.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Example: (more) poker hands
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Consider drawing 5 cards at random. What’s the probability that all 5 are diamonds?</p>
+<p>This could be found by computing the total number of ways to draw 5 diamonds out of the total number of ways to draw 5 cards: <span class="math display">\[
+\frac{{13 \choose 5}}{{52 \choose 5}}
+= \frac{13!}{5!8!}\times\frac{5!47!}{52!}
+\]</span> Or, one can avoid evaluating the factorials and instead notice that the conditional probability of drawing a diamond given having already drawn <span class="math inline">\(k\)</span> diamonds is <span class="math inline">\(\frac{13 - k}{52 - k}\)</span> — the number of diamonds left as a proportion of the number of cards left — so: <span class="math display">\[
+P\left(\text{5 diamonds}\right) = \frac{13}{52}\times\frac{12}{51}\times\frac{11}{50}\times\frac{10}{49}\times\frac{9}{48} \approx 0.000495
+\]</span></p>
+<p>For a quick exercise, check the result by simplifying the factorials in the first solution.</p>
+<p>To see why this is an application of the multiplication rule for conditional probabilities more formally, let <span class="math inline">\(E_i = \{\text{draw a diamond on the $k$th draw}\}\)</span>. Then: <span class="math display">\[
+\begin{align*}
+P\left(\text{5 diamonds}\right)
+&amp;= P(E_1 \cap E_2 \cap E_3 \cap E_4 \cap E_5) \\
+&amp;= P(E_1)
+  \times P(E_2\;| E_1)
+  \times P(E_3\;| E_1 \cap E_2) \\
+  &amp;\qquad\times P(E_4 \;| E_1 \cap E_2 \cap E_3)
+  \times P(E_5\;| E_1 \cap E_2 \cap E_3 \cap E_4)
+\end{align*}
+\]</span></p>
+</div>
+</div>
+<p>Another useful property is the <span style="color:blue">law of total probability</span>: if <span class="math inline">\(\{A_i\}\)</span> is a partition of the sample space <span class="math inline">\(S\)</span>, then for any event <span class="math inline">\(E \in \mathcal{S}\)</span> one has: <span class="math display">\[
+P(E) = \sum_i P(E\;| A_i) P(A_i)
+\]</span></p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Proof
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Note that <span class="math inline">\(E = E \cap S = E\cap \left[\bigcup_i A_i\right] = \bigcup_i (E \cap A_i)\)</span>. Since <span class="math inline">\(\{A_i\}\)</span> is disjoint, so is <span class="math inline">\(\{E \cap A_i\}\)</span>. Then by countable additivity: <span class="math display">\[
+P(E) = P\left[\bigcup_i (E \cap A_i)\right] = \sum_i P(E \cap A_i)
+\]</span> And by the multiplication rule for conditional probabilities <span class="math inline">\(P(E\cap A_i) = P(E\;| A_i) P(A_i)\)</span> so: <span class="math display">\[
+P(E) = \sum_i P(E \cap A_i) = \sum_i P(E\;| A_i) P(A_i)
+\]</span></p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Example: CVD rates
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>It’s estimated that 8% of men and 0.5% of women have color vision deficiency (CVD). Supposing that exactly these proportions appear in a group of 400 women and 200 men, what’s the probability that a randomly selected individual has CVD?</p>
+<p>From the problem set-up:</p>
+<ul>
+<li><span class="math inline">\(P(\text{CVD}\;| M) = 0.08\)</span> and <span class="math inline">\(P(\text{CVD}\;| F) = 0.005\)</span></li>
+<li><span class="math inline">\(P(M) = \frac{1}{3}\)</span> and <span class="math inline">\(P(F) = \frac{2}{3}\)</span></li>
+</ul>
+<p>Note that these are the probabilities of selecting a person with the specified attributes from this group, assuming all individuals are equally likely to be selected. This is consistent with how we’ve defined probabilities for finite sample spaces. In this case, the sample space is the collection of 600 individuals, and each individual is assigned selection probability <span class="math inline">\(\frac{1}{600}\)</span>. Thus, the meaning of the probability here comes from sampling from this group of people at random; importantly, these are not statements about the chance of having CVD, or being of one sex or the other, or the like.</p>
+<p>The law of total probability yields: <span class="math display">\[
+\begin{align*}
+P(\text{CVD})
+&amp;= P(\text{CVD}\;| M) P(M) + P(\text{CVD}\;| F) P(F) \\
+&amp;= 0.08 \cdot \frac{1}{3} + 0.005 \cdot\frac{2}{3} \\
+&amp;= 0.03
+\end{align*}
+\]</span></p>
+</div>
+</div>
+</section>
+<section id="independence" class="level3">
+<h3 class="anchored" data-anchor-id="independence">Independence</h3>
+<p>If two events are independent, then the occurrence of one event doesn’t affect the probability of the other. For example, obtaining heads in a coin toss doesn’t affect the chances of obtaining a heads in a subsequent toss.</p>
+<p>By contrast, if two events are dependent, then the occurrence of one changes the probability of the other. For example, the likelihood of a car accident is higher in heavy rain.</p>
+<p>For <span style="color:blue">independent events</span>, conditioning on one event does not change the probability of the other. Thus, we say that any two events <span class="math inline">\(E\)</span> and <span class="math inline">\(A\)</span> are independent just in case: <span class="math display">\[
+P(E \cap A) = P(E)P(A)
+\]</span></p>
+<p>If so, we write <span class="math inline">\(E\perp A\)</span>.</p>
+<p>While it might be more intuitive to define independence according to the criterion <span class="math inline">\(P(E\;| A) = P(E)\)</span>, recall that <span class="math inline">\(P(E\;| A)\)</span> is undefined if <span class="math inline">\(P(A) = 0\)</span>. By using instead the (almost equivalent) criterion <span class="math inline">\(P(E \cap A) = P(E)P(A)\)</span>, the concept is still well-defined for events with probability zero.</p>
+<p>Note two facts:</p>
+<ul>
+<li><p>independent events are <em>not</em> disjoint unless at least one event has probability zero</p></li>
+<li><p>events with probability zero are independent of all other events, including themselves.</p></li>
+</ul>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Proof
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>For the first fact, observe that for any disjoint events <span class="math inline">\(A, B\)</span>, one has <span class="math inline">\(P(A \cap B) = P(\emptyset) = 0\)</span>, so <span class="math inline">\(P(A \cap B) = P(A)P(B)\)</span> cannot hold unless either <span class="math inline">\(P(A) = 0\)</span> or <span class="math inline">\(P(B) = 0\)</span>.</p>
+<p>For the second fact, if <span class="math inline">\(P(A) = 0\)</span>, then for any event <span class="math inline">\(B\)</span>, by monotonicity of the probability measure <span class="math inline">\(B \cap A \subseteq A\)</span> implies <span class="math inline">\(P(B\cap A) \leq P(A) = 0\)</span>, so <span class="math inline">\(P(B \cap A) = 0\)</span>. Therefore <span class="math inline">\(P(B\cap A) = P(A)P(B)\)</span>.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Example: dice rolls
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Consider rolling two six-sided dice. The sample space for this experiment is <span class="math inline">\(S = \{1, 2, 3, 4, 5, 6\}^2\)</span>, <em>i.e.</em>, all ordered pairs of integers between 1 and 6 corresponding to the physical possibilities for the two dice. If all outcomes are equally likely then <span class="math inline">\(P((i, j)) = \frac{1}{|S|} = \frac{1}{36}\)</span> for all <span class="math inline">\(i, j \in \{1, \dots, 6\}\)</span>.</p>
+<p>In this scenario the value of the first die is independent of the value of the second die. While this is intuitively obvious, to see this probabilistically, let <span class="math inline">\(A_x = \{(i, j) \in S: i = x\}\)</span> denote the event that the first die is an <span class="math inline">\(i\)</span>, and let <span class="math inline">\(B_y = \{(i, j)\in S: j = y\}\)</span> denote the event that the second die is a <span class="math inline">\(j\)</span>. Now <span class="math inline">\(|A_x| = |B_y| = 6\)</span> for each <span class="math inline">\(x\)</span> and each <span class="math inline">\(y\)</span>, so: <span class="math display">\[
+P(A_x) = P(B_x) = \frac{6}{36} = \frac{1}{6}
+\]</span> Then note that for any <span class="math inline">\(x, y\)</span>, <span class="math inline">\(A_x \cap B_y = \{(x, y)\}\)</span>, so: <span class="math display">\[
+P(A_x \cap B_y) = \frac{1}{36} = \frac{1}{6}\times\frac{1}{6} = P(A_x)P(B_y)
+\]</span></p>
+<p>There are many probability measures on this space that are <em>not</em> equally likely but for which <span class="math inline">\(A_x, B_y\)</span> remain independent. For example, the table below shows probabilities assigned to each of the 36 possible rolls that are not equally likely, but it is easy to verify that the product of the probabilities in the row/column headers yields the probability in the corresponding cell.</p>
+<table class="table">
+<colgroup>
+<col style="width: 14%">
+<col style="width: 14%">
+<col style="width: 14%">
+<col style="width: 14%">
+<col style="width: 14%">
+<col style="width: 14%">
+<col style="width: 14%">
+</colgroup>
+<thead>
+<tr class="header">
+<th></th>
+<th><span class="math inline">\(P(B_1) = \frac{1}{3}\)</span></th>
+<th><span class="math inline">\(P(B_2) = \frac{1}{6}\)</span></th>
+<th><span class="math inline">\(P(B_3) = 0\)</span></th>
+<th><span class="math inline">\(P(B_4) = \frac{1}{6}\)</span></th>
+<th><span class="math inline">\(P(B_5) = \frac{1}{6}\)</span></th>
+<th><span class="math inline">\(P(B_6) = \frac{1}{6}\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(P(A_1) = \frac{1}{6}\)</span></td>
+<td><span class="math inline">\(\frac{2}{36}\)</span></td>
+<td><span class="math inline">\(\frac{1}{36}\)</span></td>
+<td><span class="math inline">\(\frac{0}{36}\)</span></td>
+<td><span class="math inline">\(\frac{1}{36}\)</span></td>
+<td><span class="math inline">\(\frac{1}{36}\)</span></td>
+<td><span class="math inline">\(\frac{1}{36}\)</span></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(P(A_2) = \frac{1}{6}\)</span></td>
+<td><span class="math inline">\(\frac{2}{36}\)</span></td>
+<td><span class="math inline">\(\frac{1}{36}\)</span></td>
+<td><span class="math inline">\(\frac{0}{36}\)</span></td>
+<td><span class="math inline">\(\frac{1}{36}\)</span></td>
+<td><span class="math inline">\(\frac{1}{36}\)</span></td>
+<td><span class="math inline">\(\frac{1}{36}\)</span></td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(P(A_3) = \frac{1}{6}\)</span></td>
+<td><span class="math inline">\(\frac{2}{36}\)</span></td>
+<td><span class="math inline">\(\frac{1}{36}\)</span></td>
+<td><span class="math inline">\(\frac{0}{36}\)</span></td>
+<td><span class="math inline">\(\frac{1}{36}\)</span></td>
+<td><span class="math inline">\(\frac{1}{36}\)</span></td>
+<td><span class="math inline">\(\frac{1}{36}\)</span></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(P(A_4) = \frac{1}{6}\)</span></td>
+<td><span class="math inline">\(\frac{2}{36}\)</span></td>
+<td><span class="math inline">\(\frac{1}{36}\)</span></td>
+<td><span class="math inline">\(\frac{0}{36}\)</span></td>
+<td><span class="math inline">\(\frac{1}{36}\)</span></td>
+<td><span class="math inline">\(\frac{1}{36}\)</span></td>
+<td><span class="math inline">\(\frac{1}{36}\)</span></td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(P(A_5) = \frac{1}{6}\)</span></td>
+<td><span class="math inline">\(\frac{2}{36}\)</span></td>
+<td><span class="math inline">\(\frac{1}{36}\)</span></td>
+<td><span class="math inline">\(\frac{0}{36}\)</span></td>
+<td><span class="math inline">\(\frac{1}{36}\)</span></td>
+<td><span class="math inline">\(\frac{1}{36}\)</span></td>
+<td><span class="math inline">\(\frac{1}{36}\)</span></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(P(A_6) = \frac{1}{6}\)</span></td>
+<td><span class="math inline">\(\frac{2}{36}\)</span></td>
+<td><span class="math inline">\(\frac{1}{36}\)</span></td>
+<td><span class="math inline">\(\frac{0}{36}\)</span></td>
+<td><span class="math inline">\(\frac{1}{36}\)</span></td>
+<td><span class="math inline">\(\frac{1}{36}\)</span></td>
+<td><span class="math inline">\(\frac{1}{36}\)</span></td>
+</tr>
+</tbody>
+</table>
+<p>Now consider the following probability measure. Note it is still a valid probability measure because the entries in the table sum to one.</p>
+<table class="table">
+<colgroup>
+<col style="width: 14%">
+<col style="width: 14%">
+<col style="width: 14%">
+<col style="width: 14%">
+<col style="width: 14%">
+<col style="width: 14%">
+<col style="width: 14%">
+</colgroup>
+<thead>
+<tr class="header">
+<th></th>
+<th><span class="math inline">\(P(B_1) = \frac{11}{36}\)</span></th>
+<th><span class="math inline">\(P(B_2) = \frac{7}{36}\)</span></th>
+<th><span class="math inline">\(P(B_3) = 0\)</span></th>
+<th><span class="math inline">\(P(B_4) = \frac{1}{6}\)</span></th>
+<th><span class="math inline">\(P(B_5) = \frac{1}{6}\)</span></th>
+<th><span class="math inline">\(P(B_6) = \frac{1}{6}\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(P(A_1) = \frac{1}{6}\)</span></td>
+<td><span class="math inline">\(\frac{2}{36}\)</span></td>
+<td><span class="math inline">\(\frac{1}{36}\)</span></td>
+<td><span class="math inline">\(\frac{0}{36}\)</span></td>
+<td><span class="math inline">\(\frac{1}{36}\)</span></td>
+<td><span class="math inline">\(\frac{1}{36}\)</span></td>
+<td><span class="math inline">\(\frac{1}{36}\)</span></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(P(A_2) = \frac{1}{6}\)</span></td>
+<td><span class="math inline">\(\frac{1}{36}\)</span></td>
+<td><span class="math inline">\(\frac{2}{36}\)</span></td>
+<td><span class="math inline">\(\frac{0}{36}\)</span></td>
+<td><span class="math inline">\(\frac{1}{36}\)</span></td>
+<td><span class="math inline">\(\frac{1}{36}\)</span></td>
+<td><span class="math inline">\(\frac{1}{36}\)</span></td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(P(A_3) = \frac{1}{6}\)</span></td>
+<td><span class="math inline">\(\frac{2}{36}\)</span></td>
+<td><span class="math inline">\(\frac{1}{36}\)</span></td>
+<td><span class="math inline">\(\frac{0}{36}\)</span></td>
+<td><span class="math inline">\(\frac{1}{36}\)</span></td>
+<td><span class="math inline">\(\frac{1}{36}\)</span></td>
+<td><span class="math inline">\(\frac{1}{36}\)</span></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(P(A_4) = \frac{1}{6}\)</span></td>
+<td><span class="math inline">\(\frac{2}{36}\)</span></td>
+<td><span class="math inline">\(\frac{1}{36}\)</span></td>
+<td><span class="math inline">\(\frac{0}{36}\)</span></td>
+<td><span class="math inline">\(\frac{1}{36}\)</span></td>
+<td><span class="math inline">\(\frac{1}{36}\)</span></td>
+<td><span class="math inline">\(\frac{1}{36}\)</span></td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(P(A_5) = \frac{1}{6}\)</span></td>
+<td><span class="math inline">\(\frac{2}{36}\)</span></td>
+<td><span class="math inline">\(\frac{1}{36}\)</span></td>
+<td><span class="math inline">\(\frac{0}{36}\)</span></td>
+<td><span class="math inline">\(\frac{1}{36}\)</span></td>
+<td><span class="math inline">\(\frac{1}{36}\)</span></td>
+<td><span class="math inline">\(\frac{1}{36}\)</span></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(P(A_6) = \frac{1}{6}\)</span></td>
+<td><span class="math inline">\(\frac{2}{36}\)</span></td>
+<td><span class="math inline">\(\frac{1}{36}\)</span></td>
+<td><span class="math inline">\(\frac{0}{36}\)</span></td>
+<td><span class="math inline">\(\frac{1}{36}\)</span></td>
+<td><span class="math inline">\(\frac{1}{36}\)</span></td>
+<td><span class="math inline">\(\frac{1}{36}\)</span></td>
+</tr>
+</tbody>
+</table>
+<p>Check your understanding:</p>
+<ol type="1">
+<li>Are <span class="math inline">\(A_x, B_y\)</span> independent under this probability measure? How do you check?</li>
+<li>Write the a table of the probabilities <span class="math inline">\(P(A_x | B_1)\)</span>.</li>
+</ol>
+</div>
+</div>
+<p>A collection of events <span class="math inline">\(\{E_i\}\)</span> is <span style="color:blue">pairwise independent</span> if for every pair of distinct events <span class="math inline">\(E_i, E_j\)</span> one has: <span class="math display">\[
+P(E_i \cap E_j) = P(E_i)P(E_j)
+\]</span></p>
+<p>A collection of events <span class="math inline">\(\{E_i\}\)</span> is <span style="color:blue">mutually independent</span> if for every <span class="math inline">\(k\)</span> and every subcollection of <span class="math inline">\(k\)</span> distinct events <span class="math inline">\(E_{i_1}, \dots, E_{i_k}\)</span>: <span class="math display">\[
+P\left(\bigcap_{j = 1}^k E_{i_j}\right) = \prod_{j = 1}^k P(E_{i_j})
+\]</span></p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Example
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Consider tossing two coins, so <span class="math inline">\(S = \{HH, HT, TH, TT\}\)</span>, and assume all outcomes are equally likely. Define the events:</p>
+<p><span class="math display">\[
+\begin{align*}
+E_1 &amp;= \{HH, HT\} \quad(\text{heads on first toss}) \\
+E_2 &amp;= \{HH, TH\} \quad(\text{heads on second toss}) \\
+E_3 &amp;= \{HH, TT\} \quad(\text{tosses match})
+\end{align*}
+\]</span></p>
+<p>Now, <span class="math inline">\(P(E_i) = \frac{1}{2}\)</span> for each <span class="math inline">\(E_i\)</span>, since each has two outcomes, so <span class="math inline">\(P(E_i)P(E_j) = \frac{1}{4}\)</span>. Moreover, <span class="math inline">\(P(E_i \cap E_j) = P(\{HH\}) = \frac{1}{4}\)</span> for each pair of events <span class="math inline">\(i \neq j\)</span>, since <span class="math inline">\(HH\)</span> is the only shared outcome between any two events. However: <span class="math display">\[
+P(E_1 \cap E_2 \cap E_3) = P(\{HH\}) = \frac{1}{4} \neq \frac{1}{8} = P(E_1)P(E_2)P(E_3)
+\]</span> So the events are pairwise independent, but not mutually independent.</p>
+</div>
+</div>
+</section>
+<section id="bayes-theorem" class="level3">
+<h3 class="anchored" data-anchor-id="bayes-theorem">Bayes’ theorem</h3>
+<p>In many circumstances one may be able to compute <span class="math inline">\(P(A\;| B)\)</span> but wish to know <span class="math inline">\(P(B\;| A)\)</span>. For example, you might have a good estimate for a diagnostic test of the probability that the test is positive given that a condition, illness, or pathogen is present, but what would really be much more useful to patients is the probability that one has the condition, illness, or pathogen given that they obtained a positive test result. The following theorem provides a means of accomplishing this.</p>
+<p><span style="color:blue">Bayes’ theorem.</span> If <span class="math inline">\(\{E_i\}\)</span> is a partition of <span class="math inline">\(S\)</span> and <span class="math inline">\(A\)</span> is an event with nonzero probability, then:</p>
+<p><span class="math display">\[
+P(E_i\;|A) = \frac{P(A\;| E_i) P(E_i)}{\sum_i P(A\;| E_i) P(E_i)}
+\]</span></p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Proof
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The result follows from the multiplication rule and the law of total probability. Since <span class="math inline">\(\{E_i\}\)</span> is a partition, <span class="math inline">\(P(A) = \sum_i P(A\;| E_i) P(E_i)\)</span>; further, <span class="math inline">\(P(E_i \cap A) = P(A\;| E_i) P(E_i)\)</span> Then: <span class="math display">\[
+P(E_i\;|A) = \frac{P(E_i \cap A)}{P(A)} = \frac{P(A\;| E_i) P(E_i)}{\sum_i P(A\;| E_i) P(E_i)}
+\]</span></p>
+</div>
+</div>
+<p>The probability <span class="math inline">\(P(E_i \;| A)\)</span> is referred to as the <span style="color:blue">posterior probability</span> and the probability <span class="math inline">\(P(E_i)\)</span> is referred to as the <span style="color:blue">prior probability</span>. The theorem provides a means of obtaining the posterior from the priors (assuming the conditional probabilities <span class="math inline">\(P(A\;| E_i)\)</span> can be computed) and is sometimes interpreted as a rule for ‘updating’ the probabilities <span class="math inline">\(P(E_i)\)</span>.</p>
+<p>As a special case, note that for any event <span class="math inline">\(E\)</span>, <span class="math inline">\(\{E, E^C\}\)</span> partition the sample space. Therefore: <span class="math display">\[
+P(E\;| A) = \frac{P(A\;| E) P(E)}{P(A\;| E) P(E) + P(A\;| E^C) P(E^C)}
+\]</span></p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Example: diagnostic test
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Consider a diagnostic test and let <span class="math inline">\(A\)</span> denote the event one has the condition of interest, <span class="math inline">\(T_+\)</span> denote the event one receives a positive test result, and <span class="math inline">\(T_-\)</span> denote the event one receives a negative test result. Assume that laboratory controls indicate that:</p>
+<p><span class="math display">\[
+\begin{align*}
+P(T_+ \;| A) &amp;= 0.99 \\
+P(T_- \;| A) &amp;= 0.01 \\
+P\left(T_+ \;| A^C\right) &amp;= 0.05 \\
+P\left(T_- \;| A^C\right) &amp;= 0.95
+\end{align*}
+\]</span> As an aside, <span class="math inline">\(P(T_+\;| A)\)</span> is the true positive rate, also known as the <em>sensitivity</em> of the test; <span class="math inline">\(P(T_- \;| A^C)\)</span> is the true negative rate, also known as the <em>specificity</em>. Note that <span class="math inline">\(P(T_+ \;| A) + P(T_- \;| A^C) \neq 1\)</span>, despite the fact that <span class="math inline">\(T_+ = (T_-)^C\)</span>; this is because conditioning on different events produces different probability measures.</p>
+<p>Suppose first that the condition has a prevalence of <span class="math inline">\(0.5\%\)</span> in the general population, so assume <span class="math inline">\(P(A) = 0.005\)</span>. Then the probability that one has the condition given a positive test result is: <span class="math display">\[
+\begin{align*}
+P(A \;| T_+)
+&amp;= \frac{P(T_+ \;| A) P(A)}{P(T_+ \;| A) P(A) + P\left(T_+ \;| A^C\right) P\left(A^C\right)} \\
+&amp;= \frac{(0.99)(0.005)}{(0.99)(0.005) + (0.05)(0.995)}\\
+&amp;\approx 0.0905
+\end{align*}
+\]</span> Further, the probability that one has the condition given a negative test result is: <span class="math display">\[
+\begin{align*}
+P(A \;| T_-)
+&amp;= \frac{P(T_- \;| A) P(A)}{P(T_- \;| A) P(A) + P\left(T_- \;| A^C\right) P\left(A^C\right)}  \\
+&amp;= \frac{(0.01)(0.005)}{(0.01)(0.005) + (0.95)(0.995)} \\
+&amp;\approx 0.0000529
+\end{align*}
+\]</span></p>
+<p>This usually comes as a surprise, given that the test appears to be fairly accurate, but somewhat prone to false negatives. What happens if the condition is more prevalent, say, present in <span class="math inline">\(10\%\)</span> of the population? In this scenario:</p>
+<p><span class="math display">\[
+\begin{align*}
+P(A \;| T_+)
+&amp;= \frac{(0.99)(0.1)}{(0.99)(0.1) + (0.05)(0.9)}
+\approx 0.688 \\
+P(A \;| T_-)
+&amp;= \frac{(0.05)(0.1)}{(0.05)(0.1) + (0.95)(0.9)}
+\approx 0.0012
+\end{align*}
+\]</span></p>
+<p>Try a few other scenarios on your own. First make a guess about how the posterior probability will change, and then check the calculation.</p>
+<ol type="1">
+<li>What happens if the false positive rate <span class="math inline">\(P\left(T_+\;| A^C\right)\)</span> is higher/lower, keeping everything else fixed?</li>
+<li>What happens if the false negative rate <span class="math inline">\(P\left(T_- \;| A)\right)\)</span> is higher/lower, keeping everything else fixed?</li>
+<li>What happens if the specificity increases to <span class="math inline">\(99.5\%\)</span> but the false negative rate increases to <span class="math inline">\(10\%\)</span>?</li>
+<li>What happens if the sensitivity decreases to <span class="math inline">\(91\%\)</span> but the false positive rate drops to <span class="math inline">\(0.1\%\)</span>?</li>
+</ol>
+</div>
+</div>
+<p>The <span style="color:blue">odds</span> of an event <span class="math inline">\(E\)</span> usually refers to the ratio <span class="math inline">\(\frac{P(E)}{P\left(E^C\right)}\)</span>, but to be more precise, this is really the odds of <span class="math inline">\(E\)</span> <em>relative to its complement</em> <span class="math inline">\(E^C\)</span>. More generally, for any two events <span class="math inline">\(E_1, E_2\)</span>: <span class="math display">\[
+\text{odds}\left(E_1, E_2\right) = \frac{P(E_1)}{P(E_2)}
+\]</span> The value of the odds gives the factor by which <span class="math inline">\(E_1\)</span> is more likely than <span class="math inline">\(E_2\)</span>, and:</p>
+<ul>
+<li>if <span class="math inline">\(\text{odds}\left(E_1, E_2\right) = 1\)</span>, the events are equally likely;</li>
+<li>if <span class="math inline">\(\text{odds}\left(E_1, E_2\right) &lt; 1\)</span>, <span class="math inline">\(E_2\)</span> is more likely than <span class="math inline">\(E_1\)</span>;</li>
+<li>if <span class="math inline">\(\text{odds}\left(E_1, E_2\right) &gt; 1\)</span>, <span class="math inline">\(E_1\)</span> is more likely than <span class="math inline">\(E_2\)</span>.</li>
+</ul>
+<p>The <span style="color:blue">conditional odds</span> of one event relative to another is defined identically but with a conditional probability measure: <span class="math display">\[
+\text{odds}\left(E_1, E_2 \;| A\right) = \frac{P(E_1 \;| A)}{P(E_2\;| A)}
+\]</span> One way to understand the diagnostic test example is that, although the probability of having the condition given a positive result is low, conditioning on the test result increases the posterior odds substantially.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Example: diagnostic test (cont’d)
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The prior odds of having the condition are: <span class="math display">\[
+\text{odds}\left(A, A^C\right) = \frac{P(A)}{P\left(A^C\right)} = \frac{0.005}{0.995} = 0.0005
+\]</span> But the posterior odds after conditioning on <span class="math inline">\(T_+\)</span> are: <span class="math display">\[
+\text{odds}\left(A, A^C \;| T_+\right) = \frac{P(A\;| T_+)}{P\left(A^C \;| T_+\right)} = \frac{0.33}{0.67} \approx 0.493
+\]</span> So the odds increase by a factor of <span class="math inline">\(\frac{0.493}{0.0005} \approx 985\)</span> by conditioning on a positive test result.</p>
+</div>
+</div>
+<p>There is an <span style="color:blue">odds form of Bayes’ theorem</span>, which states that under the same conditions as the original result, the posterior odds are the prior odds multiplied by a ‘Bayes factor’: <span class="math display">\[
+\text{odds}\left(E_i, E_j\;| A\right) = \text{odds}(E_i, E_j) \cdot \frac{P(A\;| E_i)}{P(A\;| E_j)}
+\]</span> The result follows from the definition of conditional odds and application of Bayes’ theorem to the conditional probabilities <span class="math inline">\(P(E_i\;| A)\)</span>, and the proof is left as an exercise.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Example: the Monty Hall problem
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>This is a classic probability problem named after the original host of the game show <em>Let’s Make a Deal</em>. The scenario is this: on a game show, you’re presented with three doors; behind one door is a car, and behind the other two are goats. If you pick the door concealing a car, you win the car (although no one ever explains whether, if you pick otherwise, you win a goat). You choose a door; then the host opens one of the remaining doors, revealing a goat, and asks you if you want to stay with your original guess, or switch. Are you more likely to win the car if you stay, or if you switch?</p>
+<p>We’ll work out the solution in class.</p>
+</div>
+</div>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+      &nbsp;
+    </div>   
+    <div class="nav-footer-center">
+<p>© 2024 Trevor Ruiz</p>
+</div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
+
+
+
+
+</body></html>

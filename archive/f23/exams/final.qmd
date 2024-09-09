@@ -1,0 +1,94 @@
+---
+title: "Final exam"
+author: "STAT425, Fall 2023"
+author-title: "Course"
+date: "11/16/23"
+published-title: "Date"
+format:
+  latex:
+    include-in-header:
+      - text:
+          \usepackage{fancyhdr}
+          \usepackage{pdflscape}
+    include-before-body:
+      - text:
+          \pagestyle{fancy}
+          \fancyhead[LH]{Final exam}
+          \fancyhead[RH]{STAT425, Fall 2023}
+          Name \rule{8cm}{0.15mm}
+          Section \rule{8cm}{0.15mm}
+---
+
+**Instructions:** read each problem carefully and provide solutions in the space below the prompt or on the reverse side of the page. You should provide as much justification and detail in calculation as needed to clearly display your thought process, but need not show or justify every step. If you use results from class in your solution, you can simply write, \`\`by a theorem/problem/example from class\ldots{}". None of the problems require you to perform numerical calculations. If you are unable to obtain a complete solution, a solution sketch may receive partial credit if it reflects a clear understanding of the problem and a well-reasoned approach. Please feel free to ask any clarifying questions about the problems as they arise. Good luck!
+
+
+1. Let $(X, Y)$ be distributed according to the PDF $f(x, y) = e^{-y}$ for $0 < x < y < \infty$. Find the covariance and correlation of $X$ and $Y$. 
+
+2.  About 5% of adults in the continental U.S. have coronary artery disease (CAD). From demographic data, the probabilities that a randomly selected individual lives in the northeast, southeast, south, midwest, or west, are approximately:
+
+| NE   | S   | MW   | W   |
+|------|-----|------|-----|
+| 0.2 | 0.2 | 0.2 | 0.4 |
+
+a.  Fill in the table below with a joint probability distribution in which region and CAD rate are independent. Is this distribution unique? Explain.
+
+|         | NE  | S   | MW  | W   |
+|---------|-----|-----|-----|-----|
+| CAD     |     |     |     |     |
+| healthy |     |     |     |     |
+
+b.  Is it possible that the conditional probability $P(CAD | W)$ is 0.2? Why or why not?
+
+
+3. Zero-inflated probability models modify existing distributions by adding excess probability mass at zero. These are useful for modeling data with many zeroes. Let $Y \sim \text{Poisson}(\lambda)$ and $Z \sim \text{Bernoulli}(p)$. let $X$ be a random variable such that:
+
+$$
+\begin{align*}
+P(X = x | Z = 1) &= 
+\begin{cases}
+  1 &,\; x = 0 \\
+  0 &,\; x \neq 0
+\end{cases} \\
+P(X = x | Z = 0) &= 
+P(Y = x)
+\end{align*}
+$$
+The distribution of $X$ is called a "zero-inflated Poisson". Determine the PMF of $X$ and find its mean. 
+
+4. Let $X_1, X_2$ be independent Gaussian random variables with means and variances $\mu_1, \mu_2$ and $\sigma_1^2, \sigma_2^2$, respectively. Find the MGF of $X_1 + X_2$ and use this to determine its distribution.
+
+5. Let $X_1, X_2$ be jointly uniform on the set $|x_1| + |x_2| \leq 1$. Sketch the support set, determine the joint PDF, and then find the conditional distribution of $X_1$ given $X_2 = x_2$. Based on your answer, are $X_1, X_2$ dependent?
+
+<!-- ######################## -->
+
+<!-- ##COMMON DISTRIBUTIONS## -->
+
+<!-- ######################## -->
+
++--------------------+----------------------------------------------------------------------------+-----------------------+----------------------------------+----------------------+-----------------------------------------------+-----------------------------------------------------------------------------------------+
+| Name               | PDF/PMF                                                                    | Support               | Parameters                       | Mean                 | Variance                                      | MGF                                                                                     |
++====================+============================================================================+=======================+==================================+======================+===============================================+=========================================================================================+
+| Discrete uniform   | $\frac{1}{n}$                                                              | $\{a_1, \dots, a_n\}$ | none                             | $\bar{a}$            | $\frac{1}{n}\sum_{i = 1}^n (a_i - \bar{a})^2$ | $\frac{1}{n}\sum_{i = 1}^n e^{ta_i}$                                                    |
++--------------------+----------------------------------------------------------------------------+-----------------------+----------------------------------+----------------------+-----------------------------------------------+-----------------------------------------------------------------------------------------+
+| Bernoulli          | $p^x (1 - p)^{1 - x}$                                                      | $\{0, 1\}$            | $p \in (0, 1)$                   | $p$                  | $p(1 - p)$                                    | $1 - p + pe^t$                                                                          |
++--------------------+----------------------------------------------------------------------------+-----------------------+----------------------------------+----------------------+-----------------------------------------------+-----------------------------------------------------------------------------------------+
+| Geometric          | $(1 - p)^x p$                                                              | $\mathbb{N}$          | $p \in (0, 1)$                   | $\frac{1 - p}{p}$    | $\frac{1 - p}{p^2}$                           | $\frac{p}{1 - (1 - p)e^t}$                                                              |
+|                    |                                                                            |                       |                                  |                      |                                               |                                                                                         |
+|                    |                                                                            |                       |                                  |                      |                                               | $t < -\log(1 - p)$                                                                      |
++--------------------+----------------------------------------------------------------------------+-----------------------+----------------------------------+----------------------+-----------------------------------------------+-----------------------------------------------------------------------------------------+
+| Binomial           | ${n \choose p} p^x (1 - p)^{n - x}$                                        | $\{0, 1, \dots, n\}$  | $n \in \mathbb{Z}^+$             | $np$                 | $np(1 - p)$                                   | $\left(1 - p + pe^t\right)^n$                                                           |
+|                    |                                                                            |                       |                                  |                      |                                               |                                                                                         |
+|                    |                                                                            |                       | $p \in (0, 1)$                   |                      |                                               |                                                                                         |
++--------------------+----------------------------------------------------------------------------+-----------------------+----------------------------------+----------------------+-----------------------------------------------+-----------------------------------------------------------------------------------------+
+| Negative binomial  | ${r + x - 1 \choose x} p^r (1 - p)^x$                                      | $\mathbb{N}$          | $r \in \mathbb{Z}^+$             | $\frac{r(1 - p)}{p}$ | $\frac{r(1 - p)}{p^2}$                        | $\left(\frac{p}{1 - (1 - p)e^t}\right)^r$                                               |
+|                    |                                                                            |                       |                                  |                      |                                               |                                                                                         |
+|                    |                                                                            |                       | $p \in (0, 1)$                   |                      |                                               | $t < -\log(1 - p)$                                                                      |
++--------------------+----------------------------------------------------------------------------+-----------------------+----------------------------------+----------------------+-----------------------------------------------+-----------------------------------------------------------------------------------------+
+| Poisson            | $\frac{\lambda^xe^{-\lambda}}{x!}$                                         | $\mathbb{N}$          | $\lambda > 0$                    | $\lambda$            | $\lambda$                                     | $\exp\left\{-\lambda(1 - e^t)\right\}$                                                  |
++--------------------+----------------------------------------------------------------------------+-----------------------+----------------------------------+----------------------+-----------------------------------------------+-----------------------------------------------------------------------------------------+
+| Continuous uniform | $\frac{1}{b - a}$                                                          | $(a, b)$              | $-\infty < a < b < \infty$       | $\frac{b + a}{2}$    | $\frac{(b - a)^2}{12}$                        | $\begin{cases}\frac{e^{ta} - e^{tb}}{t(b - a)} &,\;t\neq 0 \\ 1 &,\; t = 0 \end{cases}$ |
++--------------------+----------------------------------------------------------------------------+-----------------------+----------------------------------+----------------------+-----------------------------------------------+-----------------------------------------------------------------------------------------+
+| Gaussian           | $\frac{1}{\sqrt{2\pi\sigma^2}} e^{-\frac{1}{2\sigma^2} (x - \mu)^2}$       | $\mathbb{R}$          | $\mu \in \mathbb{R}, \sigma > 0$ | $\mu$                | $\sigma^2$                                    | $\exp\left\{\mu t + \frac{1}{2}t^2\sigma^2\right\}$                                     |
++--------------------+----------------------------------------------------------------------------+-----------------------+----------------------------------+----------------------+-----------------------------------------------+-----------------------------------------------------------------------------------------+
+| Gamma              | $\frac{1}{\Gamma(\alpha)\beta^\alpha} x^{\alpha - 1} e^{-\frac{x}{\beta}}$ | $x > 0$               | $\alpha > 0, \beta > 0$          | $\alpha\beta$        | $\alpha\beta^2$                               | $\left(1 - \beta t\right)^{-\alpha}$                                                    |
++--------------------+----------------------------------------------------------------------------+-----------------------+----------------------------------+----------------------+-----------------------------------------------+-----------------------------------------------------------------------------------------+

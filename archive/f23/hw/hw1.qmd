@@ -1,0 +1,60 @@
+---
+title: "Homework 1"
+author: "STAT425, Fall 2023"
+author-title: "Course"
+date: "10/5/2023"
+published-title: "Due in class on"
+---
+
+Please prepare your solutions neatly, numbered, and in order; ideally, you'll write up a final clean copy after completing all problems on scratch paper. Please note that if a prompt includes a question, you're expected to support answers with reasoning, even if the prompt does not explicitly ask for a justification. Provide your name at the top of your submission, and if you collaborate with other students in the class, please list their names at the top of your submission beneath your own.
+
+1.  (Serial systems) In a *serial* system, components are linked together in such a way that the system only works if every component works. For example, consider a string of Christmas lights; if one light goes out, the whole string goes out. Suppose that one has a serial system with $k$ components that all function independently of one another. The state of the system can be represented by a binary vector $x = (x_1, \dots, x_k)$ where the coordinate $x_i$ indicates whether the $i$th component is working. The relevant sample space is the set of all possible values of $x$, that is, $S = \{(x_1, \dots, x_k): x_i \in \{0, 1\}\}$, so that the system states are the outcomes, and the events are all possible subsets $\mathcal{S} = 2^S$. Let $E_i \in \mathcal{S}$ denote the event that the $i$th component works.
+
+    i.  Express the sample space $S$ as a Cartesian product.
+    ii. Express the event $E_i$ as a set in terms of the system states $x \in S$.
+    iii. List two distinct outcomes included in $E_1$ and two distinct outcomes included in $E_2$.
+    iv. Is $\{E_i\}$ a disjoint collection? Why or why not?
+    v.  Find the number of system states $|S|$ and the number of possible events $|\mathcal{S}|$.
+
+2.  Continuing the example in the previous problem, express each of the following events in terms of the collection $\{E_i\}$.
+
+    i.  The first component works and the second component fails.
+    ii. The first three components work.
+    iii. The system works.
+    iv. The system fails.
+    v.  Exactly one component fails.
+
+3.  Consider the monotone sequences of sets defined by $A_n = [0, 1 + \frac{1}{n})$ and $B_n = [0, 1 - \frac{1}{n})$.
+
+    i.  Is $\{A_n\}$ increasing or decreasing?
+    ii. Is $\{B_n\}$ increasing or decreasing?
+    iii. True or false: $\lim_{n \rightarrow\infty} A_n = \lim_{n\rightarrow\infty} B_n$? Explain. (*Hint*: $x \in \bigcup_n C_n$ just in case $x \in C_n$ for at least one $n$; similarly, $x \in \bigcap_n C_n$ just in case $x \in C_n$ for every $n$.)
+
+4.  Consider the "experiment" of rolling 2 six-sided dice, and denote the outcomes by pairs $(i, j)$ where $i, j \in \{1, 2, 3, 4, 5, 6\}$.
+
+    i.  Write the sample space $S$ for this experiment, assuming the order of the dice does not matter (*i.e.*, $(3, 2) = (2, 3)$), and find $|S|$.
+    ii. If $P(E) = 1$ whenever $E = \{(1, 1)\}$ and $P(E) = 0$ otherwise for $E \in 2^S$, is $P$ a valid probability measure? Why or why not?
+    iii. If $P(E) = 1$ whenever $(1, 1) \in E$ and $P(E) = 0$ otherwise for $E \in 2^S$, is $P$ a valid probability measure? Why or why not?
+
+5.  (Uniform distribution) \[OPTIONAL\] Consider the triple $(S, \mathcal{S}, P)$ where:
+
+    $$
+    \begin{align*}
+    S &= [0, 1] \\
+    \mathcal{S} &= \left\{A \subseteq S: A \text{ is a countable union or intersection of open or closed intervals or their complements}\right\} \\
+    P(E) &= \int_E dx,\quad E\in\mathcal{S} \qquad\text{(i.e., total length of $E$)}
+    \end{align*}
+    $$
+
+    i.  Show that $(S, \mathcal{S}, P)$ is a probability space by verifying the requisite conditions on $\mathcal{S}$ and $P$.
+    ii. Let $\mathcal{C}$ denote the Cantor set. Show that $P(\mathcal{C}) = 0$.
+
+    *Remark*: the integral $\int_E dx$ is defined as follows:
+
+    -   for contiguous intervals, $\int_{(a, b)} dx = \int_{[a, b]} dx = \int_{[a, b)} dx = \int_{(a, b]} dx = \int_a^b dx$
+
+    -   for disjoint intervals $E_i$, $\int_{\bigcup_i E_i} dx = \sum_i \int_{E_i} dx$
+
+6.  Let $(S, \mathcal{S}, P)$ be a probability space, and let $\{E_i\}$ be a collection of events. Show that if $\{E_i\}$ is a finite or countable partition of any event $A \subseteq S$, then $\sum_i P(E_i) = P(A)$.
+
+7.  (Bonferroni inequality) Use results from class to show that $P\left(\bigcap_{i = 1}^n E_i\right) \geq 1 - \sum_{i = 1}^n P\left(E^C\right)$.

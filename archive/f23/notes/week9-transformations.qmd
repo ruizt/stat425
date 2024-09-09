@@ -1,0 +1,117 @@
+---
+title: "Transformations"
+author: "STAT425, Fall 2023"
+author-title: "Course notes"
+date: "12/15/2023"
+published-title: "Archived"
+---
+
+Consider an arbitrary transformation of a random vector $X$; we'll use the generic notation $Y = T(X)$. If $T$ is one-to-one, then it has a well-defined inverse $X = T^{-1}(Y)$. This entails that each vector component of $X$ can be written as a function of the components of $Y$, which makes the problem of finding the distribution of $Y$ tractable using methods similar to those discussed earlier for transformations of random variables.
+
+To simplify matters, consider the bivariate setting, so that $X = (X_1, X_2)$. If $T$ is one-to-one, then we can write $X$ as:
+$$
+\begin{align*}
+X_1 &= w_1(Y_1, Y_2) \\
+X_2 &= w_2(Y_1, Y_2)
+\end{align*}
+$$
+If $S$ denotes the support set of $X$, let $\mathcal{T}(S)$ denote the image of $S$ under the transformation $T$.
+
+When $X$ is a discrete random vector, the distribution of $Y$ can be obtained by direct substitution using the joint mass function:
+$$
+P(Y_1 = y_1, Y_2 = y_2) = P(X_1 = w_1(y_1, y_2), X_2 = w_2(y_1, y_2))
+\;,\quad
+(y_1, y_2) \in \mathcal{T}(S)
+$$
+
+::: callout-note
+## Example
+
+:::
+
+When $X$ is continuous, finding the distribution of $Y = T(X)$ is a little more complex, but when the inverse transformation is smooth --- specifically, when first-order partial derivatives exist --- the PDF of $Y$ can be found using a change of variable technique.
+
+Since $T$ is one-to-one, for any event $B \in \mathcal{T}(S)$, $\{Y\in B\}$ and $\{X \in T^{-1}(B)\}$ are equivalent events, so one has that $P(Y \in B) = P(X \in T^{-1}(B))$. As a result:
+$$
+P(Y \in B) = \int\int_{T^{-1}(B)} f(x_1, x_2) dx_1 dx_2
+$$
+Now consider applying a multivariate change of variables to this integral by applying the transformation $T$. Denoting the inverse transformations by $w_1 = w_1(y_1, y_2)$ and $w_2 = w_2(y_1, y_2)$ for short, from calculus one has:
+$$
+\int\int_{T^{-1}(B)} f(x_1, x_2) dx_1 dx_2
+= \int\int_{T(T^{-1}(B))} f(w_1, w_2) |J| dw_1 dw_2
+$$
+In the latter expression, $J$ is the determinant of the Jacobian matrix, *i.e.*, the determinant of the matrix of partial derivatives of the inverse transformation:
+$$
+J = \left| \begin{array}{cc}
+  \frac{\partial w_1}{\partial y_1} &\frac{\partial w_1}{\partial y_2} \\
+  \frac{\partial w_2}{\partial y_1} &\frac{\partial w_2}{\partial y_2} \\
+  \end{array}\right|
+$$
+Thus one has:
+$$
+P(Y \in B) = \int\int_B f(w_1, w_2) |J| dw_1 dw_2
+$$
+And since densities are unique to distributions, the PDF of $Y$ must be:
+$$
+f_Y(y_1, y_2) = f_X \left(w_1(y_1, y_2), w_2(y_1, y_2)\right) |J|
+$$
+This provides a general formula for obtaining the PDF of a one-to-one transformation of a random vector; the technique extends directly to the multivariate case from the bivariate case, in the sense that:
+$$
+f_Y (y_1, \dots, y_n) = f_X(w_1, \dots, w_n) |J|
+$$
+
+::: callout-note
+## Example: sum and difference
+
+Let $X = (X_1, X_2)$ be a continuous random vector distributed according to joint PDF $f_X(x_1, x_2)$ and supported on $S$. What is the distribution of $X_1 + X_2$? What about the difference $X_1 - X_2$?
+
+First we'll solve this problem in general, and then consider a specific density function. For the general solution, consider this transformation:
+$$
+\begin{align*}
+Y_1 &= X_1 + X_2 \\
+Y_2 &= X_1 - X_2 
+\end{align*}
+$$
+This is one-to-one, and the inverse transformation is:
+$$
+\begin{align*}
+X_1 &= \frac{1}{2}(Y_1 + Y_2) \\
+X_2 &= \frac{1}{2}(Y_1 - Y_2)
+\end{align*}
+$$
+The support of $Y_1$ will depend on the specific distribution of $X$ under consideration, but $-Y_1 \leq Y_2 \leq Y_1$, since the difference cannot exceed the positive or negative sum. We'll simply write that $Y$ is supported on $\mathcal{T}(S)$. The Jacobian determinant of this transformation is:
+$$
+J = \left|\begin{array}{cc}
+  \frac{1}{2} &\frac{1}{2} \\
+  \frac{1}{2} &-\frac{1}{2}
+  \end{array}\right|
+= -\frac{1}{2}
+$$
+So using the change of variables technique, the joint PDF of $Y$ is:
+$$
+f_Y (y_1, y_2) = \frac{1}{2} f_X\left(\frac{1}{2}(y_1 + y_2), \frac{1}{2}(y_1 - y_2)\right)
+\;,\quad (y_1, y_2) \in \mathcal{T}(S)
+$$
+The marginals are:
+$$
+\begin{align*}
+f_{Y_1}(y_1) &= \int \frac{1}{2} f_X\left(\frac{1}{2}(y_1 + y_2), \frac{1}{2}(y_1 - y_2)\right)dy_2 \\
+f_{Y_2}(y_2) &= \int \frac{1}{2} f_X\left(\frac{1}{2}(y_1 + y_2), \frac{1}{2}(y_1 - y_2)\right)dy_1 \\
+\end{align*}
+$$
+For a specific example, consider $f_X(x_1, x_2) = \frac{1}{4}\exp\left\{-\frac{1}{2}(x_1 + x_2)\right\}$ supported on the positive quadrant $x_1 > 0, x_2 > 0$. Using the expression above, the joint distribution is:
+$$
+f_Y(y_1, y_2) = \frac{1}{8}\exp\left\{-\frac{1}{2} y_1 \right\}
+\;,\quad
+y_1 > 0, -y_1 < y_2 < y_1
+$$
+So the distribution of the sum $X_1 + X_2$ is the marginal distribution of $Y_1$, which is characterized by the density:
+$$
+f_{Y_1} (y_1) = \int_{-y_1}^{y_1} \frac{1}{8}\exp\left\{-\frac{1}{2} y_1 \right\} = \frac{1}{4} y_1 \exp\left\{-\frac{1}{2}y_1\right\}
+\;,\quad
+y_1 > 0
+$$
+A bit of rearrangement of the density reveals that $Y_1$ follows a gamma distribution with parameters $\alpha = 2, \beta = 2$.
+
+The distribution of the difference $X_1 - X_2$ is the marginal of $Y_2$; we'll find this distribution in class.
+:::

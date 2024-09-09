@@ -1,0 +1,247 @@
+---
+title: "Expectation"
+author: "STAT425, Fall 2023"
+author-title: "Course notes"
+date: "12/15/2023"
+published-title: "Archived"
+---
+
+### Moments
+
+The expected values of integer exponents of a random variable are known as [moments]{style="color:blue"} of the random variable (or its distribution). We'll write moments as: $$
+\mu_k = \mathbb{E}X^k
+$$
+
+We say that the $k$th moment exists if $\mathbb{E}\left[|X|^k\right] < \infty$. It can be shown that if $\mu_k < \infty$ then also $\mu_j < \infty$ for every $j < k$; that is, if the $k$th moment exists, then so do all the lower moments.
+
+::: callout-tip
+## Proof
+
+Suppose the $k$th moment exists, so that $\mathbb{E}\left[|X|^k\right] < \infty$, and let $j \leq k$ (assume $j, k$ are integers). The $j$th moment exists just in case $\mathbb{E}\left[|X|^j\right] < \infty$. The strategy will be to show that $\mathbb{E}\left[|X|^j\right] \leq \mathbb{E}\left[|X|^k\right]$
+
+If $X$ is continuous, then: $$
+\begin{align*}
+\mathbb{E}\left[|X^j|\right] 
+&= \int_\mathbb{R} |x|^j f(x) dx \\
+&= \int_{|x| \leq 1} |x|^j f(x) dx + \int_{|x| > 1} |x|^j f(x) dx \\
+&\leq \int_{|x| \leq 1} f(x)dx + \int_{|x| > 1} |x|^k f(x) dx \\
+&\leq \int_\mathbb{R} f(x)dx + \int_\mathbb{R} |x|^k f(x) dx \\
+&= 1 + \mathbb{E}\left[|x|^k\right] \\
+&\leq \mathbb{E}\left[|x|^k\right]
+\end{align*}
+$$
+
+The proof in the discrete case is a parallel argument but with sums in place of integrals, and is left as an exercise.
+:::
+
+The [centered moments]{style="color:blue"} of a random variable (or its distribution) are defined as: $$
+\tilde{\mu}_k = \mathbb{E}(X - \mu_1)^k
+$$ Note that the mean of a random variable is its first moment. The variance is its second centered moment.
+
+The moment sequence uniquely defines a random variable whenever moments exist for every $k \in \mathbb{N}$ and the random variable has bounded support. The moments of a random variable can under many circumstances be obtained from the [moment generating function]{style="color:blue"} (MGF) rather than direct calculation. The MGF is defined as the expectation $$
+m_X (t) = \mathbb{E}e^{tX}
+\;,\qquad
+t \in (-h, h)
+$$ provided it exists for some $h>0$. This is called the moment generating function because: $$
+\frac{d^k}{d^k t} m_X (t)\Big\rvert_{t = 0} 
+= \mathbb{E}X^k e^{tX}\Big\rvert_{t = 0} 
+= \mathbb{E}X^k
+$$
+
+::: callout-note
+## Example: Poisson MGF
+
+If $X \sim \text{Poisson}(\lambda)$ then for all $t\in \mathbb{R}$: $$
+\begin{align*}
+m_X (t) 
+&= \mathbb{E}e^{tX} \\
+&= \sum_{x = 0}^\infty e^{tx} \frac{\lambda^x e^{-\lambda}}{x!} \\
+&= e^{-\lambda(1 - e^t)} \sum_{x = 0}^\infty \underbrace{\frac{(\lambda e^t)^x e^{-\lambda e^t}}{x!}}_{\text{Poisson}(\lambda e^t) \text{ PMF}} \\
+&= \exp\left\{-\lambda(1 - e^t)\right\}
+\end{align*}
+$$
+
+Then, to find the first and second moments, differentiate and evaluate at $t = 0$: $$
+\begin{align*}
+\frac{d}{dt}m_X(t)\Big\rvert_{t = 0} 
+&= \lambda e^t \exp\left\{-\lambda(1 - e^t)\right\} \Big\rvert_{t = 0} = \lambda \\
+\frac{d^2}{d^2t}m_X(t)\Big\rvert_{t = 0} 
+&= \frac{d}{dt} \left[\lambda e^t \exp\left\{-\lambda(1 - e^t)\right\} \right]\Big\rvert_{t = 0} \\
+&= \left[\lambda e^t \exp\left\{-\lambda(1 - e^t)\right\} + (\lambda e^t)^2 \exp\left\{-\lambda(1 - e^t)\right\} \right]\Big\rvert_{t = 0} \\
+&= \lambda + \lambda^2
+\end{align*}
+$$ This matches the previous calculation for $\mu_1, \mu_2$.
+:::
+
+Moment generating functions, when they exist, uniquely characterize probability distributions. If $X$ and $Y$ are two random variables whose moment generating functions exist, then $X \stackrel{d}{=} Y$ if and only if $m_X(t) = m_Y(t)$ for all $t$ in a neighborhood of zero. The proof is advanced, so we will simply state this as a fact.
+
+As a consequence, an MGF can be both a way of describing a distribution and a useful tool, as the examples below illustrate.
+
+::: callout-note
+## Gaussian MGF
+
+If $Z \sim N(0, 1)$ then the MGF of $Z$ is: $$
+\begin{align*}
+m_Z (t) 
+&= \mathbb{E}e^{tZ} \\
+&= \int_\mathbb{R} e^{tz} \frac{1}{\sqrt{2\pi}} e^{-\frac{z^2}{2}} dz \\
+&= \int_\mathbb{R} \frac{1}{\sqrt{2\pi}} e^{tz - \frac{z^2}{2}} dz \\
+&= e^{\frac{1}{2}t^2} \underbrace{\int_\mathbb{R} \frac{1}{\sqrt{2\pi}} e^{-\frac{1}{2} (z - t)^2} dz}_{N(t, 1) \text{ PDF}} \\
+&= e^{\frac{1}{2}t^2}
+\end{align*}
+$$ Now if $X \sim N(\mu, \sigma^2)$ then $X \stackrel{d}{=} \sigma Z + \mu$, so $X$ has MGF: $$
+m_X (t) 
+= \mathbb{E}e^{tX} 
+= \mathbb{E}e^{t(\sigma Z + \mu)} 
+= \mathbb{E}e^{(t\sigma)Z}e^{t\mu}
+= e^{t\mu}m_Z(t\sigma)
+= \exp\left\{t\mu + \frac{1}{2}t^2\sigma^2\right\}
+$$ Then the first two moments of each distribution are:
+
+$$
+\begin{align*}
+\mathbb{E}Z &= m'_Z(0) = t e^{\frac{1}{2}t^2}\Big\rvert_{t = 0} = 0 \\
+\mathbb{E}Z^2 &= m''_Z(0) = e^{\frac{1}{2}t^2} + t^2 e^{\frac{1}{2}t^2}\Big\rvert_{t = 0} = 0 \\
+\mathbb{E}X &= m'_X(0) = (\mu + t\sigma^2)e^{\mu t + \frac{1}{2}t^2\sigma^2}\Big\rvert_{t = 0} = \mu \\
+\mathbb{E}X^2 &= m''_X(0) = \sigma^2 m_X(t) + (\mu + t\sigma^2)^2 m_X(t)\Big\rvert_{t = 0} = \mu^2 + \sigma^2
+\end{align*}
+$$ So then by the variance formula, one has: $$
+\begin{align*}
+\text{var}Z &= \mathbb{E}Z^2 - (\mathbb{E}Z)^2 = 1 - 0^2 = 1 \\
+\text{var}X &= \mathbb{E}X^2 - (\mathbb{E}X)^2 = \mu^2 + \sigma^2 - \mu^2 = \sigma^2 \\
+\end{align*}
+$$
+:::
+
+Notice that in the above example, it is easy to find the MGF of a linear function of a random variable with a known MGF. We can state this as a lemma.
+
+**Lemma**. If the MGF of $X$ exists and $Y = aX + b$, then the MGF of $Y$ is $m_Y (t) = e^{bt}m_X (at)$.
+
+::: callout-tip
+## Proof
+
+$m_Y (t) = \mathbb{E}e^{tY} = \mathbb{E}e^{t(aX + b)} = e^{tb}\mathbb{E} e^{(ta)X} = e^{tb}m_X (at)$
+:::
+
+The MGF occasionally comes in handy for other transformations, as the next example illustrates.
+
+::: callout-note
+## Lognormal moments
+
+$X$ has a [lognormal distribution]{style="color:blue"} if $\log X \sim N(\mu, \sigma^2)$. The moments of $X$ can actually be found from the MGF of $\log X$, since: $$
+m_{\log X} (t) = \mathbb{E}e^{t\log X} = \mathbb{E}X^t
+$$ Since $\log X$ is Gaussian, $m_{\log X} (t) = \exp\left\{\mu t + \frac{1}{2}t^2\sigma^2\right\}$, so: $$
+\mathbb{E}X^t = \exp\left\{\mu t + \frac{1}{2}t^2\sigma^2\right\}
+$$ Interestingly, this expression holds for non-integer values of $t$, since the MGF exists for every $t \in \mathbb{R}$.
+:::
+
+One of many interesting properties of the standard Gaussian distribution are that all its moments exist, and all odd moments are zero. Moreover, for any Gaussian distribution, the full moment sequence can be calculated explicitly. The next example explores these properties.
+
+::: callout-note
+## Gaussian moment sequence
+
+If $Z \sim N(0, 1)$ so that $Z$ has a standard Gaussian distribution, then $m_Z (t) = e^{\frac{1}{2}t^2}$.
+
+The MGF is infinitely differentiable, and a Taylor expansion about zero gives: $$
+m_Z (t) = m_Z(0) + m'_Z(0) \frac{t}{1!} + m''_Z(0)\frac{t^2}{2!} + \cdots + m^{(k)}_Z (0) \frac{t^k}{k!} + \cdots
+$$ Notice, however, that the series expansion of the exponential function $e^x = \sum_{n = 0}^\infty \frac{x^n}{n!}$ (also a Taylor expansion about zero) gives that: $$
+\begin{align*}
+e^{\frac{1}{2}t^2} 
+&= 1 + \frac{1}{1!}\left(\frac{t^2}{2}\right)^1 + \frac{1}{2!}\left(\frac{t^2}{2}\right)^2 + \cdots + \frac{1}{k!}\left(\frac{t^2}{2}\right)^k + \cdots \\
+&= 1 + \frac{t^2}{2\cdot 1!} + \frac{t^4}{2\cdot 2!} + \cdots + \frac{t^{2k}}{2^k \cdot k!} + \cdots \\
+&= 1 + \frac{t^2}{2!}\cdot \frac{2!}{2^1 1!} + \frac{t^4}{4!}\cdot \frac{4!}{2^2 2!} + \cdots + \frac{t^{2k}}{(2k)!} \cdot \frac{(2k)!}{2^k k!} + \cdots \\
+&= 1 + c_2 \frac{t^2}{2!} + c_4\frac{t^4}{4!} + \cdots + c_{2k}\frac{t^{2k}}{(2k)!} + \cdots
+\end{align*}
+$$ Above, $c_{2k} = \frac{(2k)!}{2^k k!}$ for $k = 1, 2, \dots$, and $c_{2k - 1} = 0$. By equating the series, which entails that the coefficients match, one has that $c_k = m_Z^{(k)} (0)$, and thus for $k = 1, 2, \dots$: $$
+\begin{align*}
+\mathbb{E} Z^{2k} &= c_{2k} = \frac{(2k)!}{2^k k!} \\
+\mathbb{E} Z^{2k - 1} &= c_{2k - 1} = 0
+\end{align*}
+$$
+
+Now if $X \sim N(\mu, \sigma^2)$, then $X \stackrel{d}{=} \sigma Z + \mu$, and by the binomimal theorem, one has: $$
+\mathbb{E}X^k 
+= \mathbb{E}\left[(\sigma Z + \mu)^k\right]
+= \mathbb{E}\left[ \sum_{j = 0}^k {k \choose j} (\sigma Z)^j \mu^{k - j}\right]
+= \sum_{j = 0}^k {k \choose j} \sigma^j \mathbb{E}Z^j \mu^{k - j}
+$$ Thus, the moment sequence for any Gaussian random variable can be obtained by direct calculation by first computing the moments of the standard Gaussian distribution via $c_{2k}$, and then applying the formula above.
+:::
+
+### The Gamma distribution
+
+We'll cover one last common family of distributions closely connected with the gamma or factorial function. The [gamma function]{style="color:blue"} is defined as the integral: $$
+\Gamma(\alpha) = \int_0^\infty y^{\alpha - 1} e^{-y} dy
+$$
+
+**Lemma**. Some key properties of the gamma function are:
+
+i.  $\Gamma(1) = 1$
+ii. $\Gamma\left(\frac{1}{2}\right) = \sqrt{pi}$
+iii. $\Gamma(\alpha) = (\alpha - 1)\Gamma(\alpha - 1)$
+
+::: callout-tip
+## Proof
+
+For (i), $\Gamma(1) = \int_0^\infty e^{-y}dy = 1$. For (ii), writing the definition and making the substituion $z^2 = y$ yields the Gaussian integral: $$
+\Gamma\left(\frac{1}{2}\right) 
+= \int_0^\infty y^{-\frac{1}{2}}e^{-y}dy 
+= 2\int_0^\infty e^{-z^2}dz 
+= \int_{-\infty}^\infty e^{-z^2}dz = \sqrt{pi}
+$$
+
+Lastly, (iii) is established via integration by parts: $$
+\begin{align*}
+\Gamma(\alpha) 
+&= \int_0^\infty \underbrace{y^{\alpha - 1}}_{u}\underbrace{e^{-y}}_{dv}dy \\
+&= \left[-y^{\alpha - 1} e^{-y}\right]_0^\infty + \int_0^\infty (\alpha - 1) y^{\alpha - 2} e^{-y}dy \\
+&= (\alpha - 1) \int_0^\infty y^{(\alpha - 1) - 1} e^{-y}dy \\
+&= (\alpha - 1) \Gamma(\alpha - 1) 
+\end{align*}
+$$
+:::
+
+Consider now the kernel $x^{\alpha - 1}e^{-\frac{x}{\beta}}$ for $\alpha > 0, \beta > 0$: $$
+\int_0^\infty x^{\alpha - 1}e^{-\frac{x}{\beta}}
+= \int_0^\infty (z\beta)^{\alpha - 1}e^{-z}\beta dz
+= \beta^\alpha \Gamma(\alpha)
+$$
+
+Normalizing the kernel to integrate to one yields the gamma density. $X\sim \Gamma(\alpha, \beta)$ if the PDF of $X$ is: $$
+f(x) = \frac{1}{\Gamma(\alpha)\beta^\alpha} x^{\alpha - 1}e^{-\frac{x}{\beta}}
+\;,\qquad
+x > 0, \alpha > 0, \beta > 0
+$$
+
+Since this is a nonnegative function that integrates to one over the support, it defines a valid probability distribution. The moments can be obtained by direct calculation.
+
+::: callout-note
+## Gamma moments
+
+The moments of a gamma random variable can in fact be computed directly. If $X \sim \Gamma (\alpha, \beta)$, then: $$
+\begin{align*}
+\mathbb{E}X^k 
+&= \frac{1}{\Gamma(\alpha)\beta^\alpha} \int_0^\infty x^k \cdot x^{\alpha - 1} e^{-\frac{x}{\beta}}dx \\
+&= \frac{1}{\Gamma(\alpha)\beta^\alpha} \int_0^\infty x^{(\alpha + k) - 1} e^{-\frac{x}{\beta}}dx \\
+&= \frac{\Gamma(\alpha + k)\beta^{\alpha + k}}{\Gamma(\alpha)\beta^\alpha}\int_0^\infty \frac{1}{\Gamma(\alpha + k)\beta^{\alpha + k}} x^{(\alpha + k) - 1} e^{-\frac{x}{\beta}}dx \\
+&= \frac{\Gamma(\alpha + k)\beta^{\alpha + k}}{\Gamma(\alpha)\beta^\alpha}
+\end{align*}
+$$ Nonetheless, the moment generating function of $X$ is: $$
+\begin{align*}
+m_X (t) 
+&= \mathbb{E}e^{tX} \\
+&= \frac{1}{\Gamma(\alpha)\beta^\alpha}\int_0^\infty e^{tx}x^{\alpha - 1}e^{-x}dx \\
+&= \frac{1}{\Gamma(\alpha)\beta^\alpha}\int_0^\infty x^{\alpha - 1}e^{-x\left(\frac{1}{\beta} - t\right)}dx \\
+&= \frac{1}{\left(\frac{1}{\beta} - t\right)^\alpha \beta^\alpha}\int_0^\infty \frac{\left(\frac{1}{\beta} - t\right)^\alpha}{\Gamma(\alpha)} x^{\alpha - 1}e^{-x\left(\frac{1}{\beta} - t\right)}dx \\
+&= (1 - \beta t)^{-\alpha}
+\;,\quad t < \frac{1}{\beta}
+\end{align*}
+$$ The MGF is useful primarily for determining whether, *e.g.*, a transformation has a gamma distribution. We'll see examples later.
+:::
+
+Some special cases include:
+
+-   the [chi square distribution]{style="color:blue"} with parameter $\nu > 0$ is a gamma distribution with parameters $\alpha = \frac{\nu}{2}$ and $\beta = 2$
+-   the [exponential distribution]{style="color:blue"} with parameter $\beta$ is a gamma distribution with parameter $\alpha = 1$
+
+There is a special relationship between the standard Gaussian and the chi-square (and therefore gamma) distributions: if $Z\sim N(0, 1)$ then $Z^2 \sim \chi^2_1$. This is shown by finding the CDF of $Z^2$ and differentiating; the proof is left as an exercise.
+

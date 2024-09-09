@@ -1,0 +1,55 @@
+---
+title: "Homework 4"
+author: "STAT425, Fall 2023"
+author-title: "Course"
+date: "11/2/2023"
+published-title: "Due in class on"
+# format:
+#   latex:
+#     include-in-header:
+#       - text:
+#           \usepackage{fancyhdr}
+#     include-before-body:
+#       - text:
+#           \pagestyle{fancy}
+#           \fancyhead[LH]{HW4}
+#           \fancyhead[RH]{STAT425, Fall 2023}
+---
+
+Please prepare your solutions neatly, numbered, and in order; ideally, you'll write up a final clean copy after completing all problems on scratch paper. Please note that if a prompt includes a question, you're expected to support answers with reasoning, even if the prompt does not explicitly ask for a justification. Provide your name at the top of your submission, and if you collaborate with other students in the class, please list their names at the top of your submission beneath your own.
+
+1.  (Random walk) Consider the natural numbers $\mathbb{N} = \{0, 1, 2, \dots\}$, and imagine a random process whereby given a particular location on the number line you move one step to the right with probability $p$ and one step to the left with probability $1 - p$. If you reach zero, the process stops.
+
+    i.  Find the probability that you make it to 50 if you start at 1 and $p = 0.6$.
+    ii. Find the probability that you make it to 50 if you start at 1 and $p = 0.4$.
+    iii. Find an expression for the smallest starting point required to make it to $n$ with probability $q$ if the odds favor moving to the right.
+    iv. Find an expression for the smallest starting point required to make it to $n$ with probability $q$ if the odds favor moving to the left.
+    v.  Use your answers in (iii)-(iv) to find the smallest starting point for which the process will make it to 50 with probability $0.8$ when $p=0.45$ and when $p = 0.55$.
+    vi. What is the minimum starting point for which the process is more likely to diverge than not when $p = 0.55$?
+
+2.  Show that if $X$ is a discrete random variable, then it has a countable support set.
+
+3.  Use the definition of the CDF to show that:
+
+    i.  If $X$ is a random variable with CDF $F$, then $P(a < X \leq b) = F(b) - F(a)$
+    ii. If $X$ is a random variable with CDF $F$, then $P(X > a) = 1 - F(a)$
+
+4.  Let $X$ be a continuous random variable. Show that:
+
+    i.  for every $x \in \mathbb{R}$, $P(X = x) = 0$ (*Hint*: use the lemma defining $P(X = x)$ in terms of the CDF)
+    ii. $P(X \leq x) = P(X < x)$ (*Hint*: use the result in (i))
+
+5.  (Triangular distribution) Let $X$ be a continuous random variable defined by the PDF: $$
+    f(x) = \begin{cases}
+      0 &x < -1 \\
+      x + 1 & -1 \leq x < 0 \\
+      1 - x & 0 \leq x \leq 1 \\
+      0 & x > 1
+    \end{cases}
+    $$ Sketch the density and then find the CDF of $X$.
+
+6.  Let $X$ have a uniform distribution on the integers $\{-3, -2, -1, 0, 1, 2, 3\}$. If $Y = X^2$, find the CDF, PMF, and support of $Y$, and sketch the CDF.
+
+7.  Let $X$ have a uniform distribution on the interval $(0, 1)$ and let $Y = -\log(X)$. Find the distribution of $Y$.
+
+8.  (Negative binomial) Consider performing repeated independent trials in which each trial has a fixed probability of success $p$. Let $X$ denote the number of failures before $r$ successes are obtained. Find the PMF of $X$.

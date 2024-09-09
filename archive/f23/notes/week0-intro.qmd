@@ -1,0 +1,142 @@
+---
+title: "Welcome to STAT 425!"
+author: "Probability theory (STAT 425), Fall 2023"
+format: 
+  revealjs:
+    logo: img/poly-logo-2.jpg
+    footer: "\u00a9 2023 Trevor Ruiz"
+    smaller: true
+---
+
+## Hi I'm Trevor
+
+You can call me Trevor (if you like).
+
+-   Pronouns: he/him/his
+
+-   Hometown: Galesville, MD
+
+-   Fun fact: I like to juggle (clubs, balls)
+
+-   Office: Building 25 Room 236 (25-236)
+
+-   Email: [truiz01\@calpoly.edu](mailto:truiz01@calpoly.edu)
+
+-   Web: [tdruiz.com](https://tdruiz.com)
+
+## Warm-up
+
+In groups of 3-4:
+
+1.  go around and say your name, hometown, and current class standing
+2.  write down 3 words, concepts, facts, statements, ideas, or phrases you associate with probability (can be one per person or by consensus, your choice)
+
+After 5 minutes I'll go around the room, ask you to share, and transcribe.
+
+## What is probability?
+
+Based on our collective facts, can we...
+
+-   identify common themes?
+
+-   posit a rough definition or description consistent with our ideas?
+
+## Interpretations of probability
+
+The expression $Pr(\text{Millicent will go for a hike}) = 0.8$ represents the statement *'there's an 80% chance Millicent will go for a hike'.* But what does that mean?
+
+-   (subjective) we are 80% certain that Millicent will go for a hike
+
+-   (objective) if we keep presenting Millicent with the same opportunity and circumstances, she'll go for a hike on 8 out of every 10 occasions
+
+## Interpretations of probability
+
+The subjective and objective interpretations of probability have names.
+
+-   **epistemic** interpretation: probability statements indicate degrees of belief
+
+-   **aleatory** interpretation: probability statements indicate frequencies of occurrence
+
+The mathematics we'll study are agnostic on the question of interpretation, though classical examples tend to align more naturally with the aleatory view (games of chance, dice rolls, etc.).
+
+## An informal definition
+
+*Probability is the mathematics of random events.*
+
+In this class we'll develop a formal language for probability in terms of **outcomes** and **events** in a **sample space**:
+
+-   **outcome** --- result of an experiment or random process
+
+-   **event** --- statement about outcomes
+
+-   **sample space** --- collection of all possible outcomes
+
+Using that language, we'll construct familiar concepts of random variables, distributions, and their properties.
+
+Since you already have some exposure/intuition from STAT 305 (or similar), the challenging part of this class for most of you will be the novel formalism and the level of problem-solving expected.
+
+## STAT 425 at a glance
+
+**Scope:** we'll cover probability axioms and properties, random variables, univariate and joint distributions and their properties.
+
+**Format:** we'll develop a set of course notes in class on the whiteboard following outlines that will be posted in advance of each class meeting; these will cover definitions, properties, theorems, and worked examples.
+
+**Materials:** bring note-taking apparatus (pen/paper, tablet, etc.) and an internet-connected device to each class meeting. There is no required textbook, and the recommended text is available in StatLab (25-107B).
+
+**Assessments:** weekly homeworks (7); monthly midterms (2); quarterly final exam (1).
+
+## Learning outcomes
+
+(...with emphasis on key phrases)
+
+-   ***use the axiomatic construction of probability*** to derive properties of probability measures and conditional probability measures, and ***apply definitions and properties to solve probability problems*** <!-- CLO 1, 3; EO a -->
+
+-   ***construct probability models*** for discrete and continuous random variables, develop familiarity with common probability distributions, and ***use distribution functions*** to derive properties such as expectations and variances <!-- CLO 2, 4, 5; EO b, c, e -->
+
+-   determine joint distributions for collections of random variables, and ***use joint distribution functions*** to (a) derive properties such as covariance and correlation, (b) to determine conditional and marginal distributions, and (c) derive distributions of transformations and functions of one or more random variables <!-- CLO 6, 7; EO d, f -->
+
+Note the frequent occurrence of the word ***use***! I want you to understand and be able to use the concepts we discuss in class.
+
+## Assessment and evaluation
+
+-   **Homeworks (50%).** Assigned/collected Thursdays; collaboration allowed; evaluated based on completeness, organization, and correctness of selected answers; lowest score dropped from final grade calculation.
+
+-   **Midterms (30%).** Given in class Thursdays of weeks 4 and 8; note sheet allowed; evaluated based on completeness and correctness; higher score weighted more heavily in final grade calculation.
+
+-   **Final exam (20%).** Administered as scheduled by Registrar; note sheet allowed; cumulative but emphasizes later material; evaluated based on completeness and correctness.
+
+We aim to return graded work within one week, except for the final exam, which I'll keep.
+
+Letter grades (to within $\pm 5$): A: 90-100. B: 75-90. C: 60-75. D: 50-60.
+
+## Select policies {.scrollable}
+
+-   **Time.** Expect about 12-16 hours per week, including class time. Let me know if you're exceeding this amount so I can help.
+-   **Collaboration.** Allowed *within the class* only. Collaborations must reflect a legitimate shared effort, and names of collaborators should be written on submissions.
+-   **Attendance.** Everyone is allowed two 'free' absences without notice at any time for any reason. Subsequent absences must be excusable and you should notify me by email.
+-   **Deadlines.** Everyone is allowed two 'free' late homework submissions without notice at any time for any reason. Subsequent late submissions will be evaluated for 75% credit.
+
+## Select policies
+
+-   **Grades.** Please report any discrepancies/errors in evaluation promptly (within 1 week of receiving an evaluated submission). Attempting to negotiate grades or seeking reevaluations after final grades are posted is not appropriate.
+-   **Communication.** I prefer office hours and before/in/after class discussion for most matters. I try to respond to email within 48 weekday hours. Please wait a week before sending reminders, unless it's time sensitive.
+-   **Conduct.** Instances of academic dishonesty will be reported to OSRR and consequences may range from loss of credit to automatic failure, depending on the severity of the act.
+
+## General advice
+
+I want each of you to succeed in this course and am here to help. I have a few recommendations:
+
+-   spend 15-30 minutes skimming the suggested textbook sections each week in the StatLab
+
+-   take advantage of the collaboration policy and work with classmates on homework
+
+-   use your free absences and late submissions wisely
+
+-   come to me *early* with any obstacles or difficulties you're facing
+
+-   take advantage of office hours; it's time each week that I set aside specifically for you
+
+## For next time
+
+1.  Complete [intake survey](https://forms.gle/uWWTaZrVvL7jykz86)
+2.  Check the website before class for a lecture outline
