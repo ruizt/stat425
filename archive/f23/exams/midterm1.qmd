@@ -4,16 +4,16 @@ author: "STAT425, Fall 2023"
 author-title: "Course"
 date: "10/19/2023"
 published-title: "Date"
-format:
-  latex:
-    include-in-header:
-      - text:
-          \usepackage{fancyhdr}
-    include-before-body:
-      - text:
-          \pagestyle{fancy}
-          \fancyhead[LH]{Midterm 1}
-          \fancyhead[RH]{STAT425, Fall 2023}
+# format:
+#   latex:
+#     include-in-header:
+#       - text:
+#           \usepackage{fancyhdr}
+#     include-before-body:
+#       - text:
+#           \pagestyle{fancy}
+#           \fancyhead[LH]{Midterm 1}
+#           \fancyhead[RH]{STAT425, Fall 2023}
 ---
 
 **Instructions**: read each problem carefully and provide answers in the space below. Your answers should display your reasoning clearly. If you use results from class in your answer, you can simply write, "by a theorem from class...", and need not identify the result by name. You do not need to justify small steps in this way. You also do not need to calculate decimals or perform any burdensome calculations, but you should simplify your answers as much as possible. Please feel free to ask any clarifying questions about the problems. You have 50 minutes to complete the exam. Good luck!
