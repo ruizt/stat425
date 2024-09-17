@@ -6,10 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="STAT425, Fall 2023">
-<meta name="dcterms.date" content="2023-11-16">
+<meta name="dcterms.date" content="2024-09-16">
 
-<title>STAT425 - Midterm 2</title>
+<title>STAT425 - Probability Theory</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -25,18 +24,18 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
-<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../../../site_libs/quarto-html/quarto.js"></script>
-<script src="../../../site_libs/quarto-html/popper.min.js"></script>
-<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "language": {
     "search-no-results-text": "No results",
@@ -62,37 +61,8 @@ gtag('js', new Date());
 gtag('config', 'G-H3YKZX4J88', { 'anonymize_ip': true});
 </script>
 
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
-
-<link rel="stylesheet" href="../../../styles.css">
+<link rel="stylesheet" href="styles.css">
 </head>
 
 <body class="nav-fixed fullcontent">
@@ -102,7 +72,7 @@ window.Quarto = {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="../../../index.html">
+    <a class="navbar-brand" href="./index.html">
     <span class="navbar-title">STAT425</span>
     </a>
   </div>
@@ -121,24 +91,18 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Midterm 2</h1>
+<h1 class="title">Probability Theory</h1>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
-    <div>
-    <div class="quarto-title-meta-heading">Course</div>
-    <div class="quarto-title-meta-contents">
-             <p>STAT425, Fall 2023 </p>
-          </div>
-  </div>
     
     <div>
-    <div class="quarto-title-meta-heading">Date</div>
+    <div class="quarto-title-meta-heading">Updated</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">November 16, 2023</p>
+      <p class="date">September 16, 2024</p>
     </div>
   </div>
   
@@ -150,128 +114,51 @@ window.Quarto = {
 </header>
 
 
-<p><strong>Instructions:</strong> read each problem carefully and provide solutions in the space below the prompt or on the reverse side of the page. You should provide as much justification and detail in calculation as needed to clearly display your thought process, but need not show or justify every step. If you use results from class in your solution, you can simply write, ``by a theorem/problem/example from class“. None of the problems require you to perform numerical calculations.If you are unable to obtain a complete solution, a solution sketch may receive partial credit if it reflects a clear understanding of the problem and a well-reasoned approach.Please feel free to ask any clarifying questions about the problems as they arise. Good luck!</p>
+<blockquote class="blockquote">
+<p>Probability is the mathematics of random events. In the context of modern statistics, probability theory provides a framework for studying the properties of samples, estimators, and inferences (the subjects of STAT 426 and STAT 427). This course will cover the axiomatic formulation of probability and formalize familiar concepts, including basic probability rules, random variables, distributions, and expectations. The course will also introduce concepts that play central roles in statistics, such as joint distributions, transformations, and conditional expectations.</p>
+</blockquote>
+<p>Read more in the [<a href="./syllabus.html">course syllabus</a>].</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Announcements
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>In advance of our first class meeting, please:</p>
 <ol type="1">
-<li><p>Let <span class="math inline">\(f(x) = c\left[1 - (x - 1)^2\right]\)</span>. Find the value of <span class="math inline">\(c\)</span> and support set for which <span class="math inline">\(f\)</span> is a PDF.</p></li>
-<li><p>Intuitively, a log transformation should reduce the skewness of a distribution. The skewness of a random variable is defined as the third standardized moment, i.e., the expectation <span class="math inline">\(\mathbb{E}\left[\left(\frac{X - \mu}{\sigma}\right)^3\right] = \frac{\mu_3 - 3\mu_1\sigma^2 - \mu_1^3}{\sigma^3}\)</span>, where <span class="math inline">\(\mu_k\)</span> denotes the <span class="math inline">\(k\)</span>th moment and <span class="math inline">\(\sigma\)</span> denotes the square root of the variance, i.e., <span class="math inline">\(\sigma = \sqrt{\mu_2 - \mu_1^2}\)</span>. Let <span class="math inline">\(\log(X) \sim N(0, 1)\)</span>; show that the skewness of <span class="math inline">\(X\)</span> is larger than the skewness of <span class="math inline">\(\log(X)\)</span>.</p></li>
-<li><p>Let <span class="math inline">\(X \sim \text{exponential}(\beta)\)</span> and <span class="math inline">\(c &gt; 0\)</span> and define <span class="math display">\[
-Y = \begin{cases}
-   1 &amp;,\; X &gt; c \\
-   0 &amp;,\; X \leq c
-\end{cases}
-\]</span> Find the distribution of <span class="math inline">\(Y\)</span> and its mean and variance.</p></li>
+<li>fill out this brief [<a href="https://forms.office.com/r/ruerQhi93k">intake survey</a>]</li>
+<li>read the [<a href="./syllabus.html">course syllabus</a>]</li>
+<li>skim the assigned reading (don’t worry, it’s only a few pages)</li>
 </ol>
-<table class="table">
-<colgroup>
-<col style="width: 6%">
-<col style="width: 23%">
-<col style="width: 7%">
-<col style="width: 10%">
-<col style="width: 7%">
-<col style="width: 14%">
-<col style="width: 27%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Name</th>
-<th>PDF/PMF</th>
-<th>Support</th>
-<th>Parameters</th>
-<th>Mean</th>
-<th>Variance</th>
-<th>MGF</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Discrete uniform</td>
-<td><span class="math inline">\(\frac{1}{n}\)</span></td>
-<td><span class="math inline">\(\{a_1, \dots, a_n\}\)</span></td>
-<td>none</td>
-<td><span class="math inline">\(\bar{a}\)</span></td>
-<td><span class="math inline">\(\frac{1}{n}\sum_{i = 1}^n (a_i - \bar{a})^2\)</span></td>
-<td><span class="math inline">\(\frac{1}{n}\sum_{i = 1}^n e^{ta_i}\)</span></td>
-</tr>
-<tr class="even">
-<td>Bernoulli</td>
-<td><span class="math inline">\(p^x (1 - p)^{1 - x}\)</span></td>
-<td><span class="math inline">\(\{0, 1\}\)</span></td>
-<td><span class="math inline">\(p \in (0, 1)\)</span></td>
-<td><span class="math inline">\(p\)</span></td>
-<td><span class="math inline">\(p(1 - p)\)</span></td>
-<td><span class="math inline">\(1 - p + pe^t\)</span></td>
-</tr>
-<tr class="odd">
-<td>Geometric</td>
-<td><span class="math inline">\((1 - p)^x p\)</span></td>
-<td><span class="math inline">\(\mathbb{N}\)</span></td>
-<td><span class="math inline">\(p \in (0, 1)\)</span></td>
-<td><span class="math inline">\(\frac{1 - p}{p}\)</span></td>
-<td><span class="math inline">\(\frac{1 - p}{p^2}\)</span></td>
-<td><p><span class="math inline">\(\frac{p}{1 - (1 - p)e^t}\)</span></p>
-<p><span class="math inline">\(t &lt; -\log(1 - p)\)</span></p></td>
-</tr>
-<tr class="even">
-<td>Binomial</td>
-<td><span class="math inline">\({n \choose p} p^x (1 - p)^{n - x}\)</span></td>
-<td><span class="math inline">\(\{0, 1, \dots, n\}\)</span></td>
-<td><p><span class="math inline">\(n \in \mathbb{Z}^+\)</span></p>
-<p><span class="math inline">\(p \in (0, 1)\)</span></p></td>
-<td><span class="math inline">\(np\)</span></td>
-<td><span class="math inline">\(np(1 - p)\)</span></td>
-<td><span class="math inline">\(\left(1 - p + pe^t\right)^n\)</span></td>
-</tr>
-<tr class="odd">
-<td>Negative binomial</td>
-<td><span class="math inline">\({r + x - 1 \choose x} p^r (1 - p)^x\)</span></td>
-<td><span class="math inline">\(\mathbb{N}\)</span></td>
-<td><p><span class="math inline">\(r \in \mathbb{Z}^+\)</span></p>
-<p><span class="math inline">\(p \in (0, 1)\)</span></p></td>
-<td><span class="math inline">\(\frac{r(1 - p)}{p}\)</span></td>
-<td><span class="math inline">\(\frac{r(1 - p)}{p^2}\)</span></td>
-<td><p><span class="math inline">\(\left(\frac{p}{1 - (1 - p)e^t}\right)^r\)</span></p>
-<p><span class="math inline">\(t &lt; -\log(1 - p)\)</span></p></td>
-</tr>
-<tr class="even">
-<td>Poisson</td>
-<td><span class="math inline">\(\frac{\lambda^xe^{-\lambda}}{x!}\)</span></td>
-<td><span class="math inline">\(\mathbb{N}\)</span></td>
-<td><span class="math inline">\(\lambda &gt; 0\)</span></td>
-<td><span class="math inline">\(\lambda\)</span></td>
-<td><span class="math inline">\(\lambda\)</span></td>
-<td><span class="math inline">\(\exp\left\{-\lambda(1 - e^t)\right\}\)</span></td>
-</tr>
-<tr class="odd">
-<td>Continuous uniform</td>
-<td><span class="math inline">\(\frac{1}{b - a}\)</span></td>
-<td><span class="math inline">\((a, b)\)</span></td>
-<td><span class="math inline">\(-\infty &lt; a &lt; b &lt; \infty\)</span></td>
-<td><span class="math inline">\(\frac{b + a}{2}\)</span></td>
-<td><span class="math inline">\(\frac{(b - a)^2}{12}\)</span></td>
-<td><span class="math inline">\(\begin{cases}\frac{e^{ta} - e^{tb}}{t(b - a)} &amp;,\;t\neq 0 \\ 1 &amp;,\; t = 0 \end{cases}\)</span></td>
-</tr>
-<tr class="even">
-<td>Gaussian</td>
-<td><span class="math inline">\(\frac{1}{\sqrt{2\pi\sigma^2}} e^{-\frac{1}{2\sigma^2} (x - \mu)^2}\)</span></td>
-<td><span class="math inline">\(\mathbb{R}\)</span></td>
-<td><span class="math inline">\(\mu \in \mathbb{R}, \sigma &gt; 0\)</span></td>
-<td><span class="math inline">\(\mu\)</span></td>
-<td><span class="math inline">\(\sigma^2\)</span></td>
-<td><span class="math inline">\(\exp\left\{\mu t + \frac{1}{2}t^2\sigma^2\right\}\)</span></td>
-</tr>
-<tr class="odd">
-<td>Gamma</td>
-<td><span class="math inline">\(\frac{1}{\Gamma(\alpha)\beta^\alpha} x^{\alpha - 1} e^{-\frac{x}{\beta}}\)</span></td>
-<td><span class="math inline">\(x &gt; 0\)</span></td>
-<td><span class="math inline">\(\alpha &gt; 0, \beta &gt; 0\)</span></td>
-<td><span class="math inline">\(\alpha\beta\)</span></td>
-<td><span class="math inline">\(\alpha\beta^2\)</span></td>
-<td><span class="math inline">\(\left(1 - \beta t\right)^{-\alpha}\)</span></td>
-</tr>
-</tbody>
-</table>
+</div>
+</div>
+<p><strong>Instructor:</strong> Trevor Ruiz (he/him/his) [<a href="mailto:truiz01@calpoly.edu">email</a>] [<a href="https://tdruiz.com">website</a>]</p>
+<p><strong>Class meetings:</strong></p>
+<ul>
+<li>[Section 01] 12:10pm – 2:00pm MW 186-C300</li>
+<li>[Section 02] 2:10pm – 4:00pm MW 186-C300</li>
+</ul>
+<p><strong>Office hours:</strong> 9:30am – 11:00am MW [<a href="https://calendly.com/tdruiz/office-hour">by appointment</a>]</p>
+<section id="week-1-92324" class="level2">
+<h2 class="anchored" data-anchor-id="week-1-92324">Week 1 (9/23/24)</h2>
+<p><em>Set theory; probability axioms</em></p>
+<p><strong>Monday:</strong> sets and set operations</p>
+<ul>
+<li>[reading] sections 1.1, 1.2, 1.2.1</li>
+<li>[assignment] exercises 1.2.1, 1.2.2, 1.2.6</li>
+<li>[optional] exercises 1.2.5, 1.2.7</li>
+</ul>
+<!-- **Wednesday:** probability axioms and properties -->
+<!-- - [reading] section 1.3 -->
+<!-- - [assignment] exercises 1.3.1, 1.3.6, 1.3.7 -->
+<!-- - [optional] exercises 1.3.3, 1.3.5 -->
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

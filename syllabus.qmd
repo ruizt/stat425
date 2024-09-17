@@ -1,0 +1,154 @@
+---
+title: "Course Syllabus"
+subtitle: "STAT425 Probability Theory"
+author: "Fall 2024"
+author-title: "Term"
+date: today
+date-format: "MMMM DD, YYYY"
+published-title: "Updated"
+---
+
+> Probability is the mathematics of random events. In the context of modern statistics, probability theory provides a framework for studying the properties of samples, estimators, and inferences (the subjects of STAT 426 and STAT 427). This course will cover the axiomatic formulation of probability and formalize familiar concepts, including basic probability rules, random variables, distributions, and expectations. The course will also introduce concepts that play central roles in statistics, such as joint distributions, transformations, and conditional expectations.
+
+**Instructor:** Trevor Ruiz (he/him/his) \[[email](mailto:truiz01@calpoly.edu)\] \[[website](https://tdruiz.com)\]
+
+**Class meetings:**
+
+-   \[Section 01\] 12:10pm -- 2:00pm MW 186-C300
+-   \[Section 02\] 2:10pm -- 4:00pm MW 186-C300
+
+**Office hours:** 9:30am -- 11:00am MW \[[by appointment](https://calendly.com/tdruiz/office-hour)\]
+
+## Catalog Description
+
+Rigorous development of probability theory. Probability axioms, combinatorial methods, conditional and marginal probability, independence, random variables, univariate and multivariate probability distributions, conditional distributions, transformations, order statistics, expectation and variance. Use of statistical simulation throughout the course. 4 lectures. Prerequisite: MATH 241; MATH 248 or CSC 348; and STAT 305. Recommended: STAT 301.
+
+## Textbook
+
+The following text is **required**:
+
+-   Hogg, McKean, & Craig, *Introduction to Mathematical Statistics*, 8th edition, Pearson.
+
+We will cover chapters 1 through 3, and homework assignments will be drawn from the text.
+
+You can purchase or rent a print or electronic copy through the bookstore, or rent an electronic copy for \$11/mo through the \[[publisher's website](https://www.pearson.com/en-us/subject-catalog/p/introduction-to-mathematical-statistics/P200000006211/9780137530687)\]. Additionally, a desk copy is available in StatLab (25-107B).
+
+## Learning outcomes
+
+By the end of the course, successful students will:
+
+-   \[L1\] be familiar with the basic approaches to the definition of probability;
+-   \[L2\] understand basic theory to construct probability models for both discrete and continuous random variables;
+-   \[L3\] understand and be able to use distribution functions;
+-   \[L4\] understand the meaning and the applications of joint probability and joint distribution functions;
+-   \[L5\] understand the concept of expectations with respect to a given probability function;
+-   \[L6\] understand the meaning of conditional and marginal probability functions.
+
+## Assessments
+
+Your attainment of learning outcomes will be measured by homework assignments, in-class quizzes, and a comprehensive final exam. These are described below, with the relative contributions to final grades indicated parenthetically.
+
+-   **Homework (20%).** Homework problems will be given *every class* and due the next class meeting. Typically, problem sets will be very short (no more than 3 problems), and we will devote some time to working on them together in class on the day they are assigned. Homework assignments will be collected and checked for completion but *not* graded; therefore, it is your responsibility to ensure your work is correct by checking solutions when provided, consulting with classmates, and attending office hours.
+
+-   **Quizzes (60%).** Quizzes will be given approximately biweekly in class. You will be allowed 50 minutes to complete each quiz and up to 4 (one-sided) pages of notes. We will review solutions in class following each quiz, during which time you will be expected to self-assess your work before it is submitted for grading. You will have the opportunity to submit revisions to earn back a portion of missed credit.
+
+-   **Final exam (20%).** A comprehensive common final exam will be given on Saturday, December 7, tentatively from 1:10pm – 4pm, with time and location to be confirmed as soon as such are issued by the registrar. The final will be open-book and open-note.
+
+Your scores will be recorded in Canvas for your reference along with an estimate of your running course total on a 0-100 scale. Tentatively, letter grades will span the following ranges: A (90, 100\]; B (80, 90\]; C (65, 80\]; D (50, 65\]; F \[0, 50\]. Please note these are *rough* estimates and subject to change without notice. Please also note that failure to adhere to course policies may result in a lower letter grade than would otherwise be assigned.
+
+## Tentative schedule
+
+Subject to change at instructor discretion.
+
+| Week                                     | Topics                                         | Readings               | Assignments                              |
+|------------------|---------------------|-----------------|------------------|
+| 1 (9/23)                                 | Set theory, probability axioms                 | 1.2, 1.2.1, 1.2.2, 1.3 |                                          |
+| 2 (9/30)                                 | Counting methods, probability inequalities     | 1.3.1, 1.3.2           | Quiz 1 (W)                               |
+| 3 (10/7)                                 | Conditional probability, independence          | 1.4, 1.4.1             |                                          |
+| 4 (10/14)                                | Random variables                               | 1.5, 1.6, 1.7          | Quiz 2 (W)                               |
+| 5 (10/21)                                | Expectation, transformations                   | 1.8, 1.9, 1.6.1, 1.7.2 |                                          |
+| 6 (10/28)                                | Random vectors, joint distributions            | 2.1, 2.2, 2.3, 2.4     | Quiz 3 (W)                               |
+| 7 (11/4)                                 | Random vectors, joint distributions            | 2.1, 2.2, 2.3, 2.4     |                                          |
+| 8 (11/12) *Veteran's day observed 11/11* | Multivariate transformations, order statistics | 2.6, 2.8               |                                          |
+| 9 (11/18)                                | Common distributions                           | 3.1, 3.2, 3.3          | Quiz 4 (M)                               |
+| *Fall break (11/25)*                     |                                                |                        |                                          |
+| 10 (12/2)                                | The normal distribution                        | 3.4, 3.5               | Quiz 5 (W)                               |
+| *Finals*                                 |                                                |                        | Common final **Saturday 12/7**, time TBD |
+
+## Tips for success
+
+I want you to succeed in this course. Below are three simple but effective habits:
+
+1.  don't ignore the reading
+
+    -   *before class:* skim the assigned reading for key concepts, definitions, and theorems
+
+    -   *after class:* reread carefully, paying special attention to portions discussed in class, and review relevant proofs and other derivations in detail
+
+2.  form a study group with a regular meeting time
+
+3.  before quizzes, do these two things in the following order:
+
+    -   prepare a set of summary notes covering definitions and theorems based on the text, class notes, and your notes
+
+    -   try practice problems from the relevant sections in the book
+
+        -   find the "Goldilocks problems": not too hard and not too obvious
+
+        -   go for variety (some proofs, some applied problems, multiple topics)
+
+If you find yourself falling behind at any point during the quarter, or feel you are struggling with the course, please come and talk with me. The sooner you reach out, the more options I'll have to help you.
+
+## Policies
+
+### Time commitment
+
+STAT425 is a four-credit course, which corresponds to a *minimum* time commitment of 12 hours per week, including class meetings, reading, assignments, and study time.
+
+In order to succeed in the course, you should expect to invest between 12 and 16 hours per week on average. Please let me know if you are regularly exceeding this amount or if you need help managing your time efficiently in the course. While I aim to keep the workload fairly even throughout the quarter, you should allow an extra hour or two in your schedule to accommodate week to week variations in workload as needed.
+
+### Attendance and absences
+
+Regular attendance is essential for success in the course and required per University policy. Absences should be [excusable](https://academicprograms.calpoly.edu/content/academicpolicies/class-attendance), but you do not need to notify me unless you anticipate an extended absence or will miss an in-class assessment; I trust you to adhere to Cal Poly norms and policies regarding class attendance.
+
+If you are absent and miss an in-class quiz, please contact me to arrange for a make-up; in this circumstance, University academic integrity policies prohibit you from discussing the quiz with students who took it in class.
+
+### Collaboration
+
+Collaboration with classmates is encouraged on homework assignments but not allowed on quizzes or the final exam. If you work with a group on homework problems, you are expected to be an active contributor and prepare your own solutions in your own words and writing, and by submitting your work you are attesting that you have met this expectation. You should not distribute or accept copies of written solutions under any circumstances.
+
+### Communication and email
+
+I encourage you to ask questions in class and during office hours, since that is the only certain means of obtaining a response within a guaranteed time frame.
+
+I respond to most email within 24 weekday hours, but I cannot guarantee this response time and I occasionally miss messages altogether (though I try not to). I don't answer emails at night or on weekends, so while you are welcome to write me outside of business hours, please don't expect a reply until the following business day. I also sometimes get behind on answering emails, so please wait a few days (preferably one week if it's not pressing) before sending a follow up or reminder.
+
+Please do not ask technical questions about problems or course material by email.
+
+### Late and missing work
+
+I understand that unexpected circumstances may arise and require you to temporarily rearrange your priorities and commitments on occasion during the quarter. You may, at any time during the quarter and without notice or penalty, use the following personal exceptions:
+
+-   turn in two homework assignments up to one week late
+
+-   miss one homework assignment altogether
+
+Once your personal exceptions are exhausted, homework assignments turned in up to one week late will be awarded 50% credit unless an extension is granted in advance, and missing assignments will be counted at zero credit.
+
+No other late work — *i.e.*, quizzes, quiz revisions, homework assignments turned in more than one week late, or the final exam — will be accepted unless an exception to this policy is granted. I will consider exceptions for personal and medical emergencies or other similarly unforeseeable circumstances.
+
+### Grades and assessments
+
+I make my best effort to assess your work fairly and accurately and to apply assessment criteria consistently across the class. While I sometimes do so imperfectly, I am also aware that granting adjustments to scores or grades can disadvantage more reticent students and favor those more comfortable approaching me about credit awarded on course assessments.
+
+So, in consideration of maintaining fairness and consistency, I ask that you limit requests for reassessment to clear mistakes, discrepancies, or oversights; and I also ask that you please *do* let me know if you think such an error has likely occurred. Please raise any such issues in a timely manner and not at the end of the quarter.
+
+Per University policy, faculty have final responsibility for grading criteria and grading judgment and have the right to alter student assessment or other parts of the syllabus during the term. It is not appropriate to attempt to negotiate scores or final grades. Once the term has concluded, final grades will only be changed in the case of clerical errors, without exception. If you feel your grade is unfairly assigned at the end of the course, you have the right to appeal it according to the procedure outlined [here](https://academicprograms.calpoly.edu/content/academic-petition-appeals).
+
+### Accommodations
+
+It is University policy to provide, on a flexible and individualized basis, reasonable accommodations to students who have disabilities that may affect their ability to participate in course activities or to meet course requirements. Accommodation requests should be made through the [Disability Resource Center](https://drc.calpoly.edu) (DRC).
+
+### Conduct and Academic Integrity
+
+You are expected to be aware of and adhere to University policy regarding academic integrity and conduct. Detailed information on these policies, and potential repercussions of policy violations, can be found via the [Office of Student Rights & Responsibilities](https://osrr.calpoly.edu) (OSRR).

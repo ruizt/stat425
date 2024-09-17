@@ -4,13 +4,20 @@ date: today
 published-title: 'Updated'
 ---
 
+> Probability is the mathematics of random events. In the context of modern statistics, probability theory provides a framework for studying the properties of samples, estimators, and inferences (the subjects of STAT 426 and STAT 427). This course will cover the axiomatic formulation of probability and formalize familiar concepts, including basic probability rules, random variables, distributions, and expectations. The course will also introduce concepts that play central roles in statistics, such as joint distributions, transformations, and conditional expectations.
+
+Read more in the \[[course syllabus](syllabus.qmd)\].
+
 ::: callout-note
 ## Announcements
 
-Site under development for Fall 2024. Check back later.
+In advance of our first class meeting, please:
+
+1. fill out this brief \[[intake survey](https://forms.office.com/r/ruerQhi93k)\]
+2. read the \[[course syllabus](syllabus.qmd)\]
+3. skim the assigned reading (don't worry, it's only a few pages)
 :::
 
-### Course information
 
 **Instructor:** Trevor Ruiz (he/him/his) \[[email](mailto:truiz01@calpoly.edu)\] \[[website](https://tdruiz.com)\]
 
@@ -20,3 +27,19 @@ Site under development for Fall 2024. Check back later.
 -   \[Section 02\] 2:10pm -- 4:00pm MW 186-C300
 
 **Office hours:** 9:30am -- 11:00am MW \[[by appointment](https://calendly.com/tdruiz/office-hour)\]
+
+## Week 1 (9/23/24)
+
+*Set theory; probability axioms*
+
+**Monday:** sets and set operations
+
+- [reading] sections 1.1, 1.2, 1.2.1 
+- [assignment] exercises 1.2.1, 1.2.2, 1.2.6
+- [optional] exercises 1.2.5, 1.2.7
+
+<!-- **Wednesday:** probability axioms and properties -->
+
+<!-- - [reading] section 1.3 -->
+<!-- - [assignment] exercises 1.3.1, 1.3.6, 1.3.7 -->
+<!-- - [optional] exercises 1.3.3, 1.3.5 -->
