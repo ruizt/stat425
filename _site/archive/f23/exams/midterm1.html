@@ -6,9 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2024-09-16">
+<meta name="author" content="STAT425, Fall 2023">
+<meta name="dcterms.date" content="2023-10-19">
 
-<title>STAT425 - Probability Theory</title>
+<title>STAT425 - Midterm 1</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -24,18 +25,18 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "language": {
     "search-no-results-text": "No results",
@@ -61,8 +62,37 @@ gtag('js', new Date());
 gtag('config', 'G-H3YKZX4J88', { 'anonymize_ip': true});
 </script>
 
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
-<link rel="stylesheet" href="styles.css">
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../../../styles.css">
 </head>
 
 <body class="nav-fixed fullcontent">
@@ -72,7 +102,7 @@ gtag('config', 'G-H3YKZX4J88', { 'anonymize_ip': true});
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../../../index.html">
     <span class="navbar-title">STAT425</span>
     </a>
   </div>
@@ -91,18 +121,24 @@ gtag('config', 'G-H3YKZX4J88', { 'anonymize_ip': true});
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Probability Theory</h1>
+<h1 class="title">Midterm 1</h1>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
+    <div>
+    <div class="quarto-title-meta-heading">Course</div>
+    <div class="quarto-title-meta-contents">
+             <p>STAT425, Fall 2023 </p>
+          </div>
+  </div>
     
     <div>
-    <div class="quarto-title-meta-heading">Updated</div>
+    <div class="quarto-title-meta-heading">Date</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">September 16, 2024</p>
+      <p class="date">October 19, 2023</p>
     </div>
   </div>
   
@@ -114,51 +150,31 @@ gtag('config', 'G-H3YKZX4J88', { 'anonymize_ip': true});
 </header>
 
 
-<blockquote class="blockquote">
-<p>Probability is the mathematics of random events. In the context of modern statistics, probability theory provides a framework for studying the properties of samples, estimators, and inferences (the subjects of STAT 426 and STAT 427). This course will cover the axiomatic formulation of probability and formalize familiar concepts, including basic probability rules, random variables, distributions, and expectations. The course will also introduce concepts that play central roles in statistics, such as joint distributions, transformations, and conditional expectations.</p>
-</blockquote>
-<p>Read more in the [<a href="./syllabus.html">course syllabus</a>].</p>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Announcements
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>In advance of our first class meeting, please:</p>
+<p><strong>Instructions</strong>: read each problem carefully and provide answers in the space below. Your answers should display your reasoning clearly. If you use results from class in your answer, you can simply write, “by a theorem from class…”, and need not identify the result by name. You do not need to justify small steps in this way. You also do not need to calculate decimals or perform any burdensome calculations, but you should simplify your answers as much as possible. Please feel free to ask any clarifying questions about the problems. You have 50 minutes to complete the exam. Good luck!</p>
 <ol type="1">
-<li>fill out this brief [<a href="https://forms.office.com/r/ruerQhi93k">intake survey</a>]</li>
-<li>read the [<a href="./syllabus.html">course syllabus</a>]</li>
-<li>skim the assigned reading (don’t worry, it’s only a few pages)</li>
+<li>Consider a dart board comprising concentric circles with radii <span class="math inline">\(r, \frac{2}{3}r, \frac{1}{3}r\)</span>, as depicted below. Suppose this board is mounted on a unit square, and that for an inexperienced player, the probability of hitting each region is simply the area of that region. Assume that a throw will land within the unit square. The scoring rules are: 0 points are awarded if the board is missed, 1 point is awarded for hitting the outermost circle, 2 points are awarded for hitting the middle circle, and 3 points are awarded for hitting the inner circle. Find an expression for the probability of scoring <span class="math inline">\(i\)</span> points on a single throw and show (or argue) that it is a valid probability measure.</li>
 </ol>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Dartboard.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="300"></p>
+</figure>
 </div>
-</div>
-<p><strong>Instructor:</strong> Trevor Ruiz (he/him/his) [<a href="mailto:truiz01@calpoly.edu">email</a>] [<a href="https://tdruiz.com">website</a>]</p>
-<p><strong>Class meetings:</strong></p>
-<ul>
-<li>[Section 01] 12:10pm – 2:00pm MW 186-C300</li>
-<li>[Section 02] 2:10pm – 4:00pm MW 186-C300</li>
-</ul>
-<p><strong>Office hours:</strong> 9:30am – 11:00am MW [<a href="https://calendly.com/tdruiz/office-hour">by appointment</a>]</p>
-<section id="week-1-92324" class="level2">
-<h2 class="anchored" data-anchor-id="week-1-92324">Week 1 (9/23/24)</h2>
-<p><em>Set theory; probability axioms</em></p>
-<p><strong>Monday:</strong> sets and set operations</p>
-<ul>
-<li>[reading] sections 1.1, 1.2, 1.2.1</li>
-<li>[assignment] exercises 1.2.1, 1.2.2, 1.2.6</li>
-<li>[optional] exercises 1.2.5, 1.2.7</li>
-</ul>
-<!-- **Wednesday:** probability axioms and properties -->
-<!-- - [reading] section 1.3 -->
-<!-- - [assignment] exercises 1.3.1, 1.3.6, 1.3.7 -->
-<!-- - [optional] exercises 1.3.3, 1.3.5 -->
+<ol start="2" type="1">
+<li><p>Imagine you work a summer job at a theme park. At the entrance there are 5 ticket booths, and on a particular morning, there are 200 people waiting at the entrance. Everyone waiting must choose one line and buy a ticket individually. You’re working at the first ticket booth, and it takes you exactly 2 minutes to process each transaction. After you finish selling the morning tickets, you’ll take a break. If customers select their lines at random and no new customers arrive, what is the probability that you’ll be on break in exactly an hour?</p></li>
+<li><p>Suppose you’ve developed a machine learning model to classify activity patterns as “at work” or “not at work” based on user cell phone data. In testing prior to deployment, you assess performance on timepoints sampled from 1000 users whose information was not used in the development of the model; of those, 800 users were working during the sampled timepoints. Denote the event that a user is at work by <span class="math inline">\(W\)</span> and the event that a user is predicted as at work by <span class="math inline">\(V\)</span>. Suppose you observe that for a randomly selected user from this test group: <span class="math display">\[
+\begin{align*}
+P(V\;|W) &amp;= 0.9 \\
+P\left(V^C\;|W^C\right) &amp;= 0.3
+\end{align*}
+\]</span></p>
+<ol type="i">
+<li>How many of your model predictions were correct?</li>
+<li>What is the probability that the prediction was correct for a randomly selected user in the test group?</li>
+<li>If your model predicts that a user in the test group is not at work, what is the probability that the prediction is correct?</li>
+</ol></li>
+</ol>
 
 
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
