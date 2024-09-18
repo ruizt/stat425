@@ -48,9 +48,9 @@ By the end of the course, successful students will:
 
 Your attainment of learning outcomes will be measured by homework assignments, in-class quizzes, and a comprehensive final exam. These are described below, with the relative contributions to final grades indicated parenthetically.
 
--   **Homework (20%).** Homework problems will be given *every class* and due the next class meeting. Typically, problem sets will be very short (no more than 3 problems), and we will devote some time to working on them together in class on the day they are assigned. Homework assignments will be collected and checked for completion but *not* graded; therefore, it is your responsibility to ensure your work is correct by checking solutions when provided, consulting with classmates, and attending office hours.
+-   **Homework (20%).** Homework problems will be given every class and due the next class meeting. Typically, problem sets will be very short (3 problems), and we will devote some time to working on them together in class on the day they are assigned. Homework assignments will be collected and checked for completion but *not* graded; therefore, it is your responsibility to ensure your work is correct by checking solutions when provided, consulting with classmates, and attending office hours.
 
--   **Quizzes (60%).** Quizzes will be given approximately biweekly in class. You will be allowed 50 minutes to complete each quiz and up to 4 (one-sided) pages of notes. We will review solutions in class following each quiz, during which time you will be expected to self-assess your work before it is submitted for grading. You will have the opportunity to submit revisions to earn back a portion of missed credit.
+-   **Quizzes (60%).** Quizzes will be given approximately biweekly in class. These are summative assessments and you should prepare for them as you would an exam. You will be allowed 50 minutes to complete each quiz and up to 4 (one-sided) pages of notes. We will review solutions in class following each quiz, during which time you will be expected to self-assess your work before it is submitted for grading. You will have the opportunity to submit revisions to earn back a portion of missed credit.
 
 -   **Final exam (20%).** A comprehensive common final exam will be given on Saturday, December 7, tentatively from 1:10pm – 4pm, with time and location to be confirmed as soon as such are issued by the registrar. The final will be open-book and open-note.
 
@@ -61,7 +61,7 @@ Your scores will be recorded in Canvas for your reference along with an estimate
 Subject to change at instructor discretion.
 
 | Week                                     | Topics                                         | Readings               | Assignments                              |
-|------------------|---------------------|-----------------|------------------|
+|------------------|--------------------|------------------|------------------|
 | 1 (9/23)                                 | Set theory, probability axioms                 | 1.2, 1.2.1, 1.2.2, 1.3 |                                          |
 | 2 (9/30)                                 | Counting methods, probability inequalities     | 1.3.1, 1.3.2           | Quiz 1 (W)                               |
 | 3 (10/7)                                 | Conditional probability, independence          | 1.4, 1.4.1             |                                          |
