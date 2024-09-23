@@ -32,14 +32,14 @@ In advance of our first class meeting, please:
 
 *Set theory; probability axioms*
 
-**Monday:** sets and set operations
+**Monday:** sets and set operations \[[notes](https://drive.google.com/file/d/1BV2lw1i99VfqqXDc2fmhT0eDnRD5400r/view?usp=share_link)\]
 
 - [reading] sections 1.1, 1.2, 1.2.1 
 - [assignment] exercises 1.2.1, 1.2.2, 1.2.6
 - [optional] exercises 1.2.5, 1.2.7
 
-<!-- **Wednesday:** probability axioms and properties -->
+**Wednesday:** probability axioms and properties
 
-<!-- - [reading] section 1.3 -->
-<!-- - [assignment] exercises 1.3.1, 1.3.6, 1.3.7 -->
-<!-- - [optional] exercises 1.3.3, 1.3.5 -->
+- [reading] section 1.3
+- [assignment] exercises 1.3.1, 1.3.6, 1.3.7, 1.3.22
+- [optional] exercises 1.3.3, 1.3.5
