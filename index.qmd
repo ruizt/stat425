@@ -11,7 +11,10 @@ Read more in the \[[course syllabus](syllabus.qmd)\].
 ::: callout-note
 ## Announcements
 
-HW1 due 9/25/24 11:59pm PDT via Canvas file upload or on paper. Paper submissions can be dropped off in class or after hours in the inbox in front of my office door.
+- HW1 due 9/25/24 11:59pm PDT via Canvas file upload or on paper. 
+- HW2 due 9/30/24 11:59pm PDT via Canvas file upload or on paper. 
+
+Paper submissions can be dropped off in class or after hours in the inbox in front of my office door.
 
 :::
 
@@ -46,8 +49,10 @@ For office hours, drop ins are welcome (25-236) but availability is not guarante
 -   \[assignment\] exercises 1.2.1, 1.2.2, 1.2.6
 -   \[optional\] exercises 1.2.5, 1.2.7
 
-**Wednesday:** probability axioms and properties
+**Wednesday:** probability axioms and properties \[[notes](https://drive.google.com/file/d/1X8Te5ySowwIvOEcU_tUgJLIht3z0Aa0I/view?usp=sharing)\]
 
 -   \[reading\] section 1.3
 -   \[assignment\] exercises 1.3.6, 1.3.7, 1.3.21, 1.3.22
 -   \[optional\] exercises 1.3.3, 1.3.5
+
+

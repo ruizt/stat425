@@ -4,7 +4,7 @@
     "href": "syllabus.html",
     "title": "Course Syllabus",
     "section": "",
-    "text": "Probability is the mathematics of random events. In the context of modern statistics, probability theory provides a framework for studying the properties of samples, estimators, and inferences (the subjects of STAT 426 and STAT 427). This course will cover the axiomatic formulation of probability and formalize familiar concepts, including basic probability rules, random variables, distributions, and expectations. The course will also introduce concepts that play central roles in statistics, such as joint distributions, transformations, and conditional expectations.\nInstructor: Trevor Ruiz (he/him/his) [email] [website]\nClass meetings:\nOffice hours: 9:30am – 11:00am MW [by appointment]"
+    "text": "Probability is the mathematics of random events. In the context of modern statistics, probability theory provides a framework for studying the properties of samples, estimators, and inferences (the subjects of STAT 426 and STAT 427). This course will cover the axiomatic formulation of probability and formalize familiar concepts, including basic probability rules, random variables, distributions, and expectations. The course will also introduce concepts that play central roles in statistics, such as joint distributions, transformations, and conditional expectations.\nInstructor: Trevor Ruiz (he/him/his) [email] [website]\nLearning assistant: Edy Reynolds [email]\nClass meetings:\nOffice hours (OH) and learning assistant hours (LAH):\nFor office hours, drop ins are welcome (25-236) but availability is not guaranteed without an appointment. For LA hours, availability is drop-in only on a first come, first served basis."
   },
   {
     "objectID": "syllabus.html#catalog-description",
@@ -368,6 +368,6 @@
     "href": "index.html#week-1-92324",
     "title": "Probability Theory",
     "section": "Week 1 (9/23/24)",
-    "text": "Week 1 (9/23/24)\nSet theory; probability axioms\nMonday: sets and set operations [notes]\n\n[reading] sections 1.1, 1.2, 1.2.1\n[assignment] exercises 1.2.1, 1.2.2, 1.2.6\n[optional] exercises 1.2.5, 1.2.7\n\nWednesday: probability axioms and properties\n\n[reading] section 1.3\n[assignment] exercises 1.3.6, 1.3.7, 1.3.21, 1.3.22\n[optional] exercises 1.3.3, 1.3.5"
+    "text": "Week 1 (9/23/24)\nSet theory; probability axioms\nMonday: sets and set operations [notes]\n\n[reading] sections 1.1, 1.2, 1.2.1\n[assignment] exercises 1.2.1, 1.2.2, 1.2.6\n[optional] exercises 1.2.5, 1.2.7\n\nWednesday: probability axioms and properties [notes]\n\n[reading] section 1.3\n[assignment] exercises 1.3.6, 1.3.7, 1.3.21, 1.3.22\n[optional] exercises 1.3.3, 1.3.5"
   }
 ]
