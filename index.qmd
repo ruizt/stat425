@@ -11,22 +11,30 @@ Read more in the \[[course syllabus](syllabus.qmd)\].
 ::: callout-note
 ## Announcements
 
-In advance of our first class meeting, please:
+HW1 due 9/25/24 11:59pm PDT via Canvas file upload or on paper. Paper submissions can be dropped off in class or after hours in the inbox in front of my office door.
 
-1. fill out this brief \[[intake survey](https://forms.office.com/r/ruerQhi93k)\]
-2. read the \[[course syllabus](syllabus.qmd)\]
-3. skim the assigned reading (don't worry, it's only a few pages)
 :::
 
-
 **Instructor:** Trevor Ruiz (he/him/his) \[[email](mailto:truiz01@calpoly.edu)\] \[[website](https://tdruiz.com)\]
+
+**Learning assistant:** Edy Reynolds \[[email](mailto:ereyno11@calpoly.edu)\]
 
 **Class meetings:**
 
 -   \[Section 01\] 12:10pm -- 2:00pm MW 186-C300
 -   \[Section 02\] 2:10pm -- 4:00pm MW 186-C300
 
-**Office hours:** 9:30am -- 11:00am MW \[[by appointment](https://calendly.com/tdruiz/office-hour)\]
+**Office hours (OH) and learning assistant hours (LAH)**:
+
+-   \[OH\] M 4:00pm -- 5:30pm \[[by appointment](https://calendly.com/tdruiz/office-hour)\]
+
+-   \[LAH\] T 11:00am — 12:00pm 25-107G or \[[Zoom](https://calpoly.zoom.us/meeting/tZEqdOmurTotEtGX4FobA8L6G35OPN1365v_/ics?icsToken=98tyKuGtqTgqHNeUtxGCRpwMB4jCc-7ztn5aj7d6pEvDDCJyOi-gEbEXHYJRQYuG&meetingMasterEventId=ntLzXygXQRCCVBmRoXir1g)\]
+
+-   \[OH\] W 9:30am -- 11:00am \[[by appointment](https://calendly.com/tdruiz/office-hour)\]
+
+-   \[LAH\] R 11:00am — 12:00pm 25-107G or \[[Zoom](https://calpoly.zoom.us/meeting/tZEqdOmurTotEtGX4FobA8L6G35OPN1365v_/ics?icsToken=98tyKuGtqTgqHNeUtxGCRpwMB4jCc-7ztn5aj7d6pEvDDCJyOi-gEbEXHYJRQYuG&meetingMasterEventId=ntLzXygXQRCCVBmRoXir1g)\]
+
+For office hours, drop ins are welcome (25-236) but availability is not guaranteed without an appointment. For LA hours, availability is drop-in only on a first come, first served basis.
 
 ## Week 1 (9/23/24)
 
@@ -34,12 +42,12 @@ In advance of our first class meeting, please:
 
 **Monday:** sets and set operations \[[notes](https://drive.google.com/file/d/1BV2lw1i99VfqqXDc2fmhT0eDnRD5400r/view?usp=share_link)\]
 
-- [reading] sections 1.1, 1.2, 1.2.1 
-- [assignment] exercises 1.2.1, 1.2.2, 1.2.6
-- [optional] exercises 1.2.5, 1.2.7
+-   \[reading\] sections 1.1, 1.2, 1.2.1
+-   \[assignment\] exercises 1.2.1, 1.2.2, 1.2.6
+-   \[optional\] exercises 1.2.5, 1.2.7
 
 **Wednesday:** probability axioms and properties
 
-- [reading] section 1.3
-- [assignment] exercises 1.3.1, 1.3.6, 1.3.7, 1.3.22
-- [optional] exercises 1.3.3, 1.3.5
+-   \[reading\] section 1.3
+-   \[assignment\] exercises 1.3.6, 1.3.7, 1.3.21, 1.3.22
+-   \[optional\] exercises 1.3.3, 1.3.5

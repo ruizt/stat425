@@ -12,12 +12,24 @@ published-title: "Updated"
 
 **Instructor:** Trevor Ruiz (he/him/his) \[[email](mailto:truiz01@calpoly.edu)\] \[[website](https://tdruiz.com)\]
 
+**Learning assistant:** Edy Reynolds \[[email](mailto:ereyno11@calpoly.edu)\]
+
 **Class meetings:**
 
 -   \[Section 01\] 12:10pm -- 2:00pm MW 186-C300
 -   \[Section 02\] 2:10pm -- 4:00pm MW 186-C300
 
-**Office hours:** 9:30am -- 11:00am MW \[[by appointment](https://calendly.com/tdruiz/office-hour)\]
+**Office hours (OH) and learning assistant hours (LAH)**:
+
+-   \[OH\] M 4:00pm -- 5:30pm \[[by appointment](https://calendly.com/tdruiz/office-hour)\]
+
+-   \[LAH\] T 11:00am — 12:00pm 25-107G or Zoom
+
+-   \[OH\] W 9:30am -- 11:00am \[[by appointment](https://calendly.com/tdruiz/office-hour)\]
+
+-   \[LAH\] R 11:00am — 12:00pm 25-107G or Zoom
+
+For office hours, drop ins are welcome (25-236) but availability is not guaranteed without an appointment. For LA hours, availability is drop-in only on a first come, first served basis.
 
 ## Catalog Description
 
@@ -61,7 +73,7 @@ Your scores will be recorded in Canvas for your reference along with an estimate
 Subject to change at instructor discretion.
 
 | Week                                     | Topics                                         | Readings               | Assignments                              |
-|------------------|--------------------|------------------|------------------|
+|------------------|-------------------|------------------|------------------|
 | 1 (9/23)                                 | Set theory, probability axioms                 | 1.2, 1.2.1, 1.2.2, 1.3 |                                          |
 | 2 (9/30)                                 | Counting methods, probability inequalities     | 1.3.1, 1.3.2           | Quiz 1 (W)                               |
 | 3 (10/7)                                 | Conditional probability, independence          | 1.4, 1.4.1             |                                          |
