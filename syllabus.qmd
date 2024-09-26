@@ -68,23 +68,23 @@ Your attainment of learning outcomes will be measured by homework assignments, i
 
 Your scores will be recorded in Canvas for your reference along with an estimate of your running course total on a 0-100 scale. Tentatively, letter grades will span the following ranges: A (90, 100\]; B (80, 90\]; C (65, 80\]; D (50, 65\]; F \[0, 50\]. Please note these are *rough* estimates and subject to change without notice. Please also note that failure to adhere to course policies may result in a lower letter grade than would otherwise be assigned.
 
-## Tentative schedule
+## Tentative schedule {#schedule}
 
 Subject to change at instructor discretion.
 
 | Week                                     | Topics                                         | Readings               | Assignments                              |
 |------------------|-------------------|------------------|------------------|
 | 1 (9/23)                                 | Set theory, probability axioms                 | 1.2, 1.2.1, 1.2.2, 1.3 |                                          |
-| 2 (9/30)                                 | Counting methods, probability inequalities     | 1.3.1, 1.3.2           | Quiz 1 (W)                               |
-| 3 (10/7)                                 | Conditional probability, independence          | 1.4, 1.4.1             |                                          |
-| 4 (10/14)                                | Random variables                               | 1.5, 1.6, 1.7          | Quiz 2 (W)                               |
-| 5 (10/21)                                | Expectation, transformations                   | 1.8, 1.9, 1.6.1, 1.7.2 |                                          |
-| 6 (10/28)                                | Random vectors, joint distributions            | 2.1, 2.2, 2.3, 2.4     | Quiz 3 (W)                               |
-| 7 (11/4)                                 | Random vectors, joint distributions            | 2.1, 2.2, 2.3, 2.4     |                                          |
+| 2 (9/30)                                 | Counting methods                               | 1.3.1, 1.3.2           |                                          |
+| 3 (10/7)                                 | Conditional probability, independence          | 1.4, 1.4.1             | Quiz 1 (M)                               |
+| 4 (10/14)                                | Random variables                               | 1.5, 1.6, 1.7          |                                          |
+| 5 (10/21)                                | Expectation, transformations                   | 1.8, 1.9, 1.6.1, 1.7.2 | Quiz 2 (M)                               |
+| 6 (10/28)                                | Random vectors, joint distributions            | 2.1, 2.2, 2.3, 2.4     |                                          |
+| 7 (11/4)                                 | Random vectors, joint distributions            | 2.1, 2.2, 2.3, 2.4     | Quiz 3 (M)                               |
 | 8 (11/12) *Veteran's day observed 11/11* | Multivariate transformations, order statistics | 2.6, 2.8               |                                          |
 | 9 (11/18)                                | Common distributions                           | 3.1, 3.2, 3.3          | Quiz 4 (M)                               |
 | *Fall break (11/25)*                     |                                                |                        |                                          |
-| 10 (12/2)                                | The normal distribution                        | 3.4, 3.5               | Quiz 5 (W)                               |
+| 10 (12/2)                                | The normal distribution                        | 3.4, 3.5               | Quiz 5 (M)                               |
 | *Finals*                                 |                                                |                        | Common final **Saturday 12/7**, time TBD |
 
 ## Tips for success

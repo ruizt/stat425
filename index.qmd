@@ -11,11 +11,9 @@ Read more in the \[[course syllabus](syllabus.qmd)\].
 ::: callout-note
 ## Announcements
 
-- HW1 due 9/25/24 11:59pm PDT via Canvas file upload or on paper. 
-- HW2 due 9/30/24 11:59pm PDT via Canvas file upload or on paper. 
-
-Paper submissions can be dropped off in class or after hours in the inbox in front of my office door.
-
+- HW1 solutions posted; late submissions due 10/2/24 11:59pm PDT. 
+- HW2 due 9/30/24 11:59pm PDT via Canvas file upload or on paper.
+- Quiz schedule updated; please see \[[schedule](syllabus.qmd#schedule)\] on syllabus
 :::
 
 **Instructor:** Trevor Ruiz (he/him/his) \[[email](mailto:truiz01@calpoly.edu)\] \[[website](https://tdruiz.com)\]

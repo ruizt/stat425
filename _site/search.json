@@ -39,7 +39,7 @@
     "href": "syllabus.html#tentative-schedule",
     "title": "Course Syllabus",
     "section": "Tentative schedule",
-    "text": "Tentative schedule\nSubject to change at instructor discretion.\n\n\n\n\n\n\n\n\n\nWeek\nTopics\nReadings\nAssignments\n\n\n\n\n1 (9/23)\nSet theory, probability axioms\n1.2, 1.2.1, 1.2.2, 1.3\n\n\n\n2 (9/30)\nCounting methods, probability inequalities\n1.3.1, 1.3.2\nQuiz 1 (W)\n\n\n3 (10/7)\nConditional probability, independence\n1.4, 1.4.1\n\n\n\n4 (10/14)\nRandom variables\n1.5, 1.6, 1.7\nQuiz 2 (W)\n\n\n5 (10/21)\nExpectation, transformations\n1.8, 1.9, 1.6.1, 1.7.2\n\n\n\n6 (10/28)\nRandom vectors, joint distributions\n2.1, 2.2, 2.3, 2.4\nQuiz 3 (W)\n\n\n7 (11/4)\nRandom vectors, joint distributions\n2.1, 2.2, 2.3, 2.4\n\n\n\n8 (11/12) Veteran’s day observed 11/11\nMultivariate transformations, order statistics\n2.6, 2.8\n\n\n\n9 (11/18)\nCommon distributions\n3.1, 3.2, 3.3\nQuiz 4 (M)\n\n\nFall break (11/25)\n\n\n\n\n\n10 (12/2)\nThe normal distribution\n3.4, 3.5\nQuiz 5 (W)\n\n\nFinals\n\n\nCommon final Saturday 12/7, time TBD"
+    "text": "Tentative schedule\nSubject to change at instructor discretion.\n\n\n\n\n\n\n\n\n\nWeek\nTopics\nReadings\nAssignments\n\n\n\n\n1 (9/23)\nSet theory, probability axioms\n1.2, 1.2.1, 1.2.2, 1.3\n\n\n\n2 (9/30)\nCounting methods\n1.3.1, 1.3.2\n\n\n\n3 (10/7)\nConditional probability, independence\n1.4, 1.4.1\nQuiz 1 (M)\n\n\n4 (10/14)\nRandom variables\n1.5, 1.6, 1.7\n\n\n\n5 (10/21)\nExpectation, transformations\n1.8, 1.9, 1.6.1, 1.7.2\nQuiz 2 (M)\n\n\n6 (10/28)\nRandom vectors, joint distributions\n2.1, 2.2, 2.3, 2.4\n\n\n\n7 (11/4)\nRandom vectors, joint distributions\n2.1, 2.2, 2.3, 2.4\nQuiz 3 (M)\n\n\n8 (11/12) Veteran’s day observed 11/11\nMultivariate transformations, order statistics\n2.6, 2.8\n\n\n\n9 (11/18)\nCommon distributions\n3.1, 3.2, 3.3\nQuiz 4 (M)\n\n\nFall break (11/25)\n\n\n\n\n\n10 (12/2)\nThe normal distribution\n3.4, 3.5\nQuiz 5 (M)\n\n\nFinals\n\n\nCommon final Saturday 12/7, time TBD"
   },
   {
     "objectID": "syllabus.html#tips-for-success",
@@ -369,5 +369,12 @@
     "title": "Probability Theory",
     "section": "Week 1 (9/23/24)",
     "text": "Week 1 (9/23/24)\nSet theory; probability axioms\nMonday: sets and set operations [notes]\n\n[reading] sections 1.1, 1.2, 1.2.1\n[assignment] exercises 1.2.1, 1.2.2, 1.2.6 [solutions]\n[optional] exercises 1.2.5, 1.2.7\n\nWednesday: probability axioms and properties [notes]\n\n[reading] section 1.3\n[assignment] exercises 1.3.6, 1.3.7, 1.3.21, 1.3.22\n[optional] exercises 1.3.3, 1.3.5"
+  },
+  {
+    "objectID": "syllabus.html#schedule",
+    "href": "syllabus.html#schedule",
+    "title": "Course Syllabus",
+    "section": "Tentative schedule",
+    "text": "Tentative schedule\nSubject to change at instructor discretion.\n\n\n\n\n\n\n\n\n\nWeek\nTopics\nReadings\nAssignments\n\n\n\n\n1 (9/23)\nSet theory, probability axioms\n1.2, 1.2.1, 1.2.2, 1.3\n\n\n\n2 (9/30)\nCounting methods\n1.3.1, 1.3.2\n\n\n\n3 (10/7)\nConditional probability, independence\n1.4, 1.4.1\nQuiz 1 (M)\n\n\n4 (10/14)\nRandom variables\n1.5, 1.6, 1.7\n\n\n\n5 (10/21)\nExpectation, transformations\n1.8, 1.9, 1.6.1, 1.7.2\nQuiz 2 (M)\n\n\n6 (10/28)\nRandom vectors, joint distributions\n2.1, 2.2, 2.3, 2.4\n\n\n\n7 (11/4)\nRandom vectors, joint distributions\n2.1, 2.2, 2.3, 2.4\nQuiz 3 (M)\n\n\n8 (11/12) Veteran’s day observed 11/11\nMultivariate transformations, order statistics\n2.6, 2.8\n\n\n\n9 (11/18)\nCommon distributions\n3.1, 3.2, 3.3\nQuiz 4 (M)\n\n\nFall break (11/25)\n\n\n\n\n\n10 (12/2)\nThe normal distribution\n3.4, 3.5\nQuiz 5 (M)\n\n\nFinals\n\n\nCommon final Saturday 12/7, time TBD"
   }
 ]
