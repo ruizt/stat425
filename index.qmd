@@ -46,7 +46,7 @@ For office hours, drop ins are welcome (25-236) but availability is not guarante
 **Monday:** sets and set operations \[[notes](https://drive.google.com/file/d/1BV2lw1i99VfqqXDc2fmhT0eDnRD5400r/view?usp=share_link)\]
 
 -   \[reading\] sections 1.1, 1.2, 1.2.1
--   \[assignment\] exercises 1.2.1, 1.2.2, 1.2.6
+-   \[assignment\] exercises 1.2.1, 1.2.2, 1.2.6 \[[solutions](https://drive.google.com/file/d/1-ZPl6lesXsMRxsEY3ZTxfzRCzZ37o_m7/view?usp=sharing)\]
 -   \[optional\] exercises 1.2.5, 1.2.7
 
 **Wednesday:** probability axioms and properties \[[notes](https://drive.google.com/file/d/1X8Te5ySowwIvOEcU_tUgJLIht3z0Aa0I/view?usp=sharing)\]
