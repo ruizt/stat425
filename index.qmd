@@ -11,9 +11,8 @@ Read more in the \[[course syllabus](syllabus.qmd)\].
 ::: callout-note
 ## Announcements
 
-- Edy's LA hours Tuesday 10/1 moved to 12pm-1pm
-- Late HW2 submissions due 10/7/24 11:59pm PDT
-- Late HW1 submissions due 10/2/24 11:59pm PDT 
+-   Late HW1 submissions due 10/2/24 11:59pm PDT
+-   Late HW2 submissions due 10/7/24 11:59pm PDT
 :::
 
 **Instructor:** Trevor Ruiz (he/him/his) \[[email](mailto:truiz01@calpoly.edu)\] \[[website](https://tdruiz.com)\]
@@ -53,20 +52,29 @@ For office hours, drop ins are welcome (25-236) but availability is not guarante
 -   \[assignment\] exercises 1.3.6, 1.3.7, 1.3.21, 1.3.22 \[[solutions](https://drive.google.com/file/d/1O2E5hTYmW5gNhJHHqBR78RyCVV7VZkfV/view?usp=sharing)\]
 -   \[optional\] exercises 1.3.3, 1.3.5
 
-
 ## Week 2 (9/30/24)
 
 *Discrete probability spaces; counting methods*
 
 **Monday:** counting rules \[[notes](https://drive.google.com/file/d/1kIzbfexKgpRP_uyct13dUr6Xg6xcBRw8/view?usp=sharing)\]
 
-- \[reading\] section 1.3.1
-- \[assignment\] exercises 1.3.10, 1.3.18, 1.3.19
-- \[optional\] exercises 1.3.14, 1.3.15, 1.3.16
+-   \[reading\] section 1.3.1
+-   \[assignment\] exercises 1.3.10, 1.3.18, 1.3.19
+<!-- \[[solutions](https://drive.google.com/file/d/1RDGGBZFWhKIaix7upKgqljPlxSWKeMkl/view?usp=sharing)\] -->
+-   \[optional\] exercises 1.3.14, 1.3.15, 1.3.16
 
-**Wednesday:** the matching problem; conditional probability
+**Wednesday:** the matching problem \[[notes](https://drive.google.com/file/d/1VUalbMiHu-fq1rjcNAwEJvayiGnbVd1l/view?usp=sharing)\]
 
-- \[reading\] section 1.3.2
-- \[assignment\] exercises 1.3.11, 1.3.14, 1.4.2, 1.4.6
-- \[optional\] exercises 1.4.4, 1.4.5
+-   \[reading\] section 1.3.2
+-   \[assignment\] exercises 1.3.11, 1.3.14, ~~1.4.2, 1.4.6~~
+-   ~~\[optional\] exercises 1.4.4, 1.4.5~~
 
+## Week 3 (10/7/24)
+
+**Monday**: Quiz 1
+
+-   no reading or assignment
+
+**Wednesday**: conditional probability
+
+-   \[reading\] section 1.4
