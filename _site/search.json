@@ -382,13 +382,13 @@
     "href": "index.html#week-2-93024",
     "title": "Probability Theory",
     "section": "Week 2 (9/30/24)",
-    "text": "Week 2 (9/30/24)\nDiscrete probability spaces; counting methods\nMonday: counting rules [notes]\n\n[reading] section 1.3.1\n[assignment] exercises 1.3.10, 1.3.18, 1.3.19 \n[optional] exercises 1.3.14, 1.3.15, 1.3.16\n\nWednesday: the matching problem [notes]\n\n[reading] section 1.3.2\n[assignment] exercises 1.3.11, 1.3.14, 1.4.2, 1.4.6\n[optional] exercises 1.4.4, 1.4.5"
+    "text": "Week 2 (9/30/24)\nDiscrete probability spaces; counting methods\nMonday: counting rules [notes]\n\n[reading] section 1.3.1\n[assignment] exercises 1.3.10, 1.3.18, 1.3.19 [solutions]\n[optional] exercises 1.3.14, 1.3.15, 1.3.16\n\nWednesday: the matching problem [notes]\n\n[reading] section 1.3.2\n[assignment] exercises 1.3.11, 1.3.14, 1.4.2, 1.4.6\n[optional] exercises 1.4.4, 1.4.5"
   },
   {
     "objectID": "index.html#week-3-10724",
     "href": "index.html#week-3-10724",
     "title": "Probability Theory",
     "section": "Week 3 (10/7/24)",
-    "text": "Week 3 (10/7/24)\nMonday: Quiz 1\n\nno reading or assignment\n\nWednesday: conditional probability\n\n[reading] section 1.4"
+    "text": "Week 3 (10/7/24)\nMonday: Quiz 1\n\nno reading or assignment\n\nWednesday: conditional probability\n\n[reading] sections 1.4, 1.4.1\n[assignment] exercises 1.4.2, 1.4.6, 1.4.8, 1.4.34, and generalize 1.4.2 to \\(n\\) events\n[optional] 1.4.4, 1.4.23, 1.4.26"
   }
 ]
