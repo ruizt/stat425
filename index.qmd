@@ -11,7 +11,7 @@ Read more in the \[[course syllabus](syllabus.qmd)\].
 ::: callout-note
 ## Announcements
 
--   Late HW3 submissions due 10/9/24 11:59pm PDT
+-   HW5 due 10/14/24 11:59pm PDT
 -   Late HW4 submissions due 10/14/24 11:59pm PDT
 :::
 
@@ -77,7 +77,7 @@ For office hours, drop ins are welcome (25-236) but availability is not guarante
 
 -   \[reading\] section 1.4
 -   \[assignment\] exercises 1.4.2, 1.4.6, 1.4.8, 1.4.34
--   \[optional\] exercises 1.4.4, ~~1.4.23,~~ 1.4.26
+-   \[optional\] exercises 1.4.4, 1.4.26
 
 ## Week 4 (10/14/24)
 
