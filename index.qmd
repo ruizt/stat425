@@ -13,10 +13,9 @@ Read more in the \[[course syllabus](syllabus.qmd)\].
 
 Course-related:
 
--   HW5 due 10/14/24 11:59pm PDT
+-   Quiz 2 in class 10/21/24; DRC students should schedule within 24 hours of class time
 -   HW6 due 10/16/24 11:59pm PDT
 -   Quiz 1 corrections due 10/18/24 11:59pm PDT
--   Late HW4 submissions due 10/14/24 11:59pm PDT
 -   Late HW5 submissions due 10/21/24 11:59pm PDT
 
 Non-course-related:
@@ -86,7 +85,7 @@ For office hours, drop ins are welcome (25-236) but availability is not guarante
 **Wednesday**: conditional probability; Bayes' theorem \[[notes](https://drive.google.com/file/d/1-NCNPAIqxe6kRS3EAtfMo6LDNF0CXpjg/view?usp=sharing)\]
 
 -   \[reading\] section 1.4
--   \[assignment\] exercises 1.4.2, 1.4.6, 1.4.8, 1.4.34
+-   \[assignment\] exercises 1.4.2, 1.4.6, 1.4.8, 1.4.34 \[[solutions](https://drive.google.com/file/d/1gZ20TQviytRJrgCJnw3jMF8nkNqoNfzI/view?usp=sharing)\]
 -   \[optional\] exercises 1.4.4, 1.4.26
 
 ## Week 4 (10/14/24)

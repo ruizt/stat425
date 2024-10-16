@@ -35,8 +35,8 @@
     "text": "Assessments\nYour attainment of learning outcomes will be measured by homework assignments, in-class quizzes, and a comprehensive final exam. These are described below, with the relative contributions to final grades indicated parenthetically.\n\nHomework (20%). Homework problems will be given every class and due the next class meeting. Typically, problem sets will be very short (3 problems), and we will devote some time to working on them together in class on the day they are assigned. Homework assignments will be collected and checked for completion but not graded; therefore, it is your responsibility to ensure your work is correct by checking solutions when provided, consulting with classmates, and attending office hours.\nQuizzes (60%). Quizzes will be given approximately biweekly in class. These are summative assessments and you should prepare for them as you would an exam. You will be allowed 50 minutes to complete each quiz and up to 4 (one-sided) pages of notes. We will review solutions in class following each quiz, during which time you will be expected to self-assess your work before it is submitted for grading. You will have the opportunity to submit revisions to earn back a portion of missed credit.\nFinal exam (20%). A comprehensive common final exam will be given on Saturday, December 7, tentatively from 1:10pm – 4pm, with time and location to be confirmed as soon as such are issued by the registrar. The final will be open-book and open-note.\n\nYour scores will be recorded in Canvas for your reference along with an estimate of your running course total on a 0-100 scale. Tentatively, letter grades will span the following ranges: A (90, 100]; B (80, 90]; C (65, 80]; D (50, 65]; F [0, 50]. Please note these are rough estimates and subject to change without notice. Please also note that failure to adhere to course policies may result in a lower letter grade than would otherwise be assigned."
   },
   {
-    "objectID": "syllabus.html#tentative-schedule",
-    "href": "syllabus.html#tentative-schedule",
+    "objectID": "syllabus.html#schedule",
+    "href": "syllabus.html#schedule",
     "title": "Course Syllabus",
     "section": "Tentative schedule",
     "text": "Tentative schedule\nSubject to change at instructor discretion.\n\n\n\n\n\n\n\n\n\nWeek\nTopics\nReadings\nAssignments\n\n\n\n\n1 (9/23)\nSet theory, probability axioms\n1.2, 1.2.1, 1.2.2, 1.3\n\n\n\n2 (9/30)\nCounting methods\n1.3.1, 1.3.2\n\n\n\n3 (10/7)\nConditional probability, independence\n1.4, 1.4.1\nQuiz 1 (M)\n\n\n4 (10/14)\nRandom variables\n1.5, 1.6, 1.7\n\n\n\n5 (10/21)\nExpectation, transformations\n1.8, 1.9, 1.6.1, 1.7.2\nQuiz 2 (M)\n\n\n6 (10/28)\nRandom vectors, joint distributions\n2.1, 2.2, 2.3, 2.4\n\n\n\n7 (11/4)\nRandom vectors, joint distributions\n2.1, 2.2, 2.3, 2.4\nQuiz 3 (M)\n\n\n8 (11/12) Veteran’s day observed 11/11\nMultivariate transformations, order statistics\n2.6, 2.8\n\n\n\n9 (11/18)\nCommon distributions\n3.1, 3.2, 3.3\nQuiz 4 (M)\n\n\nFall break (11/25)\n\n\n\n\n\n10 (12/2)\nThe normal distribution\n3.4, 3.5\nQuiz 5 (M)\n\n\nFinals\n\n\nCommon final Saturday 12/7, time TBD"
@@ -371,13 +371,6 @@
     "text": "Week 1 (9/23/24)\nSet theory; probability axioms\nMonday: sets and set operations [notes]\n\n[reading] sections 1.1, 1.2, 1.2.1\n[assignment] exercises 1.2.1, 1.2.2, 1.2.6 [solutions]\n[optional] exercises 1.2.5, 1.2.7\n\nWednesday: probability axioms and properties [notes]\n\n[reading] section 1.3\n[assignment] exercises 1.3.6, 1.3.7, 1.3.21, 1.3.22 [solutions]\n[optional] exercises 1.3.3, 1.3.5"
   },
   {
-    "objectID": "syllabus.html#schedule",
-    "href": "syllabus.html#schedule",
-    "title": "Course Syllabus",
-    "section": "Tentative schedule",
-    "text": "Tentative schedule\nSubject to change at instructor discretion.\n\n\n\n\n\n\n\n\n\nWeek\nTopics\nReadings\nAssignments\n\n\n\n\n1 (9/23)\nSet theory, probability axioms\n1.2, 1.2.1, 1.2.2, 1.3\n\n\n\n2 (9/30)\nCounting methods\n1.3.1, 1.3.2\n\n\n\n3 (10/7)\nConditional probability, independence\n1.4, 1.4.1\nQuiz 1 (M)\n\n\n4 (10/14)\nRandom variables\n1.5, 1.6, 1.7\n\n\n\n5 (10/21)\nExpectation, transformations\n1.8, 1.9, 1.6.1, 1.7.2\nQuiz 2 (M)\n\n\n6 (10/28)\nRandom vectors, joint distributions\n2.1, 2.2, 2.3, 2.4\n\n\n\n7 (11/4)\nRandom vectors, joint distributions\n2.1, 2.2, 2.3, 2.4\nQuiz 3 (M)\n\n\n8 (11/12) Veteran’s day observed 11/11\nMultivariate transformations, order statistics\n2.6, 2.8\n\n\n\n9 (11/18)\nCommon distributions\n3.1, 3.2, 3.3\nQuiz 4 (M)\n\n\nFall break (11/25)\n\n\n\n\n\n10 (12/2)\nThe normal distribution\n3.4, 3.5\nQuiz 5 (M)\n\n\nFinals\n\n\nCommon final Saturday 12/7, time TBD"
-  },
-  {
     "objectID": "index.html#week-2-93024",
     "href": "index.html#week-2-93024",
     "title": "Probability Theory",
@@ -389,7 +382,7 @@
     "href": "index.html#week-3-10724",
     "title": "Probability Theory",
     "section": "Week 3 (10/7/24)",
-    "text": "Week 3 (10/7/24)\nMonday: Quiz 1 [clean copy]\n\nno reading or assignment\n\nWednesday: conditional probability; Bayes’ theorem [notes]\n\n[reading] section 1.4\n[assignment] exercises 1.4.2, 1.4.6, 1.4.8, 1.4.34\n[optional] exercises 1.4.4, 1.4.26"
+    "text": "Week 3 (10/7/24)\nMonday: Quiz 1 [clean copy]\n\nno reading or assignment\n\nWednesday: conditional probability; Bayes’ theorem [notes]\n\n[reading] section 1.4\n[assignment] exercises 1.4.2, 1.4.6, 1.4.8, 1.4.34 [solutions]\n[optional] exercises 1.4.4, 1.4.26"
   },
   {
     "objectID": "index.html#week-4-101424",
