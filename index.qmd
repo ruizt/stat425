@@ -17,11 +17,6 @@ Course-related:
 -   Quiz 1 corrections due 10/18/24 11:59pm PDT
 -   Late HW5 submissions due 10/21/24 11:59pm PDT
 -   Late HW6 submissions due 10/23/24 11:59pm PDT
-
-Non-course-related:
-
-- BCSM career fair Thursday 10/17 \& Friday 10/18 \[[info](https://cosam.calpoly.edu/career-fair)\]
-- Statistics Frost SURP symposium Friday 10/18 11:10am -- 12:00pm in 53-202
 :::
 
 **Instructor:** Trevor Ruiz (he/him/his) \[[email](mailto:truiz01@calpoly.edu)\] \[[website](https://tdruiz.com)\]
@@ -85,7 +80,7 @@ For office hours, drop ins are welcome (25-236) but availability is not guarante
 **Wednesday**: conditional probability; Bayes' theorem \[[notes](https://drive.google.com/file/d/1-NCNPAIqxe6kRS3EAtfMo6LDNF0CXpjg/view?usp=sharing)\]
 
 -   \[reading\] section 1.4
--   \[assignment\] exercises 1.4.2, 1.4.6, 1.4.8, 1.4.34 \[[solutions](https://drive.google.com/file/d/1gZ20TQviytRJrgCJnw3jMF8nkNqoNfzI/view?usp=sharing)\]
+-   \[assignment\] exercises 1.4.2, 1.4.6, 1.4.8, 1.4.34 \[[solutions](https://drive.google.com/file/d/1PvfRxSJGDcgD0ugtiMkqnVWjvYMeahVF/view?usp=sharing)\]
 -   \[optional\] exercises 1.4.4, 1.4.26
 
 ## Week 4 (10/14/24)
