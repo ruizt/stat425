@@ -103,5 +103,5 @@ For office hours, drop ins are welcome (25-236) but availability is not guarante
 **Wednesday**: distribution functions
 
 -   \[reading\] remainder of section 1.5
--   \[assignment\] exercises 1.5.4, 1.6.4, 1.6.7, 1.6.9, 1.6.10
+-   \[assignment\] exercises 1.5.4, 1.5.10, 1.6.4, 1.6.7, 1.6.9, 1.6.10
 -   \[optional\] exercises 1.5.5, 1.5.6, 1.5.11, 1.6.8
