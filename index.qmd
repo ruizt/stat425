@@ -11,8 +11,9 @@ Read more in the \[[course syllabus](syllabus.qmd)\].
 ::: callout-note
 ## Announcements
 
-Course-related:
-
+-   Quiz 1 grades posted
+-   Course schedule updated on syllabus \[[here](syllabus.qmd#schedule)\]
+-   HW8 due 10/28/24 11:59pm PDT
 -   Late HW6 submissions due 10/23/24 11:59pm PDT
 -   Late HW7 submissions due 10/28/24 11:59pm PDT
 :::
@@ -104,4 +105,4 @@ For office hours, drop ins are welcome (25-236) but availability is not guarante
 
 -   \[reading\] remainder of section 1.5
 -   \[assignment\] exercises 1.5.4, 1.5.10, 1.6.4, 1.6.7, 1.6.9, 1.6.10
--   \[optional\] exercises 1.5.5, 1.5.6, 1.5.11, 1.6.8
+-   \[optional\] exercises 1.5.5, 1.5.6, 1.6.8
