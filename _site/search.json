@@ -389,13 +389,20 @@
     "href": "index.html#week-4-101424",
     "title": "Probability Theory",
     "section": "Week 4 (10/14/24)",
-    "text": "Week 4 (10/14/24)\nMonday: the Monte Hall problem; independence [notes] [R script: sensitivity and specificity]\n\n[reading] section 1.4.1\n[assignment] exercises 1.4.11, 1.4.21, 1.4.31 [solutions]\n[optional] exercises 1.4.12, 1.4.19, 1.4.23, 1.4.26\n\nWednesday: the Gambler’s ruin problem; random variables [notes] [R script: gambler’s ruin simulations]\n\n[reading] section 1.5 through remark 1.5.1 (p. 39)\n[assignment] exercises 1.4.13, 1.4.18, 1.4.22, 1.4.32"
+    "text": "Week 4 (10/14/24)\nMonday: the Monte Hall problem; independence [notes] [R script: sensitivity and specificity]\n\n[reading] section 1.4.1\n[assignment] exercises 1.4.11, 1.4.21, 1.4.31 [solutions]\n[optional] exercises 1.4.12, 1.4.19, 1.4.23, 1.4.26\n\nWednesday: the Gambler’s ruin problem; random variables [notes] [R script: gambler’s ruin simulations]\n\n[reading] section 1.5 through remark 1.5.1 (p. 39)\n[assignment] exercises 1.4.13, 1.4.18, 1.4.22, 1.4.32 [solutions]"
   },
   {
     "objectID": "index.html#week-5-102124",
     "href": "index.html#week-5-102124",
     "title": "Probability Theory",
     "section": "Week 5 (10/21/24)",
-    "text": "Week 5 (10/21/24)\nMonday: Quiz 2\n\nno reading or assignment\n\nWednesday: distribution functions\n\n[reading] remainder of section 1.5\n[assignment] exercises 1.5.4, 1.5.10, 1.6.4, 1.6.7, 1.6.9, 1.6.10\n[optional] exercises 1.5.5, 1.5.6, 1.6.8"
+    "text": "Week 5 (10/21/24)\nMonday: Quiz 2\n\nno reading or assignment\n\nWednesday: distribution functions; discrete random variables and transformations [notes]\n\n[reading] remainder of section 1.5, 1.6, 1.6.1\n[assignment] exercises 1.5.4, 1.5.10, 1.6.4, 1.6.7, 1.6.9, 1.6.10\n[optional] exercises 1.5.5, 1.5.6, 1.6.8"
+  },
+  {
+    "objectID": "index.html#week-6-102824",
+    "href": "index.html#week-6-102824",
+    "title": "Probability Theory",
+    "section": "Week 6 (10/28/24)",
+    "text": "Week 6 (10/28/24)\nMonday: continuous random variables and transformations\n\n[reading] section 1.7, 1.7.2\n[assignment] exercises 1.7.6, 1.7.12, 1.7.14, 1.7.23\n[optional] exercises 1.7.8, 1.7.24, 1.7.25"
   }
 ]
