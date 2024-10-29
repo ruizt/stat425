@@ -11,11 +11,9 @@ Read more in the \[[course syllabus](syllabus.qmd)\].
 ::: callout-note
 ## Announcements
 
--   Quiz 1 grades posted
--   Course schedule updated on syllabus \[[here](syllabus.qmd#schedule)\]
--   HW8 due 10/28/24 11:59pm PDT
--   Late HW6 submissions due 10/23/24 11:59pm PDT
+-   HW9 due 10/30/24 11:59pm PDT
 -   Late HW7 submissions due 10/28/24 11:59pm PDT
+-   Late HW8 submissions due 11/4/24 11:59pm PST
 :::
 
 **Instructor:** Trevor Ruiz (he/him/his) \[[email](mailto:truiz01@calpoly.edu)\] \[[website](https://tdruiz.com)\]
@@ -97,26 +95,32 @@ For office hours, drop ins are welcome (25-236) but availability is not guarante
 
 ## Week 5 (10/21/24)
 
-**Monday**: Quiz 2
+**Monday**: Quiz 2 \[[clean copy](https://drive.google.com/file/d/1-746sLZ9RpOyDQ4-zp-DuKU5kTtLhv58/view?usp=sharing)\]
 
 -   no reading or assignment
 
 **Wednesday**: distribution functions; discrete random variables and transformations \[[notes](https://drive.google.com/file/d/17SLavdKM19r5rtGK8wSbHhounCSiNW3K/view?usp=sharing)\]
 
 -   \[reading\] remainder of section 1.5, 1.6, 1.6.1
--   \[assignment\] exercises 1.5.4, 1.5.10, 1.6.4, 1.6.7, 1.6.9, 1.6.10
+-   \[assignment\] exercises 1.5.4, 1.5.10, 1.6.4, 1.6.7, 1.6.9, 1.6.10 \[[solutions](https://drive.google.com/file/d/1fKApE0urk9T3Nkc-dTkUKrKvv5PwsetQ/view?usp=sharing)\]
 -   \[optional\] exercises 1.5.5, 1.5.6, 1.6.8
 
 ## Week 6 (10/28/24)
 
-**Monday**: continuous random variables and transformations
+**Monday**: continuous random variables and transformations \[[notes](https://drive.google.com/file/d/11TJFxKNDmgxQ-OsUIt1aOM5Po_UKzpkd/view?usp=sharing)\]
 
 -   \[reading\] section 1.7, 1.7.2
 -   \[assignment\] exercises 1.7.6, 1.7.12, 1.7.14, 1.7.23
 -   \[optional\] exercises 1.7.8, 1.7.24, 1.7.25
 
-<!-- **Wednesday**: expectation -->
+**Wednesday**: expectations
 
-<!-- -   \[reading\] sections 1.8, 1.9 -->
-<!-- -   \[assignment\] -->
-<!-- -   \[optional\] -->
+-   \[reading\] sections 1.8, 1.9
+-   \[assignment\] exercises 1.8.2, 1.8.4, 1.9.3, 1.9.4, 1.9.27
+-   \[optional\] exercises 1.8.6, 1.8.9, 1.9.5, 1.9.8, 1.9.20
+
+## Week 7 (11/4/24)
+
+**Monday**: Quiz 3
+
+-   no reading or assignment

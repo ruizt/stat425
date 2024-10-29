@@ -73,7 +73,7 @@ Your scores will be recorded in Canvas for your reference along with an estimate
 Subject to change at instructor discretion.
 
 | Week | Topics | Readings | Assignments |
-|------------------|-------------------|------------------|------------------|
+|----|----|----|----|
 | 1 (9/23) | Set theory, probability axioms | 1.2, 1.2.1, 1.2.2, 1.3 |  |
 | 2 (9/30) | Counting methods | 1.3.1, 1.3.2 |  |
 | 3 (10/7) | Conditional probability | 1.4 | Quiz 1 (M) |

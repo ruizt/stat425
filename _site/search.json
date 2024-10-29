@@ -396,13 +396,20 @@
     "href": "index.html#week-5-102124",
     "title": "Probability Theory",
     "section": "Week 5 (10/21/24)",
-    "text": "Week 5 (10/21/24)\nMonday: Quiz 2\n\nno reading or assignment\n\nWednesday: distribution functions; discrete random variables and transformations [notes]\n\n[reading] remainder of section 1.5, 1.6, 1.6.1\n[assignment] exercises 1.5.4, 1.5.10, 1.6.4, 1.6.7, 1.6.9, 1.6.10\n[optional] exercises 1.5.5, 1.5.6, 1.6.8"
+    "text": "Week 5 (10/21/24)\nMonday: Quiz 2 [clean copy]\n\nno reading or assignment\n\nWednesday: distribution functions; discrete random variables and transformations [notes]\n\n[reading] remainder of section 1.5, 1.6, 1.6.1\n[assignment] exercises 1.5.4, 1.5.10, 1.6.4, 1.6.7, 1.6.9, 1.6.10 [solutions]\n[optional] exercises 1.5.5, 1.5.6, 1.6.8"
   },
   {
     "objectID": "index.html#week-6-102824",
     "href": "index.html#week-6-102824",
     "title": "Probability Theory",
     "section": "Week 6 (10/28/24)",
-    "text": "Week 6 (10/28/24)\nMonday: continuous random variables and transformations\n\n[reading] section 1.7, 1.7.2\n[assignment] exercises 1.7.6, 1.7.12, 1.7.14, 1.7.23\n[optional] exercises 1.7.8, 1.7.24, 1.7.25"
+    "text": "Week 6 (10/28/24)\nMonday: continuous random variables and transformations [notes]\n\n[reading] section 1.7, 1.7.2\n[assignment] exercises 1.7.6, 1.7.12, 1.7.14, 1.7.23\n[optional] exercises 1.7.8, 1.7.24, 1.7.25\n\nWednesday: expectations\n\n[reading] sections 1.8, 1.9\n[assignment] exercises 1.8.2, 1.8.4, 1.9.3, 1.9.4, 1.9.27\n[optional] exercises 1.8.6, 1.8.9, 1.9.5, 1.9.8, 1.9.20"
+  },
+  {
+    "objectID": "index.html#week-7-11424",
+    "href": "index.html#week-7-11424",
+    "title": "Probability Theory",
+    "section": "Week 7 (11/4/24)",
+    "text": "Week 7 (11/4/24)\nMonday: Quiz 3\n\nno reading or assignment"
   }
 ]
