@@ -11,8 +11,9 @@ Read more in the \[[course syllabus](syllabus.qmd)\].
 ::: callout-note
 ## Announcements
 
+-   Quiz 3 in class 11/4/24
+-   HW10 due 11/4/24 11:59pm PDT
 -   HW9 due 10/30/24 11:59pm PDT
--   Late HW7 submissions due 10/28/24 11:59pm PDT
 -   Late HW8 submissions due 11/4/24 11:59pm PST
 :::
 
@@ -110,10 +111,10 @@ For office hours, drop ins are welcome (25-236) but availability is not guarante
 **Monday**: continuous random variables and transformations \[[notes](https://drive.google.com/file/d/11TJFxKNDmgxQ-OsUIt1aOM5Po_UKzpkd/view?usp=sharing)\]
 
 -   \[reading\] section 1.7, 1.7.2
--   \[assignment\] exercises 1.7.6, 1.7.12, 1.7.14, 1.7.23
+-   \[assignment\] exercises 1.7.6, 1.7.12, 1.7.14, 1.7.23 \[[solutions](https://drive.google.com/file/d/15BlzjPfKBNBI0MU9deM3yuHMiDpXP3P-/view?usp=sharing)\]
 -   \[optional\] exercises 1.7.8, 1.7.24, 1.7.25
 
-**Wednesday**: expectations
+**Wednesday**: expectations \[[notes](https://drive.google.com/file/d/1EuoKoyHLqdtI7M-0pcnfqPUN-Edvm_ac/view?usp=sharing)\]
 
 -   \[reading\] sections 1.8, 1.9
 -   \[assignment\] exercises 1.8.2, 1.8.4, 1.9.3, 1.9.4, 1.9.27
