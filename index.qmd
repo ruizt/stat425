@@ -12,7 +12,7 @@ Read more in the \[[course syllabus](syllabus.qmd)\].
 ## Announcements
 
 -   Quiz 3 in class 11/4/24
--   HW10 due 11/4/24 11:59pm PDT
+-   HW10 due 11/4/24 11:59pm PST
 -   HW9 due 10/30/24 11:59pm PDT
 -   Late HW8 submissions due 11/4/24 11:59pm PST
 :::
@@ -121,6 +121,8 @@ For office hours, drop ins are welcome (25-236) but availability is not guarante
 -   \[optional\] exercises 1.8.6, 1.8.9, 1.9.5, 1.9.8, 1.9.20
 
 ## Week 7 (11/4/24)
+
+*Note: daylight savings time ends Sunday 11/3/24*
 
 **Monday**: Quiz 3
 
