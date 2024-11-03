@@ -13,8 +13,8 @@ Read more in the \[[course syllabus](syllabus.qmd)\].
 
 -   Quiz 3 in class 11/4/24
 -   HW10 due 11/4/24 11:59pm PST
--   HW9 due 10/30/24 11:59pm PDT
 -   Late HW8 submissions due 11/4/24 11:59pm PST
+-   Late HW9 submissions due 11/6/24 11:59pm PST
 :::
 
 **Instructor:** Trevor Ruiz (he/him/his) \[[email](mailto:truiz01@calpoly.edu)\] \[[website](https://tdruiz.com)\]
@@ -117,7 +117,8 @@ For office hours, drop ins are welcome (25-236) but availability is not guarante
 **Wednesday**: expectations \[[notes](https://drive.google.com/file/d/1EuoKoyHLqdtI7M-0pcnfqPUN-Edvm_ac/view?usp=sharing)\]
 
 -   \[reading\] sections 1.8, 1.9
--   \[assignment\] exercises 1.8.2, 1.8.4, 1.9.3, 1.9.4, 1.9.27
+-   \[assignment\] exercises 1.8.2, 1.8.4, 1.9.3, 1.9.4, 1.9.27 
+<!-- \[[solutions](https://drive.google.com/file/d/15_rM5uMS8oN8-WEQ7mz74AMxq9-qFk78/view?usp=sharing)\] -->
 -   \[optional\] exercises 1.8.6, 1.8.9, 1.9.5, 1.9.8, 1.9.20
 
 ## Week 7 (11/4/24)
@@ -127,3 +128,9 @@ For office hours, drop ins are welcome (25-236) but availability is not guarante
 **Monday**: Quiz 3
 
 -   no reading or assignment
+
+**Wednesday**: probability inequalities
+
+-   \[reading\] section 1.10
+-   \[assignment\] exercises 1.10.1, 1.10.4, 3.4.1, 3.4.11
+-   \[optional\] exercises 1.10.2, 1.10.3
