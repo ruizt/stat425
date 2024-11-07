@@ -39,7 +39,7 @@
     "href": "syllabus.html#schedule",
     "title": "Course Syllabus",
     "section": "Tentative schedule",
-    "text": "Tentative schedule\nSubject to change at instructor discretion.\n\n\n\n\n\n\n\n\n\nWeek\nTopics\nReadings\nAssignments\n\n\n\n\n1 (9/23)\nSet theory, probability axioms\n1.2, 1.2.1, 1.2.2, 1.3\n\n\n\n2 (9/30)\nCounting methods\n1.3.1, 1.3.2\n\n\n\n3 (10/7)\nConditional probability\n1.4\nQuiz 1 (M)\n\n\n4 (10/14)\nIndependence; random variables\n1.4.1, 1.5\n\n\n\n5 (10/21)\nDistribution functions; discrete random variables and transformations\n1.5, 1.6, 1.6.1\nQuiz 2 (M)\n\n\n6 (10/28)\nContinuous random variables and transformations; expectation\n1.7, 1.7.2, 1.8, 1.9\n\n\n\n7 (11/4)\nBivariate distributions\n2.1, 2.1.1, 2.1.2\nQuiz 3 (M)\n\n\n8 (11/12) Veteran’s day observed 11/11\nBivariate transformations; conditional distributions\n2.2, 2.3\n\n\n\n9 (11/18)\nIndependence, covariance, and correlation\n2.4, 2.5\nQuiz 4 (M) (W)\n\n\nFall break (11/25)\n\n\n\n\n\n10 (12/2)\nMultivariate distributions; sums and order statistics\n2.6, 2.8\nQuiz 5 (M)\n\n\nFinals\n\n\nCommon final Saturday 12/7, time TBD"
+    "text": "Tentative schedule\nSubject to change at instructor discretion.\n\n\n\n\n\n\n\n\n\nWeek\nTopics\nReadings\nAssignments\n\n\n\n\n1 (9/23)\nSet theory, probability axioms\n1.2, 1.2.1, 1.2.2, 1.3\n\n\n\n2 (9/30)\nCounting methods\n1.3.1, 1.3.2\n\n\n\n3 (10/7)\nConditional probability\n1.4\nQuiz 1 (M)\n\n\n4 (10/14)\nIndependence; random variables\n1.4.1, 1.5\n\n\n\n5 (10/21)\nDistribution functions; discrete random variables and transformations\n1.5, 1.6, 1.6.1\nQuiz 2 (M)\n\n\n6 (10/28)\nContinuous random variables and transformations; expectation\n1.7, 1.7.2, 1.8, 1.9\n\n\n\n7 (11/4)\nNormal distribution; probability inequalities\n1.10\nQuiz 3 (M)\n\n\n8 (11/12) Veteran’s day observed 11/11\nBivariate distributions and transformations\n2.1, 2.2\n\n\n\n9 (11/18)\nConditional distributions, independence, covariance, and correlation\n2.3, 2.4, 2.5\nQuiz 4 (M) (W)\n\n\nFall break (11/25)\n\n\n\n\n\n10 (12/2)\nMultivariate distributions; sums and order statistics\n2.6, 2.8\nQuiz 5 (M)\n\n\nFinals\n\n\nCommon final Saturday 12/7 1:10pm – 4:00pm PST 10-220"
   },
   {
     "objectID": "syllabus.html#tips-for-success",
@@ -403,13 +403,20 @@
     "href": "index.html#week-6-102824",
     "title": "Probability Theory",
     "section": "Week 6 (10/28/24)",
-    "text": "Week 6 (10/28/24)\nMonday: continuous random variables and transformations [notes]\n\n[reading] section 1.7, 1.7.2\n[assignment] exercises 1.7.6, 1.7.12, 1.7.14, 1.7.23 [solutions]\n[optional] exercises 1.7.8, 1.7.24, 1.7.25\n\nWednesday: expectations [notes]\n\n[reading] sections 1.8, 1.9\n[assignment] exercises 1.8.2, 1.8.4, 1.9.3, 1.9.4, 1.9.27 \n[optional] exercises 1.8.6, 1.8.9, 1.9.5, 1.9.8, 1.9.20"
+    "text": "Week 6 (10/28/24)\nMonday: continuous random variables and transformations [notes]\n\n[reading] section 1.7, 1.7.2\n[assignment] exercises 1.7.6, 1.7.12, 1.7.14, 1.7.23 [solutions]\n[optional] exercises 1.7.8, 1.7.24, 1.7.25\n\nWednesday: expectations [notes]\n\n[reading] sections 1.8, 1.9\n[assignment] exercises 1.8.2, 1.8.4, 1.9.3, 1.9.4, 1.9.27 [solutions]\n[optional] exercises 1.8.6, 1.8.9, 1.9.5, 1.9.8, 1.9.20"
   },
   {
     "objectID": "index.html#week-7-11424",
     "href": "index.html#week-7-11424",
     "title": "Probability Theory",
     "section": "Week 7 (11/4/24)",
-    "text": "Week 7 (11/4/24)\nNote: daylight savings time ends Sunday 11/3/24\nMonday: Quiz 3\n\nno reading or assignment\n\nWednesday: probability inequalities\n\n[reading] section 1.10\n[assignment] exercises 1.10.1, 1.10.4, 3.4.1, 3.4.11\n[optional] exercises 1.10.2, 1.10.3"
+    "text": "Week 7 (11/4/24)\nNote: daylight savings time ends Sunday 11/3/24\nMonday: Quiz 3\n\nno reading or assignment\n\nWednesday: the standard normal distribution; probability inequalities [notes]\n\n[reading] section 1.10\n[assignment] exercises 1.10.1, 1.10.4, 3.4.1, 3.4.11\n[optional] exercises 1.10.2, 1.10.3"
+  },
+  {
+    "objectID": "index.html#week-8-111224",
+    "href": "index.html#week-8-111224",
+    "title": "Probability Theory",
+    "section": "Week 8 (11/12/24)",
+    "text": "Week 8 (11/12/24)\nNote: Veteran’s day observed 11/11/24\nMonday: no class meeting (Veteran’s day)\nWednesday: bivariate distributions and transformations\n\n[reading] sections 2.1, 2.1"
   }
 ]
