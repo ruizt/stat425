@@ -142,4 +142,4 @@ For office hours, drop ins are welcome (25-236) but availability is not guarante
 
 **Wednesday**: bivariate distributions and transformations
 
--   \[reading\] sections 2.1, 2.1
+-   \[reading\] sections 2.1, 2.1.1, 2.1.2, 2.2
