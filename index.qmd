@@ -13,7 +13,6 @@ Read more in the \[[course syllabus](syllabus.qmd)\].
 
 -   Common final scheduled Saturday 12/7/24 1:10pm -- 4:00pm PST 10-220; please contact me if you have a conflict
 -   HW11 due 11/13/24 11:59pm PST
--   Late HW9 submissions due 11/6/24 11:59pm PST
 -   Late HW10 submissions due 11/12/24 11:59pm PST
 :::
 
@@ -124,14 +123,14 @@ For office hours, drop ins are welcome (25-236) but availability is not guarante
 
 *Note: daylight savings time ends Sunday 11/3/24*
 
-**Monday**: Quiz 3
+**Monday**: Quiz 3 \[[clean copy](https://drive.google.com/file/d/1-Hq-WxLCku_fWP4-UX08Ulmukccu0tD6/view?usp=sharing)\]
 
 -   no reading or assignment
 
 **Wednesday**: the standard normal distribution; probability inequalities \[[notes](https://drive.google.com/file/d/1GIAiOF_L_0WK16GQBXZVJHzd0u3EaSOy/view?usp=sharing)\]
 
 -   \[reading\] section 1.10
--   \[assignment\] exercises 1.10.1, 1.10.4, 3.4.1, 3.4.11
+-   \[assignment\] exercises 1.10.1, 1.10.4, 3.4.1, 3.4.11(a)
 -   \[optional\] exercises 1.10.2, 1.10.3
 
 ## Week 8 (11/12/24)
@@ -143,3 +142,15 @@ For office hours, drop ins are welcome (25-236) but availability is not guarante
 **Wednesday**: bivariate distributions and transformations
 
 -   \[reading\] sections 2.1, 2.1.1, 2.1.2, 2.2
+-   \[assignment\] exercises 2.1.7, 2.1.10, 2.2.2, 2.2.3, 2.2.5
+-   \[optional\] exercises 2.1.11, 2.2.4, 2.2.6, 2.2.7
+
+## Week 9 (11/18/24)
+
+**Monday**: conditional distributions and independence
+
+-   \[reading\] sections 2.3, 2.4
+
+**Wednesday**: quiz 4
+
+-   no reading or assignment
