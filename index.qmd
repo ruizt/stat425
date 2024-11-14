@@ -129,7 +129,7 @@ For office hours, drop ins are welcome (25-236) but availability is not guarante
 **Wednesday**: the standard normal distribution; probability inequalities \[[notes](https://drive.google.com/file/d/1GIAiOF_L_0WK16GQBXZVJHzd0u3EaSOy/view?usp=sharing)\]
 
 -   \[reading\] section 1.10
--   \[assignment\] exercises 1.10.1, 1.10.4, 3.4.1, 3.4.11(a)
+-   \[assignment\] exercises 1.10.1, 1.10.4, 3.4.1, 3.4.11(a) \[[solutions](https://drive.google.com/file/d/1N-ZIOiimg5mHXvru5iCKDQs4Rx5mEL3F/view?usp=sharing)\]
 -   \[optional\] exercises 1.10.2, 1.10.3
 
 ## Week 8 (11/12/24)
@@ -138,19 +138,19 @@ For office hours, drop ins are welcome (25-236) but availability is not guarante
 
 **Monday**: no class meeting (Veteran's day)
 
-**Wednesday**: bivariate distributions and transformations
+**Wednesday**: bivariate distributions and transformations \[[notes](https://drive.google.com/file/d/1aMs6P7Gx3Gk7VJfn3JB0eZWNkOBk7Sdk/view?usp=sharing)\]
 
 -   \[reading\] sections 2.1, 2.1.1, 2.1.2, 2.2
--   \[assignment\] exercises 2.1.7, 2.1.10, 2.2.2, 2.2.3, 2.2.5
--   \[optional\] exercises 2.1.11, 2.2.4, 2.2.6, 2.2.7
+-   \[assignment\] exercises 2.1.7, 2.1.10, 2.2.2, ~~2.2.3, 2.2.5~~, 2.1.11
+-   \[optional\] exercises ~~2.1.11, 2.2.4, 2.2.6, 2.2.7~~
 
 ## Week 9 (11/18/24)
 
 **Monday**: conditional distributions and independence
 
 -   \[reading\] sections 2.3, 2.4
--   \[assignment\] exercises 2.3.1, 2.3.3, 2.4.1, 2.4.11
--   \[optional\] exercises 2.3.8, 2.3.10, 2.3.12, 2.4.7, 2.4.8
+-   \[assignment\] exercises 2.2.3, 2.2.5, 2.3.1, 2.3.3, ~~2.4.1, 2.4.11~~
+-   \[optional\] exercises 2.2.4, 2.2.6, 2.2.7 2.3.8, 2.3.10, ~~2.3.12, 2.4.7, 2.4.8~~
 
 **Wednesday**: Quiz 4
 
