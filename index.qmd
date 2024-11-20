@@ -147,7 +147,7 @@ For office hours, drop ins are welcome (25-236) but availability is not guarante
 
 ## Week 9 (11/18/24)
 
-**Monday**: conditional distributions
+**Monday**: conditional distributions \[[notes](https://drive.google.com/file/d/1KTU3lTPgLqObvkprEDeGzwcxoOMmP6La/view?usp=sharing)\]
 
 -   \[reading\] section 2.3
 -   \[assignment\] exercises 2.2.3, 2.2.5, 2.3.1, 2.3.3(a)
