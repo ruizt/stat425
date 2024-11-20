@@ -12,7 +12,8 @@ Read more in the \[[course syllabus](syllabus.qmd)\].
 ## Announcements
 
 -   Common final scheduled Saturday 12/7/24 1:10pm -- 4:00pm PST 10-220; if you have a conflict, please fill out this \[[when2meet](https://www.when2meet.com/?27554714-dXZMx)\] with your availability for alternate times
--   HW11 due 11/13/24 11:59pm PST
+-   HW13 due 11/20/24 11:59pm PST
+-   Late HW12 submissions due 12/2/24 11:59pm PST
 :::
 
 **Instructor:** Trevor Ruiz (he/him/his) \[[email](mailto:truiz01@calpoly.edu)\] \[[website](https://tdruiz.com)\]
@@ -141,16 +142,16 @@ For office hours, drop ins are welcome (25-236) but availability is not guarante
 **Wednesday**: bivariate distributions and transformations \[[notes](https://drive.google.com/file/d/1aMs6P7Gx3Gk7VJfn3JB0eZWNkOBk7Sdk/view?usp=sharing)\]
 
 -   \[reading\] sections 2.1, 2.1.1, 2.1.2, 2.2
--   \[assignment\] exercises 2.1.7, 2.1.10, 2.2.2, ~~2.2.3, 2.2.5~~, 2.1.11
--   \[optional\] exercises ~~2.1.11, 2.2.4, 2.2.6, 2.2.7~~
+-   \[assignment\] exercises 2.1.7, 2.1.10, 2.2.2, 2.1.11 \[[solutions](https://drive.google.com/file/d/128Mddsuju3Z8112_LplYqcyYpkU2uJku/view?usp=sharing)\]
+-   \[optional\] exercises 2.1.1, 2.1.8, 2.2.1
 
 ## Week 9 (11/18/24)
 
-**Monday**: conditional distributions and independence
+**Monday**: conditional distributions
 
--   \[reading\] sections 2.3, 2.4
--   \[assignment\] exercises 2.2.3, 2.2.5, 2.3.1, 2.3.3, ~~2.4.1, 2.4.11~~
--   \[optional\] exercises 2.2.4, 2.2.6, 2.2.7 2.3.8, 2.3.10, ~~2.3.12, 2.4.7, 2.4.8~~
+-   \[reading\] section 2.3
+-   \[assignment\] exercises 2.2.3, 2.2.5, 2.3.1, 2.3.3(a)
+-   \[optional\] exercises 2.2.4, 2.2.6, 2.2.7 2.3.8, 2.3.10
 
 **Wednesday**: Quiz 4
 
