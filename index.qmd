@@ -11,8 +11,6 @@ Read more in the \[[course syllabus](syllabus.qmd)\].
 ::: callout-note
 ## Announcements
 
--   Common final scheduled Saturday 12/7/24 1:10pm -- 4:00pm PST 10-220; if you have a conflict, please fill out this \[[when2meet](https://www.when2meet.com/?27554714-dXZMx)\] with your availability for alternate times
--   HW13 due 11/20/24 11:59pm PST
 -   Late HW12 submissions due 12/2/24 11:59pm PST
 :::
 
@@ -150,9 +148,22 @@ For office hours, drop ins are welcome (25-236) but availability is not guarante
 **Monday**: conditional distributions \[[notes](https://drive.google.com/file/d/1KTU3lTPgLqObvkprEDeGzwcxoOMmP6La/view?usp=sharing)\]
 
 -   \[reading\] section 2.3
--   \[assignment\] exercises 2.2.3, 2.2.5, 2.3.1, 2.3.3(a)
+-   \[assignment\] exercises 2.2.3, 2.2.5, 2.3.1, 2.3.3(a) \[[solutions](https://drive.google.com/file/d/1KA-4DIR86UIolJ4w-7cFVNkgaEcwdNms/view?usp=sharing)\]
 -   \[optional\] exercises 2.2.4, 2.2.6, 2.2.7 2.3.8, 2.3.10
 
 **Wednesday**: Quiz 4
 
 -   no reading or assignment
+
+## Week 10 (12/2/24)
+
+**Monday**: independence, covariance, and correlation
+
+-   \[reading\] sections 2.4, 2.5
+-   \[assignment\] exercises 2.4.1, 2.4.11, 2.5.2, 2.5.3
+-   \[optional\] exercises 2.4.7, 2.4.8, 2.4.10, 2.5.4, 2.5.7, 2.5.11
+
+**Wednesday**: random samples
+
+-   \[reading\] section 2.8
+-   no assignment (besides studying!)
