@@ -11,7 +11,8 @@ Read more in the \[[course syllabus](syllabus.qmd)\].
 ::: callout-note
 ## Announcements
 
--   Late HW12 submissions due 12/2/24 11:59pm PST
+-   HW14 submissions due 12/4/24 11:59pm PST
+-   Late HW14 submissions due 12/11/24 11:59pm PST
 :::
 
 **Instructor:** Trevor Ruiz (he/him/his) \[[email](mailto:truiz01@calpoly.edu)\] \[[website](https://tdruiz.com)\]
@@ -157,7 +158,7 @@ For office hours, drop ins are welcome (25-236) but availability is not guarante
 
 ## Week 10 (12/2/24)
 
-**Monday**: independence, covariance, and correlation
+**Monday**: independence, covariance, and correlation \[[notes](https://drive.google.com/file/d/19-nJ_4c9bBcoK7O7Ps0GLHLv39KVGHow/view?usp=sharing)\]
 
 -   \[reading\] sections 2.4, 2.5
 -   \[assignment\] exercises 2.4.1, 2.4.11, 2.5.2, 2.5.3
