@@ -11,6 +11,8 @@ Read more in the \[[course syllabus](syllabus.qmd)\].
 ::: callout-note
 ## Announcements
 
+-   Final exam Saturday 12/7 1:10pm -- 4:00pm in building 10 room 220
+
 -   HW14 submissions due 12/4/24 11:59pm PST
 -   Late HW14 submissions due 12/11/24 11:59pm PST
 :::
@@ -152,7 +154,7 @@ For office hours, drop ins are welcome (25-236) but availability is not guarante
 -   \[assignment\] exercises 2.2.3, 2.2.5, 2.3.1, 2.3.3(a) \[[solutions](https://drive.google.com/file/d/1KA-4DIR86UIolJ4w-7cFVNkgaEcwdNms/view?usp=sharing)\]
 -   \[optional\] exercises 2.2.4, 2.2.6, 2.2.7 2.3.8, 2.3.10
 
-**Wednesday**: Quiz 4
+**Wednesday**: Quiz 4 \[[clean copy](https://drive.google.com/file/d/1-MZpNtji0ZKUFF1GR4CFCALix875xwrk/view?usp=sharing)\]
 
 -   no reading or assignment
 
@@ -161,10 +163,10 @@ For office hours, drop ins are welcome (25-236) but availability is not guarante
 **Monday**: independence, covariance, and correlation \[[notes](https://drive.google.com/file/d/19-nJ_4c9bBcoK7O7Ps0GLHLv39KVGHow/view?usp=sharing)\]
 
 -   \[reading\] sections 2.4, 2.5
--   \[assignment\] exercises 2.4.1, 2.4.11, 2.5.2, 2.5.3
+-   \[assignment\] exercises 2.4.1, 2.4.11, 2.5.2, 2.5.3 \[[solutions](https://drive.google.com/file/d/13SvHKEBUv3YfKa_oTknaeENOVQ269XS8/view?usp=sharing)\]
 -   \[optional\] exercises 2.4.7, 2.4.8, 2.4.10, 2.5.4, 2.5.7, 2.5.11
 
-**Wednesday**: random samples
+**Wednesday**: interpreting correlation; random samples \[[notes](https://drive.google.com/file/d/1_dksx6PSxNBwYdetONZD0L6meATN7Q4C/view?usp=sharing)\]
 
 -   \[reading\] section 2.8
 -   no assignment (besides studying!)
