@@ -11,10 +11,7 @@ Read more in the \[[course syllabus](syllabus.qmd)\].
 ::: callout-note
 ## Announcements
 
--   Final exam Saturday 12/7 1:10pm -- 4:00pm in building 10 room 220
-
--   HW14 submissions due 12/4/24 11:59pm PST
--   Late HW14 submissions due 12/11/24 11:59pm PST
+Grades posted on Canvas. Have a great holiday break!
 :::
 
 **Instructor:** Trevor Ruiz (he/him/his) \[[email](mailto:truiz01@calpoly.edu)\] \[[website](https://tdruiz.com)\]
@@ -170,3 +167,7 @@ For office hours, drop ins are welcome (25-236) but availability is not guarante
 
 -   \[reading\] section 2.8
 -   no assignment (besides studying!)
+
+## Final exam (12/7/24)
+
+\[[solutions](https://drive.google.com/file/d/15qc0Us50GvpfBRnUX8MZ7u4XCkQF2AdD/view?usp=sharing)\]
